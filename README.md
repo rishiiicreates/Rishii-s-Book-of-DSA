@@ -14,4 +14,4 @@ Welcome to my brain dump of Data Structures and Algorithms. I am essentially a p
 You don't. Seriously, bhai, don't use this as your primary study material unless you also want to fail spectacularly. But if you just want to see how someone else struggles through two-pointer problems and logs their failures, make yourself at home :3
 
 ## Contributing
-If you find a bug, please fix it. I will literally send you good vibes. Or just roast my terrible logic in the issues tab, I completely deserve it hmm....
+If you find a bug, please fix it. I will literally send you good vibes. Or just roast my terrible logic in the issues tab, I completely deserve it.
