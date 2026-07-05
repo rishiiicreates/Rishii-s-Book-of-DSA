@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, cycle-detection, bfs]
-date: 2026-06-30
----
 # Shortest cycle in an undirected graph
 
 ## Problem Statement
-Find the length of the shortest cycle in an unweighted undirected graph. If no cycle exists, return -1.
+- find the length of the shortest cycle in an unweighted undirected graph. If no cycle exists, return -1.
 
 ## Approach / Intuition
-Run [[BFS]] from every node. During traversal, if we reach a visited node that is not the parent of the current node, a cycle is found. The cycle length will be the sum of distances of both nodes from the start node plus 1.
+- run [[BFS]] from every node. During traversal, if we reach a visited node that is not the parent of the current node, a cycle is found. The cycle length will be the sum of distances of both nodes from the start node plus 1.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V \times (V + E))
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O(V \times (V + E))
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ int shortestCycle(int n, vector<vector<int>>& edges) {
 ```
 
 ## New Keywords / STL Used
-`queue`, `vector`
+- `queue`, `vector`
 
 ## Edge Cases
-Graph with no cycles (tree), disconnected graph, cycle of length 3 (triangle).
+- graph with no cycles (tree), disconnected graph, cycle of length 3 (triangle).
+
+NEXT: [[Index]]

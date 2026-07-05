@@ -1,23 +1,17 @@
----
-type: concept
-tags: [tree, binary-tree, dfs, recursion, cpp, math]
-date: 2026-06-30
----
 # Inorder Traversal
 
 ## Mathematical Definition
-**Inorder Traversal** is a continuous, strictly defined Depth-First Search (DFS) algorithm recursively evaluating a geometric binary tree utilizing the spatial sequence:
-1. Algebraically evaluate the entire left subtree $T_L$ in Inorder.
-2. Algebraically process the absolute Root node $r$.
-3. Algebraically evaluate the entire right subtree $T_R$ in Inorder.
+- **inorder Traversal** is a continuous, strictly defined Depth-First Search (DFS) algorithm recursively evaluating a geometric binary tree utilizing the spatial sequence:
+- algebraically evaluate the entire left subtree $T_L$ in Inorder.
+- algebraically process the absolute Root node $r$.
+- algebraically evaluate the entire right subtree $T_R$ in Inorder.
 
-For a Binary Search Tree (BST), the structural invariant enforces that all scalars in $T_L < r < T_R$. Thus, Inorder Traversal mathematically projects a BST into a strictly monotonic (sorted) linear sequence.
+- for a Binary Search Tree (BST), the structural invariant enforces that all scalars in $T_L < r < T_R$. Thus, Inorder Traversal mathematically projects a BST into a strictly monotonic (sorted) linear sequence.
 
----
 
 ## Recursive Approach
 
-The recursive mathematical invariant structurally mirrors the definition. We theoretically push the evaluation state to the System Call Stack until hitting the absolute geometric base case (the $\emptyset$ null set).
+- the recursive mathematical invariant structurally mirrors the definition. We theoretically push the evaluation state to the System Call Stack until hitting the absolute geometric base case (the $\emptyset$ null set).
 
 ```cpp
 #include <vector>
@@ -46,11 +40,10 @@ vector<int> inorderTraversal(TreeNode* root) {
 }
 ```
 
----
 
 ## Iterative Approach (Explicit Stack)
 
-To bypass the overhead of structural system calls and prevent stack overflow anomalies in severely skewed degenerate trees ($H \approx N$), we explicitly simulate the LIFO progression.
+- to bypass the overhead of structural system calls and prevent stack overflow anomalies in severely skewed degenerate trees ($H \approx N$), we explicitly simulate the LIFO progression.
 
 ```cpp
 #include <vector>
@@ -87,8 +80,9 @@ vector<int> iterativeInorder(TreeNode* root) {
 > [!tip]
 > Morris Traversal offers a theoretically superior strictly $\mathcal{O}(1)$ auxiliary space alternative by temporarily mutating the structural pointers of the binary tree to explicitly back-track without a stack, though it fundamentally mutates read-only graph structures during execution.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Each geometric node is pushed into the recursive or explicit stack strictly exactly once and popped strictly exactly once.
-- **Space Complexity:** $\mathcal{O}(H)$, where $H$ defines the absolute geometric height of the tree structure. $H = \lceil \log_2(N) \rceil$ for perfectly balanced trees, and $H = N$ for degenerate structures.
+- **time Complexity:** $\mathcal{O}(N)$. Each geometric node is pushed into the recursive or explicit stack strictly exactly once and popped strictly exactly once.
+- **space Complexity:** $\mathcal{O}(H)$, where $H$ defines the absolute geometric height of the tree structure. $H = \lceil \log_2(N) \rceil$ for perfectly balanced trees, and $H = N$ for degenerate structures.
+
+NEXT: [[Index]]

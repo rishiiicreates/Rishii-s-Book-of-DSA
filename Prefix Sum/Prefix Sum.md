@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, arrays]
-date: 2026-06-30
----
 # Prefix Sum
 
 ## Problem Statement
-Calculate the prefix sum of an array, where the value at index $i$ is the sum of all elements from index $0$ to $i$.
+- calculate the prefix sum of an array, where the value at index $i$ is the sum of all elements from index $0$ to $i$.
 
 ## Approach / Intuition
-The core idea of a [[Prefix Sum]] is to precompute cumulative sums so that we can answer subsequent range sum queries efficiently. We iterate through the array, adding the current element to a running total. This running total represents the sum of all elements up to the current index. 
+- the core idea of a [[Prefix Sum]] is to precompute cumulative sums so that we can answer subsequent range sum queries efficiently. We iterate through the array, adding the current element to a running total. This running total represents the sum of all elements up to the current index.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(1)$ auxiliary, $O(N)$ for output
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(1)$ auxiliary, $O(N)$ for output
 
 ## Sample Code
 ```cpp
@@ -31,9 +26,11 @@ std::vector<int> computePrefixSum(const std::vector<int>& arr) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Empty array
-- Array with negative numbers
-- Large sums that might cause integer overflow
+- empty array
+- array with negative numbers
+- large sums that might cause integer overflow
+
+NEXT: [[Index]]

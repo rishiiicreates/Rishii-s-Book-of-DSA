@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Decode String
 
 ## Problem Statement
-Decode an encoded string where the pattern `k[encoded_string]` indicates that `encoded_string` is repeated exactly `k` times.
+- decode an encoded string where the pattern `k[encoded_string]` indicates that `encoded_string` is repeated exactly `k` times.
 
 ## Approach / Intuition
-We can process this using two [[Stack]]s: one for repeat counts and one for the string fragments built so far. We parse the string, pushing numbers and current strings on encountering `[`. Upon encountering `]`, we pop the last string and its repeat count, append the current string `k` times, and update the state.
+- we can process this using two [[Stack]]s: one for repeat counts and one for the string fragments built so far. We parse the string, pushing numbers and current strings on encountering `[`. Upon encountering `]`, we pop the last string and its repeat count, append the current string `k` times, and update the state.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(Max(K) * N) where K is the multiplier value and N is the string length.
-- **[[Space Complexity]]:** O(N) for the recursion depth or the stacks.
+- **[[time Complexity]]:** O(Max(K) * N) where K is the multiplier value and N is the string length.
+- **[[space Complexity]]:** O(N) for the recursion depth or the stacks.
 
 ## Sample Code
 ```cpp
@@ -49,6 +44,8 @@ string decodeString(string s) {
 - `std::stack`, `std::isdigit`
 
 ## Edge Cases
-- Nested brackets like `2[3[a]b]`.
-- Modifiers `k` with multiple digits (e.g., `10[a]`).
-- Empty string or string without any brackets.
+- nested brackets like `2[3[a]b]`.
+- modifiers `k` with multiple digits (e.g., `10[a]`).
+- empty string or string without any brackets.
+
+NEXT: [[Index]]

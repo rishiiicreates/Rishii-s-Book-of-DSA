@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, bfs]
-date: 2026-06-30
----
 # Breadth First Search (BFS)
 
 ## Problem Statement
-Traverse or search tree or graph data structures starting from a given source node, exploring neighbor nodes level by level.
+- traverse or search tree or graph data structures starting from a given source node, exploring neighbor nodes level by level.
 
 ## Approach / Intuition
-Use a [[Queue]] to keep track of nodes to visit next and a boolean array to mark visited nodes to prevent cycles. Process each level completely before moving to the next.
+- use a [[Queue]] to keep track of nodes to visit next and a boolean array to mark visited nodes to prevent cycles. Process each level completely before moving to the next.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -43,7 +38,9 @@ vector<int> bfsOfGraph(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::queue`, `std::vector`
+- `std::queue`, `std::vector`
 
 ## Edge Cases
-Disconnected graph, single node, empty graph.
+- disconnected graph, single node, empty graph.
+
+NEXT: [[Index]]

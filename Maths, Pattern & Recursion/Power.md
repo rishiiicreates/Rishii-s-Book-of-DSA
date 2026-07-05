@@ -1,18 +1,12 @@
----
-type: concept
-tags: [pattern, recursion, cpp, math, exponentiation, binary_exponentiation]
-date: 2026-06-30
----
 # Power (Binary Exponentiation)
 
 ## Problem Statement
-Given a base $X$ and an exponent $N$, compute $X^N$.
-*Example:* $2^{10} = 1024$.
+- given a base $X$ and an exponent $N$, compute $X^N$.
+- *example:* $2^{10} = 1024$.
 
----
 
 ## Approach 1: Naive Loop
-The naive approach is to loop $N$ times and multiply $X$ by itself.
+- the naive approach is to loop $N$ times and multiply $X$ by itself.
 ```cpp
 long long naivePower(int x, int n) {
     long long ans = 1;
@@ -20,17 +14,16 @@ long long naivePower(int x, int n) {
     return ans;
 }
 ```
-**Problem:** If $N = 10^9$, this will take $10^9$ operations and result in a Time Limit Exceeded (TLE). We need an $O(\log N)$ solution.
+- **problem:** If $N = 10^9$, this will take $10^9$ operations and result in a Time Limit Exceeded (TLE). We need an $O(\log N)$ solution.
 
----
 
 ## Approach 2: Binary Exponentiation (Fast Power)
 
-We can drastically reduce the multiplications by halving the exponent at every step.
-- If $N$ is **even**: $X^N = (X^{N/2}) \times (X^{N/2})$
-- If $N$ is **odd**: $X^N = X \times (X^{N/2}) \times (X^{N/2})$
+- we can drastically reduce the multiplications by halving the exponent at every step.
+- if $N$ is **even**: $X^N = (X^{N/2}) \times (X^{N/2})$
+- if $N$ is **odd**: $X^N = X \times (X^{N/2}) \times (X^{N/2})$
 
-Instead of computing $X^{N/2}$ twice, we compute it once, store it in a variable, and square it. This drops the time from $O(N)$ down to $O(\log N)$.
+- instead of computing $X^{N/2}$ twice, we compute it once, store it in a variable, and square it. This drops the time from $O(N)$ down to $O(\log N)$.
 
 ### Recursive Implementation
 
@@ -53,7 +46,7 @@ long long powerRec(int x, int n) {
 ```
 
 ### Iterative Implementation (The Best Way)
-The iterative version is preferred in competitive programming because it uses $O(1)$ memory (no Call Stack) and relies on bitwise operations.
+- the iterative version is preferred in competitive programming because it uses $O(1)$ memory (no Call Stack) and relies on bitwise operations.
 
 ```cpp
 long long powerIterative(long long x, long long n) {
@@ -81,8 +74,9 @@ long long powerIterative(long long x, long long n) {
 > [!important]
 > **Modulo Arithmetic:** Problems usually ask you to return the answer modulo $10^9 + 7$ to prevent overflow. Simply apply `% MOD` after every single multiplication inside the `powerIterative` function.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(\log N)$. We halve the exponent at every step.
-- **Space Complexity:** $O(\log N)$ for the recursive approach due to the Call Stack, and **$O(1)$** for the iterative approach.
+- **time Complexity:** $O(\log N)$. We halve the exponent at every step.
+- **space Complexity:** $O(\log N)$ for the recursive approach due to the Call Stack, and **$O(1)$** for the iterative approach.
+
+NEXT: [[Index]]

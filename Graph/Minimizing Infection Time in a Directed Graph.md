@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, shortest-path, bfs, dijkstra]
-date: 2026-06-30
----
 # Minimizing Infection Time in a Directed Graph
 
 ## Problem Statement
-Given a directed graph with edge weights representing infection delay, find the minimum time to infect all nodes starting from a specific node, or return -1 if impossible.
+- given a directed graph with edge weights representing infection delay, find the minimum time to infect all nodes starting from a specific node, or return -1 if impossible.
 
 ## Approach / Intuition
-This is equivalent to finding the shortest path to all nodes and taking the maximum. We can apply [[Dijkstra]] algorithm to calculate shortest paths from the source to all nodes.
+- this is equivalent to finding the shortest path to all nodes and taking the maximum. We can apply [[Dijkstra]] algorithm to calculate shortest paths from the source to all nodes.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(E \log V)
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O(E \log V)
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ int networkDelayTime(vector<vector<int>>& times, int n, int k) {
 ```
 
 ## New Keywords / STL Used
-`priority_queue`, `pair`, `greater`
+- `priority_queue`, `pair`, `greater`
 
 ## Edge Cases
-Disconnected nodes (return -1), tree structure, densely connected graph.
+- disconnected nodes (return -1), tree structure, densely connected graph.
+
+NEXT: [[Index]]

@@ -1,13 +1,8 @@
----
-type: concept
-tags: [maths, pattern, cpp, loops, visual]
-date: 2026-06-30
----
 # Hollow Diamond
 
 ## Problem Statement
-Given an integer $N$, print a hollow diamond pattern of size $2N$ rows.
-*Example for $N = 4$:*
+- given an integer $N$, print a hollow diamond pattern of size $2N$ rows.
+- *example for $N = 4$:*
 ```
 ********
 ***  ***
@@ -19,20 +14,18 @@ Given an integer $N$, print a hollow diamond pattern of size $2N$ rows.
 ********
 ```
 
----
 
 ## Approach: Math & Grids
 
-This is very similar to the [[Butterfly]] pattern, but inverted. The logic remains the same: we have $2N$ total rows. It is perfectly horizontally symmetrical, meaning the top half (rows $1$ to $N$) is an exact mirror of the bottom half (rows $N$ down to $1$).
+- this is very similar to the [[Butterfly]] pattern, but inverted. The logic remains the same: we have $2N$ total rows. It is perfectly horizontally symmetrical, meaning the top half (rows $1$ to $N$) is an exact mirror of the bottom half (rows $N$ down to $1$).
 
-For any given row $i$ in the top half (from $i=1$ to $N$):
-- **Left Wing Stars:** The number of stars starts at $N$ and decreases to $1$. The formula is exactly $(N - i + 1)$.
-- **Middle Spaces:** The number of spaces starts at $0$ and grows by $2$ each time. The formula is $2 \times (i - 1)$.
-- **Right Wing Stars:** Matches the left wing exactly.
+- for any given row $i$ in the top half (from $i=1$ to $N$):
+- **left Wing Stars:** The number of stars starts at $N$ and decreases to $1$. The formula is exactly $(N - i + 1)$.
+- **middle Spaces:** The number of spaces starts at $0$ and grows by $2$ each time. The formula is $2 \times (i - 1)$.
+- **right Wing Stars:** Matches the left wing exactly.
 
-We run this logic in a loop from $i=1$ to $N$. Then, we run the exact same inner logic, but the outer loop runs backwards from $i=N$ down to $1$.
+- we run this logic in a loop from $i=1$ to $N$. Then, we run the exact same inner logic, but the outer loop runs backwards from $i=N$ down to $1$.
 
----
 
 ## Code Implementation
 
@@ -71,8 +64,9 @@ void printHollowDiamond(int n) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N^2)$. There are $2N$ rows, and for each row, we print exactly $2N$ characters (stars + spaces). Total operations = $4N^2$.
-- **Space Complexity:** $O(1)$. No auxiliary memory used.
+- **time Complexity:** $O(N^2)$. There are $2N$ rows, and for each row, we print exactly $2N$ characters (stars + spaces). Total operations = $4N^2$.
+- **space Complexity:** $O(1)$. No auxiliary memory used.
+
+NEXT: [[Index]]

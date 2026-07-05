@@ -1,32 +1,25 @@
----
-type: concept
-tags: [graph, matrix, dfs, bfs, cpp]
-date: 2026-06-30
----
 # Flood Fill
 
 ## Problem Statement
-An image is mathematically represented by an $M \times N$ integer matrix `image` where `image[i][j]` denotes the pixel value of the image.
+- an image is mathematically represented by an $M \times N$ integer matrix `image` where `image[i][j]` denotes the pixel value of the image.
 
-Given a Cartesian coordinate $(sr, sc)$ representing the starting pixel (row and column) and a scalar `color`, execute a **Flood Fill** on the image.
+- given a Cartesian coordinate $(sr, sc)$ representing the starting pixel (row and column) and a scalar `color`, execute a **Flood Fill** on the image.
 
-*Definition:* A flood fill initiates at the starting pixel, plus any pixels 4-directionally topologically connected to the starting pixel of the exact identical original color, plus any pixels 4-directionally connected to those pixels (also of identical original color), and mathematically overwrites their scalar state to the new `color`.
+- *definition:* A flood fill initiates at the starting pixel, plus any pixels 4-directionally topologically connected to the starting pixel of the exact identical original color, plus any pixels 4-directionally connected to those pixels (also of identical original color), and mathematically overwrites their scalar state to the new `color`.
 
----
 
 ## Approach: Conditional Connected Component Traversal
 
-This is structurally identical to [[Number of Islands]], executing a single Cartesian BFS or DFS. However, instead of wiping all landmasses, we conditionally propagate state modifications *only* to adjacent cells whose topological values match the original target's state.
+- this is structurally identical to [[Number of Islands]], executing a single Cartesian BFS or DFS. However, instead of wiping all landmasses, we conditionally propagate state modifications *only* to adjacent cells whose topological values match the original target's state.
 
-1. **Parameter Initialization:** Cache the absolute initial state `initialColor = image[sr][sc]`. If `initialColor == color`, the state mathematically satisfies the terminal condition identically, and traversing would induce an infinite topological loop without a visited array. Immediately return `image`.
-2. **Radial Traversal:** Trigger a recursive DFS (or queue BFS) originating at `(sr, sc)`.
-3. **Execution Block:**
-   - Overwrite the current pixel: `image[r][c] = color`.
-   - Iterate across all 4 delta coordinate vectors.
-   - For each valid adjacent cell `(nr, nc)`: if `image[nr][nc] == initialColor`, recursively trigger traversal into that coordinate.
-4. **Return:** The intrinsically mutated matrix.
+- **parameter Initialization:** Cache the absolute initial state `initialColor = image[sr][sc]`. If `initialColor == color`, the state mathematically satisfies the terminal condition identically, and traversing would induce an infinite topological loop without a visited array. Immediately return `image`.
+- **radial Traversal:** Trigger a recursive DFS (or queue BFS) originating at `(sr, sc)`.
+- **execution Block:**
+   - overwrite the current pixel: `image[r][c] = color`.
+   - iterate across all 4 delta coordinate vectors.
+   - for each valid adjacent cell `(nr, nc)`: if `image[nr][nc] == initialColor`, recursively trigger traversal into that coordinate.
+- **return:** The intrinsically mutated [[Matrix]].
 
----
 
 ## Code Implementation (DFS)
 
@@ -71,8 +64,9 @@ vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int co
 > [!warning]
 > The absolute most critical failure point in Flood Fill algorithms is failing to trap the `initialColor == newColor` edge case. If the target area is already the target color, traversing strictly conditional on `image[r][c] == initialColor` will re-trigger infinitely across the same region, shattering the stack.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(M \times N)$. In the absolute worst-case scenario, the entire matrix shares the identical initial color and requires mutation, forcing the recursive stack to visit every cell exactly once.
-- **Space Complexity:** $O(M \times N)$. The implicit dynamic overhead mapped to the maximum theoretical depth of the recursive execution stack in pathological structural layouts (e.g., long serpentine pixel chains).
+- **time Complexity:** $O(M \times N)$. In the absolute worst-case scenario, the entire matrix shares the identical initial color and requires mutation, forcing the recursive stack to visit every cell exactly once.
+- **space Complexity:** $O(M \times N)$. The implicit dynamic overhead mapped to the maximum theoretical depth of the recursive execution stack in pathological structural layouts (e.g., long serpentine pixel chains).
+
+NEXT: [[Index]]

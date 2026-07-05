@@ -1,26 +1,19 @@
----
-type: concept
-tags: [two-pointer, array, cpp, sorting, math]
-date: 2026-06-30
----
 # Merge Two Sorted Arrays
 
 ## Problem Statement
-Given two strictly sorted arrays $A$ and $B$, evaluate their mathematical combination into a single strictly sorted array.
+- given two strictly sorted arrays $A$ and $B$, evaluate their mathematical combination into a single strictly sorted array.
 
----
 
 ## Approach: Two-Pointer Monotonic Convergence
 
-Because the sequences are fundamentally monotonic, we can bypass general $\mathcal{O}((N+M) \log(N+M))$ sorting algorithms and merge them linearly in $\mathcal{O}(N+M)$.
-We deploy a dual [[Two-Pointer]] convergence model:
-1. Initialize pointer $i = 0$ for array $A$ and $j = 0$ for array $B$.
-2. Greedily compare $A[i]$ and $B[j]$.
-3. Extract the strictly smaller mathematical element and push it to the output sequence, incrementing its corresponding pointer.
-4. If $A[i] = B[j]$, mathematical stability dictates evaluating either arbitrarily (though structurally, pulling from $A$ preserves relative sequence stability).
-5. Once one boundary exhausts, forcefully flush the residual elements of the remaining unexhausted array.
+- because the sequences are fundamentally monotonic, we can bypass general $\mathcal{O}((N+M) \log(N+M))$ sorting algorithms and merge them linearly in $\mathcal{O}(N+M)$.
+- we deploy a dual [[Two-Pointer]] convergence model:
+- initialize pointer $i = 0$ for array $A$ and $j = 0$ for array $B$.
+- greedily compare $A[i]$ and $B[j]$.
+- extract the strictly smaller mathematical element and push it to the output sequence, incrementing its corresponding pointer.
+- if $A[i] = B[j]$, mathematical stability dictates evaluating either arbitrarily (though structurally, pulling from $A$ preserves relative sequence stability).
+- once one boundary exhausts, forcefully flush the residual elements of the remaining unexhausted array.
 
----
 
 ## Code Implementation
 
@@ -57,8 +50,9 @@ vector<int> mergeArrays(const vector<int>& a, const vector<int>& b) {
 > [!important]
 > For variants requiring **in-place** merging (e.g., LeetCode 88, where $A$ has excess padded capacity), the pointers must structurally evaluate from the **rear** ($N-1$ and $M-1$) downwards. A forward evaluation mathematically overwrites unread states in $A$.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N + M)$. Both sequences are evaluated exactly once.
-- **Space Complexity:** $\mathcal{O}(N + M)$ to structure the returned array. The temporal auxiliary space is strictly $\mathcal{O}(1)$.
+- **time Complexity:** $\mathcal{O}(N + M)$. Both sequences are evaluated exactly once.
+- **space Complexity:** $\mathcal{O}(N + M)$ to structure the returned array. The temporal auxiliary space is strictly $\mathcal{O}(1)$.
+
+NEXT: [[Index]]

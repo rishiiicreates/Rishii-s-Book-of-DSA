@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, depth]
-date: 2026-06-30
----
 # Diameter of Binary Tree
 
 ## Problem Statement
-Compute the length of the diameter of a binary tree. The diameter is the length of the longest path between any two nodes in a tree, which may or may not pass through the root.
+- compute the length of the diameter of a binary tree. The diameter is the length of the longest path between any two nodes in a tree, which may or may not pass through the root.
 
 ## Approach / Intuition
-The longest path passing through a node is the sum of the maximum heights of its left and right subtrees. Compute the height using [[Depth-First Search]], and at each node, update a global maximum diameter with `left_height + right_height`.
+- the longest path passing through a node is the sum of the maximum heights of its left and right subtrees. Compute the height using [[Depth-First Search]], and at each node, update a global maximum diameter with `left_height + right_height`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(H)$ for recursion stack
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(H)$ for recursion stack
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ int diameterOfBinaryTree(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-Pass by reference
+- pass by reference
 
 ## Edge Cases
-Empty tree, tree with one node, heavily unbalanced tree.
+- empty tree, tree with one node, heavily unbalanced tree.
+
+NEXT: [[Index]]

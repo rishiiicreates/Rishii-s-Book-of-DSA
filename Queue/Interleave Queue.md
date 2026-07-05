@@ -1,37 +1,30 @@
----
-type: concept
-tags: [queue, stack, cpp]
-date: 2026-06-30
----
 # Interleave the First Half of the Queue with Second Half
 
 ## Problem Statement
-Given a Queue $Q$ of integers of even length $N$, mathematically interleave the first half of the queue with the second half.
+- given a Queue $Q$ of integers of even length $N$, mathematically interleave the first half of the queue with the second half.
 
-*Example:* $Q = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]$
-*Result:* $Q = [11, 16, 12, 17, 13, 18, 14, 19, 15, 20]$
+- *example:* $Q = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]$
+- *result:* $Q = [11, 16, 12, 17, 13, 18, 14, 19, 15, 20]$
 
----
 
 ## Approach: Auxiliary Queue Partitioning
 
-The most intuitive mathematical reduction involves partitioning the original queue $Q$ into two distinct subsets and subsequently interleaving them.
+- the most intuitive mathematical reduction involves partitioning the original queue $Q$ into two distinct subsets and subsequently interleaving them.
 
-1. **Partitioning:** Initialize an auxiliary queue $Q_{aux}$. Since $N$ is even, we can precisely dequeue the first $\frac{N}{2}$ elements from $Q$ and enqueue them into $Q_{aux}$.
-   - *State:* $Q_{aux}$ contains the first half. $Q$ contains the second half.
-2. **Interleaving:** While $Q_{aux}$ is not empty:
-   - Dequeue the front element from $Q_{aux}$ and enqueue it into $Q$. (This places the first-half element at the back).
-   - Dequeue the front element from $Q$ (which is a second-half element) and immediately enqueue it back into $Q$.
+- **partitioning:** Initialize an auxiliary queue $Q_{aux}$. Since $N$ is even, we can precisely dequeue the first $\frac{N}{2}$ elements from $Q$ and enqueue them into $Q_{aux}$.
+   - *state:* $Q_{aux}$ contains the first half. $Q$ contains the second half.
+- **interleaving:** While $Q_{aux}$ is not empty:
+   - dequeue the front element from $Q_{aux}$ and enqueue it into $Q$. (This places the first-half element at the back).
+   - dequeue the front element from $Q$ (which is a second-half element) and immediately enqueue it back into $Q$.
 
 ### Alternative Approach: Auxiliary Stack
 
-If restricted to using a [[Stack]] instead of an auxiliary queue, the problem requires multiple topological inversions since a stack naturally reverses order.
-1. Push first half into Stack, pop and enqueue to $Q$ (now at the back, but reversed).
-2. Shift the first half to the back again.
-3. Push first half into Stack (restoring original relative order), then pop and interleave with $Q$.
-*This proves that using a Queue simplifies the permutations mathematically.*
+- if restricted to using a [[Stack]] instead of an auxiliary queue, the problem requires multiple topological inversions since a stack naturally reverses order.
+- push first half into Stack, pop and enqueue to $Q$ (now at the back, but reversed).
+- shift the first half to the back again.
+- push first half into Stack (restoring original relative order), then pop and interleave with $Q$.
+- *this proves that using a Queue simplifies the permutations mathematically.*
 
----
 
 ## Code Implementation (Auxiliary Queue)
 
@@ -67,8 +60,9 @@ void interleaveQueue(queue<int>& q) {
 > [!important]
 > For the mathematical permutation to map cleanly without offset issues, $N$ must strictly be an even parity integer. If $N$ is odd, the definition of "first half" is ambiguous and requires domain-specific rounding rules.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$. We traverse the first half in $O(N/2)$ and the entire interleaving process operates in $O(N)$. The net time complexity is strictly linear.
-- **Space Complexity:** $O(N)$. The auxiliary queue requires memory proportional to $\frac{N}{2}$, which normalizes to $O(N)$ asymptotically.
+- **time Complexity:** $O(N)$. We traverse the first half in $O(N/2)$ and the entire interleaving process operates in $O(N)$. The net time complexity is strictly linear.
+- **space Complexity:** $O(N)$. The auxiliary queue requires memory proportional to $\frac{N}{2}$, which normalizes to $O(N)$ asymptotically.
+
+NEXT: [[Index]]

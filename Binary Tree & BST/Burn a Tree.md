@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, graph-conversion]
-date: 2026-06-30
----
 # Minimum Time to Burn a Tree
 
 ## Problem Statement
-Given a binary tree and a target node, find the minimum time required to burn the entire tree. The fire spreads to adjacent nodes (parent and children) in 1 second.
+- given a binary tree and a target node, find the minimum time required to burn the entire tree. The fire spreads to adjacent nodes (parent and children) in 1 second.
 
 ## Approach / Intuition
-Since fire spreads upwards to the parent as well, the tree needs to be treated as an undirected [[Graph]]. First, perform a traversal to map each node to its parent. Then, use [[Breadth-First Search]] starting from the target node, spreading to the left child, right child, and parent. The total time is the maximum number of BFS levels explored.
+- since fire spreads upwards to the parent as well, the tree needs to be treated as an undirected [[Graph]]. First, perform a traversal to map each node to its parent. Then, use [[Breadth-First Search]] starting from the target node, spreading to the left child, right child, and parent. The total time is the maximum number of BFS levels explored.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$ for parent map, visited map, and queue
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$ for parent map, visited map, and queue
 
 ## Sample Code
 ```cpp
@@ -88,7 +83,9 @@ int minTime(TreeNode* root, int target) {
 ```
 
 ## New Keywords / STL Used
-`unordered_map` with pointer keys
+- `unordered_map` with pointer keys
 
 ## Edge Cases
-Target node is the root, tree has only one node.
+- target node is the root, tree has only one node.
+
+NEXT: [[Index]]

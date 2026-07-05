@@ -1,21 +1,15 @@
----
-type: concept
-tags: [fundamentals, cpp, loops]
-date: 2026-06-30
----
 # For Loop
 
 ## What is a For Loop?
-A `for` loop is a control flow statement used to execute a block of code repeatedly for a known number of times. It is the most commonly used loop in Data Structures and Algorithms when iterating through arrays, matrices, or simulating sequential operations.
+- a `for` loop is a control flow statement used to execute a block of code repeatedly for a known number of times. It is the most commonly used loop in Data Structures and Algorithms when iterating through arrays, matrices, or simulating sequential operations.
 
----
 
 ## The Standard `for` Loop
 
-A standard `for` loop condenses three critical pieces of iteration logic into a single line:
-1. **Initialization:** Executed once at the beginning (e.g., `int i = 0`).
-2. **Condition:** Checked before *every* iteration. If `true`, the loop runs. (e.g., `i < n`).
-3. **Update:** Executed at the very end of every iteration (e.g., `i++`).
+- a standard `for` loop condenses three critical pieces of iteration logic into a single line:
+- **initialization:** Executed once at the beginning (e.g., `int i = 0`).
+- **condition:** Checked before *every* iteration. If `true`, the loop runs. (e.g., `i < n`).
+- **update:** Executed at the very end of every iteration (e.g., `i++`).
 
 ```cpp
 int n = 5;
@@ -28,11 +22,10 @@ for (int i = 0; i < n; ++i) {
 > [!tip]
 > Pre-increment (`++i`) is marginally faster than post-increment (`i++`) in C++ when dealing with complex iterators or objects because it avoids creating a temporary copy of the object. While the compiler optimizes this for standard integers, it's a good habit to write `++i` in competitive programming.
 
----
 
 ## The Range-Based `for` Loop (C++11)
 
-When you simply need to visit every element in a container (like a `vector`, `set`, or `map`) from start to finish, the range-based for loop is drastically cleaner and less error-prone.
+- when you simply need to visit every element in a container (like a `vector`, `set`, or `map`) from start to finish, the range-based for loop is drastically cleaner and less error-prone.
 
 ```cpp
 #include <vector>
@@ -52,7 +45,7 @@ for (int val : arr) {
 ```
 
 ### Passing by Reference in Range Loops
-If you want to **modify** the elements in the container, or if the container holds massive objects (like strings or other vectors) that are expensive to copy, you must pass by reference using `&`.
+- if you want to **modify** the elements in the container, or if the container holds massive objects (like strings or other vectors) that are expensive to copy, you must pass by reference using `&`.
 
 ```cpp
 vector<string> names = {"Alice", "Bob"};
@@ -69,7 +62,6 @@ for (int& num : nums) {
 }
 ```
 
----
 
 ## Loop Control Statements
 - **`break`**: Immediately terminates the entire loop. Execution resumes at the first statement following the loop.
@@ -84,8 +76,9 @@ for (int i = 0; i < 10; ++i) {
 // Output: 1 3 5 
 ```
 
----
 
 ## Complexity
-- **Time Complexity:** $O(N)$ where $N$ is the number of times the condition evaluates to true.
-- **Space Complexity:** $O(1)$ auxiliary space, as we typically only allocate the single loop counter variable `i`.
+- **time Complexity:** $O(N)$ where $N$ is the number of times the condition evaluates to true.
+- **space Complexity:** $O(1)$ auxiliary space, as we typically only allocate the single loop counter variable `i`.
+
+NEXT: [[Index]]

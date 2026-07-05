@@ -1,32 +1,25 @@
----
-type: concept
-tags: [tree, binary-tree, traversal, cpp, geometry, math]
-date: 2026-06-30
----
 # Diagonal Traversal of Binary Tree
 
 ## Problem Statement
-Given a discrete binary tree, mathematically partition its absolute geometric structure into a sequence of purely diagonal components. Elements situated on the identical principal topological diagonal must be grouped iteratively, maintaining strict descending depth causality (i.e., top-down within each specific discrete diagonal).
+- given a discrete binary tree, mathematically partition its absolute geometric structure into a sequence of purely diagonal components. Elements situated on the identical principal topological diagonal must be grouped iteratively, maintaining strict descending depth causality (i.e., top-down within each specific discrete diagonal).
 
----
 
 ## Approach: Topological Depth Masking (DFS/BFS)
 
-The geometric definition of a rightward descending diagonal defines an invariant structural slope: any given node $U$, and its immediate right child $U_R$, mathematically exist upon the absolute identical diagonal space. A transition strictly to a left child $U_L$ structurally shifts the topological coordinate vector exactly one discrete spatial diagonal to the "left".
+- the geometric definition of a rightward descending diagonal defines an invariant structural slope: any given node $U$, and its immediate right child $U_R$, mathematically exist upon the absolute identical diagonal space. A transition strictly to a left child $U_L$ structurally shifts the topological coordinate vector exactly one discrete spatial diagonal to the "left".
 
-We establish a localized tracking coordinate $D$ representing the diagonal scalar offset:
-- Root evaluates strictly to $D = 0$.
-- For right topological shifts: $D_{right} = D$.
-- For left topological shifts: $D_{left} = D + 1$.
+- we establish a localized tracking coordinate $D$ representing the diagonal scalar offset:
+- root evaluates strictly to $D = 0$.
+- for right topological shifts: $D_{right} = D$.
+- for left topological shifts: $D_{left} = D + 1$.
 
-Algorithm (FIFO Loop / Queue):
-1. Execute a continuous loop to trace discrete unbranched rightward structures.
-2. Initialize a LIFO/FIFO boundary (typically a queue) to defer evaluations of disjoint leftward shifted subspaces.
-3. For every node popped, iteratively penetrate strictly down its continuous sequence of right spatial children.
-4. During this continuous rightward descent, push the evaluated spatial node into the current scalar diagonal group.
-5. Whenever a left child structurally exists, enqueue it. Because the queue processes spatially, all elements defined by exactly $D=k$ are processed fully before $D=k+1$.
+- algorithm (FIFO Loop / Queue):
+- execute a continuous loop to trace discrete unbranched rightward structures.
+- initialize a LIFO/FIFO boundary (typically a queue) to defer evaluations of disjoint leftward shifted subspaces.
+- for every node popped, iteratively penetrate strictly down its continuous sequence of right spatial children.
+- during this continuous rightward descent, push the evaluated spatial node into the current scalar diagonal group.
+- whenever a left child structurally exists, enqueue it. Because the queue processes spatially, all elements defined by exactly $D=k$ are processed fully before $D=k+1$.
 
----
 
 ## Code Implementation
 
@@ -84,8 +77,9 @@ vector<vector<int>> diagonalTraversal(TreeNode* root) {
 > [!tip]
 > A recursive DFS approach tracking the $D$ offset as a scalar state parameter mapping directly to a `unordered_map<int, vector<int>>` equivalently yields identical geometric groupings, though it introduces redundant map insertions dominating optimal structural vector appends.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Every geometric node physically traverses the rightward loop and/or the delayed BFS queue strictly at most once.
-- **Space Complexity:** $\mathcal{O}(N)$. The queue temporally bounds the maximum structural width defined strictly by the density of left-branching geometry.
+- **time Complexity:** $\mathcal{O}(N)$. Every geometric node physically traverses the rightward loop and/or the delayed BFS queue strictly at most once.
+- **space Complexity:** $\mathcal{O}(N)$. The queue temporally bounds the maximum structural width defined strictly by the density of left-branching geometry.
+
+NEXT: [[Index]]

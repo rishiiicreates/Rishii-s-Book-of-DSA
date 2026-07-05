@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # Heap Sort
 
 ## Problem Statement
-Sort an [[Array]] of elements in ascending or descending order using the [[Heap]] data structure.
+- sort an [[Array]] of elements in ascending or descending order using the [[Heap]] data structure.
 
 ## Approach / Intuition
-First, build a max-heap from the given array (taking O(N) time). Then, repeatedly extract the maximum element (the root) and place it at the end of the array, while shrinking the considered heap size and calling heapify to restore the max-heap property. This results in a sorted array in-place.
+- first, build a max-heap from the given array (taking O(N) time). Then, repeatedly extract the maximum element (the root) and place it at the end of the array, while shrinking the considered heap size and calling heapify to restore the max-heap property. This results in a sorted array in-place.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(1) auxiliary space, performed in-place.
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(1) auxiliary space, performed in-place.
 
 ## Sample Code
 ```cpp
@@ -51,8 +46,10 @@ void heapSort(vector<int>& arr) {
 ```
 
 ## New Keywords / STL Used
-`swap`
+- `swap`
 
 ## Edge Cases
-- Array already sorted or reverse sorted.
-- Array with all identical elements.
+- array already sorted or reverse sorted.
+- array with all identical elements.
+
+NEXT: [[Index]]

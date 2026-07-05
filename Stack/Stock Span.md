@@ -1,30 +1,23 @@
----
-type: concept
-tags: [stack, monotonic-stack, cpp, array, math]
-date: 2026-06-30
----
 # Stock Span Problem
 
 ## Problem Statement
-Given a discrete temporal sequence of stock prices, mathematically evaluate the theoretical "span" of each price. The span $S[i]$ is structurally defined as the maximum contiguous number of days immediately preceding (and including) day $i$ for which the price is mathematically $\le$ the price on day $i$.
+- given a discrete temporal sequence of stock prices, mathematically evaluate the theoretical "span" of each price. The span $S[i]$ is structurally defined as the maximum contiguous number of days immediately preceding (and including) day $i$ for which the price is mathematically $\le$ the price on day $i$.
 
----
 
 ## Approach: Temporal Distance via Monotonic Stack
 
-This problem theoretically reduces to discovering the index of the **Previous Greater Element**. If the closest preceding strictly greater element resides at index $j$, the continuous contiguous span bounded by it evaluates algebraically to:
+- this problem theoretically reduces to discovering the index of the **Previous Greater Element**. If the closest preceding strictly greater element resides at index $j$, the continuous contiguous span bounded by it evaluates algebraically to:
 $$ S[i] = i - j $$
-If no such structurally superior bound exists, the price is an absolute historical maximum, evaluating to a span of $i + 1$.
+- if no such structurally superior bound exists, the price is an absolute historical maximum, evaluating to a span of $i + 1$.
 
-Algorithm:
-1. Maintain a [[Monotonic Stack]] storing the spatial **indices** (not the raw scalar values) of elements to accurately evaluate temporal distance.
-2. Enforce a strictly decreasing mathematical invariant on the stack based on raw price values.
-3. For each day $i$, forcefully evict any index $k$ from the stack where $\text{price}[k] \le \text{price}[i]$.
-4. The resolved index remaining on the stack represents the strict boundary $j$.
-5. Evaluate $S[i] = i - j$. If the stack is exhausted, evaluate $S[i] = i + 1$.
-6. Push index $i$ to constraint future evaluations.
+- algorithm:
+- maintain a [[Monotonic Stack]] storing the spatial **indices** (not the raw scalar values) of elements to accurately evaluate temporal distance.
+- enforce a strictly decreasing mathematical invariant on the stack based on raw price values.
+- for each day $i$, forcefully evict any index $k$ from the stack where $\text{price}[k] \le \text{price}[i]$.
+- the resolved index remaining on the stack represents the strict boundary $j$.
+- evaluate $S[i] = i - j$. If the stack is exhausted, evaluate $S[i] = i + 1$.
+- push index $i$ to constraint future evaluations.
 
----
 
 ## Code Implementation
 
@@ -63,8 +56,9 @@ vector<int> calculateSpan(const vector<int>& price) {
 > [!important]
 > Storing the indices rather than the direct scalar values is structurally mandatory for all mathematical problems demanding distance, span, width, or absolute spatial boundaries. The raw value can always be accessed via `price[index]`, but the inverse is structurally impossible in $\mathcal{O}(1)$.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$ amortized. The total geometric push and pop operations strictly sum to $2N$.
-- **Space Complexity:** $\mathcal{O}(N)$. The LIFO structure is theoretically bounded by the sequence size.
+- **time Complexity:** $\mathcal{O}(N)$ amortized. The total geometric push and pop operations strictly sum to $2N$.
+- **space Complexity:** $\mathcal{O}(N)$. The LIFO structure is theoretically bounded by the sequence size.
+
+NEXT: [[Index]]

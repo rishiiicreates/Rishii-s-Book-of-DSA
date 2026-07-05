@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Two Stacks in an Array
 
 ## Problem Statement
-Implement two stacks in a single array such that both stacks can perform `push` and `pop` operations without overflowing as long as there is any free space in the array.
+- implement two stacks in a single array such that both stacks can perform `push` and `pop` operations without overflowing as long as there is any free space in the array.
 
 ## Approach / Intuition
-Instead of dividing the array into two fixed halves, we start the first [[Stack]] from the beginning of the array and the second stack from the end. They grow towards each other. This ensures optimal space utilization and prevents overflow of one stack if the other is empty while total space is still available.
+- instead of dividing the array into two fixed halves, we start the first [[Stack]] from the beginning of the array and the second stack from the end. They grow towards each other. This ensures optimal space utilization and prevents overflow of one stack if the other is empty while total space is still available.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for all operations
-- **[[Space Complexity]]:** O(N) total space for the array
+- **[[time Complexity]]:** O(1) for all operations
+- **[[space Complexity]]:** O(N) total space for the array
 
 ## Sample Code
 ```cpp
@@ -71,7 +66,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`new`, `delete[]`, `class`
+- `new`, `delete[]`, `class`
 
 ## Edge Cases
-Pushing when `top1 == top2 - 1` (Array completely full), popping when respective stack is empty.
+- pushing when `top1 == top2 - 1` (Array completely full), popping when respective stack is empty.
+
+NEXT: [[Index]]

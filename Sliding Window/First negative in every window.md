@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, deque]
-date: 2026-06-30
----
 # First negative in every window
 
 ## Problem Statement
-Given an array of integers and an integer `K`, find the first negative integer encountered in each and every contiguous subarray of size `K`.
+- given an array of integers and an integer `K`, find the first negative integer encountered in each and every contiguous subarray of size `K`.
 
 ## Approach / Intuition
-Maintain a deque containing the indices of negative numbers found in the current window in sequential order. When sliding the window, eagerly eject indices that have fallen behind the active window bounds from the front of the deque, and push new negative indices to the back. This highlights an advanced [[Deque Application]] nested inside a sliding window logic flow.
+- maintain a deque containing the indices of negative numbers found in the current window in sequential order. When sliding the window, eagerly eject indices that have fallen behind the active window bounds from the front of the deque, and push new negative indices to the back. This highlights an advanced [[Deque Application]] nested inside a sliding window logic flow.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(K)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(K)
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ vector<int> firstNegativeInteger(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-`std::deque`
+- `std::deque`
 
 ## Edge Cases
-Arrays entirely absent of negative integers (reporting 0s), `K` matching the full array bounds, universally negative arrays.
+- arrays entirely absent of negative integers (reporting 0s), `K` matching the full array bounds, universally negative arrays.
+
+NEXT: [[Index]]

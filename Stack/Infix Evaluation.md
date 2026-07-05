@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Infix Evaluation
 
 ## Problem Statement
-Evaluate a given string representing a mathematical infix expression containing numbers and operators `+, -, *, /` along with parentheses.
+- evaluate a given string representing a mathematical infix expression containing numbers and operators `+, -, *, /` along with parentheses.
 
 ## Approach / Intuition
-We use two [[Stack]]s: one for numbers and another for operators. We iterate through the expression. Numbers are pushed onto the number stack. Opening parentheses go to the operator stack. Operators are pushed onto the operator stack after evaluating and popping operators of higher or equal precedence. For a closing parenthesis, we evaluate until we see an opening parenthesis.
+- we use two [[Stack]]s: one for numbers and another for operators. We iterate through the expression. Numbers are pushed onto the number stack. Opening parentheses go to the operator stack. Operators are pushed onto the operator stack after evaluating and popping operators of higher or equal precedence. For a closing parenthesis, we evaluate until we see an opening parenthesis.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the string
-- **[[Space Complexity]]:** O(N) for the two stacks
+- **[[time Complexity]]:** O(N) where N is the length of the string
+- **[[space Complexity]]:** O(N) for the two stacks
 
 ## Sample Code
 ```cpp
@@ -86,7 +81,9 @@ int evaluate(string tokens) {
 ```
 
 ## New Keywords / STL Used
-`std::isdigit`, `std::stack`, `switch`
+- `std::isdigit`, `std::stack`, `switch`
 
 ## Edge Cases
-Multi-digit numbers, spaces in expression, negative numbers (if applicable), highly nested parentheses.
+- multi-digit numbers, spaces in expression, negative numbers (if applicable), highly nested parentheses.
+
+NEXT: [[Index]]

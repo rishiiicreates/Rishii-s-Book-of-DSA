@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, islands]
-date: 2026-06-30
----
 # Number of Islands
 
 ## Problem Statement
-Given a 2D binary grid, count the number of islands. An island is surrounded by water (0s) and is formed by connecting adjacent lands (1s) horizontally or vertically.
+- given a 2D binary grid, count the number of islands. An island is surrounded by water (0s) and is formed by connecting adjacent lands (1s) horizontally or vertically.
 
 ## Approach / Intuition
-Traverse the grid and whenever an unvisited land ('1') is found, increment the island count and trigger a [[BFS]] or [[DFS]] to mark the entire connected component as visited.
+- traverse the grid and whenever an unvisited land ('1') is found, increment the island count and trigger a [[BFS]] or [[DFS]] to mark the entire connected component as visited.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N * M)
-- **[[Space Complexity]]:** O(N * M)
+- **[[time Complexity]]:** O(N * M)
+- **[[space Complexity]]:** O(N * M)
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ int numIslands(vector<vector<char>>& grid) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-All 1s, all 0s, empty grid.
+- all 1s, all 0s, empty grid.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, number-theory]
-date: 2026-06-30
----
 # nCr
 
 ## Problem Statement
-Calculate combinations nCr modulo a prime (typically 10^9+7).
+- calculate combinations nCr modulo a prime (typically 10^9+7).
 
 ## Approach / Intuition
-Precompute factorials and their modular inverses using [[Fermat's Little Theorem]]. Then calculate nCr efficiently as $(n! \times \text{inv}(r!) \times \text{inv}((n-r)!)) \bmod p$.
+- precompute factorials and their modular inverses using [[Fermat's Little Theorem]]. Then calculate nCr efficiently as $(n! \times \text{inv}(r!) \times \text{inv}((n-r)!)) \bmod p$.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log M)$ for precomputation, $O(1)$ per query
-- **[[Space Complexity]]:** $O(N)$ for storing factorials and inverses
+- **[[time Complexity]]:** $O(N \log M)$ for precomputation, $O(1)$ per query
+- **[[space Complexity]]:** $O(N)$ for storing factorials and inverses
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ long long nCr(long long n, long long r, long long p, vector<long long>& fact) {
 ```
 
 ## New Keywords / STL Used
-`vector`
+- `vector`
 
 ## Edge Cases
-$n < r$, $r = 0$, $n = 0$, modulo overflow.
+- $n < r$, $r = 0$, $n = 0$, modulo overflow.
+
+NEXT: [[Index]]

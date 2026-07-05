@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, greedy, disjoint-set]
-date: 2026-06-30
----
 # Job Sequencing
 
 ## Problem Statement
-Given a set of jobs, each with a deadline and profit, maximize total profit assuming each job takes 1 unit of time.
+- given a set of jobs, each with a deadline and profit, maximize total profit assuming each job takes 1 unit of time.
 
 ## Approach / Intuition
-Use a [[Greedy Algorithm]] combined with a [[Disjoint Set]] to efficiently find the latest available time slot for a job before its deadline. Sort jobs by descending profit and assign them.
+- use a [[Greedy Algorithm]] combined with a [[Disjoint Set]] to efficiently find the latest available time slot for a job before its deadline. Sort jobs by descending profit and assign them.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N \log N)
-- **[[Space Complexity]]:** O(M) where M is maximum deadline
+- **[[time Complexity]]:** O(N \log N)
+- **[[space Complexity]]:** O(M) where M is maximum deadline
 
 ## Sample Code
 ```cpp
@@ -59,7 +54,9 @@ vector<int> JobScheduling(Job arr[], int n) {
 ```
 
 ## New Keywords / STL Used
-`struct`, `sort`, custom comparator
+- `struct`, `sort`, custom comparator
 
 ## Edge Cases
-All jobs have same deadline, deadlines are earlier than the number of jobs, empty job array.
+- all jobs have same deadline, deadlines are earlier than the number of jobs, empty job array.
+
+NEXT: [[Index]]

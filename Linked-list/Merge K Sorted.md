@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, merge, priority-queue]
-date: 2026-06-30
----
 # Merge K Sorted Lists
 
 ## Problem Statement
-You are given an array of `k` linked-lists, where each linked-list is inherently sorted in ascending order. Merge all the linked-lists into one optimally sorted linked-list and return it.
+- you are given an array of `k` linked-lists, where each linked-list is inherently sorted in ascending order. Merge all the linked-lists into one optimally sorted linked-list and return it.
 
 ## Approach / Intuition
-Leverage a min-heap (priority queue) to maintain the smallest available nodes across all `k` lists simultaneously. Pop the absolute minimum, append it to the aggregated result list, and push its next consecutive node back into the heap. This showcases a perfect real-world application of a [[Priority Queue]].
+- leverage a min-heap (priority queue) to maintain the smallest available nodes across all `k` lists simultaneously. Pop the absolute minimum, append it to the aggregated result list, and push its next consecutive node back into the heap. This showcases a perfect real-world application of a [[Priority Queue]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log k)
-- **[[Space Complexity]]:** O(k)
+- **[[time Complexity]]:** O(N log k)
+- **[[space Complexity]]:** O(k)
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`
+- `std::priority_queue`
 
 ## Edge Cases
-Empty array of lists, arrays sporadically containing null lists.
+- empty array of lists, arrays sporadically containing null lists.
+
+NEXT: [[Index]]

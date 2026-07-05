@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, tree-view]
-date: 2026-06-30
----
 # Left View of Binary Tree
 
 ## Problem Statement
-Given a binary tree, print or return the nodes visible when the tree is viewed from the left side.
+- given a binary tree, print or return the nodes visible when the tree is viewed from the left side.
 
 ## Approach / Intuition
-Use a [[Depth-First Search]] (DFS) approach, maintaining the current depth. For each new depth level encountered, the first node visited will be the one visible from the left, provided we traverse the left child before the right child. Alternatively, [[Breadth-First Search]] (BFS) can be used, capturing the first node of each level queue.
+- use a [[Depth-First Search]] (DFS) approach, maintaining the current depth. For each new depth level encountered, the first node visited will be the one visible from the left, provided we traverse the left child before the right child. Alternatively, [[Breadth-First Search]] (BFS) can be used, capturing the first node of each level queue.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(H)$ for DFS recursion stack, where $H$ is tree height
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(H)$ for DFS recursion stack, where $H$ is tree height
 
 ## Sample Code
 ```cpp
@@ -43,7 +38,9 @@ vector<int> leftView(TreeNode *root) {
 ```
 
 ## New Keywords / STL Used
-DFS traversal
+- dFS traversal
 
 ## Edge Cases
-Empty tree, completely skewed tree (left or right).
+- empty tree, completely skewed tree (left or right).
+
+NEXT: [[Index]]

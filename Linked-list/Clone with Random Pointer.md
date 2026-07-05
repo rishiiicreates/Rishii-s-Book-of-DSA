@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, clone]
-date: 2026-06-30
----
 # Clone List with Random Pointer
 
 ## Problem Statement
-A linked list is given such that each explicit node natively contains an additional random pointer which could actively point to any node structurally in the list or strictly to null. Return a deep physical copy of the list.
+- a linked list is given such that each explicit node natively contains an additional random pointer which could actively point to any node structurally in the list or strictly to null. Return a deep physical copy of the list.
 
 ## Approach / Intuition
-Interweave original nodes and identical clone nodes structurally together sequentially (`A -> A' -> B -> B'`). Set random pointers dynamically on the cloned nodes relying upon references locked in the interwoven nodes, achieving flawless [[Memory Mapping]]. Finally, decouple both lists sequentially.
+- interweave original nodes and identical clone nodes structurally together sequentially (`A -> A' -> B -> B'`). Set random pointers dynamically on the cloned nodes relying upon references locked in the interwoven nodes, achieving flawless [[Memory Mapping]]. Finally, decouple both lists sequentially.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1) auxiliary
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1) auxiliary
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ Node* copyRandomList(Node* head) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Massive arrays of random pointers targeting identical nodes locally, fully null original structures gracefully exiting.
+- massive arrays of random pointers targeting identical nodes locally, fully null original structures gracefully exiting.
+
+NEXT: [[Index]]

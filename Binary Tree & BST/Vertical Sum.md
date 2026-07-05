@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, vertical-traversal, hashing]
-date: 2026-06-30
----
 # Vertical Sum
 
 ## Problem Statement
-Given a binary tree, find the vertical sum of the nodes that are in the same vertical line.
+- given a binary tree, find the vertical sum of the nodes that are in the same vertical line.
 
 ## Approach / Intuition
-We perform a traversal (such as [[DFS]] or [[Level Order Traversal]]) keeping track of the horizontal distance (HD) from the root. The root is at HD 0. Left children have an HD of `parent_HD - 1`, and right children have `parent_HD + 1`. We use a hash map (or ordered map) to accumulate the sum of nodes that fall on the same HD. 
+- we perform a traversal (such as [[DFS]] or [[Level Order Traversal]]) keeping track of the horizontal distance (HD) from the root. The root is at HD 0. Left children have an HD of `parent_HD - 1`, and right children have `parent_HD + 1`. We use a hash map (or ordered map) to accumulate the sum of nodes that fall on the same HD.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N)$ if using `std::map` to keep HD sorted, or $O(N)$ if using `std::unordered_map` with min/max tracking.
-- **[[Space Complexity]]:** $O(N)$ for the map and recursion stack.
+- **[[time Complexity]]:** $O(N \log N)$ if using `std::map` to keep HD sorted, or $O(N)$ if using `std::unordered_map` with min/max tracking.
+- **[[space Complexity]]:** $O(N)$ for the map and recursion stack.
 
 ## Sample Code
 ```cpp
@@ -49,9 +44,11 @@ std::vector<int> verticalSum(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-`std::map`, `std::vector`
+- `std::map`, `std::vector`
 
 ## Edge Cases
-- Empty tree
-- Completely skewed tree (all nodes on different HDs, or zigzagging on same HDs)
-- Negative node values
+- empty tree
+- completely skewed tree (all nodes on different HDs, or zigzagging on same HDs)
+- negative node values
+
+NEXT: [[Index]]

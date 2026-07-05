@@ -1,30 +1,23 @@
----
-type: concept
-tags: [hashing, cpp, arrays]
-date: 2026-06-30
----
 # Check if Array Elements are Consecutive
 
 ## Problem Statement
-Given an unsorted array $A$ of $N$ integers, determine if the elements can be rearranged to form a strictly contiguous consecutive sequence.
+- given an unsorted array $A$ of $N$ integers, determine if the elements can be rearranged to form a strictly contiguous consecutive sequence.
 
-*Example:* $A = [5, 2, 3, 1, 4]$
-*Result:* `true` (Can be arranged to $[1, 2, 3, 4, 5]$)
+- *example:* $A = [5, 2, 3, 1, 4]$
+- *result:* `true` (Can be arranged to $[1, 2, 3, 4, 5]$)
 
-*Example:* $A = [5, 2, 3, 1, 6]$
-*Result:* `false`
+- *example:* $A = [5, 2, 3, 1, 6]$
+- *result:* `false`
 
----
 
 ## Approach: Mathematical Bounding & Hash Set
 
-For an array of $N$ elements to form a strictly consecutive mathematical sequence, two conditions must hold simultaneously:
-1. **Uniqueness Constraint:** All $N$ elements must be distinct. If there are duplicates, it's impossible to form a sequence of length $N$.
-2. **Range Constraint:** Let the maximum element be $Max$ and the minimum be $Min$. For the sequence to be contiguous without gaps, the mathematical span must exactly match the number of elements: $Max - Min = N - 1$.
+- for an array of $N$ elements to form a strictly consecutive mathematical sequence, two conditions must hold simultaneously:
+- **uniqueness Constraint:** All $N$ elements must be distinct. If there are duplicates, it's impossible to form a sequence of length $N$.
+- **range Constraint:** Let the maximum element be $Max$ and the minimum be $Min$. For the sequence to be contiguous without gaps, the mathematical span must exactly match the number of elements: $Max - Min = N - 1$.
 
-We can check both conditions in a single pass $O(N)$ using a [[Hash Set]] to verify uniqueness while continuously tracking the maximum and minimum values.
+- we can check both conditions in a single pass $O(N)$ using a [[Hash Set]] to verify uniqueness while continuously tracking the maximum and minimum values.
 
----
 
 ## Code Implementation
 
@@ -61,8 +54,9 @@ bool isConsecutiveSequence(const vector<int>& nums) {
 > [!tip]
 > Notice how this differs from "Longest Consecutive Sequence". Here, we evaluate the *entire* array globally as one monolithic sequence, allowing us to mathematically bypass sequence tracing entirely in favor of simple bounds checking.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$. We perform exactly one pass over the array, performing $O(1)$ set insertions and bound updates per element.
-- **Space Complexity:** $O(N)$ auxiliary space for the `unordered_set` to guarantee $O(1)$ duplicate checking.
+- **time Complexity:** $O(N)$. We perform exactly one pass over the array, performing $O(1)$ set insertions and bound updates per element.
+- **space Complexity:** $O(N)$ auxiliary space for the `unordered_set` to guarantee $O(1)$ duplicate checking.
+
+NEXT: [[Index]]

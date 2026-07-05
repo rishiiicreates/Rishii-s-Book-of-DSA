@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, minimum-spanning-tree, kruskal]
-date: 2026-06-30
----
 # Kruskal
 
 ## Problem Statement
-Find the Minimum Spanning Tree (MST) of a connected, undirected graph with edge weights.
+- find the Minimum Spanning Tree (MST) of a connected, undirected graph with edge weights.
 
 ## Approach / Intuition
-Sort all edges by weight. Iterate through them and greedily add an edge to the MST if it doesn't form a cycle, checking this efficiently using a [[Disjoint Set]].
+- sort all edges by weight. Iterate through them and greedily add an edge to the MST if it doesn't form a cycle, checking this efficiently using a [[Disjoint Set]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(E \log E + E \times \alpha(V))
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O(E \log E + E \times \alpha(V))
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -68,7 +63,9 @@ int spanningTree(int V, vector<vector<int>> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`sort`, nested `pair`
+- `sort`, nested `pair`
 
 ## Edge Cases
-Multiple edges with the same weight, single component vs disconnected components.
+- multiple edges with the same weight, single component vs disconnected components.
+
+NEXT: [[Index]]

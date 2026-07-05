@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Wildcard Matching
 
 ## Problem Statement
-Given an input string `s` and a pattern `p`, implement wildcard pattern matching with support for `?` (matches any single character) and `*` (matches any sequence of characters, including the empty sequence).
+- given an input string `s` and a pattern `p`, implement wildcard pattern matching with support for `?` (matches any single character) and `*` (matches any sequence of characters, including the empty sequence).
 
 ## Approach / Intuition
-Use a 2D [[Dynamic Programming]] array where `dp[i][j]` is true if `s[0..i-1]` matches `p[0..j-1]`. If `p` has `?` or characters match, take diagonal value. If `p` has `*`, it can match zero characters (`dp[i][j-1]`) or match current character (`dp[i-1][j]`).
+- use a 2D [[Dynamic Programming]] array where `dp[i][j]` is true if `s[0..i-1]` matches `p[0..j-1]`. If `p` has `?` or characters match, take diagonal value. If `p` has `*`, it can match zero characters (`dp[i][j-1]`) or match current character (`dp[i-1][j]`).
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * m)
-- **[[Space Complexity]]:** O(n * m) (can be optimized to O(m))
+- **[[time Complexity]]:** O(n * m)
+- **[[space Complexity]]:** O(n * m) (can be optimized to O(m))
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ bool isMatch(string s, string p) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `string`
+- `vector`, `string`
 
 ## Edge Cases
-Empty string, pattern with only `*`, pattern with no wildcards.
+- empty string, pattern with only `*`, pattern with no wildcards.
+
+NEXT: [[Index]]

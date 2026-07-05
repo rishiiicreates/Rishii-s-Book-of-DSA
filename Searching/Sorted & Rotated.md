@@ -1,32 +1,25 @@
----
-type: concept
-tags: [searching, binary-search, cpp, rotated-array]
-date: 2026-06-30
----
 # Search in Sorted & Rotated Array
 
 ## Problem Statement
-Given an array of integers `nums` sorted in ascending order (with distinct values) and rotated at some unknown pivot index $k$, find the index of a `target` value. If it is not found, return `-1`.
+- given an array of integers `nums` sorted in ascending order (with distinct values) and rotated at some unknown pivot index $k$, find the index of a `target` value. If it is not found, return `-1`.
 
----
 
 ## Approach: Deterministic Half-Validation
 
-A standard Binary Search requires strict monotonicity. A rotated sorted array is not strictly monotonic, but it consists of **two strictly monotonic segments**. 
-The mathematical guarantee here is that if we pick any arbitrary `mid` point, at least one of the two halves—either `[left, mid]` or `[mid, right]`—**must** be strictly sorted.
+- a standard Binary Search requires strict monotonicity. A rotated sorted array is not strictly monotonic, but it consists of **two strictly monotonic segments**.
+- the mathematical guarantee here is that if we pick any arbitrary `mid` point, at least one of the two halves—either `[left, mid]` or `[mid, right]`—**must** be strictly sorted.
 
-Algorithm:
-1. Find `mid`. If `nums[mid] == target`, return `mid`.
-2. Check if the left half `[left, mid]` is sorted (i.e., `nums[left] <= nums[mid]`).
-   - If sorted, check if `target` mathematically falls strictly within this bounded interval `[nums[left], nums[mid])`. 
-     - If yes, eliminate the right half (`right = mid - 1`).
-     - If no, eliminate the left half (`left = mid + 1`).
-3. Otherwise, the right half `[mid, right]` must be strictly sorted.
-   - Check if `target` mathematically falls strictly within this bounded interval `(nums[mid], nums[right]]`.
-     - If yes, eliminate the left half (`left = mid + 1`).
-     - If no, eliminate the right half (`right = mid - 1`).
+- algorithm:
+- find `mid`. If `nums[mid] == target`, return `mid`.
+- check if the left half `[left, mid]` is sorted (i.e., `nums[left] <= nums[mid]`).
+   - if sorted, check if `target` mathematically falls strictly within this bounded interval `[nums[left], nums[mid])`.
+     - if yes, eliminate the right half (`right = mid - 1`).
+     - if no, eliminate the left half (`left = mid + 1`).
+- otherwise, the right half `[mid, right]` must be strictly sorted.
+   - check if `target` mathematically falls strictly within this bounded interval `(nums[mid], nums[right]]`.
+     - if yes, eliminate the left half (`left = mid + 1`).
+     - if no, eliminate the right half (`right = mid - 1`).
 
----
 
 ## Code Implementation
 
@@ -72,8 +65,9 @@ int searchRotated(const vector<int>& nums, int target) {
 > [!tip]
 > Be extremely careful with the equality bounds `<` vs `<=`. Since we already check `nums[mid] == target` at the very beginning of the loop, the bounding conditions for `target < nums[mid]` and `target > nums[mid]` become strictly exclusive for the `mid` point.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(\log N)$. Despite the rotation, the search space is mathematically halved at every single step based on boundary evaluations.
-- **Space Complexity:** $\mathcal{O}(1)$. The algorithm operates entirely in-place.
+- **time Complexity:** $\mathcal{O}(\log N)$. Despite the rotation, the search space is mathematically halved at every single step based on boundary evaluations.
+- **space Complexity:** $\mathcal{O}(1)$. The algorithm operates entirely in-place.
+
+NEXT: [[Index]]

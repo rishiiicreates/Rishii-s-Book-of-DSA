@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, sliding-window]
-date: 2026-06-30
----
 # Sliding Window Maximum
 
 ## Problem Statement
-Given an array and an integer `k`, find the maximum element in every contiguous subarray (window) of size `k`.
+- given an array and an integer `k`, find the maximum element in every contiguous subarray (window) of size `k`.
 
 ## Approach / Intuition
-Use a [[Deque]] to store the indices of array elements. Maintain elements in strictly decreasing order of their values within the deque. For every new element, remove indices from the back if their corresponding array values are smaller. Remove indices from the front if they fall outside the current window `[i - k + 1]`.
+- use a [[Deque]] to store the indices of array elements. Maintain elements in strictly decreasing order of their values within the deque. For every new element, remove indices from the back if their corresponding array values are smaller. Remove indices from the front if they fall outside the current window `[i - k + 1]`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(k)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(k)
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ vector<int> maxSlidingWindow(vector<int>& nums, int k) {
 ```
 
 ## New Keywords / STL Used
-`std::deque`
+- `std::deque`
 
 ## Edge Cases
-`k` equals 1, `k` equals array size, strictly increasing array, strictly decreasing array.
+- `k` equals 1, `k` equals array size, strictly increasing array, strictly decreasing array.
+
+NEXT: [[Index]]

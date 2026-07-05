@@ -1,36 +1,29 @@
----
-type: concept
-tags: [graph, string, bfs, cpp]
-date: 2026-06-30
----
 # Word Ladder I
 
 ## Problem Statement
-Given two strings `beginWord` and `endWord`, and a dictionary of strings `wordList`, mathematically compute the absolute shortest transformation sequence length from `beginWord` to `endWord`.
+- given two strings `beginWord` and `endWord`, and a dictionary of strings `wordList`, mathematically compute the absolute shortest transformation sequence length from `beginWord` to `endWord`.
 
-A strictly valid transformation sequence must satisfy:
-1. Every adjacent pair of words $W_i$ and $W_{i+1}$ differ by exactly one character.
-2. Every intermediate word $W_i$ must exist within the `wordList`.
+- a strictly valid transformation sequence must satisfy:
+- every adjacent pair of words $W_i$ and $W_{i+1}$ differ by exactly one character.
+- every intermediate word $W_i$ must exist within the `wordList`.
 
-If no such transformation sequence exists, return `0`.
+- if no such transformation sequence exists, return `0`.
 
----
 
 ## Approach: Unweighted Graph Shortest Path via BFS
 
-This problem fundamentally maps to determining the **Shortest Path in an Unweighted Graph**. 
-- Each unique word constitutes a **Vertex** $V$.
-- An **Edge** exists between two vertices if their Hamming distance is precisely $1$.
+- this problem fundamentally maps to determining the **Shortest Path in an Unweighted Graph**.
+- each unique word constitutes a **Vertex** $V$.
+- an **Edge** exists between two vertices if their Hamming distance is precisely $1$.
 
-Because the edges are strictly unweighted (or uniformly weighted $W=1$), [[Breadth First Search]] inherently guarantees finding the absolute shortest path. DFS is mathematically incapable of guaranteeing shortest paths in unweighted graphs without exhaustive exponential exploration.
+- because the edges are strictly unweighted (or uniformly weighted $W=1$), [[Breadth First Search]] inherently guarantees finding the absolute shortest path. DFS is mathematically incapable of guaranteeing shortest paths in unweighted graphs without exhaustive exponential exploration.
 
-1. **Topological Mapping:** Instead of precomputing the $O(V^2)$ adjacency list (which is catastrophic for large dictionaries), we dynamically generate neighbors. For a given word, iteratively replace each character with every letter $a-z$ and check if the resulting mutation exists in a `unordered_set` derived from `wordList`.
-2. **State Tracking:** 
-   - Instantiate a queue holding pairs `{current_word, current_depth}`.
-   - Delete words from the `unordered_set` immediately upon visitation to enforce strict acyclic progression.
-3. **Termination:** If the generated mutation equals `endWord`, immediately return `current_depth + 1`.
+- **topological Mapping:** Instead of precomputing the $O(V^2)$ adjacency list (which is catastrophic for large dictionaries), we dynamically generate neighbors. For a given word, iteratively replace each character with every letter $a-z$ and check if the resulting mutation exists in a `unordered_set` derived from `wordList`.
+- **state Tracking:**
+   - instantiate a queue holding pairs `{current_word, current_depth}`.
+   - delete words from the `unordered_set` immediately upon visitation to enforce strict acyclic progression.
+- **termination:** If the generated mutation equals `endWord`, immediately return `current_depth + 1`.
 
----
 
 ## Code Implementation
 
@@ -85,8 +78,9 @@ int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
 > [!important]
 > Notice the crucial `wordSet.erase(word)` statement. This acts as the explicit `visited` boolean array. Without it, the BFS will oscillate infinitely between `hit -> hot -> hit`, shattering the memory limit.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \times L \times 26) \approx O(N \times L)$, where $N$ is the scalar length of the `wordList` and $L$ is the length of the string. In the absolute worst case, every single word is processed, and for each word, $26 \times L$ dynamic mutations are hashed.
-- **Space Complexity:** $O(N \times L)$ mapping to the `unordered_set` overhead to store all dictionary words, plus the theoretical maximum queue depth.
+- **time Complexity:** $O(N \times L \times 26) \approx O(N \times L)$, where $N$ is the scalar length of the `wordList` and $L$ is the length of the string. In the absolute worst case, every single word is processed, and for each word, $26 \times L$ dynamic mutations are hashed.
+- **space Complexity:** $O(N \times L)$ mapping to the `unordered_set` overhead to store all dictionary words, plus the theoretical maximum queue depth.
+
+NEXT: [[Index]]

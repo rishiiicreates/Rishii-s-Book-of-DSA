@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, shortest-path, dijkstra]
-date: 2026-06-30
----
 # Dijkstra
 
 ## Problem Statement
-Find the shortest path from a single source to all other vertices in a weighted graph with non-negative edge weights.
+- find the shortest path from a single source to all other vertices in a weighted graph with non-negative edge weights.
 
 ## Approach / Intuition
-Maintain a [[Priority Queue]] (min-heap) to greedily pick the vertex with the smallest distance. Relax its neighbors by checking if the path through this vertex offers a shorter distance.
+- maintain a [[Priority Queue]] (min-heap) to greedily pick the vertex with the smallest distance. Relax its neighbors by checking if the path through this vertex offers a shorter distance.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O((V + E) \log V)
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O((V + E) \log V)
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ vector<int> dijkstra(int V, vector<vector<int>> adj[], int S) {
 ```
 
 ## New Keywords / STL Used
-`priority_queue`, `pair`, `vector`, `greater`
+- `priority_queue`, `pair`, `vector`, `greater`
 
 ## Edge Cases
-Disconnected graph, single node graph, graph with 0 weight edges.
+- disconnected graph, single node graph, graph with 0 weight edges.
+
+NEXT: [[Index]]

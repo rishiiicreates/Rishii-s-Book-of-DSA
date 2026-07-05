@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dsa, cpp, trie, bit-manipulation, offline-queries]
-date: 2026-06-30
----
 # Maximum XOR With an Element From Array
 
 ## Problem Statement
-Given an array and multiple queries of the form `[x, m]`, find the maximum XOR of `x` with any array element that is $\le m$.
+- given an array and multiple queries of the form `[x, m]`, find the maximum XOR of `x` with any array element that is $\le m$.
 
 ## Approach / Intuition
-Sort the array and the queries (offline query processing). The queries are sorted based on their $m$ values. Iterate through the sorted queries. Before evaluating a query, insert all array elements that are $\le m$ into a binary [[Trie]]. Once the valid elements are inserted, query the Trie to find the max XOR using the same [[Bit Manipulation]] technique as finding the max XOR of two numbers.
+- sort the array and the queries (offline query processing). The queries are sorted based on their $m$ values. Iterate through the sorted queries. Before evaluating a query, insert all array elements that are $\le m$ into a binary [[Trie]]. Once the valid elements are inserted, query the Trie to find the max XOR using the same [[Bit Manipulation]] technique as finding the max XOR of two numbers.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(Q \log Q + N \log N + Q \cdot 32 + N \cdot 32)$
-- **[[Space Complexity]]:** $O(N \cdot 32 + Q)$ for Trie and offline query storage
+- **[[time Complexity]]:** $O(Q \log Q + N \log N + Q \cdot 32 + N \cdot 32)$
+- **[[space Complexity]]:** $O(N \cdot 32 + Q)$ for Trie and offline query storage
 
 ## Sample Code
 ```cpp
@@ -87,7 +82,9 @@ vector<int> maximizeXor(vector<int>& nums, vector<vector<int>>& queries) {
 ```
 
 ## New Keywords / STL Used
-Offline queries, `pair` sorting
+- offline queries, `pair` sorting
 
 ## Edge Cases
-No array elements are $\le m$ (returns -1).
+- no array elements are $\le m$ (returns -1).
+
+NEXT: [[Index]]

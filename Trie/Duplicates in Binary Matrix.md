@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, trie]
-date: 2026-06-30
----
 # Duplicates in Binary Matrix
 
 ## Problem Statement
-Given a binary matrix, find and return all the duplicate rows.
+- given a binary [[Matrix]], find and return all the duplicate rows.
 
 ## Approach / Intuition
-Insert each row into a [[Trie]] where nodes represent $0$ or $1$. If traversing a row reaches an existing end-of-word node, it is a duplicate. Otherwise, mark the end node to track it for future rows.
+- insert each row into a [[Trie]] where nodes represent $0$ or $1$. If traversing a row reaches an existing end-of-word node, it is a duplicate. Otherwise, mark the end node to track it for future rows.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(R \times C)$
-- **[[Space Complexity]]:** $O(R \times C)$
+- **[[time Complexity]]:** $O(R \times C)$
+- **[[space Complexity]]:** $O(R \times C)$
 
 ## Sample Code
 ```cpp
@@ -55,7 +50,9 @@ vector<int> findDuplicateRows(vector<vector<int>>& matrix) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Empty matrix, no duplicates.
+- empty matrix, no duplicates.
+
+NEXT: [[Index]]

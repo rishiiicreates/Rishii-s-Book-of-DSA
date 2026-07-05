@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching]
-date: 2026-06-30
----
 # Longest Prefix Suffix
 
 ## Problem Statement
-Find the length of the longest proper prefix of a string which is also a suffix.
+- find the length of the longest proper prefix of a string which is also a suffix.
 
 ## Approach / Intuition
-We build the LPS array used in the [[KMP Algorithm]]. We maintain the length of the previous longest prefix suffix and compare the current character with the character at that length.
+- we build the LPS array used in the [[KMP Algorithm]]. We maintain the length of the previous longest prefix suffix and compare the current character with the character at that length.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ vector<int> computeLPSArray(string s) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-String of length 1, all characters same.
+- string of length 1, all characters same.
+
+NEXT: [[Index]]

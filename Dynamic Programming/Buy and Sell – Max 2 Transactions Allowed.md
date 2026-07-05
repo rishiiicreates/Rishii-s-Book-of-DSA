@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, stock]
-date: 2026-06-30
----
 # Buy and Sell – Max 2 Transactions Allowed
 
 ## Problem Statement
-Find the maximum profit from buying and selling stocks given an array of prices. You may complete at most two transactions, and you must sell the stock before buying again.
+- find the maximum profit from buying and selling stocks given an array of prices. You may complete at most two transactions, and you must sell the stock before buying again.
 
 ## Approach / Intuition
-Use a [[State Machine]] to track the four possible states: buying the first stock, selling the first stock, buying the second stock, and selling the second stock. We can update these states sequentially for each day to maximize profit using [[Dynamic Programming]] concepts space-optimized to O(1).
+- use a [[State Machine]] to track the four possible states: buying the first stock, selling the first stock, buying the second stock, and selling the second stock. We can update these states sequentially for each day to maximize profit using [[Dynamic Programming]] concepts space-optimized to O(1).
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int maxProfit(vector<int>& prices) {
 ```
 
 ## New Keywords / STL Used
-`max`, `vector`
+- `max`, `vector`
 
 ## Edge Cases
-Decreasing prices (profit 0), array length less than 2.
+- decreasing prices (profit 0), array length less than 2.
+
+NEXT: [[Index]]

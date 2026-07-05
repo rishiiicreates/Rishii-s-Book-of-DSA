@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Longest Palindromic Substring
 
 ## Problem Statement
-Given a string `s`, return the longest palindromic substring in `s`.
+- given a string `s`, return the longest palindromic substring in `s`.
 
 ## Approach / Intuition
-We can solve this by expanding around the center for each character or by using [[Dynamic Programming]]. In DP, a substring `s[i..j]` is a palindrome if `s[i] == s[j]` and `s[i+1..j-1]` is a palindrome. Expand around center is often faster in practice.
+- we can solve this by expanding around the center for each character or by using [[Dynamic Programming]]. In DP, a substring `s[i..j]` is a palindrome if `s[i] == s[j]` and `s[i+1..j-1]` is a palindrome. Expand around center is often faster in practice.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n^2)
-- **[[Space Complexity]]:** O(1) for expand around center (DP is O(n^2))
+- **[[time Complexity]]:** O(n^2)
+- **[[space Complexity]]:** O(1) for expand around center (DP is O(n^2))
 
 ## Sample Code
 ```cpp
@@ -43,7 +38,9 @@ string longestPalindrome(string s) {
 ```
 
 ## New Keywords / STL Used
-`string`, `substr`, `max`, lambda function
+- `string`, `substr`, `max`, lambda function
 
 ## Edge Cases
-Single character string, all identical characters, empty string.
+- single character string, all identical characters, empty string.
+
+NEXT: [[Index]]

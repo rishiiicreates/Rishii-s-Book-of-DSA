@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, inorder, swap]
-date: 2026-06-30
----
 # Fix BST with 2 swapped nodes
 
 ## Problem Statement
-Two nodes of a BST are swapped by mistake. Recover the tree without changing its structure.
+- two nodes of a BST are swapped by mistake. Recover the tree without changing its structure.
 
 ## Approach / Intuition
-Since an [[Inorder Traversal]] of a BST yields a strictly increasing sequence, we can track the `prev` node during traversal. If `prev->val > curr->val`, we've found a violation. The first time this happens, `prev` is the first swapped node, and `curr` is a candidate for the second. If it happens again, the new `curr` is definitely the second swapped node. After finding both, we simply swap their values.
+- since an [[Inorder Traversal]] of a BST yields a strictly increasing sequence, we can track the `prev` node during traversal. If `prev->val > curr->val`, we've found a violation. The first time this happens, `prev` is the first swapped node, and `curr` is a candidate for the second. If it happens again, the new `curr` is definitely the second swapped node. After finding both, we simply swap their values.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(H)$ for recursion stack.
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(H)$ for recursion stack.
 
 ## Sample Code
 ```cpp
@@ -64,9 +59,11 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::swap`
+- `std::swap`
 
 ## Edge Cases
-- Swapped nodes are adjacent in inorder traversal
-- Swapped nodes are far apart
-- Swapped nodes are parent and child
+- swapped nodes are adjacent in inorder traversal
+- swapped nodes are far apart
+- swapped nodes are parent and child
+
+NEXT: [[Index]]

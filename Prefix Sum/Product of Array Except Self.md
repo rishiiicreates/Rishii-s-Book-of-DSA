@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, prefix-product]
-date: 2026-06-30
----
 # Product of Array Except Self
 
 ## Problem Statement
-Given an array of integers, return an array such that each element at index `i` is the product of all the elements of the original array except `arr[i]`, strictly without using the division operator.
+- given an array of integers, return an array such that each element at index `i` is the product of all the elements of the original array except `arr[i]`, strictly without using the division operator.
 
 ## Approach / Intuition
-Calculate the left cumulative [[Prefix Product]] up to each element in a forward pass. In a backward pass, calculate the right cumulative suffix product and multiply it with the left products. This computes the surrounding product dynamically without relying on division.
+- calculate the left cumulative [[Prefix Product]] up to each element in a forward pass. In a backward pass, calculate the right cumulative suffix product and multiply it with the left products. This computes the surrounding product dynamically without relying on division.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1) auxiliary space (excluding output array)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1) auxiliary space (excluding output array)
 
 ## Sample Code
 ```cpp
@@ -35,7 +30,9 @@ vector<int> productExceptSelf(vector<int>& nums) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Array containing a single zero (product relies entirely on suffix/prefix), array containing multiple zeros (all outputs evaluate to zero).
+- array containing a single zero (product relies entirely on suffix/prefix), array containing multiple zeros (all outputs evaluate to zero).
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Max of Mins of every window size
 
 ## Problem Statement
-Given an integer array, find the maximum of the minimums of every possible window size from 1 to N.
+- given an integer array, find the maximum of the minimums of every possible window size from 1 to N.
 
 ## Approach / Intuition
-For each element, we find the range over which it acts as the minimum using the [[Next Smaller Element]] and [[Previous Smaller Element]] via a [[Stack]]. We record the element as a candidate for the answer of that particular window length. Since larger elements can also be the answer for smaller windows, we backfill the answer array from right to left.
+- for each element, we find the range over which it acts as the minimum using the [[Next Smaller Element]] and [[Previous Smaller Element]] via a [[Stack]]. We record the element as a candidate for the answer of that particular window length. Since larger elements can also be the answer for smaller windows, we backfill the answer array from right to left.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) to compute left and right limits and populate the answers array.
-- **[[Space Complexity]]:** O(N) to maintain the stack and the bounds arrays.
+- **[[time Complexity]]:** O(N) to compute left and right limits and populate the answers array.
+- **[[space Complexity]]:** O(N) to maintain the stack and the bounds arrays.
 
 ## Sample Code
 ```cpp
@@ -47,5 +42,7 @@ vector<int> maxOfMin(int arr[], int n) {
 - `std::stack`, `std::vector`, `std::max`
 
 ## Edge Cases
-- All elements are the same.
-- Elements are in strictly increasing or decreasing order.
+- all elements are the same.
+- elements are in strictly increasing or decreasing order.
+
+NEXT: [[Index]]

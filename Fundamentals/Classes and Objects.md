@@ -1,16 +1,10 @@
----
-type: concept
-tags: [fundamentals, cpp, oop]
-date: 2026-06-30
----
 # Classes and Objects
 
 ## What are Classes and Objects?
-A **Class** is a user-defined blueprint or template that represents a real-world concept. It binds data (attributes/member variables) and the operations that manipulate that data (methods/member functions) into a single, cohesive unit. This is the core pillar of **Object-Oriented Programming (OOP)** known as **Encapsulation**.
+- a **Class** is a user-defined blueprint or template that represents a real-world concept. It binds data (attributes/member variables) and the operations that manipulate that data (methods/member functions) into a single, cohesive unit. This is the core pillar of **Object-Oriented Programming (OOP)** known as **Encapsulation**.
 
-An **Object** is a concrete instance of a Class existing in memory.
+- an **Object** is a concrete instance of a Class existing in memory.
 
----
 
 ## The Anatomy of a Class
 
@@ -45,11 +39,10 @@ public:
 };
 ```
 
----
 
 ## Using Objects
 
-To use the class, you instantiate it.
+- to use the class, you instantiate it.
 ```cpp
 int main() {
     // Creating an object on the Stack
@@ -70,18 +63,17 @@ int main() {
 > [!important]
 > **Stack vs Heap Allocation:** In modern C++, prefer Stack allocation (e.g. `Node n;`) whenever possible. It's significantly faster and the memory is managed entirely automatically. Only use Heap allocation (e.g. `new Node()`) when the object is massively large, needs to outlive the current function scope, or when building dynamic linked structures (like Trees and Linked Lists).
 
----
 
 ## `struct` vs `class` in C++
 
-In languages like C#, structs are fundamentally different from classes (value type vs reference type). However, in C++, **a struct and a class are exactly the same thing**, with only one tiny difference:
-- In a `class`, all members are **private** by default.
-- In a `struct`, all members are **public** by default.
+- in languages like C#, structs are fundamentally different from classes (value type vs reference type). However, in C++, **a struct and a class are exactly the same thing**, with only one tiny difference:
+- in a `class`, all members are **private** by default.
+- in a `struct`, all members are **public** by default.
 
 ### When to use which?
-In Competitive Programming and DSA:
-- Use **`struct`** for Plain Old Data structures (like a point in 2D space, a node in a Linked List, or a graph edge) where you just want to group variables together and access them directly without writing tedious getter/setter methods.
-- Use **`class`** when building a complex system that requires strict encapsulation and data protection.
+- in Competitive Programming and DSA:
+- use **`struct`** for Plain Old Data structures (like a point in 2D space, a node in a Linked List, or a graph edge) where you just want to group variables together and access them directly without writing tedious getter/setter methods.
+- use **`class`** when building a complex system that requires strict encapsulation and data protection.
 
 ```cpp
 // Common DSA pattern: using a struct for a graph Edge
@@ -94,8 +86,9 @@ struct Edge {
 };
 ```
 
----
 
 ## Complexity
-- **Time Complexity:** Object creation takes time proportional to the logic inside its constructor. For a simple initialization, it's $O(1)$.
-- **Space Complexity:** $O(S)$, where $S$ is the sum of the byte sizes of all member variables inside the class. Methods (functions) do not take up per-object space; they exist once in the executable code segment.
+- **time Complexity:** Object creation takes time proportional to the logic inside its constructor. For a simple initialization, it's $O(1)$.
+- **space Complexity:** $O(S)$, where $S$ is the sum of the byte sizes of all member variables inside the class. Methods (functions) do not take up per-object space; they exist once in the executable code segment.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dsa, cpp, trie, bit-manipulation]
-date: 2026-06-30
----
 # Maximum XOR of Two Numbers in an Array
 
 ## Problem Statement
-Given an array of integers, find the maximum XOR value of any two elements in the array.
+- given an array of integers, find the maximum XOR value of any two elements in the array.
 
 ## Approach / Intuition
-Use a binary [[Trie]] to store the binary representations of the numbers (starting from the most significant bit). For each number in the array, traverse the Trie attempting to maximize the XOR. At each bit level, check if the opposite bit exists in the Trie (to yield a 1 in XOR). If it does, follow that path; otherwise, follow the same bit path. This combines [[Bit Manipulation]] with a specialized Trie.
+- use a binary [[Trie]] to store the binary representations of the numbers (starting from the most significant bit). For each number in the array, traverse the Trie attempting to maximize the XOR. At each bit level, check if the opposite bit exists in the Trie (to yield a 1 in XOR). If it does, follow that path; otherwise, follow the same bit path. This combines [[Bit Manipulation]] with a specialized Trie.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \cdot 32)$
-- **[[Space Complexity]]:** $O(N \cdot 32)$
+- **[[time Complexity]]:** $O(N \cdot 32)$
+- **[[space Complexity]]:** $O(N \cdot 32)$
 
 ## Sample Code
 ```cpp
@@ -74,7 +69,9 @@ int findMaximumXOR(vector<int>& nums) {
 ```
 
 ## New Keywords / STL Used
-Bitwise shift, bitwise AND/OR
+- bitwise shift, bitwise AND/OR
 
 ## Edge Cases
-Array of size 1 (returns 0), array with all identical elements.
+- array of size 1 (returns 0), array with all identical elements.
+
+NEXT: [[Index]]

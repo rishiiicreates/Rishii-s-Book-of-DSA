@@ -1,30 +1,23 @@
----
-type: concept
-tags: [searching, binary-search, cpp, greedy, math]
-date: 2026-06-30
----
 # Maximize Median
 
 ## Problem Statement
-Given an array of $N$ integers (where $N$ is odd) and an integer $K$, you can perform at most $K$ operations. Each operation consists of choosing an index $i$ and increasing `arr[i]` by $1$.
-Return the maximum possible median of the array after performing at most $K$ operations.
+- given an array of $N$ integers (where $N$ is odd) and an integer $K$, you can perform at most $K$ operations. Each operation consists of choosing an index $i$ and increasing `arr[i]` by $1$.
+- return the maximum possible median of the array after performing at most $K$ operations.
 
----
 
 ## Approach: Parametric Binary Search + Greedy Validation
 
-First, we sort the array. The median is located at index `mid_idx = N / 2`.
-To maximize the median efficiently, we only care about increasing elements from `mid_idx` to $N - 1$. Increasing elements before `mid_idx` does absolutely nothing to improve the median.
+- first, we sort the array. The median is located at index `mid_idx = N / 2`.
+- to maximize the median efficiently, we only care about increasing elements from `mid_idx` to $N - 1$. Increasing elements before `mid_idx` does absolutely nothing to improve the median.
 
-The function $f(\text{target})$ determines if we can achieve a median of $\text{target}$ using $\le K$ operations. It is monotonically decreasing (if we can achieve $X$, we can achieve $X-1$).
-1. Set `low = arr[N / 2]`.
-2. Set `high = arr[N / 2] + K` (the absolute theoretical maximum if all $K$ operations were dumped onto the median and the elements to its right).
-3. For a candidate median `mid`, calculate the cost:
-   - For every $i$ from `mid_idx` to $N-1$, if `arr[i] < mid`, we must add `mid - arr[i]` to our operation cost.
-   - If `cost > K` at any point, abort and return `false`.
-4. Binary search exactly on this boolean boundary to find the maximum valid `mid`.
+- the function $f(\text{target})$ determines if we can achieve a median of $\text{target}$ using $\le K$ operations. It is monotonically decreasing (if we can achieve $X$, we can achieve $X-1$).
+- set `low = arr[N / 2]`.
+- set `high = arr[N / 2] + K` (the absolute theoretical maximum if all $K$ operations were dumped onto the median and the elements to its right).
+- for a candidate median `mid`, calculate the cost:
+   - for every $i$ from `mid_idx` to $N-1$, if `arr[i] < mid`, we must add `mid - arr[i]` to our operation cost.
+   - if `cost > K` at any point, abort and return `false`.
+- binary search exactly on this boolean boundary to find the maximum valid `mid`.
 
----
 
 ## Code Implementation
 
@@ -74,8 +67,9 @@ long long maxMedian(vector<int>& arr, long long k) {
 > [!important]
 > The target median and the cost accumulators **must** use `long long`. The maximum theoretical median can easily overflow a standard 32-bit integer when large values of $K$ (e.g., $10^9$) are added to large array elements.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N \log N + N \log(\max(arr) + K))$. Sorting the array takes $\mathcal{O}(N \log N)$. The binary search takes $\log(\max(arr) + K)$ iterations, and each validation scan takes $\mathcal{O}(N)$ time.
-- **Space Complexity:** $\mathcal{O}(\log N)$ required by the introsort call, otherwise $\mathcal{O}(1)$ auxiliary space.
+- **time Complexity:** $\mathcal{O}(N \log N + N \log(\max(arr) + K))$. Sorting the array takes $\mathcal{O}(N \log N)$. The binary search takes $\log(\max(arr) + K)$ iterations, and each validation scan takes $\mathcal{O}(N)$ time.
+- **space Complexity:** $\mathcal{O}(\log N)$ required by the introsort call, otherwise $\mathcal{O}(1)$ auxiliary space.
+
+NEXT: [[Index]]

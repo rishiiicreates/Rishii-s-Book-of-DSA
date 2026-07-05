@@ -1,28 +1,21 @@
----
-type: concept
-tags: [tree, binary-tree, graph, bfs, cpp, math]
-date: 2026-06-30
----
 # Nodes at Distance K
 
 ## Problem Statement
-Given a discrete binary tree, a strict geometric target node pointer `target`, and a scalar distance variable $K$, extract all discrete mathematical nodes structurally residing exactly $K$ spatial unweighted geometric edges away from `target`.
+- given a discrete binary tree, a strict geometric target node pointer `target`, and a scalar distance variable $K$, extract all discrete mathematical nodes structurally residing exactly $K$ spatial unweighted geometric edges away from `target`.
 
----
 
 ## Approach: Undirected Graph Transformation (Parent Pointers + BFS)
 
-A native binary tree strictly limits topological boundaries to one-way downward causal spatial traversal. A radius of $K$ dictates isotropic structural explosion equally traversing children *and* structurally ascending explicitly towards parents. 
-To facilitate symmetrical isotropic graph search, we must mathematically upgrade the unidirectional binary tree into a full unweighted bidirectional map.
+- a native binary tree strictly limits topological boundaries to one-way downward causal spatial traversal. A radius of $K$ dictates isotropic structural explosion equally traversing children *and* structurally ascending explicitly towards parents.
+- to facilitate symmetrical isotropic graph search, we must mathematically upgrade the unidirectional binary tree into a full unweighted bidirectional map.
 
-Algorithm:
-1. **Geometric Graph Transformation (DFS):** Penetrate the binary structure utilizing a standard DFS Preorder topology. As you scan, populate a structural `unordered_map<TreeNode*, TreeNode*>` physically mapping every child boundary backward exactly to its strict temporal parent.
-2. **Isotropic Structural Blast (BFS):** Execute an undirected geometric Breadth-First Search (BFS) directly initiated at `target`. 
-3. Employ a localized `unordered_set<TreeNode*>` explicitly preventing unbounded cyclical oscillations resulting from bidirectional mappings.
-4. Structurally explode continuously outward by appending left, right, and explicitly evaluated parent pointers. 
-5. Increment the mathematical spatial radius count. Once $r = K$, the strictly bounded elements currently residing globally inside the temporal BFS queue represent the definitive geometric result space.
+- algorithm:
+- **geometric Graph Transformation (DFS):** Penetrate the binary structure utilizing a standard DFS Preorder topology. As you scan, populate a structural `unordered_map<TreeNode*, TreeNode*>` physically mapping every child boundary backward exactly to its strict temporal parent.
+- **isotropic Structural Blast (BFS):** Execute an undirected geometric Breadth-First Search (BFS) directly initiated at `target`.
+- employ a localized `unordered_set<TreeNode*>` explicitly preventing unbounded cyclical oscillations resulting from bidirectional mappings.
+- structurally explode continuously outward by appending left, right, and explicitly evaluated parent pointers.
+- increment the mathematical spatial radius count. Once $r = K$, the strictly bounded elements currently residing globally inside the temporal BFS queue represent the definitive geometric result space.
 
----
 
 ## Code Implementation
 
@@ -108,8 +101,9 @@ vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
 > [!important]
 > For highly dense geometric clusters where allocating $\mathcal{O}(N)$ parent tracking pointers induces extreme memory bounds, a pure dual-pass Recursive backtracking equivalent functionally calculates exact geometry devoid of maps, albeit dramatically sacrificing theoretical comprehension and linear clarity.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Physical initialization bounds graph transformation at $N$ edges. The spatial isotropic BFS visits geometry exclusively strictly once.
-- **Space Complexity:** $\mathcal{O}(N)$. Total supplementary temporal mappings rigorously demand structural space mapped specifically exactly for all existent nodes.
+- **time Complexity:** $\mathcal{O}(N)$. Physical initialization bounds graph transformation at $N$ edges. The spatial isotropic BFS visits geometry exclusively strictly once.
+- **space Complexity:** $\mathcal{O}(N)$. Total supplementary temporal mappings rigorously demand structural space mapped specifically exactly for all existent nodes.
+
+NEXT: [[Index]]

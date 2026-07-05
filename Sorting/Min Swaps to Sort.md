@@ -1,29 +1,22 @@
----
-type: concept
-tags: [sorting, cpp, graph]
-date: 2026-06-30
----
 # Minimum Swaps to Sort
 
 ## Problem Statement
-Given an array $A$ of $N$ distinct elements, find the minimum number of swaps required to sort the array in strictly ascending order.
+- given an array $A$ of $N$ distinct elements, find the minimum number of swaps required to sort the array in strictly ascending order.
 
-*Example:* $A = [2, 8, 5, 4]$
-*Result:* $1$ (Swap $8$ and $4$ to get $[2, 4, 5, 8]$)
+- *example:* $A = [2, 8, 5, 4]$
+- *result:* $1$ (Swap $8$ and $4$ to get $[2, 4, 5, 8]$)
 
----
 
 ## Approach: Graph Theory (Cycle Decomposition)
 
-The problem reduces to decomposing a permutation into disjoint cycles. 
-1. Attach the original index to each element and sort the array by values. This reveals where each element *should* go.
-2. The sorted array tells us: the element originally at index $i$ must move to index $j$. This defines a directed edge $i \to j$.
-3. The graph decomposes into a set of disjoint cycles.
-4. For a cycle of length $L$, mathematically it requires exactly $L - 1$ swaps to resolve.
-5. So, the total number of swaps is $\sum (\text{Cycle\_Length} - 1)$.
-6. We can trace cycles directly: iterate through the sorted pairs. If an element is already in the correct place, ignore it. If not, swap it continuously with the element occupying its original index until the cycle closes.
+- the problem reduces to decomposing a permutation into disjoint cycles.
+- attach the original index to each element and sort the array by values. This reveals where each element *should* go.
+- the sorted array tells us: the element originally at index $i$ must move to index $j$. This defines a directed edge $i \to j$.
+- the graph decomposes into a set of disjoint cycles.
+- for a cycle of length $L$, mathematically it requires exactly $L - 1$ swaps to resolve.
+- so, the total number of swaps is $\sum (\text{Cycle\_Length} - 1)$.
+- we can trace cycles directly: iterate through the sorted pairs. If an element is already in the correct place, ignore it. If not, swap it continuously with the element occupying its original index until the cycle closes.
 
----
 
 ## Code Implementation
 
@@ -68,8 +61,9 @@ int minSwaps(vector<int>& nums) {
 > [!tip]
 > A mathematically equivalent implementation uses a `visited` boolean array. You follow the $i \to \text{target}$ edges to trace the cycle, marking nodes as `visited`. If a cycle has length $L$, you add $L - 1$ to the total swap count. The swap-in-place method shown above achieves the same result elegantly without a `visited` array.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log N)$. Sorting the pairs dominates the execution time. Resolving the cycles via swaps takes exactly $O(N)$ time since each element is swapped at most once to its final position.
-- **Space Complexity:** $O(N)$ to store the pairs of values and original indices.
+- **time Complexity:** $O(N \log N)$. Sorting the pairs dominates the execution time. Resolving the cycles via swaps takes exactly $O(N)$ time since each element is swapped at most once to its final position.
+- **space Complexity:** $O(N)$ to store the pairs of values and original indices.
+
+NEXT: [[Index]]

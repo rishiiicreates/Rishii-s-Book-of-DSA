@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, number-theory]
-date: 2026-06-30
----
 # Segmented Sieve
 
 ## Problem Statement
-Find all primes in a range $[L, R]$ where $R$ can be up to $10^{12}$, but $R - L \le 10^6$.
+- find all primes in a range $[L, R]$ where $R$ can be up to $10^{12}$, but $R - L \le 10^6$.
 
 ## Approach / Intuition
-Use a standard [[Sieve of Eratosthenes]] to find primes up to $\sqrt{R}$. Then use these primes to mark multiples in the offset range $[L, R]$ using an array of size $R - L + 1$.
+- use a standard [[Sieve of Eratosthenes]] to find primes up to $\sqrt{R}$. Then use these primes to mark multiples in the offset range $[L, R]$ using an array of size $R - L + 1$.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O((R-L + \sqrt{R}) \log \log \sqrt{R})$
-- **[[Space Complexity]]:** $O(\sqrt{R} + R - L)$
+- **[[time Complexity]]:** $O((R-L + \sqrt{R}) \log \log \sqrt{R})$
+- **[[space Complexity]]:** $O(\sqrt{R} + R - L)$
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ vector<int> segmentedSieve(long long L, long long R) {
 ```
 
 ## New Keywords / STL Used
-`sqrt`, `max`
+- `sqrt`, `max`
 
 ## Edge Cases
-$L = 1$, large $R$ nearing limits.
+- $l = 1$, large $R$ nearing limits.
+
+NEXT: [[Index]]

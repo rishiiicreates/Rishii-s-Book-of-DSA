@@ -1,25 +1,18 @@
----
-type: concept
-tags: [two-pointer, array, cpp, set-theory, math]
-date: 2026-06-30
----
 # Union of Two Sorted Arrays
 
 ## Problem Statement
-Given two monotonic arrays $A$ and $B$, evaluate their mathematical set union $A \cup B$. The result must be strictly sorted and structurally devoid of any duplicate elements.
+- given two monotonic arrays $A$ and $B$, evaluate their mathematical set union $A \cup B$. The result must be strictly sorted and structurally devoid of any duplicate elements.
 
----
 
 ## Approach: Converging Deduplication
 
-We iterate simultaneously through both strictly sorted arrays using a dual [[Two Pointers]] mechanism, structurally merging them similarly to Merge Sort, but enforcing strict deductive filters to guarantee set uniqueness.
-1. Greedily compare $A[i]$ and $B[j]$.
-2. Determine the strictly minimal theoretical candidate.
-3. Validate against the ultimate element in the current result structure `res.back()`. If the minimal candidate mathematically diverges from the ultimate element, push it.
-4. Increment the pointer associated with the minimal candidate. If they are exactly equal, conceptually treat it as pulling from $A$, but increment *both* pointers to bypass the structural collision.
-5. After the primary iteration terminates, rigorously flush the residual elements of the unexhausted sequence using the exact same uniqueness constraint.
+- we iterate simultaneously through both strictly sorted arrays using a dual [[Two Pointers]] mechanism, structurally merging them similarly to Merge Sort, but enforcing strict deductive filters to guarantee set uniqueness.
+- greedily compare $A[i]$ and $B[j]$.
+- determine the strictly minimal theoretical candidate.
+- validate against the ultimate element in the current result structure `res.back()`. If the minimal candidate mathematically diverges from the ultimate element, push it.
+- increment the pointer associated with the minimal candidate. If they are exactly equal, conceptually treat it as pulling from $A$, but increment *both* pointers to bypass the structural collision.
+- after the primary iteration terminates, rigorously flush the residual elements of the unexhausted sequence using the exact same uniqueness constraint.
 
----
 
 ## Code Implementation
 
@@ -69,8 +62,9 @@ vector<int> findUnion(const vector<int>& a, const vector<int>& b) {
 > [!important]
 > Attempting to utilize `std::set` or `std::unordered_set` fundamentally violates the intrinsic structural advantage provided by the sorted inputs, degrading a theoretically optimal $\mathcal{O}(N+M)$ localized algorithm into an $\mathcal{O}((N+M) \log(N+M))$ or heavily heavily allocated $\mathcal{O}(N+M)$ amortized structure.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N + M)$. Both pointers evaluate exactly within their spatial bounds.
-- **Space Complexity:** $\mathcal{O}(1)$ auxiliary space. The mathematical union inherently demands $\mathcal{O}(N + M)$ spatial structure for output.
+- **time Complexity:** $\mathcal{O}(N + M)$. Both pointers evaluate exactly within their spatial bounds.
+- **space Complexity:** $\mathcal{O}(1)$ auxiliary space. The mathematical union inherently demands $\mathcal{O}(N + M)$ spatial structure for output.
+
+NEXT: [[Index]]

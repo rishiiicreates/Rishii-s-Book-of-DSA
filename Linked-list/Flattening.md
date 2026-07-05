@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, flatten, merge]
-date: 2026-06-30
----
 # Flattening a Linked List
 
 ## Problem Statement
-Given a linked list where every central node contains standard `next` pointers to adjacent lateral nodes and `bottom` pointers to isolated child linked lists, flatten it heavily into a single-level sorted linked list using only the `bottom` structural pointer.
+- given a linked list where every central node contains standard `next` pointers to adjacent lateral nodes and `bottom` pointers to isolated child linked lists, flatten it heavily into a single-level sorted linked list using only the `bottom` structural pointer.
 
 ## Approach / Intuition
-Rely on deep recursion to aggressively flatten trailing list nodes first. Iteratively merge the vertical `bottom` linked list actively with the flattened output emerging from the right-side list, cleanly emulating traditional [[Merge Sort]] logic atop raw linked lists.
+- rely on deep recursion to aggressively flatten trailing list nodes first. Iteratively merge the vertical `bottom` linked list actively with the flattened output emerging from the right-side list, cleanly emulating traditional [[Merge Sort]] logic atop raw linked lists.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N * M)
-- **[[Space Complexity]]:** O(N) auxiliary space recursively
+- **[[time Complexity]]:** O(N * M)
+- **[[space Complexity]]:** O(N) auxiliary space recursively
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ Node* flatten(Node* root) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Linear lists existing purely down a single `bottom` hierarchy without any `next` elements natively populated.
+- linear lists existing purely down a single `bottom` hierarchy without any `next` elements natively populated.
+
+NEXT: [[Index]]

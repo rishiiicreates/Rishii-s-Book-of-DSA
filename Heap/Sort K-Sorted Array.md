@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, cpp, nearly-sorted]
-date: 2026-06-30
----
 # Sort K-Sorted Array
 
 ## Problem Statement
-Efficiently sort an array where every element is practically at most `K` discrete places strictly away from its finalized target sorted position.
+- efficiently sort an array where every element is practically at most `K` discrete places strictly away from its finalized target sorted position.
 
 ## Approach / Intuition
-Maintain a resilient Min Heap spanning mathematically exactly `K + 1` elements tightly. Because an element's correct positional order is heavily guaranteed within this window range, aggressively pushing array elements iteratively and popping the minimum instantly yields the absolute globally correct order, exhibiting highly localized [[Windowed Sorting]].
+- maintain a resilient Min Heap spanning mathematically exactly `K + 1` elements tightly. Because an element's correct positional order is heavily guaranteed within this window range, aggressively pushing array elements iteratively and popping the minimum instantly yields the absolute globally correct order, exhibiting highly localized [[Windowed Sorting]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log K)
-- **[[Space Complexity]]:** O(K)
+- **[[time Complexity]]:** O(N log K)
+- **[[space Complexity]]:** O(K)
 
 ## Sample Code
 ```cpp
@@ -36,7 +31,9 @@ vector<int> sortKSortedArray(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Completely native sorted arrays running baseline, `K = 0` (requiring absolutely zero shifts), `K = N` (mathematically degrading to standard heap sort).
+- completely native sorted arrays running baseline, `K = 0` (requiring absolutely zero shifts), `K = N` (mathematically degrading to standard heap sort).
+
+NEXT: [[Index]]

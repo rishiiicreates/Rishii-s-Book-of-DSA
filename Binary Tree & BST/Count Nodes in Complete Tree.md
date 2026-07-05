@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, complete-tree]
-date: 2026-06-30
----
 # Count Complete Tree Nodes
 
 ## Problem Statement
-Given the root of a complete binary tree, return the number of the nodes in the tree efficiently (faster than $O(N)$).
+- given the root of a complete binary tree, return the number of the nodes in the tree efficiently (faster than $O(N)$).
 
 ## Approach / Intuition
-In a complete binary tree, if the depth of the leftmost path equals the depth of the rightmost path, it's a perfect binary tree, and its node count is $2^h - 1$. If they are not equal, recursively count the nodes in the left and right subtrees. This approach uses [[Depth-First Search]] combined with structural properties to prune large parts of the tree.
+- in a complete binary tree, if the depth of the leftmost path equals the depth of the rightmost path, it's a perfect binary tree, and its node count is $2^h - 1$. If they are not equal, recursively count the nodes in the left and right subtrees. This approach uses [[Depth-First Search]] combined with structural properties to prune large parts of the tree.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log^2 N)$
-- **[[Space Complexity]]:** $O(\log N)$ for recursion stack
+- **[[time Complexity]]:** $O(\log^2 N)$
+- **[[space Complexity]]:** $O(\log N)$ for recursion stack
 
 ## Sample Code
 ```cpp
@@ -57,7 +52,9 @@ int countNodes(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-Bitwise shift for power of 2
+- bitwise shift for power of 2
 
 ## Edge Cases
-Empty tree, tree with just one node, last level with just one node.
+- empty tree, tree with just one node, last level with just one node.
+
+NEXT: [[Index]]

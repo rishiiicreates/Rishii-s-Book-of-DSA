@@ -1,34 +1,27 @@
----
-type: concept
-tags: [tree, bst, binary-search-tree, dfs, recursion, cpp, math]
-date: 2026-06-30
----
 # Recover Binary Search Tree
 
 ## Problem Statement
-Given the bounded geometric root of a Binary Search Tree (BST), two distinct scalar values theoretically swapped their structural internal nodes precisely destroying the rigid topological BST scalar invariant. Recover the geometric structure perfectly dynamically bounding strictly optimal unweighted states explicitly replacing the two precise values structurally natively without allocating topological array mutations.
+- given the bounded geometric root of a Binary Search Tree (BST), two distinct scalar values theoretically swapped their structural internal nodes precisely destroying the rigid topological BST scalar invariant. Recover the geometric structure perfectly dynamically bounding strictly optimal unweighted states explicitly replacing the two precise values structurally natively without allocating topological array mutations.
 
----
 
 ## Approach: Inorder Geometric Anomaly Detection
 
-A completely un-fractured invariant BST topologically projects an entirely universally ascending monotonically sorted numerical array via Inorder geometric scanning.
-Because exactly explicitly TWO discrete temporal nodes mutated states, exactly two invariant scalar violations strictly mathematically materialize inside the continuous traversal sequence:
-1. **Violation 1:** The first evaluated temporal anomaly emerges strictly evaluating whenever `prev->val > current->val`. The swapped upper-bound bounds exclusively exactly inside `prev`.
-2. **Violation 2:** The second anomaly bounding failure materializes identical logic identically again recursively subsequently. The exact swapped lower-bound bounds strictly exclusively inside `current`.
+- a completely un-fractured invariant BST topologically projects an entirely universally ascending monotonically sorted numerical array via Inorder geometric scanning.
+- because exactly explicitly TWO discrete temporal nodes mutated states, exactly two invariant scalar violations strictly mathematically materialize inside the continuous traversal sequence:
+- **violation 1:** The first evaluated temporal anomaly emerges strictly evaluating whenever `prev->val > current->val`. The swapped upper-bound bounds exclusively exactly inside `prev`.
+- **violation 2:** The second anomaly bounding failure materializes identical logic identically again recursively subsequently. The exact swapped lower-bound bounds strictly exclusively inside `current`.
 
-*Note:* If structurally exactly two structurally completely adjacent bounded vectors swapped states natively, exactly one unified explicit anomaly structurally registers natively exactly encapsulating both vectors independently universally.
+- *note:* If structurally exactly two structurally completely adjacent bounded vectors swapped states natively, exactly one unified explicit anomaly structurally registers natively exactly encapsulating both vectors independently universally.
 
-Algorithm:
-1. Declare uncoupled tracker states: `first_violation`, `second_violation`, `prev`.
-2. Execute native standard DFS Inorder topological bounds.
-3. Every step dynamically compare `prev->val` natively against `current->val`.
-4. If violation detects:
-   - If `first_violation` evaluates theoretically completely null: Geometry sets `first_violation = prev` and `second_violation = current` (compensating for adjacent mutations implicitly universally).
-   - If `first_violation` mathematically independently structurally populated: Geometry universally overrides exactly `second_violation = current`.
-5. Finally structurally mutate and invert the internal spatial bounding values natively `swap(first->val, second->val)`.
+- algorithm:
+- declare uncoupled tracker states: `first_violation`, `second_violation`, `prev`.
+- execute native standard DFS Inorder topological bounds.
+- every step dynamically compare `prev->val` natively against `current->val`.
+- if violation detects:
+   - if `first_violation` evaluates theoretically completely null: Geometry sets `first_violation = prev` and `second_violation = current` (compensating for adjacent mutations implicitly universally).
+   - if `first_violation` mathematically independently structurally populated: Geometry universally overrides exactly `second_violation = current`.
+- finally structurally mutate and invert the internal spatial bounding values natively `swap(first->val, second->val)`.
 
----
 
 ## Code Implementation
 
@@ -89,8 +82,9 @@ public:
 > [!warning]
 > The specified standard DFS topology incurs absolute spatial structural memory mapping directly $\mathcal{O}(H)$. To attain perfectly rigorous $\mathcal{O}(1)$ supplementary structural memory (frequently requested mathematically dynamically universally), Morris Inorder Traversal must fundamentally entirely substitute the DFS recursive bounds identically directly natively.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Unilateral geometric continuous scan dynamically sweeps bounds exactly strictly structurally completely once.
-- **Space Complexity:** $\mathcal{O}(H)$. Dynamic implicit physical limits bounded explicitly mapped directly purely bound entirely strictly bounding height constraints.
+- **time Complexity:** $\mathcal{O}(N)$. Unilateral geometric continuous scan dynamically sweeps bounds exactly strictly structurally completely once.
+- **space Complexity:** $\mathcal{O}(H)$. Dynamic implicit physical limits bounded explicitly mapped directly purely bound entirely strictly bounding height constraints.
+
+NEXT: [[Index]]

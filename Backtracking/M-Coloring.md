@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, graph]
-date: 2026-06-30
----
 # M-Coloring Problem
 
 ## Problem Statement
-Determine if it's possible to color the vertices of a graph using at most $M$ colors such that no two adjacent vertices share the same color.
+- determine if it's possible to color the vertices of a graph using at most $M$ colors such that no two adjacent vertices share the same color.
 
 ## Approach / Intuition
-Use [[Backtracking]] to assign colors to vertices one by one. For a current vertex, try all $M$ colors. Before assigning a color, check if it's safe (i.e., no adjacent vertex in the [[Graph]] has the same color). If safe, assign it and recurse for the next vertex. If all subsequent vertices can be colored, return true; else, backtrack and try the next color.
+- use [[Backtracking]] to assign colors to vertices one by one. For a current vertex, try all $M$ colors. Before assigning a color, check if it's safe (i.e., no adjacent vertex in the [[Graph]] has the same color). If safe, assign it and recurse for the next vertex. If all subsequent vertices can be colored, return true; else, backtrack and try the next color.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(M^V)$ where $V$ is the number of vertices
-- **[[Space Complexity]]:** $O(V)$ for the color array and recursion stack
+- **[[time Complexity]]:** $O(M^V)$ where $V$ is the number of vertices
+- **[[space Complexity]]:** $O(V)$ for the color array and recursion stack
 
 ## Sample Code
 ```cpp
@@ -48,7 +43,9 @@ bool graphColoring(vector<vector<int>>& graph, int m, int n) {
 ```
 
 ## New Keywords / STL Used
-Adjacency matrix traversal
+- adjacency [[Matrix]] traversal
 
 ## Edge Cases
-Graph with no edges, complete graph (needs exactly $V$ colors), disconnected components.
+- graph with no edges, complete graph (needs exactly $V$ colors), disconnected components.
+
+NEXT: [[Index]]

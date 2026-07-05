@@ -1,29 +1,22 @@
----
-type: concept
-tags: [matrix, 2d-array, cpp, traversal]
-date: 2026-07-01
----
 # Matrix
 
 ## Problem Statement
-Understand how to work with a 2D array (or matrix) to perform grid-based operations, traversals, and coordinate mapping.
+- understand how to work with a 2D array (or [[Matrix]]) to perform grid-based operations, traversals, and coordinate mapping.
 
----
 
 ## Approach: 2D Arrays and Memory Mapping
 
-A **Matrix** is a two-dimensional array. In C++, this can be implemented as an array of arrays (e.g., `vector<vector<int>>`) or mathematically mapped onto a flattened 1D array.
+- a **Matrix** is a two-dimensional array. In C++, this can be implemented as an array of arrays (e.g., `vector<vector<int>>`) or mathematically mapped onto a flattened 1D array.
 
-For a matrix of dimensions $R \times C$ (rows $\times$ columns):
-If implemented as a flat 1D array of size $R \times C$, the 2D coordinate $(i, j)$ maps to the 1D index:
+- for a matrix of dimensions $R \times C$ (rows $\times$ columns):
+- if implemented as a flat 1D array of size $R \times C$, the 2D coordinate $(i, j)$ maps to the 1D index:
 $$ \text{Index} = i \times C + j $$
 
-If implemented as a `vector<vector<int>>`, memory might not be perfectly contiguous across rows, but row access and column access are straightforward. Traversals require nested loops iterating over rows and columns.
+- if implemented as a `vector<vector<int>>`, memory might not be perfectly contiguous across rows, but row access and column access are straightforward. Traversals require nested loops iterating over rows and columns.
 
 ### Row-Major vs Column-Major Order
-C++ natively stores 2D arrays in **row-major order**, meaning contiguous elements in memory belong to the same row. Traversing row-by-row is cache-friendly and significantly faster than traversing column-by-column.
+- c++ natively stores 2D arrays in **row-major order**, meaning contiguous elements in memory belong to the same row. Traversing row-by-row is cache-friendly and significantly faster than traversing column-by-column.
 
----
 
 ## Code Implementation
 
@@ -59,11 +52,12 @@ int main() {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(R \times C)$ to traverse every element in the matrix.
-- **Space Complexity:** $O(R \times C)$ to store the matrix.
+- **time Complexity:** $O(R \times C)$ to traverse every element in the matrix.
+- **space Complexity:** $O(R \times C)$ to store the matrix.
 
 > [!tip]
 > For highly performance-critical code involving large matrices, use a flattened 1D `vector<int>` of size $R \times C$ and calculate indices manually. This guarantees cache locality and avoids the overhead of multiple vector allocations.
+
+NEXT: [[Index]]

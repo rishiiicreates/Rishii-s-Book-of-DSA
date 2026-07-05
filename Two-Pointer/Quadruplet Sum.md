@@ -1,26 +1,19 @@
----
-type: concept
-tags: [hashing, two-pointer, cpp, array, combinatorics, math]
-date: 2026-06-30
----
 # Quadruplet Sum (Hash Map Approach)
 
 ## Problem Statement
-Evaluate whether there exists exactly four unique elements within an array of size $N$ that algebraically sum to a specific integer $T$.
+- evaluate whether there exists exactly four unique elements within an array of size $N$ that algebraically sum to a specific integer $T$.
 
----
 
 ## Approach: Bipartite Combinatorial Hashing
 
-While the strictly sorted [[Two-Pointer]] approach guarantees $\mathcal{O}(N^3)$ bounds, determining just the *existence* of a quadruplet (without requiring lexicographical uniqueness of all valid sets) can theoretically be resolved in $\mathcal{O}(N^2)$ average time using a paired [[Hash Map]].
+- while the strictly sorted [[Two-Pointer]] approach guarantees $\mathcal{O}(N^3)$ bounds, determining just the *existence* of a quadruplet (without requiring lexicographical uniqueness of all valid sets) can theoretically be resolved in $\mathcal{O}(N^2)$ average time using a paired [[Hash Map]].
 
-Algorithm:
-1. Geometrically bisect the equation $a + b + c + d = T$ into $(a + b) = T - (c + d)$.
-2. We iterate through the array evaluating the sum of pairs $(a, b)$ and mapping their algebraic sum to their respective indices in a Hash Map.
-3. Crucially, to prevent temporal crossover (using the exact same index twice), we only map $(a, b)$ pairs that geometrically precede the currently evaluated $(c, d)$ pair.
-4. For every element $nums[i]$ and $nums[j]$ (where $i < j$), we evaluate the complement $C = T - (nums[i] + nums[j])$. If $C$ mathematically exists in the Hash Map, a distinct quadruplet is structurally guaranteed.
+- algorithm:
+- geometrically bisect the equation $a + b + c + d = T$ into $(a + b) = T - (c + d)$.
+- we iterate through the array evaluating the sum of pairs $(a, b)$ and mapping their algebraic sum to their respective indices in a Hash Map.
+- crucially, to prevent temporal crossover (using the exact same index twice), we only map $(a, b)$ pairs that geometrically precede the currently evaluated $(c, d)$ pair.
+- for every element $nums[i]$ and $nums[j]$ (where $i < j$), we evaluate the complement $C = T - (nums[i] + nums[j])$. If $C$ mathematically exists in the Hash Map, a distinct quadruplet is structurally guaranteed.
 
----
 
 ## Code Implementation
 
@@ -66,8 +59,9 @@ bool hasQuadrupletSum(const vector<int>& nums, int target) {
 > [!important]
 > The exact temporal placement of `pairSumMap` insertion is mathematically critical. If you pre-calculate all $\mathcal{O}(N^2)$ pairs into the map *before* querying, you risk falsely validating a quadruplet constructed from overlapping structural indices (e.g., using `nums[3]` twice). Interleaving the map accumulation strictly *behind* the evaluation frontier guarantees mathematical disjointness.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N^2)$ amortized. Evaluating $N^2$ states with an $\mathcal{O}(1)$ average table lookup.
-- **Space Complexity:** $\mathcal{O}(N^2)$ to store the algebraic pairs in the Hash Map.
+- **time Complexity:** $\mathcal{O}(N^2)$ amortized. Evaluating $N^2$ states with an $\mathcal{O}(1)$ average table lookup.
+- **space Complexity:** $\mathcal{O}(N^2)$ to store the algebraic pairs in the Hash Map.
+
+NEXT: [[Index]]

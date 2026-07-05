@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, stock]
-date: 2026-06-30
----
 # Buy and Sell with Cooldown
 
 ## Problem Statement
-Find the maximum profit you can achieve by buying and selling stocks. You may complete as many transactions as you like, but after you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).
+- find the maximum profit you can achieve by buying and selling stocks. You may complete as many transactions as you like, but after you sell your stock, you cannot buy stock on the next day (i.e., cooldown one day).
 
 ## Approach / Intuition
-Use a [[State Machine]] with [[Dynamic Programming]]. We can define states for holding a stock, not holding (ready to buy), and being in cooldown. Update these states day by day based on possible transitions. Space can be optimized to O(1).
+- use a [[State Machine]] with [[Dynamic Programming]]. We can define states for holding a stock, not holding (ready to buy), and being in cooldown. Update these states day by day based on possible transitions. Space can be optimized to O(1).
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -39,7 +34,9 @@ int maxProfit(vector<int>& prices) {
 ```
 
 ## New Keywords / STL Used
-`max`, `vector`
+- `max`, `vector`
 
 ## Edge Cases
-Array of size 0 or 1, strictly decreasing prices, strictly increasing prices.
+- array of size 0 or 1, strictly decreasing prices, strictly increasing prices.
+
+NEXT: [[Index]]

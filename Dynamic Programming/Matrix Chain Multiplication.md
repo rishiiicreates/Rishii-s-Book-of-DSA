@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, matrix]
-date: 2026-06-30
----
 # Matrix Chain Multiplication
 
 ## Problem Statement
-Given a sequence of matrices, find the most efficient way to multiply these matrices together by minimizing the number of scalar multiplications.
+- given a sequence of matrices, find the most efficient way to multiply these matrices together by minimizing the number of scalar multiplications.
 
 ## Approach / Intuition
-This is a classic interval [[Dynamic Programming]] problem. We evaluate all possible splits to multiply the matrices. `dp[i][j]` represents the minimum cost to multiply matrices from index `i` to `j`. We iterate over all possible chain lengths, and for each interval `[i, j]`, we try partitioning at every possible `k`. Cost is `dp[i][k] + dp[k+1][j] + cost_to_multiply_results`.
+- this is a classic interval [[Dynamic Programming]] problem. We evaluate all possible splits to multiply the matrices. `dp[i][j]` represents the minimum cost to multiply matrices from index `i` to `j`. We iterate over all possible chain lengths, and for each interval `[i, j]`, we try partitioning at every possible `k`. Cost is `dp[i][k] + dp[k+1][j] + cost_to_multiply_results`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^3)
-- **[[Space Complexity]]:** O(N^2)
+- **[[time Complexity]]:** O(N^3)
+- **[[space Complexity]]:** O(N^2)
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ int matrixMultiplication(int N, vector<int>& arr) {
 ```
 
 ## New Keywords / STL Used
-`INT_MAX`, `std::min`
+- `iNT_MAX`, `std::min`
 
 ## Edge Cases
-Only two matrices to multiply, dimensions resulting in very large costs, small N.
+- only two matrices to multiply, dimensions resulting in very large costs, small N.
+
+NEXT: [[Index]]

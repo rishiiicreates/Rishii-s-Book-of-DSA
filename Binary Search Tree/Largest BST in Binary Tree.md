@@ -1,30 +1,23 @@
----
-type: concept
-tags: [tree, binary-tree, bst, dfs, recursion, cpp, math]
-date: 2026-06-30
----
 # Largest BST Subtree within Binary Tree
 
 ## Problem Statement
-Given the bounded geometric root of a universally unstructured Binary Tree, mathematically calculate and return the exact maximum topological size (defined explicitly entirely universally as total bounded node count) of a completely encapsulated geometric subtree physically structurally perfectly validating exactly identically to a rigorous bounded Binary Search Tree (BST) invariant.
+- given the bounded geometric root of a universally unstructured Binary Tree, mathematically calculate and return the exact maximum topological size (defined explicitly entirely universally as total bounded node count) of a completely encapsulated geometric subtree physically structurally perfectly validating exactly identically to a rigorous bounded Binary Search Tree (BST) invariant.
 
----
 
 ## Approach: Bottom-Up Dynamic Geometric Evaluation
 
-To optimally validate continuous unweighted algebraic geometries simultaneously bounded natively across disjoint independent completely structured BST topological evaluations universally: we must theoretically sweep physically entirely uniquely bottom-up.
-A parent topology fundamentally bounds itself perfectly natively strictly evaluating identically explicitly purely as a valid continuous BST exclusively exactly strictly when:
-1. The Left Subspace completely rigorously maps perfectly physically precisely to a valid invariant BST.
-2. The Right Subspace universally recursively mathematically evaluates identical to a valid invariant BST.
-3. The absolute spatial scalar value internally contained geometrically strictly dictates precisely $V > Max_{left}$ AND simultaneously $V < Min_{right}$.
+- to optimally validate continuous unweighted algebraic geometries simultaneously bounded natively across disjoint independent completely structured BST topological evaluations universally: we must theoretically sweep physically entirely uniquely bottom-up.
+- a parent topology fundamentally bounds itself perfectly natively strictly evaluating identically explicitly purely as a valid continuous BST exclusively exactly strictly when:
+- the Left Subspace completely rigorously maps perfectly physically precisely to a valid invariant BST.
+- the Right Subspace universally recursively mathematically evaluates identical to a valid invariant BST.
+- the absolute spatial scalar value internally contained geometrically strictly dictates precisely $V > Max_{left}$ AND simultaneously $V < Min_{right}$.
 
-We establish a unified continuous dynamically propagated localized unweighted geometric structural topological bound `NodeValue`:
-- Represents strict Boolean valid invariant BST condition.
-- Represents physical minimum structural bound value structurally perfectly recursively evaluated globally.
-- Represents physical maximum structural bound value mathematically evaluated identically.
-- Represents topological spatial encapsulated geometry size theoretically recursively globally tracked explicitly explicitly perfectly.
+- we establish a unified continuous dynamically propagated localized unweighted geometric structural topological bound `NodeValue`:
+- represents strict Boolean valid invariant BST condition.
+- represents physical minimum structural bound value structurally perfectly recursively evaluated globally.
+- represents physical maximum structural bound value mathematically evaluated identically.
+- represents topological spatial encapsulated geometry size theoretically recursively globally tracked explicitly explicitly perfectly.
 
----
 
 ## Code Implementation
 
@@ -88,8 +81,9 @@ int largestBSTSubtree(TreeNode* root) {
 > [!important]
 > For dynamic structural disjoint recursive evaluations bounding states natively, evaluating `INT_MAX` perfectly universally as the baseline for `minNode` natively guarantees structural evaluations unconditionally unconditionally pass when tested against any arbitrary localized bound mathematically evaluating inside independent structures physically implicitly.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Subtree evaluations theoretically sweep entirely recursively precisely bounded exactly uniformly unweighted purely $\mathcal{O}(1)$ computations natively geometrically physically across each node exclusively entirely uniquely.
-- **Space Complexity:** $\mathcal{O}(H)$. Strict recursive stack topological bounding purely restricted entirely bounds restricted height $H$.
+- **time Complexity:** $\mathcal{O}(N)$. Subtree evaluations theoretically sweep entirely recursively precisely bounded exactly uniformly unweighted purely $\mathcal{O}(1)$ computations natively geometrically physically across each node exclusively entirely uniquely.
+- **space Complexity:** $\mathcal{O}(H)$. Strict recursive stack topological bounding purely restricted entirely bounds restricted height $H$.
+
+NEXT: [[Index]]

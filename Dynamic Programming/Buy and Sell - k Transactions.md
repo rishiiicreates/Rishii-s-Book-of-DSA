@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, stock]
-date: 2026-06-30
----
 # Buy and Sell - k Transactions
 
 ## Problem Statement
-Find the maximum profit from buying and selling stocks. You may complete at most `k` transactions. You must sell the stock before you buy again.
+- find the maximum profit from buying and selling stocks. You may complete at most `k` transactions. You must sell the stock before you buy again.
 
 ## Approach / Intuition
-Extend the state machine from 2 transactions to `k` transactions. Use a 2D [[Dynamic Programming]] array where `dp[i][0]` is the max profit holding a stock after `i` transactions, and `dp[i][1]` is not holding. If `k` is larger than `n/2`, it reduces to infinite transactions.
+- extend the state machine from 2 transactions to `k` transactions. Use a 2D [[Dynamic Programming]] array where `dp[i][0]` is the max profit holding a stock after `i` transactions, and `dp[i][1]` is not holding. If `k` is larger than `n/2`, it reduces to infinite transactions.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * k)
-- **[[Space Complexity]]:** O(k)
+- **[[time Complexity]]:** O(n * k)
+- **[[space Complexity]]:** O(k)
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ int maxProfit(int k, vector<int>& prices) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `max`
+- `vector`, `max`
 
 ## Edge Cases
-`k` is 0, empty array, `k` is very large.
+- `k` is 0, empty array, `k` is very large.
+
+NEXT: [[Index]]

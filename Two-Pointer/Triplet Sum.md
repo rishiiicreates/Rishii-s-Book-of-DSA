@@ -1,31 +1,24 @@
----
-type: concept
-tags: [two-pointer, cpp, sum-problem]
-date: 2026-06-30
----
 # Triplet Sum
 
 ## Problem Statement
-Given an array $A$ of $N$ integers and an integer $X$, find if there exists a triplet $(A[i], A[j], A[k])$ such that $A[i] + A[j] + A[k] = X$ and $i, j, k$ are strictly distinct indices.
+- given an array $A$ of $N$ integers and an integer $X$, find if there exists a triplet $(A[i], A[j], A[k])$ such that $A[i] + A[j] + A[k] = X$ and $i, j, k$ are strictly distinct indices.
 
-*Example:* $A = [1, 4, 45, 6, 10, 8]$, $X = 22$
-*Result:* `true` (Triplet is $4, 10, 8$)
+- *example:* $A = [1, 4, 45, 6, 10, 8]$, $X = 22$
+- *result:* `true` (Triplet is $4, 10, 8$)
 
----
 
 ## Approach: Fix and Find (Two Pointers)
 
-A naive cubic approach tests all $\binom{N}{3}$ combinations in $O(N^3)$ time. We can mathematically reduce this to $O(N^2)$ by applying the [[Two-Pointer]] paradigm nested inside a linear traversal.
+- a naive cubic approach tests all $\binom{N}{3}$ combinations in $O(N^3)$ time. We can mathematically reduce this to $O(N^2)$ by applying the [[Two-Pointer]] paradigm nested inside a linear traversal.
 
-1. **Monotonicity Requirement:** We first sort the array $A$ to enable the two-pointer convergence search.
-2. **Fixation Loop:** Iterate through the array with an index `i` from $0$ to $N-3$. For each iteration, we logically "fix" $A[i]$ as the first element of our prospective triplet.
-3. **Subproblem Reduction:** The problem mathematically collapses into finding a Pair Sum in the subarray $A[i+1 \dots N-1]$ that equals the new target $X - A[i]$.
-4. **Convergence Search:** Initialize `left = i + 1` and `right = N - 1`. Check the sum $S = A[i] + A[\text{left}] + A[\text{right}]$.
-   - If $S == X$, a valid triplet exists. Return `true`.
-   - If $S < X$, increment `left`.
-   - If $S > X$, decrement `right`.
+- **monotonicity Requirement:** We first sort the array $A$ to enable the two-pointer convergence search.
+- **fixation Loop:** Iterate through the array with an index `i` from $0$ to $N-3$. For each iteration, we logically "fix" $A[i]$ as the first element of our prospective triplet.
+- **subproblem Reduction:** The problem mathematically collapses into finding a Pair Sum in the subarray $A[i+1 \dots N-1]$ that equals the new target $X - A[i]$.
+- **convergence Search:** Initialize `left = i + 1` and `right = N - 1`. Check the sum $S = A[i] + A[\text{left}] + A[\text{right}]$.
+   - if $S == X$, a valid triplet exists. Return `true`.
+   - if $S < X$, increment `left`.
+   - if $S > X$, decrement `right`.
 
----
 
 ## Code Implementation
 
@@ -67,8 +60,9 @@ bool find3Numbers(vector<int>& arr, int X) {
 > [!important]
 > By fixing the smallest element in the triplet, we guarantee that we only search the subarray to its right (`left = i + 1`). This inherently prevents reusing elements and elegantly avoids exploring permutations of the same triplet.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N^2)$. Sorting takes $O(N \log N)$. The outer loop runs $O(N)$ times, and for each iteration, the inner two-pointer scan takes $O(N)$ time. The total time is strictly bounded by $O(N^2)$.
-- **Space Complexity:** $O(1)$ auxiliary space if in-place sorting is used.
+- **time Complexity:** $O(N^2)$. Sorting takes $O(N \log N)$. The outer loop runs $O(N)$ times, and for each iteration, the inner two-pointer scan takes $O(N)$ time. The total time is strictly bounded by $O(N^2)$.
+- **space Complexity:** $O(1)$ auxiliary space if in-place sorting is used.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, target_sum]
-date: 2026-06-30
----
 # Target Sum
 
 ## Problem Statement
-Given an integer array and a target, assign `+` or `-` to each integer so that the sum evaluates to the target. Return the number of different expressions that evaluate to target.
+- given an integer array and a target, assign `+` or `-` to each integer so that the sum evaluates to the target. Return the number of different expressions that evaluate to target.
 
 ## Approach / Intuition
-Let elements assigned `+` be $S_1$ and `-` be $S_2$. We know $S_1 - S_2 = target$ and $S_1 + S_2 = total\_sum$. Adding them gives $S_1 = (total\_sum + target) / 2$. This reduces the problem to [[Subset Count With Sum]] for a new target.
+- let elements assigned `+` be $S_1$ and `-` be $S_2$. We know $S_1 - S_2 = target$ and $S_1 + S_2 = total\_sum$. Adding them gives $S_1 = (total\_sum + target) / 2$. This reduces the problem to [[Subset Count With Sum]] for a new target.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * target)
-- **[[Space Complexity]]:** O(target)
+- **[[time Complexity]]:** O(n * target)
+- **[[space Complexity]]:** O(target)
 
 ## Sample Code
 ```cpp
@@ -36,7 +31,9 @@ int findTargetSumWays(vector<int>& nums, int target) {
 ```
 
 ## New Keywords / STL Used
-`abs`, `vector`
+- `abs`, `vector`
 
 ## Edge Cases
-Target absolute value greater than array sum, sum + target is odd, multiple zeros in input.
+- target absolute value greater than array sum, sum + target is odd, multiple zeros in input.
+
+NEXT: [[Index]]

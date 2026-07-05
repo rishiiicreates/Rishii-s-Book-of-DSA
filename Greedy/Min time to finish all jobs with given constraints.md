@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, min-time-finish-jobs]
-date: 2026-06-30
----
 # Min Time to Finish All Jobs with Given Constraints
 
 ## Problem Statement
-Given an array of jobs with their times and `K` identical assignees. An assignee can do continuous jobs. Find the minimum time to finish all jobs. The time taken is the maximum time among all assignees.
+- given an array of jobs with their times and `K` identical assignees. An assignee can do continuous jobs. Find the minimum time to finish all jobs. The time taken is the maximum time among all assignees.
 
 ## Approach / Intuition
-Use [[Binary Search]] for the answer. The search space is between the max job time and the sum of all job times. For a mid value, use a [[Greedy Algorithm]] to check if all jobs can be distributed to `K` assignees such that no assignee takes more than `mid` time.
+- use [[Binary Search]] for the answer. The search space is between the max job time and the sum of all job times. For a mid value, use a [[Greedy Algorithm]] to check if all jobs can be distributed to `K` assignees such that no assignee takes more than `mid` time.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log(Sum - Max))
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N log(Sum - Max))
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -59,5 +54,7 @@ int minTime(vector<int>& jobs, int k) {
 - `max_element`, `accumulate`
 
 ## Edge Cases
-- Single assignee
-- Single job
+- single assignee
+- single job
+
+NEXT: [[Index]]

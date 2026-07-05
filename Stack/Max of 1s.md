@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Max of 1s
 
 ## Problem Statement
-Given a binary matrix, find the area of the largest rectangle containing only 1s.
+- given a binary [[Matrix]], find the area of the largest rectangle containing only 1s.
 
 ## Approach / Intuition
-This can be modeled as finding the [[Largest Rectangle in a Histogram]] iteratively for each row. We can treat each row as the base of a histogram and update the heights row by row. If the current cell is 1, the height increases by 1; if 0, the height resets to 0.
+- this can be modeled as finding the [[Largest Rectangle in a Histogram]] iteratively for each row. We can treat each row as the base of a histogram and update the heights row by row. If the current cell is 1, the height increases by 1; if 0, the height resets to 0.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N * M) where N is the number of rows and M is the number of columns.
-- **[[Space Complexity]]:** O(M) to store the heights of the histogram for the current row and the stack.
+- **[[time Complexity]]:** O(N * M) where N is the number of rows and M is the number of columns.
+- **[[space Complexity]]:** O(M) to store the heights of the histogram for the current row and the stack.
 
 ## Sample Code
 ```cpp
@@ -44,6 +39,8 @@ int maxArea(int M[1000][1000], int n, int m) {
 - `std::stack`, `std::vector`, `std::max`
 
 ## Edge Cases
-- Matrix consisting entirely of 0s.
-- Matrix consisting entirely of 1s.
-- 1D matrix (single row or single column).
+- matrix consisting entirely of 0s.
+- matrix consisting entirely of 1s.
+- 1d matrix (single row or single column).
+
+NEXT: [[Index]]

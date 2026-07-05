@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, trie]
-date: 2026-06-30
----
 # Implement Trie
 
 ## Problem Statement
-Implement a Trie (Prefix Tree) with `insert`, `search`, and `startsWith` methods.
+- implement a Trie (Prefix Tree) with `insert`, `search`, and `startsWith` methods.
 
 ## Approach / Intuition
-Create a `TrieNode` structure with an array of children pointers (usually size 26 for lowercase English letters) and a boolean flag indicating the end of a word. Traverse down the [[Tree Data Structure]], creating nodes if they don't exist.
+- create a `TrieNode` structure with an array of children pointers (usually size 26 for lowercase English letters) and a boolean flag indicating the end of a word. Traverse down the [[Tree Data Structure]], creating nodes if they don't exist.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(L)$ for insert/search where $L$ is word length
-- **[[Space Complexity]]:** $O(N \cdot L \cdot \Sigma)$ where $N$ is number of words, $\Sigma$ is alphabet size
+- **[[time Complexity]]:** $O(L)$ for insert/search where $L$ is word length
+- **[[space Complexity]]:** $O(N \cdot L \cdot \Sigma)$ where $N$ is number of words, $\Sigma$ is alphabet size
 
 ## Sample Code
 ```cpp
@@ -71,7 +66,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`nullptr`
+- `nullptr`
 
 ## Edge Cases
-Empty string operations, overlapping prefixes.
+- empty string operations, overlapping prefixes.
+
+NEXT: [[Index]]

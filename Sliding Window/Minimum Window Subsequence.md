@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, two-pointers]
-date: 2026-06-30
----
 # Minimum Window Subsequence
 
 ## Problem Statement
-Given strings `s` and `t`, find the minimum continuous substring in `s` such that `t` is a subsequence of it.
+- given strings `s` and `t`, find the minimum continuous substring in `s` such that `t` is a subsequence of it.
 
 ## Approach / Intuition
-Use a specialized [[Two Pointers]] approach. Traverse `s` to find a full match of `t` from left to right. Once matched, traverse backwards from the matching end to find the optimal start point. Update the minimum window and resume searching from the character just after the optimal start.
+- use a specialized [[Two Pointers]] approach. Traverse `s` to find a full match of `t` from left to right. Once matched, traverse backwards from the matching end to find the optimal start point. Update the minimum window and resume searching from the character just after the optimal start.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(S * T) in the worst case, but often closer to O(S).
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(S * T) in the worst case, but often closer to O(S).
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -45,6 +40,8 @@ string minWindowSubsequence(string s, string t) {
 - `std::string::substr`
 
 ## Edge Cases
-- Subsequence `t` is not present
+- subsequence `t` is not present
 - `t` is longer than `s`
-- Multiple equally short windows (return the first one)
+- multiple equally short windows (return the first one)
+
+NEXT: [[Index]]

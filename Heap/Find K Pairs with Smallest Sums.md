@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, cpp, pairs, combinations]
-date: 2026-06-30
----
 # Find K Pairs with Smallest Sums
 
 ## Problem Statement
-Given two thoroughly individually sorted distinct integer arrays, optimally dynamically find the precise `K` interconnected element pairs strictly natively possessing the mathematically smallest combinatorially combined sums.
+- given two thoroughly individually sorted distinct integer arrays, optimally dynamically find the precise `K` interconnected element pairs strictly natively possessing the mathematically smallest combinatorially combined sums.
 
 ## Approach / Intuition
-Treat the conceptualized pairs structurally as an aggregated grid matrix natively. Begin strictly by seeding pairs explicitly formed solely by the first core element of `nums1` and directly every initial element of `nums2` inside an isolated Min Heap structurally. After correctly popping the baseline minimum, explicitly push the geometrically adjacent paired sequence generated strictly by advancing the localized array index of strictly `nums1` to aggressively explore the frontier utilizing a dynamic [[Priority Queue]].
+- treat the conceptualized pairs structurally as an aggregated grid matrix natively. Begin strictly by seeding pairs explicitly formed solely by the first core element of `nums1` and directly every initial element of `nums2` inside an isolated Min Heap structurally. After correctly popping the baseline minimum, explicitly push the geometrically adjacent paired sequence generated strictly by advancing the localized array index of strictly `nums1` to aggressively explore the frontier utilizing a dynamic [[Priority Queue]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(K log K)
-- **[[Space Complexity]]:** O(K)
+- **[[time Complexity]]:** O(K log K)
+- **[[space Complexity]]:** O(K)
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k
 ```
 
 ## New Keywords / STL Used
-`decltype`, Lambda comparator syntax
+- `decltype`, Lambda comparator syntax
 
 ## Edge Cases
-Both intrinsic arrays inherently drastically scaling functionally smaller numerically than `K`, absolutely totally entirely empty array constraints natively terminating logically early.
+- both intrinsic arrays inherently drastically scaling functionally smaller numerically than `K`, absolutely totally entirely empty array constraints natively terminating logically early.
+
+NEXT: [[Index]]

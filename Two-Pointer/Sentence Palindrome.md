@@ -1,19 +1,14 @@
----
-type: concept
-tags: [two-pointer, cpp, string]
-date: 2026-06-30
----
 # Valid Palindrome
 
 ## Problem Statement
-Determine if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.
+- determine if a given string is a palindrome, considering only alphanumeric characters and ignoring cases.
 
 ## Approach / Intuition
-Set one pointer at the start of the string and another at the end. Move them towards the center, skipping non-alphanumeric characters. Compare the characters at both pointers (converted to lowercase). If they ever mismatch, it's not a palindrome. This is an application of converging [[Two Pointers]].
+- set one pointer at the start of the string and another at the end. Move them towards the center, skipping non-alphanumeric characters. Compare the characters at both pointers (converted to lowercase). If they ever mismatch, it's not a palindrome. This is an application of converging [[Two Pointers]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -38,7 +33,9 @@ bool isPalindrome(string s) {
 ```
 
 ## New Keywords / STL Used
-`isalnum`, `tolower`
+- `isalnum`, `tolower`
 
 ## Edge Cases
-Empty string, string with only spaces or punctuation, single character.
+- empty string, string with only spaces or punctuation, single character.
+
+NEXT: [[Index]]

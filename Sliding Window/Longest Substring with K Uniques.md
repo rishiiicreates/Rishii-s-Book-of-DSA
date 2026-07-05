@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, string, hash]
-date: 2026-06-30
----
 # Longest Substring with At Most K Distinct Characters
 
 ## Problem Statement
-Given a string, find the length of the longest substring that contains at most `k` distinct characters.
+- given a string, find the length of the longest substring that contains at most `k` distinct characters.
 
 ## Approach / Intuition
-Maintain a frequency map and a counter for distinct characters within a [[Sliding Window]]. Expand the window by advancing `right`. When the distinct character count exceeds `k`, advance `left` and update the frequency map until the distinct count drops back to `k`. Keep track of the maximum window size.
+- maintain a frequency map and a counter for distinct characters within a [[Sliding Window]]. Expand the window by advancing `right`. When the distinct character count exceeds `k`, advance `left` and update the frequency map until the distinct count drops back to `k`. Keep track of the maximum window size.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1) or O(K) for character map
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1) or O(K) for character map
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ int lengthOfLongestSubstringKDistinct(string s, int k) {
 ```
 
 ## New Keywords / STL Used
-`unordered_map::erase`
+- `unordered_map::erase`
 
 ## Edge Cases
-`k = 0`, empty string, `k` greater than string length, string with fewer than `k` distinct characters.
+- `k = 0`, empty string, `k` greater than string length, string with fewer than `k` distinct characters.
+
+NEXT: [[Index]]

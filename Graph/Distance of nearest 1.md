@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, multi-source-bfs, grid]
-date: 2026-06-30
----
 # Distance of nearest 1
 
 ## Problem Statement
-Given a binary grid, find the distance of the nearest 1 for every 0.
+- given a binary grid, find the distance of the nearest 1 for every 0.
 
 ## Approach / Intuition
-Use multi-source [[BFS]]. Enqueue all cells containing 1 initially with a distance of 0. Explore level by level to update the distances of all adjacent 0s.
+- use multi-source [[BFS]]. Enqueue all cells containing 1 initially with a distance of 0. Explore level by level to update the distances of all adjacent 0s.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N \times M)
-- **[[Space Complexity]]:** O(N \times M)
+- **[[time Complexity]]:** O(N \times M)
+- **[[space Complexity]]:** O(N \times M)
 
 ## Sample Code
 ```cpp
@@ -53,7 +48,9 @@ vector<vector<int>> nearest(vector<vector<int>>& grid) {
 ```
 
 ## New Keywords / STL Used
-`queue`, nested `pair`
+- `queue`, nested `pair`
 
 ## Edge Cases
-Grid with all 1s, grid with all 0s, 1x1 grid.
+- grid with all 1s, grid with all 0s, 1x1 grid.
+
+NEXT: [[Index]]

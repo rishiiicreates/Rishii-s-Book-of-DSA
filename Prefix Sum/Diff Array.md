@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, difference-array]
-date: 2026-06-30
----
 # Difference Array
 
 ## Problem Statement
-Given an array initialized to 0, process multiple queries of the form `(L, R, X)` to add value `X` to all elements from index `L` to `R`. After processing all queries, output the updated array.
+- given an array initialized to 0, process multiple queries of the form `(L, R, X)` to add value `X` to all elements from index `L` to `R`. After processing all queries, output the updated array.
 
 ## Approach / Intuition
-Utilize a structural [[Difference Array]] initialized with zeros. For a query bounded by `(L, R, X)`, increment `diff[L]` by `X` and decrement `diff[R+1]` by `X`. Once all queries execute optimally in O(1) time, sweeping a continuous [[Prefix Sum]] across the difference array perfectly reconstitutes the final state.
+- utilize a structural [[Difference Array]] initialized with zeros. For a query bounded by `(L, R, X)`, increment `diff[L]` by `X` and decrement `diff[R+1]` by `X`. Once all queries execute optimally in O(1) time, sweeping a continuous [[Prefix Sum]] across the difference array perfectly reconstitutes the final state.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N + Q)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N + Q)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -36,7 +31,9 @@ vector<int> processQueries(int n, vector<vector<int>>& queries) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Enormous query clusters, overlapping heavy intervals, interval updates aggressively hitting the furthest array boundaries.
+- enormous query clusters, overlapping heavy intervals, interval updates aggressively hitting the furthest array boundaries.
+
+NEXT: [[Index]]

@@ -1,32 +1,25 @@
----
-type: concept
-tags: [binary-tree, bfs, pointer-manipulation, cpp]
-date: 2026-06-30
----
 # Connect Nodes at Same Level
 
 ## Problem Statement
-Given a binary tree where every node possesses an additional auxiliary pointer called `nextRight` (initialized to `nullptr`), mathematically populate all `nextRight` pointers such that they point to the node strictly to their immediate right on the same topological depth level. The `nextRight` pointer of the absolute rightmost node at any level must permanently remain `nullptr`.
+- given a binary tree where every node possesses an additional auxiliary pointer called `nextRight` (initialized to `nullptr`), mathematically populate all `nextRight` pointers such that they point to the node strictly to their immediate right on the same topological depth level. The `nextRight` pointer of the absolute rightmost node at any level must permanently remain `nullptr`.
 
----
 
 ## Approach: Level Order Traversal (BFS)
 
-The requirement explicitly mandates establishing lateral topological relationships across identically indexed depth tiers. This is structurally perfectly aligned with a [[Breadth First Search]] (Level Order Traversal) using a queue.
+- the requirement explicitly mandates establishing lateral topological relationships across identically indexed depth tiers. This is structurally perfectly aligned with a [[Breadth First Search]] (Level Order Traversal) using a queue.
 
-1. **Queue Instantiation:** Initialize a `std::queue<Node*>` and enqueue the `root`.
-2. **Level Boundary Evaluation:** For each discrete level, the mathematical size of the queue represents the exact quantity of nodes occupying that specific level. Let this be `level_size`.
-3. **Lateral Binding:** 
-   - Iterate exactly `level_size` times.
-   - Dequeue a `curr` node.
-   - If this is **not** the absolute last node of the current iterative loop (`i < level_size - 1`), set `curr->nextRight = queue.front()`.
-   - Enqueue the standard topological children (`curr->left` and `curr->right`).
-4. **Sentinel Termination:** The last node inherently defaults to `nullptr` (assuming node constructors initialize `nextRight` properly), satisfying the boundary condition constraint.
+- **queue Instantiation:** Initialize a `std::queue<Node*>` and enqueue the `root`.
+- **level Boundary Evaluation:** For each discrete level, the mathematical size of the queue represents the exact quantity of nodes occupying that specific level. Let this be `level_size`.
+- **lateral Binding:**
+   - iterate exactly `level_size` times.
+   - dequeue a `curr` node.
+   - if this is **not** the absolute last node of the current iterative loop (`i < level_size - 1`), set `curr->nextRight = queue.front()`.
+   - enqueue the standard topological children (`curr->left` and `curr->right`).
+- **sentinel Termination:** The last node inherently defaults to `nullptr` (assuming node constructors initialize `nextRight` properly), satisfying the boundary condition constraint.
 
 ### Optimization (Constant Space)
-If the mathematical constraints demand $O(1)$ space, the algorithm can fundamentally rely on the previously established `nextRight` pointers acting as a custom linked list for the current level, using it to populate the child level directly without a dynamic queue.
+- if the mathematical constraints demand $O(1)$ space, the algorithm can fundamentally rely on the previously established `nextRight` pointers acting as a custom linked list for the current level, using it to populate the child level directly without a dynamic queue.
 
----
 
 ## Code Implementation (Queue Based)
 
@@ -72,8 +65,9 @@ void connect(Node* root) {
 > [!important]
 > Forgetting to cache `level_size` into a static scalar before initiating the `for` loop is a catastrophic logical error. The queue `size()` dynamically alters as children are enqueued, which would completely corrupt the lateral level boundaries.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$. Every node in the binary tree is enqueued precisely once and dequeued precisely once. Link assignments compute in strictly $O(1)$ time.
-- **Space Complexity:** $O(W)$, where $W$ is the maximum width of the binary tree. For a perfectly balanced tree, the deepest level holds $\frac{N}{2}$ nodes, yielding a strict worst-case boundary of $O(N)$ dynamic memory auxiliary overhead.
+- **time Complexity:** $O(N)$. Every node in the binary tree is enqueued precisely once and dequeued precisely once. Link assignments compute in strictly $O(1)$ time.
+- **space Complexity:** $O(W)$, where $W$ is the maximum width of the binary tree. For a perfectly balanced tree, the deepest level holds $\frac{N}{2}$ nodes, yielding a strict worst-case boundary of $O(N)$ dynamic memory auxiliary overhead.
+
+NEXT: [[Index]]

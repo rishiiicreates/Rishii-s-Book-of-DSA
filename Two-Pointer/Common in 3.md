@@ -1,19 +1,14 @@
----
-type: concept
-tags: [two-pointer, cpp, intersection]
-date: 2026-06-30
----
 # Find Common Elements in Three Sorted Arrays
 
 ## Problem Statement
-Given three sorted arrays, find all the common elements across all three arrays.
+- given three sorted arrays, find all the common elements across all three arrays.
 
 ## Approach / Intuition
-Use three pointers, one for each array. Compare the elements at these pointers. If all three are equal, add to the result and advance all pointers. Otherwise, find the array with the smallest current element and advance its pointer. This is an extension of the [[Two Pointers]] intersection logic to three arrays.
+- use three pointers, one for each array. Compare the elements at these pointers. If all three are equal, add to the result and advance all pointers. Otherwise, find the array with the smallest current element and advance its pointer. This is an extension of the [[Two Pointers]] intersection logic to three arrays.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n1 + n2 + n3)
-- **[[Space Complexity]]:** O(1) excluding output space
+- **[[time Complexity]]:** O(n1 + n2 + n3)
+- **[[space Complexity]]:** O(1) excluding output space
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ vector<int> commonElements(const vector<int>& a, const vector<int>& b, const vec
 ```
 
 ## New Keywords / STL Used
-`continue`
+- `continue`
 
 ## Edge Cases
-No common elements, one or more empty arrays, elements appear multiple times but not across all arrays.
+- no common elements, one or more empty arrays, elements appear multiple times but not across all arrays.
+
+NEXT: [[Index]]

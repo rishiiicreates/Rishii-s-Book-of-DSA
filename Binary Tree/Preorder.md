@@ -1,23 +1,17 @@
----
-type: concept
-tags: [tree, binary-tree, dfs, recursion, cpp, math]
-date: 2026-06-30
----
 # Preorder Traversal
 
 ## Mathematical Definition
-**Preorder Traversal** is a mathematically strict Depth-First Search (DFS) taxonomy recursively ordering the spatial evaluation of a binary graph utilizing the sequence:
-1. Algebraically process the absolute Root node $r$ immediately.
-2. Recursively project into the entire left subtree $T_L$.
-3. Recursively project into the entire right subtree $T_R$.
+- **preorder Traversal** is a mathematically strict Depth-First Search (DFS) taxonomy recursively ordering the spatial evaluation of a binary graph utilizing the sequence:
+- algebraically process the absolute Root node $r$ immediately.
+- recursively project into the entire left subtree $T_L$.
+- recursively project into the entire right subtree $T_R$.
 
-This topology forces the structural root to universally precede its spatial children. Mathematically, this mirrors prefix notation structurally (e.g., $+ \ a \ b$).
+- this topology forces the structural root to universally precede its spatial children. Mathematically, this mirrors prefix notation structurally (e.g., $+ \ a \ b$).
 
----
 
 ## Recursive Approach
 
-The recursive implementation theoretically aligns identically with the mathematical axiom.
+- the recursive implementation theoretically aligns identically with the mathematical axiom.
 
 ```cpp
 #include <vector>
@@ -46,11 +40,10 @@ vector<int> preorderTraversal(TreeNode* root) {
 }
 ```
 
----
 
 ## Iterative Approach (Explicit Stack)
 
-To strictly enforce a linear simulation of the recursion, we exploit a standard LIFO `std::stack`. The root is mathematically processed immediately upon extraction. The strict order of pushing is reversed ($T_R$ then $T_L$) to guarantee $T_L$ evaluates chronologically first upon popping.
+- to strictly enforce a linear simulation of the recursion, we exploit a standard LIFO `std::stack`. The root is mathematically processed immediately upon extraction. The strict order of pushing is reversed ($T_R$ then $T_L$) to guarantee $T_L$ evaluates chronologically first upon popping.
 
 ```cpp
 #include <vector>
@@ -84,8 +77,9 @@ vector<int> iterativePreorder(TreeNode* root) {
 > [!important]
 > Reversing the spatial push sequence (`right` then `left`) is mathematically critical. A LIFO structure extracts the strictly newest temporal entry; pushing the left child last forces the left path to be physically processed first, fulfilling the Preorder invariant.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Each distinct geometric node is evaluated dynamically exactly once.
-- **Space Complexity:** $\mathcal{O}(H)$, bounded strictly by the height of the binary graph. Evaluates to $\mathcal{O}(N)$ geometrically in the worst-case configuration (skewed list).
+- **time Complexity:** $\mathcal{O}(N)$. Each distinct geometric node is evaluated dynamically exactly once.
+- **space Complexity:** $\mathcal{O}(H)$, bounded strictly by the height of the binary graph. Evaluates to $\mathcal{O}(N)$ geometrically in the worst-case configuration (skewed list).
+
+NEXT: [[Index]]

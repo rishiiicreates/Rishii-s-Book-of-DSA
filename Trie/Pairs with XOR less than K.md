@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dsa, cpp, trie, bit-manipulation]
-date: 2026-06-30
----
 # Count Pairs With XOR in a Range
 
 ## Problem Statement
-Given an integer array and a boundary limit, count how many pairs have an XOR sum strictly less than a specific value.
+- given an integer array and a boundary limit, count how many pairs have an XOR sum strictly less than a specific value.
 
 ## Approach / Intuition
-Use a binary [[Trie]] where each node maintains a `count` of how many numbers pass through it. For each number $x$ in the array, compute how many previously inserted numbers have an XOR with $x$ that is strictly less than a limit $L$. Traverse the Trie bit by bit. Depending on the bits of $x$ and the limit $L$, either add the entire `count` of a subtree or traverse deeper.
+- use a binary [[Trie]] where each node maintains a `count` of how many numbers pass through it. For each number $x$ in the array, compute how many previously inserted numbers have an XOR with $x$ that is strictly less than a limit $L$. Traverse the Trie bit by bit. Depending on the bits of $x$ and the limit $L$, either add the entire `count` of a subtree or traverse deeper.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \cdot 15)$ (assuming max values fit in 15 bits)
-- **[[Space Complexity]]:** $O(N \cdot 15)$
+- **[[time Complexity]]:** $O(N \cdot 15)$ (assuming max values fit in 15 bits)
+- **[[space Complexity]]:** $O(N \cdot 15)$
 
 ## Sample Code
 ```cpp
@@ -75,7 +70,9 @@ int countPairs(vector<int>& nums, int low, int high) {
 ```
 
 ## New Keywords / STL Used
-Subtree counting
+- subtree counting
 
 ## Edge Cases
-Empty array, small array limits.
+- empty array, small array limits.
+
+NEXT: [[Index]]

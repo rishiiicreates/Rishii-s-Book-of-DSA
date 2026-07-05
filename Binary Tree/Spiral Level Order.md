@@ -1,29 +1,22 @@
----
-type: concept
-tags: [tree, binary-tree, bfs, queue, deque, cpp, math]
-date: 2026-06-30
----
 # Spiral (Zig-Zag) Level Order Traversal
 
 ## Problem Statement
-Mathematically evaluate a Breadth-First Search (BFS) topology across a geometric binary tree structure, executing a strict sequence inversion uniformly alternating its directional spatial progression per depth layer $d$. At $d=1$, traverse left-to-right. At $d=2$, traverse right-to-left. 
+- mathematically evaluate a Breadth-First Search (BFS) topology across a geometric binary tree structure, executing a strict sequence inversion uniformly alternating its directional spatial progression per depth layer $d$. At $d=1$, traverse left-to-right. At $d=2$, traverse right-to-left.
 
----
 
 ## Approach: Alternating Depth Bounds via Deque
 
-While canonical BFS dictates strict FIFO behavior, reversing alternate structural layers requires algorithmic divergence. To strictly maintain $\mathcal{O}(N)$ without invoking external $\mathcal{O}(N)$ `std::reverse` inversions iteratively on every spatial level vector, we substitute the standard FIFO boundary for a Double-Ended Queue (Deque).
+- while canonical BFS dictates strict FIFO behavior, reversing alternate structural layers requires algorithmic divergence. To strictly maintain $\mathcal{O}(N)$ without invoking external $\mathcal{O}(N)$ `std::reverse` inversions iteratively on every spatial level vector, we substitute the standard FIFO boundary for a Double-Ended Queue (Deque).
 
-Algorithm:
-1. Initialize a `std::deque` representing the topological BFS layer.
-2. Track a strict boolean spatial orientation flag `left_to_right = true`.
-3. Geometrically iterate through each contiguous depth boundary $d$.
-4. **Insertion Topology:** Instead of strictly pushing rightward on the evaluated result vector, leverage an internal `deque<int>` (or pre-allocated vector) for the specific layer state.
-   - If `left_to_right == true`: Geometrically append the scalars standardly.
-   - If `left_to_right == false`: Topologically unshift (push to the front) the scalars into the layer bounds.
-5. Invert the logical sequence flag exclusively upon completing spatial boundary $d$.
+- algorithm:
+- initialize a `std::deque` representing the topological BFS layer.
+- track a strict boolean spatial orientation flag `left_to_right = true`.
+- geometrically iterate through each contiguous depth boundary $d$.
+- **insertion Topology:** Instead of strictly pushing rightward on the evaluated result vector, leverage an internal `deque<int>` (or pre-allocated vector) for the specific layer state.
+   - if `left_to_right == true`: Geometrically append the scalars standardly.
+   - if `left_to_right == false`: Topologically unshift (push to the front) the scalars into the layer bounds.
+- invert the logical sequence flag exclusively upon completing spatial boundary $d$.
 
----
 
 ## Code Implementation
 
@@ -79,8 +72,9 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
 > [!important]
 > The temporal `std::queue` directing the topological traversal of children *must remain structurally strictly left-to-right* during the loop. The absolute inversion must exclusively impact the output storage indexing, otherwise topological spatial relations between subsequent layers disintegrate geometrically.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Each internal element traverses the FIFO queue and resolves into a directly bounded vector index exclusively once.
-- **Space Complexity:** $\mathcal{O}(N)$. Bound strictly by the maximum spatial width of the contiguous binary tree level $\approx \frac{N}{2}$.
+- **time Complexity:** $\mathcal{O}(N)$. Each internal element traverses the FIFO queue and resolves into a directly bounded vector index exclusively once.
+- **space Complexity:** $\mathcal{O}(N)$. Bound strictly by the maximum spatial width of the contiguous binary tree level $\approx \frac{N}{2}$.
+
+NEXT: [[Index]]

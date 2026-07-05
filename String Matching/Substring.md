@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching]
-date: 2026-06-30
----
 # Substring
 
 ## Problem Statement
-Find if a string $P$ (pattern) is a substring of string $T$ (text).
+- find if a string $P$ (pattern) is a substring of string $T$ (text).
 
 ## Approach / Intuition
-A naive [[String Matching]] approach compares the pattern against all possible starting positions in the text. We slide the pattern over the text one by one and check for a match.
+- a naive [[String Matching]] approach compares the pattern against all possible starting positions in the text. We slide the pattern over the text one by one and check for a match.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \times M)$
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(N \times M)$
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ int findSubstring(string text, string pattern) {
 ```
 
 ## New Keywords / STL Used
-`std::string`
+- `std::string`
 
 ## Edge Cases
-Empty pattern, empty text, pattern longer than text.
+- empty pattern, empty text, pattern longer than text.
+
+NEXT: [[Index]]

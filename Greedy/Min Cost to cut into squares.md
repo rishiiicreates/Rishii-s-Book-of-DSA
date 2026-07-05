@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, dsa, cpp]
-date: 2026-06-30
----
 # Minimum Cost to Cut a Board into Squares
 
 ## Problem Statement
-Given a board of size M x N and costs associated with making horizontal and vertical cuts, find the minimum total cost to cut the board into single squares. The cost of a cut is its intrinsic cost multiplied by the number of segments it cuts through.
+- given a board of size M x N and costs associated with making horizontal and vertical cuts, find the minimum total cost to cut the board into single squares. The cost of a cut is its intrinsic cost multiplied by the number of segments it cuts through.
 
 ## Approach / Intuition
-We employ a [[Greedy]] strategy. Sort both the horizontal and vertical cut costs in descending order. Always perform the most expensive available cut first. A horizontal cut increases the number of vertical segments, and a vertical cut increases the number of horizontal segments.
+- we employ a [[Greedy]] strategy. Sort both the horizontal and vertical cut costs in descending order. Always perform the most expensive available cut first. A horizontal cut increases the number of vertical segments, and a vertical cut increases the number of horizontal segments.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(M log M + N log N) for sorting the cut costs.
-- **[[Space Complexity]]:** O(1) auxiliary space.
+- **[[time Complexity]]:** O(M log M + N log N) for sorting the cut costs.
+- **[[space Complexity]]:** O(1) auxiliary space.
 
 ## Sample Code
 ```cpp
@@ -55,7 +50,9 @@ long long minCostToCut(std::vector<int>& X, std::vector<int>& Y) {
 ```
 
 ## New Keywords / STL Used
-`std::greater`
+- `std::greater`
 
 ## Edge Cases
-A 1x1 board requires no cuts, completely symmetric costs.
+- a 1x1 board requires no cuts, completely symmetric costs.
+
+NEXT: [[Index]]

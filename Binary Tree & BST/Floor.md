@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, floor]
-date: 2026-06-30
----
 # Floor
 
 ## Problem Statement
-Given a BST and an integer key, find the floor value of the key in the BST. The floor value is the greatest node value smaller than or equal to the key.
+- given a BST and an integer key, find the floor value of the key in the BST. The floor value is the greatest node value smaller than or equal to the key.
 
 ## Approach / Intuition
-We traverse the [[Binary Search Tree]]. If the current node's value equals the key, we found the exact floor. If the current node's value is greater than the key, the floor must be in the left subtree. If the current node's value is less than the key, this node is a potential candidate for the floor. We update our `floor` variable and then move to the right subtree to try and find a larger value that is still $\leq$ the key.
+- we traverse the [[Binary Search Tree]]. If the current node's value equals the key, we found the exact floor. If the current node's value is greater than the key, the floor must be in the left subtree. If the current node's value is less than the key, this node is a potential candidate for the floor. We update our `floor` variable and then move to the right subtree to try and find a larger value that is still $\leq$ the key.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(H)$ where $H$ is the tree height.
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(H)$ where $H$ is the tree height.
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -43,9 +38,11 @@ int floorBST(TreeNode* root, int key) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Key is smaller than all nodes in the BST
-- Key is exactly present in the BST
-- BST is empty
+- key is smaller than all nodes in the BST
+- key is exactly present in the BST
+- bST is empty
+
+NEXT: [[Index]]

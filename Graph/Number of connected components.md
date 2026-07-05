@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, dfs, connected-components]
-date: 2026-06-30
----
 # Number of connected components
 
 ## Problem Statement
-Count the number of disconnected components in an undirected graph.
+- count the number of disconnected components in an undirected graph.
 
 ## Approach / Intuition
-Iterate over all vertices and perform [[DFS]] or [[BFS]] for any unvisited node. Each complete traversal of an unvisited node marks one entire component.
+- iterate over all vertices and perform [[DFS]] or [[BFS]] for any unvisited node. Each complete traversal of an unvisited node marks one entire component.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ int countComponents(int V, vector<vector<int>>& edges) {
 ```
 
 ## New Keywords / STL Used
-`vector`
+- `vector`
 
 ## Edge Cases
-Graph with 0 edges, fully connected graph, graph with multiple disconnected subgraphs.
+- graph with 0 edges, fully connected graph, graph with multiple disconnected subgraphs.
+
+NEXT: [[Index]]

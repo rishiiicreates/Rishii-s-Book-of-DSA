@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, tree-view]
-date: 2026-06-30
----
 # Vertical Order Traversal of a Binary Tree
 
 ## Problem Statement
-Given the root of a binary tree, calculate the vertical order traversal of the binary tree. Nodes at the same horizontal and vertical distance should be sorted by value.
+- given the root of a binary tree, calculate the vertical order traversal of the binary tree. Nodes at the same horizontal and vertical distance should be sorted by value.
 
 ## Approach / Intuition
-Perform a [[Breadth-First Search]] using a queue storing `{node, {vertical_dist, level}}`. Use a nested map structure `map<int, map<int, multiset<int>>>` to automatically sort the elements. The outer map keys are the vertical distances, inner map keys are levels, and the multiset handles sorting of values at the exact same position. Extract values sequentially from this map.
+- perform a [[Breadth-First Search]] using a queue storing `{node, {vertical_dist, level}}`. Use a nested map structure `map<int, map<int, multiset<int>>>` to automatically sort the elements. The outer map keys are the vertical distances, inner map keys are levels, and the multiset handles sorting of values at the exact same position. Extract values sequentially from this map.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N)$ due to multiset and map insertions
-- **[[Space Complexity]]:** $O(N)$ for maps and queue
+- **[[time Complexity]]:** $O(N \log N)$ due to multiset and map insertions
+- **[[space Complexity]]:** $O(N)$ for maps and queue
 
 ## Sample Code
 ```cpp
@@ -66,7 +61,9 @@ vector<vector<int>> verticalTraversal(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-`map`, `multiset`, nested map structures
+- `map`, `multiset`, nested map structures
 
 ## Edge Cases
-Empty tree, multiple nodes mapping to the exact same vertical and horizontal coordinates.
+- empty tree, multiple nodes mapping to the exact same vertical and horizontal coordinates.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, grid_dp]
-date: 2026-06-30
----
 # Minimum cost Path
 
 ## Problem Statement
-Given an $m \times n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path. You can only move either down or right at any point in time.
+- given an $m \times n$ grid filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path. You can only move either down or right at any point in time.
 
 ## Approach / Intuition
-To minimize the path sum to reach cell $(i, j)$, we take the current cell's value and add it to the minimum of the path sums to reach the cell directly above $(i-1, j)$ and the cell to the left $(i, j-1)$. We use [[Dynamic Programming]] and can optimize space to just a 1D array representing the previous row.
+- to minimize the path sum to reach cell $(i, j)$, we take the current cell's value and add it to the minimum of the path sums to reach the cell directly above $(i-1, j)$ and the cell to the left $(i, j-1)$. We use [[Dynamic Programming]] and can optimize space to just a 1D array representing the previous row.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(M \times N)$
-- **[[Space Complexity]]:** $O(N)$ using 1D space optimization.
+- **[[time Complexity]]:** $O(M \times N)$
+- **[[space Complexity]]:** $O(N)$ using 1D space optimization.
 
 ## Sample Code
 ```cpp
@@ -38,7 +33,9 @@ int minPathSum(std::vector<std::vector<int>>& grid) {
 ```
 
 ## New Keywords / STL Used
-`std::min`, `std::vector`
+- `std::min`, `std::vector`
 
 ## Edge Cases
-$1 \times 1$ grid.
+- $1 \times 1$ grid.
+
+NEXT: [[Index]]

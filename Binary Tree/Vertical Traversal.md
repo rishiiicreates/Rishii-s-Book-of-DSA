@@ -1,30 +1,23 @@
----
-type: concept
-tags: [binary-tree, cpp, math, geometry, bst]
-date: 2026-07-01
----
 # Vertical Order Traversal
 
 ## Problem Statement
-Given a Binary Tree topology $T$, construct a geometrically ordered 2D sequence of its node scalars. The mathematical position of a node is defined by an absolute $(X, Y)$ coordinate space:
-- Geometric root is at $(0, 0)$.
-- Left child structurally maps to $(X - 1, Y + 1)$.
-- Right child structurally maps to $(X + 1, Y + 1)$.
+- given a Binary Tree topology $T$, construct a geometrically ordered 2D sequence of its node scalars. The mathematical position of a node is defined by an absolute $(X, Y)$ coordinate space:
+- geometric root is at $(0, 0)$.
+- left child structurally maps to $(X - 1, Y + 1)$.
+- right child structurally maps to $(X + 1, Y + 1)$.
 
-Output the scalars grouped primarily by $X$ coordinate (ascending), and secondarily by $Y$ coordinate (ascending). If multiple vertices occupy the exact same spatial matrix coordinate $(X, Y)$, they must be scalar-sorted ascending.
+- output the scalars grouped primarily by $X$ coordinate (ascending), and secondarily by $Y$ coordinate (ascending). If multiple vertices occupy the exact same spatial matrix coordinate $(X, Y)$, they must be scalar-sorted ascending.
 
----
 
 ## Approach: Cartesian Coordinate Mapping & Multi-Set Geometry
 
-The absolute constraints mathematically mandate a globally sorted 2D mapping topology. 
-We evaluate a BFS traversal (or pre-order DFS) to inject every node into an ordered geometrical state map:
-`map<int, map<int, multiset<int>>>`
-1. The absolute outer `map` strictly sorts the discrete topological columns ($X$-axis).
-2. The nested inner `map` strictly sorts the discrete topological rows ($Y$-axis).
-3. The absolute inner `multiset` handles structural collision clustering, sorting scalar values that share identical $(X, Y)$ geometry automatically.
+- the absolute constraints mathematically mandate a globally sorted 2D mapping topology.
+- we evaluate a BFS traversal (or pre-order DFS) to inject every node into an ordered geometrical state map:
+- `map<int, map<int, multiset<int>>>`
+- the absolute outer `map` strictly sorts the discrete topological columns ($X$-axis).
+- the nested inner `map` strictly sorts the discrete topological rows ($Y$-axis).
+- the absolute inner `multiset` handles structural collision clustering, sorting scalar values that share identical $(X, Y)$ geometry automatically.
 
----
 
 ## Code Implementation
 
@@ -86,11 +79,12 @@ vector<vector<int>> verticalTraversal(TreeNode* root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log N \cdot \log K)$ dominated heavily by dynamic insertion into the generic `std::map` and `std::multiset`.
-- **Space Complexity:** $O(N)$ allocating absolute geometrical mappings for every discrete structural vertex.
+- **time Complexity:** $O(N \log N \cdot \log K)$ dominated heavily by dynamic insertion into the generic `std::map` and `std::multiset`.
+- **space Complexity:** $O(N)$ allocating absolute geometrical mappings for every discrete structural vertex.
 
 > [!important]
 > **BFS vs DFS Spatial Safety:** While both traversals evaluate valid topologies, BFS naturally explores monotonic $Y$ states sequentially, minimizing redundant state clustering. A pure DFS approach operates identically but requires the explicit $Y$-axis map, whereas BFS can sometimes implicitly guarantee $Y$-axis ordering if topological constraints allow skipping the inner map.
+
+NEXT: [[Index]]

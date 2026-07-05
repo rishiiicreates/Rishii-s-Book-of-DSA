@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, string-manipulation]
-date: 2026-06-30
----
 # Count Occurrences of Anagrams
 
 ## Problem Statement
-Given a word and a text, return the count of all anagrams of the word in the text.
+- given a word and a text, return the count of all anagrams of the word in the text.
 
 ## Approach / Intuition
-Maintain a frequency map of the word's characters. Use a fixed-size [[Sliding Window]] of length equal to the word's length over the text. Track the number of characters that fully match their required frequency. As the window slides, add the new character on the right and remove the old character from the left, updating the match count. If all distinct characters match, an anagram is found.
+- maintain a frequency map of the word's characters. Use a fixed-size [[Sliding Window]] of length equal to the word's length over the text. Track the number of characters that fully match their required frequency. As the window slides, add the new character on the right and remove the old character from the left, updating the match count. If all distinct characters match, an anagram is found.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(|text|)$
-- **[[Space Complexity]]:** $O(1)$ (constant size alphabet map)
+- **[[time Complexity]]:** $O(|text|)$
+- **[[space Complexity]]:** $O(1)$ (constant size alphabet map)
 
 ## Sample Code
 ```cpp
@@ -51,7 +46,9 @@ int search(string pat, string txt) {
 ```
 
 ## New Keywords / STL Used
-Fixed-size window tracking
+- fixed-size window tracking
 
 ## Edge Cases
-Pattern length greater than text length, no anagrams exist, string and pattern are identical.
+- pattern length greater than text length, no anagrams exist, string and pattern are identical.
+
+NEXT: [[Index]]

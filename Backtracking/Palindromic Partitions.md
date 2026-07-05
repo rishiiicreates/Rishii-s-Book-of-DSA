@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, string]
-date: 2026-06-30
----
 # Palindromic Partitions
 
 ## Problem Statement
-Given a string, find all possible partitions such that every substring of the partition is a palindrome.
+- given a string, find all possible partitions such that every substring of the partition is a palindrome.
 
 ## Approach / Intuition
-Use [[Backtracking]] to generate partitions. Iterate through the [[String]], slicing prefixes. If a prefix is a palindrome, recursively partition the remaining suffix. Keep track of the current sequence of palindromes, and when the end of the string is reached, add the sequence to the result list.
+- use [[Backtracking]] to generate partitions. Iterate through the [[String]], slicing prefixes. If a prefix is a palindrome, recursively partition the remaining suffix. Keep track of the current sequence of palindromes, and when the end of the string is reached, add the sequence to the result list.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \cdot 2^N)$
-- **[[Space Complexity]]:** $O(N)$ for recursion stack
+- **[[time Complexity]]:** $O(N \cdot 2^N)$
+- **[[space Complexity]]:** $O(N)$ for recursion stack
 
 ## Sample Code
 ```cpp
@@ -53,7 +48,9 @@ vector<vector<string>> partition(string s) {
 ```
 
 ## New Keywords / STL Used
-`pop_back`, `substr`
+- `pop_back`, `substr`
 
 ## Edge Cases
-Empty string, string with all identical characters, string with no palindromic substrings longer than 1.
+- empty string, string with all identical characters, string with no palindromic substrings longer than 1.
+
+NEXT: [[Index]]

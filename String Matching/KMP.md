@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching]
-date: 2026-06-30
----
 # KMP
 
 ## Problem Statement
-Efficiently find all occurrences of a pattern in a text.
+- efficiently find all occurrences of a pattern in a text.
 
 ## Approach / Intuition
-The [[KMP Algorithm]] precomputes a [[Longest Prefix Suffix]] (LPS) array for the pattern. This tells us the maximum length of a matched prefix that is also a suffix, allowing us to skip redundant comparisons when a mismatch occurs.
+- the [[KMP Algorithm]] precomputes a [[Longest Prefix Suffix]] (LPS) array for the pattern. This tells us the maximum length of a matched prefix that is also a suffix, allowing us to skip redundant comparisons when a mismatch occurs.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N + M)$
-- **[[Space Complexity]]:** $O(M)$
+- **[[time Complexity]]:** $O(N + M)$
+- **[[space Complexity]]:** $O(M)$
 
 ## Sample Code
 ```cpp
@@ -55,7 +50,9 @@ vector<int> kmp(string text, string pattern) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Pattern length greater than text length, all identical characters.
+- pattern length greater than text length, all identical characters.
+
+NEXT: [[Index]]

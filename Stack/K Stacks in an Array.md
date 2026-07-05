@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # K Stacks in an Array
 
 ## Problem Statement
-Implement `k` stacks using a single array such that the space is dynamically shared among all the stacks.
+- implement `k` stacks using a single array such that the space is dynamically shared among all the stacks.
 
 ## Approach / Intuition
-We use three arrays: `arr` for storing actual elements, `top` for storing the index of the top element of each [[Stack]], and `next` for linking the elements of the same stack and tracking the next free spot. A variable `freeSpot` points to the first available index. When pushing, we update `next` to point to the old top, and update the new top to the allocated index.
+- we use three arrays: `arr` for storing actual elements, `top` for storing the index of the top element of each [[Stack]], and `next` for linking the elements of the same stack and tracking the next free spot. A variable `freeSpot` points to the first available index. When pushing, we update `next` to point to the old top, and update the new top to the allocated index.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for push and pop operations
-- **[[Space Complexity]]:** O(N + K) where N is array capacity and K is number of stacks
+- **[[time Complexity]]:** O(1) for push and pop operations
+- **[[space Complexity]]:** O(N + K) where N is array capacity and K is number of stacks
 
 ## Sample Code
 ```cpp
@@ -71,7 +66,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`new`, `delete[]`, pointer arithmetic
+- `new`, `delete[]`, pointer arithmetic
 
 ## Edge Cases
-Array becomes full (no free spot), a specific stack is empty and pop is called on it.
+- array becomes full (no free spot), a specific stack is empty and pop is called on it.
+
+NEXT: [[Index]]

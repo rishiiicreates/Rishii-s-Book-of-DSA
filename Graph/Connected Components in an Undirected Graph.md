@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, connected-components]
-date: 2026-06-30
----
 # Connected Components in an Undirected Graph
 
 ## Problem Statement
-Count the number of connected components in an undirected graph given `V` vertices and `E` edges.
+- count the number of connected components in an undirected graph given `V` vertices and `E` edges.
 
 ## Approach / Intuition
-Iterate through all nodes. For every unvisited node, increment the component count and run a [[DFS]] or [[BFS]] to visit all nodes in its component.
+- iterate through all nodes. For every unvisited node, increment the component count and run a [[DFS]] or [[BFS]] to visit all nodes in its component.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -43,7 +38,9 @@ int countComponents(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Fully disconnected graph, complete graph, single node.
+- fully disconnected graph, complete graph, single node.
+
+NEXT: [[Index]]

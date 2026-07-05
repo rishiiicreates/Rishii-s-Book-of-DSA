@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, topological-sort]
-date: 2026-06-30
----
 # Topological Sorting
 
 ## Problem Statement
-Find a linear ordering of vertices such that for every directed edge u -> v, vertex u comes before v in the ordering. Valid only for [[Directed Acyclic Graph]] (DAG).
+- find a linear ordering of vertices such that for every directed edge u -> v, vertex u comes before v in the ordering. Valid only for [[Directed Acyclic Graph]] (DAG).
 
 ## Approach / Intuition
-Use Kahn's Algorithm ([[BFS]] with in-degree array) or [[DFS]] with a [[Stack]]. In DFS, after recursively visiting all neighbors, push the node into a stack.
+- use Kahn's Algorithm ([[BFS]] with in-degree array) or [[DFS]] with a [[Stack]]. In DFS, after recursively visiting all neighbors, push the node into a stack.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -45,7 +40,9 @@ vector<int> topoSort(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::stack`
+- `std::stack`
 
 ## Edge Cases
-Disconnected DAG, single node, graph with cycle (not applicable).
+- disconnected DAG, single node, graph with cycle (not applicable).
+
+NEXT: [[Index]]

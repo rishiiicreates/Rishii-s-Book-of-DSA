@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, dijkstra, grid]
-date: 2026-06-30
----
 # Minimum Cost Path
 
 ## Problem Statement
-Find the minimum cost to reach the bottom-right cell from the top-left cell in a grid, moving in 4 directions, where cell values represent the traversal cost.
+- find the minimum cost to reach the bottom-right cell from the top-left cell in a grid, moving in 4 directions, where cell values represent the traversal cost.
 
 ## Approach / Intuition
-View the grid as a graph where each cell is a vertex and edges exist to 4-directional neighbors. Use [[Dijkstra]] algorithm with a min-heap to find the minimum cost path.
+- view the grid as a graph where each cell is a vertex and edges exist to 4-directional neighbors. Use [[Dijkstra]] algorithm with a min-heap to find the minimum cost path.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^2 \log(N^2))
-- **[[Space Complexity]]:** O(N^2)
+- **[[time Complexity]]:** O(N^2 \log(N^2))
+- **[[space Complexity]]:** O(N^2)
 
 ## Sample Code
 ```cpp
@@ -45,7 +40,9 @@ int minimumCostPath(vector<vector<int>>& grid) {
 ```
 
 ## New Keywords / STL Used
-`priority_queue`, nested `pair`
+- `priority_queue`, nested `pair`
 
 ## Edge Cases
-1x1 grid, grid with uniform costs, path requiring zig-zag traversal.
+- 1x1 grid, grid with uniform costs, path requiring zig-zag traversal.
+
+NEXT: [[Index]]

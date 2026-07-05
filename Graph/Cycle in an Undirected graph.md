@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, cycle-detection]
-date: 2026-06-30
----
 # Cycle in an Undirected Graph
 
 ## Problem Statement
-Detect if an undirected graph contains a cycle.
+- detect if an undirected graph contains a cycle.
 
 ## Approach / Intuition
-Use [[BFS]] or [[DFS]] while keeping track of the parent node. If we visit a node that is already visited and it is not the parent of the current node, a cycle exists.
+- use [[BFS]] or [[DFS]] while keeping track of the parent node. If we visit a node that is already visited and it is not the parent of the current node, a cycle exists.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ bool isCycle(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Forest (multiple components), self-loops, parallel edges.
+- forest (multiple components), self-loops, parallel edges.
+
+NEXT: [[Index]]

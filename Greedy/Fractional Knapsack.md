@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, fractional-knapsack]
-date: 2026-06-30
----
 # Fractional Knapsack
 
 ## Problem Statement
-Given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. We can break items for maximizing the total value.
+- given weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack. We can break items for maximizing the total value.
 
 ## Approach / Intuition
-Calculate the value/weight ratio for each item. Sort the items based on this ratio in descending order. Iteratively pick items with the highest ratio until the knapsack is full. If an item cannot fit completely, take a fraction of it using the [[Greedy Algorithm]].
+- calculate the value/weight ratio for each item. Sort the items based on this ratio in descending order. Iteratively pick items with the highest ratio until the knapsack is full. If an item cannot fit completely, take a fraction of it using the [[Greedy Algorithm]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -50,8 +45,10 @@ double fractionalKnapsack(int W, vector<Item>& items) {
 ```
 
 ## New Keywords / STL Used
-- Custom comparator function for `sort`
+- custom comparator function for `sort`
 
 ## Edge Cases
-- Knapsack capacity 0
-- Single item larger than capacity
+- knapsack capacity 0
+- single item larger than capacity
+
+NEXT: [[Index]]

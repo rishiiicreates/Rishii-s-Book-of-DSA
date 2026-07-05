@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, game-theory]
-date: 2026-06-30
----
 # Optimal Strategy for a Game
 
 ## Problem Statement
-Consider a row of coins. Two players take turns picking a coin from either end. Find the maximum possible value the first player can collect, assuming both players play optimally.
+- consider a row of coins. Two players take turns picking a coin from either end. Find the maximum possible value the first player can collect, assuming both players play optimally.
 
 ## Approach / Intuition
-This requires interval [[Dynamic Programming]]. Let `dp[i][j]` be the max value a player can get from coins `i` to `j`. If we pick coin `i`, the opponent will leave us with `min(dp[i+2][j], dp[i+1][j-1])`. If we pick `j`, the opponent leaves us `min(dp[i+1][j-1], dp[i][j-2])`. Thus, `dp[i][j] = max(arr[i] + min(...), arr[j] + min(...))`.
+- this requires interval [[Dynamic Programming]]. Let `dp[i][j]` be the max value a player can get from coins `i` to `j`. If we pick coin `i`, the opponent will leave us with `min(dp[i+2][j], dp[i+1][j-1])`. If we pick `j`, the opponent leaves us `min(dp[i+1][j-1], dp[i][j-2])`. Thus, `dp[i][j] = max(arr[i] + min(...), arr[j] + min(...))`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^2)
-- **[[Space Complexity]]:** O(N^2)
+- **[[time Complexity]]:** O(N^2)
+- **[[space Complexity]]:** O(N^2)
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ long long maximumAmount(int n, int arr[]) {
 ```
 
 ## New Keywords / STL Used
-`std::max`, `std::min`
+- `std::max`, `std::min`
 
 ## Edge Cases
-Even vs odd number of coins, all coins of same value, array of size 2.
+- even vs odd number of coins, all coins of same value, array of size 2.
+
+NEXT: [[Index]]

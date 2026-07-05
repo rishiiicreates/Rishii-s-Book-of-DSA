@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # The Skyline Problem
 
 ## Problem Statement
-Given the locations and heights of several buildings, return the skyline formed by these buildings collectively.
+- given the locations and heights of several buildings, return the skyline formed by these buildings collectively.
 
 ## Approach / Intuition
-Represent each building as two events: a start event (x, height, entering) and an end event (x, height, leaving). Sort the events primarily by the `x` coordinate. We process the events and maintain the active buildings' heights in a max-[[Heap]] (or a `multiset` allowing lazy deletion / log(N) removal). For each event, if it's a start, add its height. If it's an end, remove its height. After processing all events at a given `x`, if the maximum active height changes from the previous maximum, we record a new key point for the skyline.
+- represent each building as two events: a start event (x, height, entering) and an end event (x, height, leaving). Sort the events primarily by the `x` coordinate. We process the events and maintain the active buildings' heights in a max-[[Heap]] (or a `multiset` allowing lazy deletion / log(N) removal). For each event, if it's a start, add its height. If it's an end, remove its height. After processing all events at a given `x`, if the maximum active height changes from the previous maximum, we record a new key point for the skyline.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N) for sorting and heap/multiset operations.
-- **[[Space Complexity]]:** O(N) to store events and active heights.
+- **[[time Complexity]]:** O(N log N) for sorting and heap/multiset operations.
+- **[[space Complexity]]:** O(N) to store events and active heights.
 
 ## Sample Code
 ```cpp
@@ -57,8 +52,10 @@ vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
 ```
 
 ## New Keywords / STL Used
-`std::multiset`, `rbegin()`
+- `std::multiset`, `rbegin()`
 
 ## Edge Cases
-- Multiple buildings starting and ending at the same coordinates.
-- Buildings of the same height.
+- multiple buildings starting and ending at the same coordinates.
+- buildings of the same height.
+
+NEXT: [[Index]]

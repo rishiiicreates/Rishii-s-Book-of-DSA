@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, trie]
-date: 2026-06-30
----
 # Longest Word With All Prefixes
 
 ## Problem Statement
-Find the longest string in an array such that every prefix of it is also in the array. If there is a tie, return the lexicographically smallest.
+- find the longest string in an array such that every prefix of it is also in the array. If there is a tie, return the lexicographically smallest.
 
 ## Approach / Intuition
-Insert all words into a [[Trie]]. Then, check each word character by character to see if every prefix (node) has its `isEnd` flag set. Keep track of the longest valid word.
+- insert all words into a [[Trie]]. Then, check each word character by character to see if every prefix (node) has its `isEnd` flag set. Keep track of the longest valid word.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\sum L)$ to build and search
-- **[[Space Complexity]]:** $O(\sum L \cdot \Sigma)$
+- **[[time Complexity]]:** $O(\sum L)$ to build and search
+- **[[space Complexity]]:** $O(\sum L \cdot \Sigma)$
 
 ## Sample Code
 ```cpp
@@ -68,7 +63,9 @@ string longestWord(vector<string>& words) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Empty array, no word with all prefixes (returns empty string).
+- empty array, no word with all prefixes (returns empty string).
+
+NEXT: [[Index]]

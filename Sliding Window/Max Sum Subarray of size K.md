@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, max-sum]
-date: 2026-06-30
----
 # Max Sum Subarray of Size K
 
 ## Problem Statement
-Given an array of integers and a number `K`, find the maximum sum of any contiguous subarray of exactly size `K`.
+- given an array of integers and a number `K`, find the maximum sum of any contiguous subarray of exactly size `K`.
 
 ## Approach / Intuition
-Compute the sum of the very first `K` elements. Then, advance the window one element at a time across the array, adding the incoming element and subtracting the outgoing element, continuously tracking the maximum sum observed. This establishes the fundamental fixed-size [[Sliding Window]] pattern.
+- compute the sum of the very first `K` elements. Then, advance the window one element at a time across the array, adding the incoming element and subtracting the outgoing element, continuously tracking the maximum sum observed. This establishes the fundamental fixed-size [[Sliding Window]] pattern.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int maximumSumSubarray(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-`K` greater than array length, array consisting strictly of negative numbers (where maximum sum remains negative).
+- `k` greater than array length, array consisting strictly of negative numbers (where maximum sum remains negative).
+
+NEXT: [[Index]]

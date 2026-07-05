@@ -1,19 +1,14 @@
----
-type: concept
-tags: [bst, cpp]
-date: 2026-06-30
----
 # Largest BST Subtree
 
 ## Problem Statement
-Find the largest subtree in a binary tree that is also a valid [[Binary Search Tree]]. Return its size.
+- find the largest subtree in a binary tree that is also a valid [[Binary Search Tree]]. Return its size.
 
 ## Approach / Intuition
-We can use a [[Postorder Traversal]] to process the children before the parent. A node forms a valid BST if both its left and right subtrees are valid BSTs, and its value strictly falls between the maximum of the left subtree and the minimum of the right subtree. We pass up information about validity, size, min, and max.
+- we can use a [[Postorder Traversal]] to process the children before the parent. A node forms a valid BST if both its left and right subtrees are valid BSTs, and its value strictly falls between the maximum of the left subtree and the minimum of the right subtree. We pass up information about validity, size, min, and max.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the number of nodes.
-- **[[Space Complexity]]:** O(H) for the recursion stack.
+- **[[time Complexity]]:** O(N) where N is the number of nodes.
+- **[[space Complexity]]:** O(H) for the recursion stack.
 
 ## Sample Code
 ```cpp
@@ -56,11 +51,13 @@ public:
 ```
 
 ## New Keywords / STL Used
-- Custom class as return type
+- custom class as return type
 - `std::max`, `std::min`
-- `INT_MAX`, `INT_MIN`
+- `iNT_MAX`, `INT_MIN`
 
 ## Edge Cases
-- Entire tree is a BST.
-- No subtree greater than a single leaf is a BST.
-- Empty tree.
+- entire tree is a BST.
+- no subtree greater than a single leaf is a BST.
+- empty tree.
+
+NEXT: [[Index]]

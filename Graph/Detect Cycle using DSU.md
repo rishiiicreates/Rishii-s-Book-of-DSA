@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, disjoint-set, cycle-detection]
-date: 2026-06-30
----
 # Detect Cycle using DSU
 
 ## Problem Statement
-Determine if an undirected graph contains a cycle.
+- determine if an undirected graph contains a cycle.
 
 ## Approach / Intuition
-Iterate over all edges in the graph. For each edge (u, v), if they already belong to the same component (have the same ultimate parent in the [[Disjoint Set]]), a cycle exists.
+- iterate over all edges in the graph. For each edge (u, v), if they already belong to the same component (have the same ultimate parent in the [[Disjoint Set]]), a cycle exists.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(E \times \alpha(V))
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(E \times \alpha(V))
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -59,7 +54,9 @@ bool detectCycle(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`class`, `vector`
+- `class`, `vector`
 
 ## Edge Cases
-Empty graph, tree (no cycle), multi-graph with parallel edges, self loops.
+- empty graph, tree (no cycle), multi-graph with parallel edges, self loops.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp]
-date: 2026-06-30
----
 # Smallest containing 0, 1 and 2
 
 ## Problem Statement
-Given a string containing only '0', '1', and '2', find the length of the smallest substring that contains all three characters.
+- given a string containing only '0', '1', and '2', find the length of the smallest substring that contains all three characters.
 
 ## Approach / Intuition
-This can be efficiently solved using a [[Sliding Window]] approach. We can simply iterate through the string while keeping track of the most recent indices where '0', '1', and '2' were seen. Whenever we have valid indices for all three characters, the length of the substring ending at the current position is `current_index - minimum_of_the_three_indices + 1`. We take the minimum of these valid lengths across the entire traversal.
+- this can be efficiently solved using a [[Sliding Window]] approach. We can simply iterate through the string while keeping track of the most recent indices where '0', '1', and '2' were seen. Whenever we have valid indices for all three characters, the length of the substring ending at the current position is `current_index - minimum_of_the_three_indices + 1`. We take the minimum of these valid lengths across the entire traversal.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -43,9 +38,11 @@ int smallestSubstring(string S) {
 ```
 
 ## New Keywords / STL Used
-`std::min` with initializer list, `INT_MAX`
+- `std::min` with initializer list, `INT_MAX`
 
 ## Edge Cases
-- String shorter than 3 characters
-- String missing one or more of the required characters
-- Substrings repeating characters multiple times before containing all three
+- string shorter than 3 characters
+- string missing one or more of the required characters
+- substrings repeating characters multiple times before containing all three
+
+NEXT: [[Index]]

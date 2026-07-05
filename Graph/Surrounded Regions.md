@@ -1,28 +1,21 @@
----
-type: concept
-tags: [graph, dfs, bfs, matrix, cpp, boundaries]
-date: 2026-07-01
----
 # Surrounded Regions (Replace O's with X's)
 
 ## Problem Statement
-Given an $M \times N$ spatial matrix grid, structurally mapping characters `'X'` and `'O'`. Mathematically mutate every generic `'O'` that is fully isolated geographically by `'X'` on all 4 directions into `'X'`.
-The strict algebraic law states that any `'O'` structurally bound to the perimeter (the 4 spatial boundaries of the matrix grid) is mathematically invincible to geometric capture. Subsequently, any interior `'O'` contiguous with an invincible perimeter `'O'` is also immune via transitive property inheritance.
+- given an $M \times N$ spatial matrix grid, structurally mapping characters `'X'` and `'O'`. Mathematically mutate every generic `'O'` that is fully isolated geographically by `'X'` on all 4 directions into `'X'`.
+- the strict algebraic law states that any `'O'` structurally bound to the perimeter (the 4 spatial boundaries of the matrix grid) is mathematically invincible to geometric capture. Subsequently, any interior `'O'` contiguous with an invincible perimeter `'O'` is also immune via transitive property inheritance.
 
----
 
 ## Approach: Reverse Propagation Analysis (DFS/BFS)
 
-Structurally iterating the center coordinates and attempting to prove total isolation evaluates to a convoluted logic geometry.
-Instead, we algebraically reverse the topological constraint constraint:
-1. Isolate the mathematical perimeter completely (Row $0$, Row $M-1$, Col $0$, Col $N-1$).
-2. Identify all `'O'` scalars geometrically bound to this absolute boundary.
-3. Utilize DFS (or BFS) localized on these boundary `'O'` nodes to topologically map all internal contiguous `'O'` neighbors, dynamically mutating them to an invincible placeholder state (e.g., `'T'`).
-4. Execute a complete sequential sweep of the $M \times N$ matrix.
-   - Any surviving `'O'` was mathematically isolated and is mutated to `'X'`.
-   - Any placeholder `'T'` is returned to its invincible state `'O'`.
+- structurally iterating the center coordinates and attempting to prove total isolation evaluates to a convoluted logic geometry.
+- instead, we algebraically reverse the topological constraint constraint:
+- isolate the mathematical perimeter completely (Row $0$, Row $M-1$, Col $0$, Col $N-1$).
+- identify all `'O'` scalars geometrically bound to this absolute boundary.
+- utilize DFS (or BFS) localized on these boundary `'O'` nodes to topologically map all internal contiguous `'O'` neighbors, dynamically mutating them to an invincible placeholder state (e.g., `'T'`).
+- execute a complete sequential sweep of the $M \times N$ matrix.
+   - any surviving `'O'` was mathematically isolated and is mutated to `'X'`.
+   - any placeholder `'T'` is returned to its invincible state `'O'`.
 
----
 
 ## Code Implementation
 
@@ -84,11 +77,12 @@ void solve(vector<vector<char>>& board) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(M \times N)$ total boundary constraint. DFS isolates topological components strictly linearly. The initial boundary sweep and the terminal replacement operate at $O(M \times N)$.
-- **Space Complexity:** $O(M \times N)$ bound specifically to the DFS recursive call-stack geometric limits. In strict production matrices, BFS operates with identical mathematical bounds but negates call-stack overflow vulnerabilities.
+- **time Complexity:** $O(M \times N)$ total boundary constraint. DFS isolates topological components strictly linearly. The initial boundary sweep and the terminal replacement operate at $O(M \times N)$.
+- **space Complexity:** $O(M \times N)$ bound specifically to the DFS recursive call-stack geometric limits. In strict production matrices, BFS operates with identical mathematical bounds but negates call-stack overflow vulnerabilities.
 
 > [!important]
 > **State Machine Memory Avoidance:** Utilizing a topological `visited` matrix maps generic graphs structurally, but for strict 2-state mutations (`'X'` and `'O'`), utilizing a third scalar state (`'T'`) directly within the array eliminates auxiliary space allocations dynamically.
+
+NEXT: [[Index]]

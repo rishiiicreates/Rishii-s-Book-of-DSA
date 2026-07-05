@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, dijkstra, shortest-path]
-date: 2026-06-30
----
 # Shortest path with one curved edge in an undirected Graph
 
 ## Problem Statement
-Find the shortest path between two nodes in an undirected graph where you can traverse exactly one alternate "curved" edge instead of a normal edge.
+- find the shortest path between two nodes in an undirected graph where you can traverse exactly one alternate "curved" edge instead of a normal edge.
 
 ## Approach / Intuition
-Run [[Dijkstra]] from the source node to get shortest distances array, and run it again from the destination node to get a second distances array. Iterate over all curved edges and find the minimum total path considering the curved edge in both orientations.
+- run [[Dijkstra]] from the source node to get shortest distances array, and run it again from the destination node to get a second distances array. Iterate over all curved edges and find the minimum total path considering the curved edge in both orientations.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O((V + E) \log V)
-- **[[Space Complexity]]:** O(V + E)
+- **[[time Complexity]]:** O((V + E) \log V)
+- **[[space Complexity]]:** O(V + E)
 
 ## Sample Code
 ```cpp
@@ -56,7 +51,9 @@ int shortestPathWithCurvedEdge(int n, int m, int a, int b, vector<vector<int>>& 
 ```
 
 ## New Keywords / STL Used
-`auto`, lambda functions, `min` with initializer list
+- `auto`, lambda functions, `min` with initializer list
 
 ## Edge Cases
-No curved edges provided, using no curved edges is optimal, source and destination are the same.
+- no curved edges provided, using no curved edges is optimal, source and destination are the same.
+
+NEXT: [[Index]]

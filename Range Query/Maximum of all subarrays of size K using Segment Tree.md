@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query, segment_tree]
-date: 2026-06-30
----
 # Maximum of all subarrays of size K using Segment Tree
 
 ## Problem Statement
-Given an array and an integer $K$, find the maximum for each and every contiguous subarray of size $K$.
+- given an array and an integer $K$, find the maximum for each and every contiguous subarray of size $K$.
 
 ## Approach / Intuition
-We can build a [[Segment Tree]] where each node stores the maximum of its range. Then, we query the maximum in the range $[i, i + K - 1]$ for all $i$ from $0$ to $N - K$. Alternatively, a Sliding Window approach is more optimal, but a Segment tree works in $O(N \log N)$.
+- we can build a [[Segment Tree]] where each node stores the maximum of its range. Then, we query the maximum in the range $[i, i + K - 1]$ for all $i$ from $0$ to $N - K$. Alternatively, a Sliding Window approach is more optimal, but a Segment tree works in $O(N \log N)$.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N \log N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -71,7 +66,9 @@ vector<int> maxSlidingWindow(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-`std::max`
+- `std::max`
 
 ## Edge Cases
-$K$ equals array size, $K = 1$.
+- $k$ equals array size, $K = 1$.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, pointer-manipulation]
-date: 2026-06-30
----
 # Reverse a Doubly Linked List
 
 ## Problem Statement
-Given the head of a doubly linked list, reverse the list by updating the `prev` and `next` pointers.
+- given the head of a doubly linked list, reverse the list by updating the `prev` and `next` pointers.
 
 ## Approach / Intuition
-Iterate through the [[Doubly Linked List]]. For each node, swap its `prev` and `next` pointers. Continue traversing using what is now the `prev` pointer (since it holds the original next node). Return the last non-null node encountered as the new head.
+- iterate through the [[Doubly Linked List]]. For each node, swap its `prev` and `next` pointers. Continue traversing using what is now the `prev` pointer (since it holds the original next node). Return the last non-null node encountered as the new head.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ DoublyNode* reverseDoublyList(DoublyNode* head) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-Empty list, single node list.
+- empty list, single node list.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [bst, cpp]
-date: 2026-06-30
----
 # Merge two BSTs
 
 ## Problem Statement
-Merge two given [[Binary Search Tree]]s into a single sorted list or a balanced BST.
+- merge two given [[Binary Search Tree]]s into a single sorted list or a balanced BST.
 
 ## Approach / Intuition
-Perform an [[Inorder Traversal]] on both trees to extract their elements into two sorted arrays. Then, use the [[Merge Sort]] logic to combine the two sorted arrays into one. Finally, build a balanced BST from the merged sorted array, or simply return the sorted elements as required.
+- perform an [[Inorder Traversal]] on both trees to extract their elements into two sorted arrays. Then, use the [[Merge Sort]] logic to combine the two sorted arrays into one. Finally, build a balanced BST from the merged sorted array, or simply return the sorted elements as required.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(M + N) where M and N are the number of nodes in the two trees.
-- **[[Space Complexity]]:** O(M + N) to store the inorder traversals and the merged array.
+- **[[time Complexity]]:** O(M + N) where M and N are the number of nodes in the two trees.
+- **[[space Complexity]]:** O(M + N) to store the inorder traversals and the merged array.
 
 ## Sample Code
 ```cpp
@@ -53,6 +48,8 @@ public:
 - `push_back`
 
 ## Edge Cases
-- One or both trees are empty.
-- All elements of one tree are smaller or larger than the other.
-- Trees have duplicate elements.
+- one or both trees are empty.
+- all elements of one tree are smaller or larger than the other.
+- trees have duplicate elements.
+
+NEXT: [[Index]]

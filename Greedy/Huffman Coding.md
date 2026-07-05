@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, huffman-coding]
-date: 2026-06-30
----
 # Huffman Coding
 
 ## Problem Statement
-Given a set of characters and their frequencies, generate a prefix-free binary code for each character that minimizes the total encoded length of the message.
+- given a set of characters and their frequencies, generate a prefix-free binary code for each character that minimizes the total encoded length of the message.
 
 ## Approach / Intuition
-Build a Huffman tree using a [[Priority Queue]] (min-heap). Extract the two nodes with the lowest frequencies, create a new internal node with a frequency equal to their sum, and push it back. Repeat until one node remains, which becomes the root. This is a classic [[Greedy Algorithm]].
+- build a Huffman tree using a [[Priority Queue]] (min-heap). Extract the two nodes with the lowest frequencies, create a new internal node with a frequency equal to their sum, and push it back. Repeat until one node remains, which becomes the root. This is a classic [[Greedy Algorithm]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -57,5 +52,7 @@ Node* buildHuffmanTree(vector<char>& chars, vector<unsigned>& freqs) {
 - `priority_queue`, custom struct functor for comparison
 
 ## Edge Cases
-- Only one character provided
-- All characters have the same frequency
+- only one character provided
+- all characters have the same frequency
+
+NEXT: [[Index]]

@@ -1,33 +1,26 @@
----
-type: concept
-tags: [searching, binary search, cpp, math]
-date: 2026-06-30
----
 # Koko Eating Banana
 
 ## Problem Statement
-Koko loves to eat bananas. There are $N$ piles of bananas, where the $i$-th pile has $P[i]$ bananas. The guards are gone for $H$ hours. Koko can decide her bananas-per-hour eating speed $K$. Each hour, she chooses a pile and eats $K$ bananas from it. If the pile has less than $K$ bananas, she eats all of them and will not eat any more bananas during this hour.
+- koko loves to eat bananas. There are $N$ piles of bananas, where the $i$-th pile has $P[i]$ bananas. The guards are gone for $H$ hours. Koko can decide her bananas-per-hour eating speed $K$. Each hour, she chooses a pile and eats $K$ bananas from it. If the pile has less than $K$ bananas, she eats all of them and will not eat any more bananas during this hour.
 
-Find the minimum integer eating speed $K$ such that she can eat all the bananas within $H$ hours.
+- find the minimum integer eating speed $K$ such that she can eat all the bananas within $H$ hours.
 
-*Example:* $P = [3, 6, 7, 11]$, $H = 8$
-*Result:* $4$
+- *example:* $P = [3, 6, 7, 11]$, $H = 8$
+- *result:* $4$
 
----
 
 ## Approach: Binary Search on Answer Space
 
-The eating speed $K$ must lie in a finite range:
-- **Minimum Speed ($L$):** $1$ (She must eat at least 1 banana per hour).
-- **Maximum Speed ($R$):** $\max(P)$ (Eating faster than the largest pile does not save any more time because each pile takes at least 1 hour).
+- the eating speed $K$ must lie in a finite range:
+- **minimum Speed ($L$):** $1$ (She must eat at least 1 banana per hour).
+- **maximum Speed ($R$):** $\max(P)$ (Eating faster than the largest pile does not save any more time because each pile takes at least 1 hour).
 
-The time taken $T(K)$ to eat all bananas at speed $K$ is a monotonic decreasing function. Thus, we can apply [[Binary Search]].
-1. Choose a candidate speed `mid`.
-2. Compute the total hours required: $T(\text{mid}) = \sum_{i} \lceil P[i] / \text{mid} \rceil$.
-3. If $T(\text{mid}) \le H$, it means Koko eats fast enough. We try to slow her down to find the minimum valid speed: `high = mid - 1`.
-4. If $T(\text{mid}) > H$, Koko is eating too slowly. We must increase her speed: `low = mid + 1`.
+- the time taken $T(K)$ to eat all bananas at speed $K$ is a monotonic decreasing function. Thus, we can apply [[Binary Search]].
+- choose a candidate speed `mid`.
+- compute the total hours required: $T(\text{mid}) = \sum_{i} \lceil P[i] / \text{mid} \rceil$.
+- if $T(\text{mid}) \le H$, it means Koko eats fast enough. We try to slow her down to find the minimum valid speed: `high = mid - 1`.
+- if $T(\text{mid}) > H$, Koko is eating too slowly. We must increase her speed: `low = mid + 1`.
 
----
 
 ## Code Implementation
 
@@ -73,8 +66,9 @@ int minEatingSpeed(const vector<int>& piles, int h) {
 > [!warning]
 > The `hours` calculation can exceed the 32-bit integer limit if the piles are very large and the speed is small. Always use `long long` for the accumulator.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log_2(\max(P)))$. The search space is bounded by the maximum element, and each check takes $O(N)$ time.
-- **Space Complexity:** $O(1)$. Auxiliary space is strictly constant.
+- **time Complexity:** $O(N \log_2(\max(P)))$. The search space is bounded by the maximum element, and each check takes $O(N)$ time.
+- **space Complexity:** $O(1)$. Auxiliary space is strictly constant.
+
+NEXT: [[Index]]

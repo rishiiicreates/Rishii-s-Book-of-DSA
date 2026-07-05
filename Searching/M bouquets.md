@@ -1,33 +1,26 @@
----
-type: concept
-tags: [searching, binary-search, cpp, array, math]
-date: 2026-06-30
----
 # Minimum Days to Make M Bouquets
 
 ## Problem Statement
-Given an integer array `bloomDay` where `bloomDay[i]` represents the day the $i$-th flower will bloom. 
-You need to make $M$ bouquets. To make exactly one bouquet, you need to use $K$ **adjacent** flowers from the garden.
-Return the minimum number of days you need to wait to be able to make $M$ bouquets from the garden. If it is impossible, return `-1`.
+- given an integer array `bloomDay` where `bloomDay[i]` represents the day the $i$-th flower will bloom.
+- you need to make $M$ bouquets. To make exactly one bouquet, you need to use $K$ **adjacent** flowers from the garden.
+- return the minimum number of days you need to wait to be able to make $M$ bouquets from the garden. If it is impossible, return `-1`.
 
----
 
 ## Approach: Parametric Binary Search (Minimizing the Maximum)
 
-The core insight is that the feasibility function $f(d)$—which returns `true` if $M$ bouquets can be made by day $d$, and `false` otherwise—is strictly monotonically increasing.
-If it is possible to make $M$ bouquets on day $d$, it is mathematically guaranteed to be possible on day $d+1$. This monotonic boolean boundary $F, F, \dots, F, T, T, \dots, T$ perfectly permits binary search on the answer space.
+- the core insight is that the feasibility function $f(d)$—which returns `true` if $M$ bouquets can be made by day $d$, and `false` otherwise—is strictly monotonically increasing.
+- if it is possible to make $M$ bouquets on day $d$, it is mathematically guaranteed to be possible on day $d+1$. This monotonic boolean boundary $F, F, \dots, F, T, T, \dots, T$ perfectly permits binary search on the answer space.
 
-Algorithm:
-1. The lower bound `low` is the minimum day any flower blooms: $\min(\text{bloomDay})$.
-2. The upper bound `high` is the maximum day any flower blooms: $\max(\text{bloomDay})$.
-3. For a candidate day `mid`, simulate the bouquet creation:
-   - Traverse `bloomDay`. If `bloomDay[i] <= mid`, increment an `adjacent` counter.
-   - If `adjacent == K`, a bouquet is successfully formed: increment `bouquets` and reset `adjacent = 0`.
-   - If `bloomDay[i] > mid`, the adjacency chain is broken: reset `adjacent = 0`.
-4. If `bouquets >= M`, `mid` is a feasible answer, but we want the **minimum** day, so we search the left space: `high = mid - 1`.
-5. Otherwise, `mid` is infeasible, we search the right space: `low = mid + 1`.
+- algorithm:
+- the lower bound `low` is the minimum day any flower blooms: $\min(\text{bloomDay})$.
+- the upper bound `high` is the maximum day any flower blooms: $\max(\text{bloomDay})$.
+- for a candidate day `mid`, simulate the bouquet creation:
+   - traverse `bloomDay`. If `bloomDay[i] <= mid`, increment an `adjacent` counter.
+   - if `adjacent == K`, a bouquet is successfully formed: increment `bouquets` and reset `adjacent = 0`.
+   - if `bloomDay[i] > mid`, the adjacency chain is broken: reset `adjacent = 0`.
+- if `bouquets >= M`, `mid` is a feasible answer, but we want the **minimum** day, so we search the left space: `high = mid - 1`.
+- otherwise, `mid` is infeasible, we search the right space: `low = mid + 1`.
 
----
 
 ## Code Implementation
 
@@ -82,8 +75,9 @@ int minDays(const vector<int>& bloomDay, int m, int k) {
 > [!important]
 > The multiplication $M \times K$ can easily exceed the 32-bit signed integer limit if both are large. You **must** cast them to `long long` before multiplication to prevent integer overflow in the impossibility check.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N \log(\max(D) - \min(D)))$, where $N$ is the number of flowers and $D$ is the bloomDay array. The search space is bounded by the difference between the maximum and minimum bloom days.
-- **Space Complexity:** $\mathcal{O}(1)$. The algorithm evaluates the array strictly in-place.
+- **time Complexity:** $\mathcal{O}(N \log(\max(D) - \min(D)))$, where $N$ is the number of flowers and $D$ is the bloomDay array. The search space is bounded by the difference between the maximum and minimum bloom days.
+- **space Complexity:** $\mathcal{O}(1)$. The algorithm evaluates the array strictly in-place.
+
+NEXT: [[Index]]

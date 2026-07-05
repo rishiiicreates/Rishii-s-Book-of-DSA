@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, string, dynamic-programming]
-date: 2026-06-30
----
 # Word Break
 
 ## Problem Statement
-Given a string and a dictionary of words, find all possible ways to break the string into valid dictionary words.
+- given a string and a dictionary of words, find all possible ways to break the string into valid dictionary words.
 
 ## Approach / Intuition
-Use [[Backtracking]] to try splitting the [[String]] at every possible prefix that exists in the dictionary. Upon finding a valid prefix, recurse on the suffix. To optimize and avoid redundant computations, we can combine this with memoization (part of [[Dynamic Programming]]).
+- use [[Backtracking]] to try splitting the [[String]] at every possible prefix that exists in the dictionary. Upon finding a valid prefix, recurse on the suffix. To optimize and avoid redundant computations, we can combine this with memoization (part of [[Dynamic Programming]]).
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(2^N)$ in worst case for all paths
-- **[[Space Complexity]]:** $O(N)$ for recursion stack (plus output storage)
+- **[[time Complexity]]:** $O(2^N)$ in worst case for all paths
+- **[[space Complexity]]:** $O(N)$ for recursion stack (plus output storage)
 
 ## Sample Code
 ```cpp
@@ -45,7 +40,9 @@ vector<string> wordBreak(int n, vector<string>& dict, string s) {
 ```
 
 ## New Keywords / STL Used
-`unordered_set`, `substr`
+- `unordered_set`, `substr`
 
 ## Edge Cases
-No valid breakdown exists, string matches exactly one word in the dictionary, multiple overlapping dictionary words.
+- no valid breakdown exists, string matches exactly one word in the dictionary, multiple overlapping dictionary words.
+
+NEXT: [[Index]]

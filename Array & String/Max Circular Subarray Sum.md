@@ -1,28 +1,21 @@
----
-type: concept
-tags: [array, string, cpp, subarray]
-date: 2026-06-30
----
 # Max Circular Subarray Sum
 
 ## Problem Statement
-Given a circular integer array $A$ of size $N$, find the maximum possible sum of a non-empty contiguous subarray. A circular array means the end of the array connects to the beginning.
+- given a circular integer array $A$ of size $N$, find the maximum possible sum of a non-empty contiguous subarray. A circular array means the end of the array connects to the beginning.
 
-*Example:* $A = [5, -3, 5]$
-*Result:* $10$ (Subarray $[5, 5]$ wrapping around)
+- *example:* $A = [5, -3, 5]$
+- *result:* $10$ (Subarray $[5, 5]$ wrapping around)
 
----
 
 ## Approach: Max / Min Kadane's
 
-The maximum subarray sum in a circular array can take two forms:
-1. **Linear Form:** The subarray does not wrap around. The answer is just the standard result from [[Kadane's Algorithm]].
-2. **Circular Form:** The subarray wraps around the edges. This means the elements *excluded* from our sum form a standard, non-wrapping contiguous subarray in the middle. To maximize the wrapping sum, we must minimize the excluded middle sum.
+- the maximum subarray sum in a circular array can take two forms:
+- **linear Form:** The subarray does not wrap around. The answer is just the standard result from [[Kadane's Algorithm]].
+- **circular Form:** The subarray wraps around the edges. This means the elements *excluded* from our sum form a standard, non-wrapping contiguous subarray in the middle. To maximize the wrapping sum, we must minimize the excluded middle sum.
 
-Therefore, `Circular Max = Total Array Sum - Minimum Subarray Sum`.
-We run Kadane's Algorithm for both maximum and minimum simultaneously.
+- therefore, `Circular Max = Total Array Sum - Minimum Subarray Sum`.
+- we run Kadane's Algorithm for both maximum and minimum simultaneously.
 
----
 
 ## Code Implementation
 
@@ -60,8 +53,9 @@ int maxSubarraySumCircular(const vector<int>& nums) {
 > [!warning]
 > The edge case where **all** elements are negative is critical. In this scenario, `total_sum == min_sum`. Thus, `total_sum - min_sum = 0`. But a subarray cannot be empty! So if `max_sum < 0`, we must return `max_sum` directly instead of returning $0$.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ where $N$ is the number of elements. We compute everything in a single pass.
-- **Space Complexity:** $O(1)$. No auxiliary structures are used.
+- **time Complexity:** $O(N)$ where $N$ is the number of elements. We compute everything in a single pass.
+- **space Complexity:** $O(1)$. No auxiliary structures are used.
+
+NEXT: [[Index]]

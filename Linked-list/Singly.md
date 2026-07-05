@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, traversal]
-date: 2026-06-30
----
 # Singly Linked List
 
 ## Problem Statement
-Implement basic operations (traversal, insertion, deletion) on a singly linked list where nodes only point forward to the next node.
+- implement basic operations (traversal, insertion, deletion) on a singly linked list where nodes only point forward to the next node.
 
 ## Approach / Intuition
-Perform a standard [[Linked List]] traversal using a `while` loop, checking for `node != nullptr`. To insert or delete, you typically need a reference to the previous node to adjust the `next` pointers properly, making careful [[Pointer Manipulation]] essential.
+- perform a standard [[Linked List]] traversal using a `while` loop, checking for `node != nullptr`. To insert or delete, you typically need a reference to the previous node to adjust the `next` pointers properly, making careful [[Pointer Manipulation]] essential.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n) for traversal, O(1) for insertion/deletion if pointer to previous node is known
-- **[[Space Complexity]]:** O(1) auxiliary space
+- **[[time Complexity]]:** O(n) for traversal, O(1) for insertion/deletion if pointer to previous node is known
+- **[[space Complexity]]:** O(1) auxiliary space
 
 ## Sample Code
 ```cpp
@@ -32,7 +27,9 @@ ListNode* insertAtHead(ListNode* head, int val) {
 ```
 
 ## New Keywords / STL Used
-`new`
+- `new`
 
 ## Edge Cases
-Inserting into an empty list, deleting the head node, deleting the tail node.
+- inserting into an empty list, deleting the head node, deleting the tail node.
+
+NEXT: [[Index]]

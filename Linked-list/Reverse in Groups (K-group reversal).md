@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, pointer-manipulation]
-date: 2026-06-30
----
 # Reverse Nodes in k-Group
 
 ## Problem Statement
-Given the head of a linked list, reverse the nodes of the list `k` at a time, and return the modified list. If the number of nodes is not a multiple of `k` then left-out nodes in the end should remain as it is.
+- given the head of a linked list, reverse the nodes of the list `k` at a time, and return the modified list. If the number of nodes is not a multiple of `k` then left-out nodes in the end should remain as it is.
 
 ## Approach / Intuition
-First, count the total nodes to know how many full groups of `k` exist. Use a dummy node to ease head manipulation. For each group, use standard [[Pointer Manipulation]] to reverse `k` nodes, carefully re-linking the ends of the reversed segment to the previous and next parts of the list.
+- first, count the total nodes to know how many full groups of `k` exist. Use a dummy node to ease head manipulation. For each group, use standard [[Pointer Manipulation]] to reverse `k` nodes, carefully re-linking the ends of the reversed segment to the previous and next parts of the list.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ ListNode* reverseKGroup(ListNode* head, int k) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-`k=1`, `k` greater than list length, list length is a multiple of `k`, empty list.
+- `k=1`, `k` greater than list length, list length is a multiple of `k`, empty list.
+
+NEXT: [[Index]]

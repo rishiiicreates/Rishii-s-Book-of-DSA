@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, rotate]
-date: 2026-06-30
----
 # Rotate List
 
 ## Problem Statement
-Given the `head` of a linked list, rotate the list to the right by `k` places.
+- given the `head` of a linked list, rotate the list to the right by `k` places.
 
 ## Approach / Intuition
-First, traverse the list to find its full length and connect the tail to the head, temporarily forming a circular linked list. Calculate the effective rotations using `k % length`. Locate the new tail at position `length - k - 1`, break the loop, and set its adjacent node as the new head. This utilizes basic but robust [[List Traversal]].
+- first, traverse the list to find its full length and connect the tail to the head, temporarily forming a circular linked list. Calculate the effective rotations using `k % length`. Locate the new tail at position `length - k - 1`, break the loop, and set its adjacent node as the new head. This utilizes basic but robust [[List Traversal]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -36,7 +31,9 @@ ListNode* rotateRight(ListNode* head, int k) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Empty list, single node list, `k` strictly matching a multiple of the list length.
+- empty list, single node list, `k` strictly matching a multiple of the list length.
+
+NEXT: [[Index]]

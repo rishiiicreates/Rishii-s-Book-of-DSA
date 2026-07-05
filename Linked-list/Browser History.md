@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, design]
-date: 2026-06-30
----
 # Design Browser History
 
 ## Problem Statement
-Design a browser history system that allows you to cleanly visit URLs, go back, and go forward by a specific number of steps.
+- design a browser history system that allows you to cleanly visit URLs, go back, and go forward by a specific number of steps.
 
 ## Approach / Intuition
-Implement a doubly linked list where each structural node strictly stores a URL. Maintain a pointer to the active page. Moving backward and forward merely requires traversing the `prev` and `next` pointers. Visiting a new page automatically clears all forward history safely, emphasizing effective [[Doubly Linked List]] manipulation.
+- implement a doubly linked list where each structural node strictly stores a URL. Maintain a pointer to the active page. Moving backward and forward merely requires traversing the `prev` and `next` pointers. Visiting a new page automatically clears all forward history safely, emphasizing effective [[Doubly Linked List]] manipulation.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for visit, O(Steps) for back/forward
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(1) for visit, O(Steps) for back/forward
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -51,7 +46,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`struct`
+- `struct`
 
 ## Edge Cases
-Stepping back significantly further than the historical capacity, stepping forward past the most recent page boundary.
+- stepping back significantly further than the historical capacity, stepping forward past the most recent page boundary.
+
+NEXT: [[Index]]

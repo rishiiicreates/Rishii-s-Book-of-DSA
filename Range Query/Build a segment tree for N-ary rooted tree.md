@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query, tree]
-date: 2026-06-30
----
 # Build a segment tree for N-ary rooted tree
 
 ## Problem Statement
-Perform range queries and updates on subtrees or paths in an N-ary rooted tree.
+- perform range queries and updates on subtrees or paths in an N-ary rooted tree.
 
 ## Approach / Intuition
-By using an [[Euler Tour]] (or DFS flattening), we can map the nodes of the tree to a 1D array where a subtree corresponds to a contiguous subarray. Then, we can use a standard [[Segment Tree]] over this flattened array.
+- by using an [[Euler Tour]] (or DFS flattening), we can map the nodes of the tree to a 1D array where a subtree corresponds to a contiguous subarray. Then, we can use a standard [[Segment Tree]] over this flattened array.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ for Euler tour, $O(\log N)$ for queries
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$ for Euler tour, $O(\log N)$ for queries
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -52,7 +47,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::pair`
+- `std::pair`
 
 ## Edge Cases
-Leaf nodes, skewed tree (line graph), tree with only one node.
+- leaf nodes, skewed tree (line graph), tree with only one node.
+
+NEXT: [[Index]]

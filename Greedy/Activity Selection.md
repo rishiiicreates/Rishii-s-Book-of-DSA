@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, activity-selection]
-date: 2026-06-30
----
 # Activity Selection
 
 ## Problem Statement
-Given N activities with their start and finish times, select the maximum number of activities that can be performed by a single person, assuming only one activity can be worked on at a time.
+- given N activities with their start and finish times, select the maximum number of activities that can be performed by a single person, assuming only one activity can be worked on at a time.
 
 ## Approach / Intuition
-Sort the activities based on their finish times in ascending order. Pick the first activity and then iterate through the rest. If an activity starts after or at the same time the previously selected activity finishes, select it. This [[Greedy Algorithm]] ensures maximum activities are chosen.
+- sort the activities based on their finish times in ascending order. Pick the first activity and then iterate through the rest. If an activity starts after or at the same time the previously selected activity finishes, select it. This [[Greedy Algorithm]] ensures maximum activities are chosen.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(N) for storing pairs
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(N) for storing pairs
 
 ## Sample Code
 ```cpp
@@ -45,8 +40,10 @@ int maxActivities(vector<Activity>& activities) {
 ```
 
 ## New Keywords / STL Used
-- Custom comparator, struct
+- custom comparator, struct
 
 ## Edge Cases
-- All activities overlap
-- No activities overlap
+- all activities overlap
+- no activities overlap
+
+NEXT: [[Index]]

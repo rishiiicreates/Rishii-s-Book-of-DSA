@@ -1,29 +1,22 @@
----
-type: concept
-tags: [array, cpp, two-pointers, math]
-date: 2026-06-30
----
 # Rotate Array
 
 ## Problem Statement
-Given an integer array `nums`, rotate the array to the right by `k` steps, where $k \ge 0$. 
-This means the element at index $i$ moves to $(i + k) \pmod N$, where $N$ is the size of the array.
+- given an integer array `nums`, rotate the array to the right by `k` steps, where $k \ge 0$.
+- this means the element at index $i$ moves to $(i + k) \pmod N$, where $N$ is the size of the array.
 
----
 
 ## Approach: Block Reversal Strategy
 
-The naive approach involves shifting the elements one by one $k$ times, which takes $\mathcal{O}(N \times k)$ time. An intermediate approach uses an extra array of size $N$, taking $\mathcal{O}(N)$ time and $\mathcal{O}(N)$ space.
+- the naive approach involves shifting the elements one by one $k$ times, which takes $\mathcal{O}(N \times k)$ time. An intermediate approach uses an extra array of size $N$, taking $\mathcal{O}(N)$ time and $\mathcal{O}(N)$ space.
 
-The **Block Reversal Strategy** relies on mathematical properties of array indices. Since rotating by $k$ when $k \ge N$ is equivalent to rotating by $k \pmod N$, we first effectively reduce $k$.
-The strategy requires three in-place reversals:
-1. **Reverse the entire array:** This moves the last $k$ elements to the front, but their internal order is backwards.
-2. **Reverse the first $k$ elements:** This restores the original internal order of the chunk that wrapped around.
-3. **Reverse the remaining $N - k$ elements:** This restores the internal order of the rest of the array.
+- the **Block Reversal Strategy** relies on mathematical properties of array indices. Since rotating by $k$ when $k \ge N$ is equivalent to rotating by $k \pmod N$, we first effectively reduce $k$.
+- the strategy requires three in-place reversals:
+- **reverse the entire array:** This moves the last $k$ elements to the front, but their internal order is backwards.
+- **reverse the first $k$ elements:** This restores the original internal order of the chunk that wrapped around.
+- **reverse the remaining $N - k$ elements:** This restores the internal order of the rest of the array.
 
-This powerful mathematical property transforms the elements into their exactly desired rotated positions through simple $\mathcal{O}(1)$ space swaps.
+- this powerful mathematical property transforms the elements into their exactly desired rotated positions through simple $\mathcal{O}(1)$ space swaps.
 
----
 
 ## Code Implementation
 
@@ -54,8 +47,9 @@ void rotateArray(vector<int>& arr, int k) {
 > [!tip]
 > `std::reverse` from `<algorithm>` provides an optimized in-place reversal in C++. Under the hood, it performs a classic two-pointer swap from the outside towards the center.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. The first reverse takes $\mathcal{O}(N/2)$ swaps. The subsequent two take $\mathcal{O}(k/2)$ and $\mathcal{O}((N-k)/2)$ swaps respectively. Total operations scale linearly with $N$.
-- **Space Complexity:** $\mathcal{O}(1)$. All operations are done in-place without utilizing any auxiliary scaling memory.
+- **time Complexity:** $\mathcal{O}(N)$. The first reverse takes $\mathcal{O}(N/2)$ swaps. The subsequent two take $\mathcal{O}(k/2)$ and $\mathcal{O}((N-k)/2)$ swaps respectively. Total operations scale linearly with $N$.
+- **space Complexity:** $\mathcal{O}(1)$. All operations are done in-place without utilizing any auxiliary scaling memory.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query, bit_manipulation]
-date: 2026-06-30
----
 # XOR of a given range
 
 ## Problem Statement
-Find the bitwise XOR of elements in a range $[L, R]$.
+- find the bitwise XOR of elements in a range $[L, R]$.
 
 ## Approach / Intuition
-The XOR operation and its inverse are the same. We can compute the [[Prefix Sum]] (Prefix XOR) of the array. The XOR of range $[L, R]$ can then be found in $O(1)$ time by evaluating `prefix[R] ^ prefix[L - 1]`.
+- the XOR operation and its inverse are the same. We can compute the [[Prefix Sum]] (Prefix XOR) of the array. The XOR of range $[L, R]$ can then be found in $O(1)$ time by evaluating `prefix[R] ^ prefix[L - 1]`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ preprocessing, $O(1)$ per query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$ preprocessing, $O(1)$ per query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-Bitwise XOR operator `^`
+- bitwise XOR operator `^`
 
 ## Edge Cases
-Range starts at index 0, range of length 1, array of all zeroes.
+- range starts at index 0, range of length 1, array of all zeroes.
+
+NEXT: [[Index]]

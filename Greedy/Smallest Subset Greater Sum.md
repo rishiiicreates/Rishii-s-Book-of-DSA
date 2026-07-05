@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, smallest-subset-greater-sum]
-date: 2026-06-30
----
 # Smallest Subset Greater Sum
 
 ## Problem Statement
-Find the minimum number of elements in a subset such that their sum is strictly greater than the sum of the remaining elements in the array.
+- find the minimum number of elements in a subset such that their sum is strictly greater than the sum of the remaining elements in the array.
 
 ## Approach / Intuition
-Calculate the total sum of the array. Sort the array in descending order. Keep adding elements to the subset and keep track of the subset sum using a [[Greedy Algorithm]]. Stop when the subset sum is greater than half of the total sum.
+- calculate the total sum of the array. Sort the array in descending order. Keep adding elements to the subset and keep track of the subset sum using a [[Greedy Algorithm]]. Stop when the subset sum is greater than half of the total sum.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -43,5 +38,7 @@ int minElements(vector<int>& arr) {
 - `accumulate`, `greater<int>()`
 
 ## Edge Cases
-- Array with all zeros
-- Array with a single element
+- array with all zeros
+- array with a single element
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [two-pointer, cpp, string-manipulation]
-date: 2026-06-30
----
 # Reverse Words in a String
 
 ## Problem Statement
-Given an input string, reverse the order of the words. A word is defined as a sequence of non-space characters.
+- given an input string, reverse the order of the words. A word is defined as a sequence of non-space characters.
 
 ## Approach / Intuition
-First, reverse the entire [[String]]. Then, iterate through the string and use the [[Two-Pointer]] technique to find the boundaries of each word and reverse it individually. Finally, clean up any extra spaces that might have been present in the original string by shifting characters in-place.
+- first, reverse the entire [[String]]. Then, iterate through the string and use the [[Two-Pointer]] technique to find the boundaries of each word and reverse it individually. Finally, clean up any extra spaces that might have been present in the original string by shifting characters in-place.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(1)$ if done in-place
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(1)$ if done in-place
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ string reverseWords(string s) {
 ```
 
 ## New Keywords / STL Used
-`reverse`, `erase`
+- `reverse`, `erase`
 
 ## Edge Cases
-Multiple spaces between words, leading or trailing spaces, empty string.
+- multiple spaces between words, leading or trailing spaces, empty string.
+
+NEXT: [[Index]]

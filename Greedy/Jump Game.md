@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, jump-game]
-date: 2026-06-30
----
 # Jump Game
 
 ## Problem Statement
-Given an array of non-negative integers where each element represents your maximum jump length at that position, determine if you can reach the last index.
+- given an array of non-negative integers where each element represents your maximum jump length at that position, determine if you can reach the last index.
 
 ## Approach / Intuition
-Maintain a variable that represents the furthest index you can reach so far. Iterate through the array; if the current index is reachable, update the furthest reachable index. If the furthest index is greater than or equal to the last index, return true. This is an application of a [[Greedy Algorithm]].
+- maintain a variable that represents the furthest index you can reach so far. Iterate through the array; if the current index is reachable, update the furthest reachable index. If the furthest index is greater than or equal to the last index, return true. This is an application of a [[Greedy Algorithm]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -37,5 +32,7 @@ bool canJump(vector<int>& nums) {
 - `max`
 
 ## Edge Cases
-- Array with a single element
-- Zero at the beginning of the array
+- array with a single element
+- zero at the beginning of the array
+
+NEXT: [[Index]]

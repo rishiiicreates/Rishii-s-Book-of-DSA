@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, stack]
-date: 2026-06-30
----
 # Implement Stack using Queues
 
 ## Problem Statement
-Implement a last-in-first-out (LIFO) stack using only a single queue.
+- implement a last-in-first-out (LIFO) stack using only a single queue.
 
 ## Approach / Intuition
-To simulate a [[Stack]], every time an element is pushed into the queue, rotate the queue. That means, push the new element, then pop and push all the existing elements `size() - 1` times so that the newly added element always stays at the front of the [[Queue]].
+- to simulate a [[Stack]], every time an element is pushed into the queue, rotate the queue. That means, push the new element, then pop and push all the existing elements `size() - 1` times so that the newly added element always stays at the front of the [[Queue]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n) for push, O(1) for pop and top
-- **[[Space Complexity]]:** O(n)
+- **[[time Complexity]]:** O(n) for push, O(1) for pop and top
+- **[[space Complexity]]:** O(n)
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::queue`
+- `std::queue`
 
 ## Edge Cases
-Popping/topping from an empty stack.
+- popping/topping from an empty stack.
+
+NEXT: [[Index]]

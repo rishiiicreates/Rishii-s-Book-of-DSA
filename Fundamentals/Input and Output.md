@@ -1,22 +1,16 @@
----
-type: concept
-tags: [fundamentals, cpp, io]
-date: 2026-06-30
----
 # Input and Output (I/O) in C++
 
 ## What is I/O in C++?
-Input and Output (I/O) operations allow a program to interact with the user or an external file. In C++, the standard I/O library `<iostream>` provides the objects `cin` (for standard input) and `cout` (for standard output). 
+- input and Output (I/O) operations allow a program to interact with the user or an external file. In C++, the standard I/O library `<iostream>` provides the objects `cin` (for standard input) and `cout` (for standard output).
 
-For Competitive Programming and Data Structures & Algorithms, I/O performance is critical. Reading $10^6$ integers natively can cause a Time Limit Exceeded (TLE) error if not optimized properly.
+- for Competitive Programming and Data Structures & Algorithms, I/O performance is critical. Reading $10^6$ integers natively can cause a Time Limit Exceeded (TLE) error if not optimized properly.
 
----
 
 ## Fast I/O Optimization
 
-By default, C++ streams (`cin`/`cout`) are synchronized with C streams (`scanf`/`printf`). This ensures that if you mix them, the output appears in the correct order. However, this synchronization adds massive overhead.
+- by default, C++ streams (`cin`/`cout`) are synchronized with C streams (`scanf`/`printf`). This ensures that if you mix them, the output appears in the correct order. However, this synchronization adds massive overhead.
 
-To write the fastest possible I/O in C++, we always start our `main` function with these two lines:
+- to write the fastest possible I/O in C++, we always start our `main` function with these two lines:
 
 ```cpp
 #include <iostream>
@@ -35,28 +29,27 @@ int main() {
 ```
 
 ### Why does this work?
-1. **`sync_with_stdio(false)`**: Tells the C++ compiler not to sync its streams with C's standard I/O. **Warning:** After doing this, you must *never* mix `cin/cout` with `scanf/printf`.
-2. **`cin.tie(NULL)`**: By default, `cin` is tied to `cout`. This means that before `cin` reads anything, it automatically flushes the `cout` buffer (so prompts like `"Enter value: "` appear immediately). By untying them, we avoid wasting time flushing the buffer automatically on every read.
+- **`sync_with_stdio(false)`**: Tells the C++ compiler not to sync its streams with C's standard I/O. **Warning:** After doing this, you must *never* mix `cin/cout` with `scanf/printf`.
+- **`cin.tie(NULL)`**: By default, `cin` is tied to `cout`. This means that before `cin` reads anything, it automatically flushes the `cout` buffer (so prompts like `"Enter value: "` appear immediately). By untying them, we avoid wasting time flushing the buffer automatically on every read.
 
 > [!important]
 > **Never use `endl`** in performance-critical code. `endl` not only inserts a newline but also forces a buffer flush. Flushing the buffer is an expensive OS-level operation. Instead, use `\n` to insert a newline. The buffer will flush itself automatically when it's full or when the program terminates.
 
----
 
 ## Common I/O Patterns
 
 ### Reading until End-Of-File (EOF)
-Sometimes the number of inputs isn't given. You must read until the file ends.
+- sometimes the number of inputs isn't given. You must read until the file ends.
 ```cpp
 int x;
 while (cin >> x) {
     // Process x
 }
 ```
-*`cin >> x` evaluates to `true` as long as it successfully extracts an integer.*
+- *`cin >> x` evaluates to `true` as long as it successfully extracts an integer.*
 
 ### Reading a Full Line with Spaces
-If you use `cin >> s` for a string, it stops at the first space. To read an entire line including spaces, use `getline()`.
+- if you use `cin >> s` for a string, it stops at the first space. To read an entire line including spaces, use `getline()`.
 ```cpp
 #include <string>
 
@@ -65,7 +58,7 @@ getline(cin, sentence); // Reads the whole line until \n
 ```
 
 ### Handling the "Newline Buffer" Bug
-If you read an integer and then immediately use `getline()`, the `getline()` will instantly read the leftover newline character `\n` from the integer input and return an empty string.
+- if you read an integer and then immediately use `getline()`, the `getline()` will instantly read the leftover newline character `\n` from the integer input and return an empty string.
 ```cpp
 int n;
 cin >> n;
@@ -76,8 +69,9 @@ string s;
 getline(cin, s); 
 ```
 
----
 
 ## Complexity
-- **Time Complexity**: $O(1)$ per I/O operation. With fast I/O enabled, the speed is virtually identical to pure C's `scanf`/`printf`.
-- **Space Complexity**: $O(1)$ overhead to hold the parsed variable.
+- **time Complexity**: $O(1)$ per I/O operation. With fast I/O enabled, the speed is virtually identical to pure C's `scanf`/`printf`.
+- **space Complexity**: $O(1)$ overhead to hold the parsed variable.
+
+NEXT: [[Index]]

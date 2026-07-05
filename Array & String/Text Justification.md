@@ -1,42 +1,35 @@
----
-type: concept
-tags: [array, string, cpp, string-formatting, greedy, math]
-date: 2026-06-30
----
 # Text Justification
 
 ## Problem Statement
-Given an array of string `words` and an integer `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully (left and right) justified.
+- given an array of string `words` and an integer `maxWidth`, format the text such that each line has exactly `maxWidth` characters and is fully (left and right) justified.
 
-Mathematical Constraints:
-1. Pack as many words as possible on each line (Greedy packing).
-2. Distribute spaces evenly. If uneven, the leftmost space slots absorb the remainder.
-3. The final line must be left-justified with zero extra internal spacing.
+- mathematical Constraints:
+- pack as many words as possible on each line (Greedy packing).
+- distribute spaces evenly. If uneven, the leftmost space slots absorb the remainder.
+- the final line must be left-justified with zero extra internal spacing.
 
----
 
 ## Approach: Greedy Packing & Modulo Distribution
 
-This problem is a masterclass in index simulation and deterministic state constraints.
+- this problem is a masterclass in index simulation and deterministic state constraints.
 
 ### 1. Greedy Packing
-For a starting word at index `i`, we greedily expand an index `j` until the cumulative length of the words plus the mandatory minimum spaces (`j - i - 1`) exceeds `maxWidth`. The block of words constrained by $[i, j-1]$ strictly defines our current line.
+- for a starting word at index `i`, we greedily expand an index `j` until the cumulative length of the words plus the mandatory minimum spaces (`j - i - 1`) exceeds `maxWidth`. The block of words constrained by $[i, j-1]$ strictly defines our current line.
 
 ### 2. Space Distribution Mathematics
-Let $W$ be the number of words in the line (`j - i`), and $L$ be the sum of their raw character lengths.
-The total available spaces $S = \text{maxWidth} - L$.
-The number of interconnecting gaps $G = W - 1$.
+- let $W$ be the number of words in the line (`j - i`), and $L$ be the sum of their raw character lengths.
+- the total available spaces $S = \text{maxWidth} - L$.
+- the number of interconnecting gaps $G = W - 1$.
 
-If $G == 0$ (a single word on the line), or if this is the **last line** ($j == N$):
-The line must be left-justified. Words are separated by exactly 1 space, and the tail is heavily padded with spaces until `maxWidth` is reached.
+- if $G == 0$ (a single word on the line), or if this is the **last line** ($j == N$):
+- the line must be left-justified. Words are separated by exactly 1 space, and the tail is heavily padded with spaces until `maxWidth` is reached.
 
-Otherwise, for standard lines:
-- Base spaces per gap: $B = \lfloor S / G \rfloor$
-- Remainder spaces (distributed left-to-right): $R = S \pmod G$
+- otherwise, for standard lines:
+- base spaces per gap: $B = \lfloor S / G \rfloor$
+- remainder spaces (distributed left-to-right): $R = S \pmod G$
 
-A gap receives $B + 1$ spaces if its relative index is strictly less than $R$. Otherwise, it receives $B$ spaces.
+- a gap receives $B + 1$ spaces if its relative index is strictly less than $R$. Otherwise, it receives $B$ spaces.
 
----
 
 ## Code Implementation
 
@@ -101,8 +94,9 @@ vector<string> fullJustify(vector<string>& words, int maxWidth) {
 > [!warning]
 > Be extremely cautious with the string constructor `string(size_t n, char c)` in C++. Using it appropriately dynamically generates the exact number of consecutive spaces without resorting to inefficient `while` loops. 
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(L)$, where $L$ is the total number of characters across all words in the array. Every character is processed and strictly concatenated once.
-- **Space Complexity:** $\mathcal{O}(L)$ to construct the final array of justified string lines.
+- **time Complexity:** $\mathcal{O}(L)$, where $L$ is the total number of characters across all words in the array. Every character is processed and strictly concatenated once.
+- **space Complexity:** $\mathcal{O}(L)$ to construct the final array of justified string lines.
+
+NEXT: [[Index]]

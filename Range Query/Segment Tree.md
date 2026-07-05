@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query]
-date: 2026-06-30
----
 # Segment Tree
 
 ## Problem Statement
-Perform range queries and point updates on an array efficiently.
+- perform range queries and point updates on an array efficiently.
 
 ## Approach / Intuition
-A [[Segment Tree]] divides the array into segments and stores aggregated information (like sum, min, max) for each segment. This allows range queries and point updates in logarithmic time.
+- a [[Segment Tree]] divides the array into segments and stores aggregated information (like sum, min, max) for each segment. This allows range queries and point updates in logarithmic time.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ build, $O(\log N)$ query/update
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$ build, $O(\log N)$ query/update
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -69,7 +64,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::vector::assign`
+- `std::vector::assign`
 
 ## Edge Cases
-Query range fully outside segment, fully inside, or partially overlapping.
+- query range fully outside segment, fully inside, or partially overlapping.
+
+NEXT: [[Index]]

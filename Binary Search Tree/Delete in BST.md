@@ -1,35 +1,28 @@
----
-type: concept
-tags: [binary-search-tree, recursion, deletion, cpp]
-date: 2026-06-30
----
 # Delete Node in a BST
 
 ## Problem Statement
-Given the root of a [[Binary Search Tree]] and a scalar value `key`, mathematically locate the node with `val == key`, safely excise it from the topological structure, and ensure the BST properties are flawlessly preserved.
+- given the root of a [[Binary Search Tree]] and a scalar value `key`, mathematically locate the node with `val == key`, safely excise it from the topological structure, and ensure the BST properties are flawlessly preserved.
 
----
 
 ## Approach: Hibbard Deletion Algorithm
 
-Deleting a node is the most mathematically intricate operation in a BST, as excising an internal node creates a structural vacuum. We must evaluate three distinct topological cases:
+- deleting a node is the most mathematically intricate operation in a BST, as excising an internal node creates a structural vacuum. We must evaluate three distinct topological cases:
 
-1. **Case 1: Target is a Leaf Node**
-   - The node has zero children.
-   - *Resolution:* Simply delete the node and return `nullptr` to its parent.
+- **case 1: Target is a Leaf Node**
+   - the node has zero children.
+   - *resolution:* Simply delete the node and return `nullptr` to its parent.
 
-2. **Case 2: Target has Exactly One Child**
-   - The node has either an isolated left subtree or an isolated right subtree.
-   - *Resolution:* Delete the target node and return its single child to the parent, effectively bypassing the excised node.
+- **case 2: Target has Exactly One Child**
+   - the node has either an isolated left subtree or an isolated right subtree.
+   - *resolution:* Delete the target node and return its single child to the parent, effectively bypassing the excised node.
 
-3. **Case 3: Target has Two Children (The Critical Case)**
-   - Excision creates two orphaned subtrees. We must replace the target node's mathematical value with a value that logically separates the left partition from the right partition.
-   - *Resolution:* 
-     1. Find the **In-Order Successor** (the absolute minimum value in the right subtree). Alternatively, the In-Order Predecessor (max in left subtree) is equally valid.
-     2. Overwrite the target node's `val` with the successor's `val`.
-     3. Recursively delete the successor node from the right subtree. The successor is guaranteed to fall into Case 1 or Case 2, as it inherently lacks a left child.
+- **case 3: Target has Two Children (The Critical Case)**
+   - excision creates two orphaned subtrees. We must replace the target node's mathematical value with a value that logically separates the left partition from the right partition.
+   - *resolution:*
+     - find the **In-Order Successor** (the absolute minimum value in the right subtree). Alternatively, the In-Order Predecessor (max in left subtree) is equally valid.
+     - overwrite the target node's `val` with the successor's `val`.
+     - recursively delete the successor node from the right subtree. The successor is guaranteed to fall into Case 1 or Case 2, as it inherently lacks a left child.
 
----
 
 ## Code Implementation
 
@@ -91,8 +84,9 @@ TreeNode* deleteNode(TreeNode* root, int key) {
 > [!warning]
 > Forgetting to `delete root` results in severe memory leaks. Furthermore, when implementing Case 3, never attempt to structurally move the successor node itself (re-wiring left and right pointers). Simply transferring the scalar `val` and recursing is significantly safer and cleaner.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(H)$, where $H$ is the topological height of the tree. Finding the node takes $O(H)$, and traversing to find the successor (if Case 3 triggers) takes at most $O(H)$. Total time remains bounded by tree depth.
-- **Space Complexity:** $O(H)$ auxiliary space corresponding to the maximum depth of the recursive call stack.
+- **time Complexity:** $O(H)$, where $H$ is the topological height of the tree. Finding the node takes $O(H)$, and traversing to find the successor (if Case 3 triggers) takes at most $O(H)$. Total time remains bounded by tree depth.
+- **space Complexity:** $O(H)$ auxiliary space corresponding to the maximum depth of the recursive call stack.
+
+NEXT: [[Index]]

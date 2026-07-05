@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, design, priority-queue]
-date: 2026-06-30
----
 # Design Twitter
 
 ## Problem Statement
-Design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and dynamically fetch the 10 most recent tweets directly in the user's news feed.
+- design a simplified version of Twitter where users can post tweets, follow/unfollow another user, and dynamically fetch the 10 most recent tweets directly in the user's news feed.
 
 ## Approach / Intuition
-Maintain scalable maps tracking user followers and lists of their posts. When actively generating the news feed, gather all posts from the user and their direct followees. Use a max-heap to aggressively merge and retrieve the top 10 most recent tweets in timestamp order, merging [[Hash Map Tracking]] effectively with a [[Priority Queue]].
+- maintain scalable maps tracking user followers and lists of their posts. When actively generating the news feed, gather all posts from the user and their direct followees. Use a max-heap to aggressively merge and retrieve the top 10 most recent tweets in timestamp order, merging [[Hash Map Tracking]] effectively with a [[Priority Queue]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(U) for follow/unfollow, O(T log 10) for getNewsFeed
-- **[[Space Complexity]]:** O(U + T)
+- **[[time Complexity]]:** O(U) for follow/unfollow, O(T log 10) for getNewsFeed
+- **[[space Complexity]]:** O(U + T)
 
 ## Sample Code
 ```cpp
@@ -51,7 +46,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::unordered_set`
+- `std::unordered_set`
 
 ## Edge Cases
-Users explicitly attempting to follow/unfollow themselves, requesting feeds for users completely lacking social ties or posts.
+- users explicitly attempting to follow/unfollow themselves, requesting feeds for users completely lacking social ties or posts.
+
+NEXT: [[Index]]

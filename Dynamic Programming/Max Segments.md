@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, knapsack_variation]
-date: 2026-06-30
----
 # Max Segments
 
 ## Problem Statement
-Given a line segment of length $N$, cut it into the maximum number of segments such that the length of each segment is either $X$, $Y$, or $Z$.
+- given a line segment of length $N$, cut it into the maximum number of segments such that the length of each segment is either $X$, $Y$, or $Z$.
 
 ## Approach / Intuition
-This is an [[Unbounded Knapsack]] variation. Let `dp[i]` be the maximum segments for a rod of length $i$. To find `dp[i]`, we look at `dp[i-X]`, `dp[i-Y]`, and `dp[i-Z]` and take the maximum among valid previous states, then add 1. We initialize the DP array with a very small negative value and `dp[0] = 0` to denote invalid states.
+- this is an [[Unbounded Knapsack]] variation. Let `dp[i]` be the maximum segments for a rod of length $i$. To find `dp[i]`, we look at `dp[i-X]`, `dp[i-Y]`, and `dp[i-Z]` and take the maximum among valid previous states, then add 1. We initialize the DP array with a very small negative value and `dp[0] = 0` to denote invalid states.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$ for the DP array.
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$ for the DP array.
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int maximizeTheCuts(int n, int x, int y, int z) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`, `std::max`
+- `std::vector`, `std::max`
 
 ## Edge Cases
-Impossible to cut exactly to $N$ (returns 0), $X, Y, Z > N$.
+- impossible to cut exactly to $N$ (returns 0), $X, Y, Z > N$.
+
+NEXT: [[Index]]

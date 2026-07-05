@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, cache]
-date: 2026-06-30
----
 # Implement LFU Cache
 
 ## Problem Statement
-Design and implement a data structure for Least Frequently Used (LFU) cache, supporting `get` and `put` in O(1) average time complexity.
+- design and implement a data structure for Least Frequently Used (LFU) cache, supporting `get` and `put` in O(1) average time complexity.
 
 ## Approach / Intuition
-Use two hash maps: one mapping keys to `{value, frequency}` and another mapping frequencies to a doubly [[Linked List]] of keys. Maintain a `minFreq` variable. On `get` or `put`, increment the frequency, move the key from its current frequency list to the `freq + 1` list, and update `minFreq` if the previous list becomes empty.
+- use two hash maps: one mapping keys to `{value, frequency}` and another mapping frequencies to a doubly [[Linked List]] of keys. Maintain a `minFreq` variable. On `get` or `put`, increment the frequency, move the key from its current frequency list to the `freq + 1` list, and update `minFreq` if the previous list becomes empty.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for both get and put
-- **[[Space Complexity]]:** O(capacity)
+- **[[time Complexity]]:** O(1) for both get and put
+- **[[space Complexity]]:** O(capacity)
 
 ## Sample Code
 ```cpp
@@ -61,7 +56,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::list`, `std::unordered_map`
+- `std::list`, `std::unordered_map`
 
 ## Edge Cases
-Capacity of 0, multiple items with the same minimum frequency (evict least recently used among them).
+- capacity of 0, multiple items with the same minimum frequency (evict least recently used among them).
+
+NEXT: [[Index]]

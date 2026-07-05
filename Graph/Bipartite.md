@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, bipartite]
-date: 2026-06-30
----
 # Bipartite Graph
 
 ## Problem Statement
-Determine if a graph is bipartite (i.e., its vertices can be divided into two disjoint sets such that no two adjacent vertices have the same color).
+- determine if a graph is bipartite (i.e., its vertices can be divided into two disjoint sets such that no two adjacent vertices have the same color).
 
 ## Approach / Intuition
-Use [[BFS]] or [[DFS]] for graph coloring. Color the starting node with 0 and all its neighbors with 1. If any neighbor is already colored with the same color, the graph is not bipartite.
+- use [[BFS]] or [[DFS]] for graph coloring. Color the starting node with 0 and all its neighbors with 1. If any neighbor is already colored with the same color, the graph is not bipartite.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -52,7 +47,9 @@ bool isBipartite(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::queue`, `std::vector`
+- `std::queue`, `std::vector`
 
 ## Edge Cases
-Graph with odd length cycle (not bipartite), disconnected graph.
+- graph with odd length cycle (not bipartite), disconnected graph.
+
+NEXT: [[Index]]

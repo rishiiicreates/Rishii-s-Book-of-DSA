@@ -1,29 +1,22 @@
----
-type: concept
-tags: [stack, monotonic-stack, dynamic-programming, cpp, geometry, math]
-date: 2026-06-30
----
 # Maximal Rectangle in 2D Binary Matrix
 
 ## Problem Statement
-Given a discrete 2D binary matrix structured with strictly $0$s and $1$s, mathematically calculate the absolute maximum bounded geometrical area of a rectangle containing strictly only $1$s.
+- given a discrete 2D binary matrix structured with strictly $0$s and $1$s, mathematically calculate the absolute maximum bounded geometrical area of a rectangle containing strictly only $1$s.
 
----
 
 ## Approach: Dynamic Histogram Projection
 
-This 2D spatial challenge mathematically reduces to executing the **Largest Rectangle in Histogram** evaluation $\mathcal{O}(R)$ times, iteratively projecting the 2D grid structurally into $1D$ spatial histograms.
+- this 2D spatial challenge mathematically reduces to executing the **Largest Rectangle in Histogram** evaluation $\mathcal{O}(R)$ times, iteratively projecting the 2D grid structurally into $1D$ spatial histograms.
 
-Algorithm:
-1. Maintain an $\mathcal{O}(C)$ sized auxiliary vector `heights` representing the cumulative geometric height of contiguous $1$s for the current theoretical base row.
-2. Iterate strictly over each row in the bounded matrix.
-3. For each spatial column $j$, mathematically update the histogram structure:
-   - If `matrix[i][j] == '1'`, algebraically increment `heights[j]`.
-   - If `matrix[i][j] == '0'`, forcefully collapse `heights[j]` to $0$, as the contiguous spatial boundary is broken.
-4. For the resolved histogram of row $i$, theoretically apply the $\mathcal{O}(C)$ LIFO bounding mechanism to extract the absolute maximal valid rectangle resting on that row.
-5. Track the theoretical global geometric maximum.
+- algorithm:
+- maintain an $\mathcal{O}(C)$ sized auxiliary vector `heights` representing the cumulative geometric height of contiguous $1$s for the current theoretical base row.
+- iterate strictly over each row in the bounded [[Matrix]].
+- for each spatial column $j$, mathematically update the histogram structure:
+   - if `matrix[i][j] == '1'`, algebraically increment `heights[j]`.
+   - if `matrix[i][j] == '0'`, forcefully collapse `heights[j]` to $0$, as the contiguous spatial boundary is broken.
+- for the resolved histogram of row $i$, theoretically apply the $\mathcal{O}(C)$ LIFO bounding mechanism to extract the absolute maximal valid rectangle resting on that row.
+- track the theoretical global geometric maximum.
 
----
 
 ## Code Implementation
 
@@ -86,8 +79,9 @@ int maximalRectangle(const vector<vector<char>>& matrix) {
 > [!tip]
 > A highly optimized bit-masking dynamic programming variant exists utilizing left and right bounds specifically for Boolean spatial mapping. However, leveraging the Histogram transformation structurally preserves modularity and avoids complex edge-case evaluations.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(R \times C)$. Structurally updating the $1D$ histogram demands $\mathcal{O}(C)$ operations, and mathematically bounded evaluation utilizes strictly $\mathcal{O}(C)$ operations per row.
-- **Space Complexity:** $\mathcal{O}(C)$ to maintain the temporal sequence constraints (the histogram state and auxiliary LIFO evaluation structures).
+- **time Complexity:** $\mathcal{O}(R \times C)$. Structurally updating the $1D$ histogram demands $\mathcal{O}(C)$ operations, and mathematically bounded evaluation utilizes strictly $\mathcal{O}(C)$ operations per row.
+- **space Complexity:** $\mathcal{O}(C)$ to maintain the temporal sequence constraints (the histogram state and auxiliary LIFO evaluation structures).
+
+NEXT: [[Index]]

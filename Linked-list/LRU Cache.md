@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, design, lru]
-date: 2026-06-30
----
 # LRU Cache
 
 ## Problem Statement
-Design a data structure that fundamentally follows the constraints of a Least Recently Used (LRU) cache. It must actively support `get` and `put` operations strictly in O(1) average time complexity.
+- design a data structure that fundamentally follows the constraints of a Least Recently Used (LRU) cache. It must actively support `get` and `put` operations strictly in O(1) average time complexity.
 
 ## Approach / Intuition
-Pair a hash map structurally with a doubly linked list. The hash map ensures reliable O(1) node access by key, while the doubly linked list inherently supports rapid O(1) removals and constant insertions at the head, strictly maintaining the internal [[Eviction Policy]] order flawlessly.
+- pair a hash map structurally with a doubly linked list. The hash map ensures reliable O(1) node access by key, while the doubly linked list inherently supports rapid O(1) removals and constant insertions at the head, strictly maintaining the internal [[Eviction Policy]] order flawlessly.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1)
-- **[[Space Complexity]]:** O(Capacity)
+- **[[time Complexity]]:** O(1)
+- **[[space Complexity]]:** O(Capacity)
 
 ## Sample Code
 ```cpp
@@ -69,7 +64,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`struct`
+- `struct`
 
 ## Edge Cases
-Cache accessed heavily with non-existent keys, initialization with a rigid capacity of exactly 1.
+- cache accessed heavily with non-existent keys, initialization with a rigid capacity of exactly 1.
+
+NEXT: [[Index]]

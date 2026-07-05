@@ -1,30 +1,23 @@
----
-type: concept
-tags: [searching, cpp, binary-search, math]
-date: 2026-07-01
----
 # Nth Root
 
 ## Problem Statement
-Given two positive integers $N$ and $M$, find the exact integer $N$-th root of $M$. If $M$ does not have a perfect integer $N$-th root, return $-1$. Mathematically, find $k \ge 1$ such that $k^N = M$.
+- given two positive integers $N$ and $M$, find the exact integer $N$-th root of $M$. If $M$ does not have a perfect integer $N$-th root, return $-1$. Mathematically, find $k \ge 1$ such that $k^N = M$.
 
----
 
 ## Approach: Bounded Exponentiation Search
 
-The function $f(k) = k^N$ is strictly monotonically increasing for $k \ge 1, N \ge 1$.
-Because of this monotonicity, we can binary search the potential roots in the range $[1, M]$.
+- the function $f(k) = k^N$ is strictly monotonically increasing for $k \ge 1, N \ge 1$.
+- because of this monotonicity, we can binary search the potential roots in the range $[1, M]$.
 
-1. Maintain pointers $L = 1$ and $R = M$.
-2. For midpoint $mid$:
-   - If $mid^N == M$, return $mid$.
-   - If $mid^N < M$, search right ($L = mid + 1$).
-   - If $mid^N > M$, search left ($R = mid - 1$).
+- maintain pointers $L = 1$ and $R = M$.
+- for midpoint $mid$:
+   - if $mid^N == M$, return $mid$.
+   - if $mid^N < M$, search right ($L = mid + 1$).
+   - if $mid^N > M$, search left ($R = mid - 1$).
 
-The core difficulty is efficiently and safely computing $mid^N$. If we simply use `pow()`, precision issues might arise. If we use a naive loop, we risk massive integer overflow (e.g., $1000^{10} = 10^{30}$, far exceeding a 64-bit integer limit of $\approx 9 \times 10^{18}$).
-We must implement a **capped exponentiation** function that terminates immediately if the product strictly exceeds $M$.
+- the core difficulty is efficiently and safely computing $mid^N$. If we simply use `pow()`, precision issues might arise. If we use a naive loop, we risk massive integer overflow (e.g., $1000^{10} = 10^{30}$, far exceeding a 64-bit integer limit of $\approx 9 \times 10^{18}$).
+- we must implement a **capped exponentiation** function that terminates immediately if the product strictly exceeds $M$.
 
----
 
 ## Code Implementation
 
@@ -65,11 +58,12 @@ int NthRoot(int n, int m) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(\log M \cdot N)$. The binary search executes $O(\log M)$ times. In the absolute worst case, the exponentiation evaluates $N$ multiplications.
-- **Space Complexity:** $O(1)$ auxiliary space.
+- **time Complexity:** $O(\log M \cdot N)$. The binary search executes $O(\log M)$ times. In the absolute worst case, the exponentiation evaluates $N$ multiplications.
+- **space Complexity:** $O(1)$ auxiliary space.
 
 > [!important]
 > **Why `current > m` termination is flawless:** We only care if $mid^N$ equals $M$. The moment the accumulating product exceeds $M$, it's mathematically impossible for further multiplications (by an integer $\ge 1$) to bring it back down to $M$. Returning immediately saves time and prevents UB from standard integer overflow.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dsa, cpp, trie, string]
-date: 2026-06-30
----
 # Palindrome Pairs
 
 ## Problem Statement
-Given a list of unique words, find all pairs of indices `(i, j)` such that the concatenation of the two words `words[i] + words[j]` forms a palindrome.
+- given a list of unique words, find all pairs of indices `(i, j)` such that the concatenation of the two words `words[i] + words[j]` forms a palindrome.
 
 ## Approach / Intuition
-For a word pair $(A, B)$ to form a palindrome, either $B$ is the reverse of $A$'s prefix and the rest of $A$ is a palindrome, or $A$ is the reverse of $B$'s suffix and the rest of $B$ is a palindrome. We can reverse all words and insert them into a [[Trie]]. For each word, traverse the Trie. A match occurs if we exhaust the Trie node (meaning a reversed word matched our prefix) and the remaining suffix of our current word is a palindrome.
+- for a word pair $(A, B)$ to form a palindrome, either $B$ is the reverse of $A$'s prefix and the rest of $A$ is a palindrome, or $A$ is the reverse of $B$'s suffix and the rest of $B$ is a palindrome. We can reverse all words and insert them into a [[Trie]]. For each word, traverse the Trie. A match occurs if we exhaust the Trie node (meaning a reversed word matched our prefix) and the remaining suffix of our current word is a palindrome.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \cdot L^2)$ where $N$ is word count, $L$ is max word length
-- **[[Space Complexity]]:** $O(N \cdot L)$ for the Trie
+- **[[time Complexity]]:** $O(N \cdot L^2)$ where $N$ is word count, $L$ is max word length
+- **[[space Complexity]]:** $O(N \cdot L)$ for the Trie
 
 ## Sample Code
 ```cpp
@@ -77,7 +72,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`reverse`, indexing word matching
+- `reverse`, indexing word matching
 
 ## Edge Cases
-Empty strings in the list, words forming palindromes with themselves (avoid returning `(i, i)`).
+- empty strings in the list, words forming palindromes with themselves (avoid returning `(i, i)`).
+
+NEXT: [[Index]]

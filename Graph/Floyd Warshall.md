@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, shortest-path, floyd-warshall]
-date: 2026-06-30
----
 # Floyd Warshall
 
 ## Problem Statement
-Find the shortest paths between all pairs of vertices in a weighted directed graph, handling negative edges but no negative cycles.
+- find the shortest paths between all pairs of vertices in a weighted directed graph, handling negative edges but no negative cycles.
 
 ## Approach / Intuition
-Use [[Dynamic Programming]] to iteratively update the shortest path between every pair of nodes considering every node as an intermediate point.
+- use [[Dynamic Programming]] to iteratively update the shortest path between every pair of nodes considering every node as an intermediate point.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V^3)
-- **[[Space Complexity]]:** O(V^2)
+- **[[time Complexity]]:** O(V^3)
+- **[[space Complexity]]:** O(V^2)
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ void shortest_distance(vector<vector<int>>& matrix) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `min`
+- `vector`, `min`
 
 ## Edge Cases
-Graph with negative weights, isolated nodes, absent edges marked as -1.
+- graph with negative weights, isolated nodes, absent edges marked as -1.
+
+NEXT: [[Index]]

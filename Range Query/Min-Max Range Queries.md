@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query]
-date: 2026-06-30
----
 # Min-Max Range Queries
 
 ## Problem Statement
-Given an array, efficiently answer queries to find the minimum and maximum elements in a given range $[L, R]$.
+- given an array, efficiently answer queries to find the minimum and maximum elements in a given range $[L, R]$.
 
 ## Approach / Intuition
-We can build a [[Segment Tree]] where each node stores a pair of `{min, max}` for its corresponding segment. Merging two segments involves taking the minimum of their mins and the maximum of their maxes.
+- we can build a [[Segment Tree]] where each node stores a pair of `{min, max}` for its corresponding segment. Merging two segments involves taking the minimum of their mins and the maximum of their maxes.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ build, $O(\log N)$ query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$ build, $O(\log N)$ query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -61,7 +56,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`struct`, `std::min`, `std::max`
+- `struct`, `std::min`, `std::max`
 
 ## Edge Cases
-Range $[L, R]$ has only one element, query out of bounds.
+- range $[L, R]$ has only one element, query out of bounds.
+
+NEXT: [[Index]]

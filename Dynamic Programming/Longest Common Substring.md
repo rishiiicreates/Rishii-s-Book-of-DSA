@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Longest Common Substring
 
 ## Problem Statement
-Given two strings, find the length of the longest common substring between them. A substring is a contiguous sequence of characters within a string.
+- given two strings, find the length of the longest common substring between them. A substring is a contiguous sequence of characters within a string.
 
 ## Approach / Intuition
-Use a 2D [[Dynamic Programming]] table where `dp[i][j]` stores the length of the longest common suffix of the substrings ending at `s1[i-1]` and `s2[j-1]`. If the characters match, `dp[i][j] = dp[i-1][j-1] + 1`; otherwise, it's 0. The max value in the table is the answer.
+- use a 2D [[Dynamic Programming]] table where `dp[i][j]` stores the length of the longest common suffix of the substrings ending at `s1[i-1]` and `s2[j-1]`. If the characters match, `dp[i][j] = dp[i-1][j-1] + 1`; otherwise, it's 0. The max value in the table is the answer.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * m)
-- **[[Space Complexity]]:** O(n * m) (can be optimized to O(m))
+- **[[time Complexity]]:** O(n * m)
+- **[[space Complexity]]:** O(n * m) (can be optimized to O(m))
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ int longestCommonSubstr(string S1, string S2, int n, int m) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `max`, `string`
+- `vector`, `max`, `string`
 
 ## Edge Cases
-Empty strings, completely different strings, identical strings.
+- empty strings, completely different strings, identical strings.
+
+NEXT: [[Index]]

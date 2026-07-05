@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # K’th largest in a stream
 
 ## Problem Statement
-Design a class to find the `k`th largest element in a stream. Note that it is the `k`th largest element in the sorted order, not the `k`th distinct element.
+- design a class to find the `k`th largest element in a stream. Note that it is the `k`th largest element in the sorted order, not the `k`th distinct element.
 
 ## Approach / Intuition
-Use a min-[[Heap]] of size `k` to continuously track the `k` largest elements seen so far. When a new element comes in, we add it to the min-heap. If the heap size exceeds `k`, we pop the minimum element. The top of the min-heap will always represent the `k`th largest element of the stream at any given time.
+- use a min-[[Heap]] of size `k` to continuously track the `k` largest elements seen so far. When a new element comes in, we add it to the min-heap. If the heap size exceeds `k`, we pop the minimum element. The top of the min-heap will always represent the `k`th largest element of the stream at any given time.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(log k) for each `add` operation. O(N log k) for initial construction.
-- **[[Space Complexity]]:** O(k)
+- **[[time Complexity]]:** O(log k) for each `add` operation. O(N log k) for initial construction.
+- **[[space Complexity]]:** O(k)
 
 ## Sample Code
 ```cpp
@@ -44,8 +39,10 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, `std::greater`
+- `std::priority_queue`, `std::greater`
 
 ## Edge Cases
-- Adding elements when the heap has fewer than `k` elements initially.
-- Stream contains negative numbers or duplicates.
+- adding elements when the heap has fewer than `k` elements initially.
+- stream contains negative numbers or duplicates.
+
+NEXT: [[Index]]

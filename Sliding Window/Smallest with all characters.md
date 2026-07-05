@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, string-manipulation]
-date: 2026-06-30
----
 # Smallest Window Containing All Characters of Another String
 
 ## Problem Statement
-Given two strings $S$ and $P$, find the smallest substring in $S$ containing all characters of $P$ (including duplicates).
+- given two strings $S$ and $P$, find the smallest substring in $S$ containing all characters of $P$ (including duplicates).
 
 ## Approach / Intuition
-Use a frequency map to store the required counts of characters from $P$. Utilize a [[Sliding Window]] on $S$. As the `right` pointer moves, decrement the required counts and track how many needed characters have been matched. When all characters are matched, shrink the window from the `left` to find the minimum length, saving the best starting index and length.
+- use a frequency map to store the required counts of characters from $P$. Utilize a [[Sliding Window]] on $S$. As the `right` pointer moves, decrement the required counts and track how many needed characters have been matched. When all characters are matched, shrink the window from the `left` to find the minimum length, saving the best starting index and length.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(|S| + |P|)$
-- **[[Space Complexity]]:** $O(1)$ (constant size map for characters)
+- **[[time Complexity]]:** $O(|S| + |P|)$
+- **[[space Complexity]]:** $O(1)$ (constant size map for characters)
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ string minWindow(string s, string p) {
 ```
 
 ## New Keywords / STL Used
-`substr`
+- `substr`
 
 ## Edge Cases
-$P$ longer than $S$, no such window exists, $S$ and $P$ are identical.
+- $p$ longer than $S$, no such window exists, $S$ and $P$ are identical.
+
+NEXT: [[Index]]

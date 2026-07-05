@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Score of Balanced Parentheses
 
 ## Problem Statement
-Given a balanced parentheses string, compute the score of the string based on the following rules: `()` has score 1, `AB` has score A + B, and `(A)` has score 2 * A.
+- given a balanced parentheses string, compute the score of the string based on the following rules: `()` has score 1, `AB` has score A + B, and `(A)` has score 2 * A.
 
 ## Approach / Intuition
-We maintain a [[Stack]] to keep track of the scores at the current depth. When we see `(`, we push a 0 to indicate a new nested level. When we see `)`, we pop the inner score. If the inner score is 0, it means it was an empty `()`, so we add 1 to the new top of the stack. If it's greater than 0, it was `(A)`, so we add `2 * innerScore` to the new top of the stack.
+- we maintain a [[Stack]] to keep track of the scores at the current depth. When we see `(`, we push a 0 to indicate a new nested level. When we see `)`, we pop the inner score. If the inner score is 0, it means it was an empty `()`, so we add 1 to the new top of the stack. If it's greater than 0, it was `(A)`, so we add `2 * innerScore` to the new top of the stack.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the string length
-- **[[Space Complexity]]:** O(N) for the stack depth
+- **[[time Complexity]]:** O(N) where N is the string length
+- **[[space Complexity]]:** O(N) for the stack depth
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ int scoreOfParentheses(string s) {
 ```
 
 ## New Keywords / STL Used
-`std::stack`, `std::max`
+- `std::stack`, `std::max`
 
 ## Edge Cases
-Deeply nested string `((()))`, consecutive strings `()()()`, combinations like `(()(()))`.
+- deeply nested string `((()))`, consecutive strings `()()()`, combinations like `(()(()))`.
+
+NEXT: [[Index]]

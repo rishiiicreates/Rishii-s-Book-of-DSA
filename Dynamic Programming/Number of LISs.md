@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, lis]
-date: 2026-06-30
----
 # Number of Longest Increasing Subsequences
 
 ## Problem Statement
-Find the total number of longest increasing subsequences in an integer array.
+- find the total number of longest increasing subsequences in an integer array.
 
 ## Approach / Intuition
-We use two [[Dynamic Programming]] arrays: `dp[i]` for the length of LIS ending at `i`, and `cnt[i]` for the number of such LISs ending at `i`. When we find an element `nums[j] < nums[i]`, if `dp[j] + 1 > dp[i]`, we update `dp[i]` and set `cnt[i] = cnt[j]`. If `dp[j] + 1 == dp[i]`, we add `cnt[j]` to `cnt[i]`.
+- we use two [[Dynamic Programming]] arrays: `dp[i]` for the length of LIS ending at `i`, and `cnt[i]` for the number of such LISs ending at `i`. When we find an element `nums[j] < nums[i]`, if `dp[j] + 1 > dp[i]`, we update `dp[i]` and set `cnt[i] = cnt[j]`. If `dp[j] + 1 == dp[i]`, we add `cnt[j]` to `cnt[i]`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^2)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N^2)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -54,7 +49,9 @@ int findNumberOfLIS(vector<int>& nums) {
 ```
 
 ## New Keywords / STL Used
-`std::max`
+- `std::max`
 
 ## Edge Cases
-Array with all identical elements, strictly decreasing array, multiple subsequences of the same max length.
+- array with all identical elements, strictly decreasing array, multiple subsequences of the same max length.
+
+NEXT: [[Index]]

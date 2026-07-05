@@ -1,28 +1,21 @@
----
-type: concept
-tags: [heap, min-heap, array, cpp, k-way]
-date: 2026-07-01
----
 # Merge K Sorted Arrays
 
 ## Problem Statement
-Given $K$ topologically independent contiguous arrays, each pre-sorted in absolute strictly ascending monotonic order, construct a mathematically unified array containing all scalar components, structurally preserving the absolute sorted geometry.
+- given $K$ topologically independent contiguous arrays, each pre-sorted in absolute strictly ascending monotonic order, construct a mathematically unified array containing all scalar components, structurally preserving the absolute sorted geometry.
 
----
 
 ## Approach: Min-Heap Topological State Tracking
 
-Concatenating raw vectors and sorting requires $O(N \log N)$, completely negating the geometric advantage of the pre-sorted subsets.
-To achieve mathematically optimal compression, we utilize a **Min-Heap (Priority Queue)** to execute a topological **K-Way Merge**.
+- concatenating raw vectors and sorting requires $O(N \log N)$, completely negating the geometric advantage of the pre-sorted subsets.
+- to achieve mathematically optimal compression, we utilize a **Min-Heap (Priority Queue)** to execute a topological **K-Way Merge**.
 
-We map state tuples into the Min-Heap: `{scalar_value, array_index, element_index}`.
-1. Initiate geometric bounds: Inject exactly the 0-th element of all $K$ valid arrays into the Min-Heap.
-2. Because the Min-Heap universally surfaces the absolute global minimum of the current frontier, we pop the root vertex.
-3. Append `scalar_value` to the terminal structure array.
-4. From the exhausted topological vector (`array_index`), we conditionally fetch the immediate subsequent element (`element_index + 1`). If mathematically valid, inject it into the Min-Heap boundary.
-5. The structure naturally collapses when the priority queue geometry is completely empty.
+- we map state tuples into the Min-Heap: `{scalar_value, array_index, element_index}`.
+- initiate geometric bounds: Inject exactly the 0-th element of all $K$ valid arrays into the Min-Heap.
+- because the Min-Heap universally surfaces the absolute global minimum of the current frontier, we pop the root vertex.
+- append `scalar_value` to the terminal structure array.
+- from the exhausted topological vector (`array_index`), we conditionally fetch the immediate subsequent element (`element_index + 1`). If mathematically valid, inject it into the Min-Heap boundary.
+- the structure naturally collapses when the priority queue geometry is completely empty.
 
----
 
 ## Code Implementation
 
@@ -75,11 +68,12 @@ vector<int> mergeKSortedArrays(vector<vector<int>>& arrays, int k) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log K)$ mathematically verified. Every individual scalar ($N$ total elements) is geometrically pushed and popped from the priority queue. The strict bounds of the Min-Heap are limited to exactly $K$ active elements.
-- **Space Complexity:** $O(K)$ bounding the explicit auxiliary storage required for the active Min-Heap state tracker. The resulting $O(N)$ geometry bounds the return matrix allocation.
+- **time Complexity:** $O(N \log K)$ mathematically verified. Every individual scalar ($N$ total elements) is geometrically pushed and popped from the priority queue. The strict bounds of the Min-Heap are limited to exactly $K$ active elements.
+- **space Complexity:** $O(K)$ bounding the explicit auxiliary storage required for the active Min-Heap state tracker. The resulting $O(N)$ geometry bounds the return matrix allocation.
 
 > [!tip]
 > **Divide and Conquer Isomorphism:** This topological construction can mathematically map equivalently utilizing a strict Divide and Conquer merging geometry (merging subsets in pairs continuously). That mapping incurs identical $O(N \log K)$ time and $O(\log K)$ call-stack space bounds. However, Heap-based K-Way Merge generally yields superior spatial cache behavior for monolithic arrays.
+
+NEXT: [[Index]]

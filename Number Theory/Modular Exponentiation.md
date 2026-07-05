@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, number-theory]
-date: 2026-06-30
----
 # Modular Exponentiation
 
 ## Problem Statement
-Compute $(x^y) \bmod p$ efficiently.
+- compute $(x^y) \bmod p$ efficiently.
 
 ## Approach / Intuition
-Use binary exponentiation ([[Fast Exponentiation]]). Recursively or iteratively square the base and halve the exponent. If the current exponent is odd, multiply the result by the base. Modulo operation is applied at each multiplication to prevent overflow.
+- use binary exponentiation ([[Fast Exponentiation]]). Recursively or iteratively square the base and halve the exponent. If the current exponent is odd, multiply the result by the base. Modulo operation is applied at each multiplication to prevent overflow.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log y)$
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(\log y)$
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -30,7 +25,9 @@ long long power(long long base, long long exp, long long mod) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Base 0, exponent 0, modulo 1.
+- base 0, exponent 0, modulo 1.
+
+NEXT: [[Index]]

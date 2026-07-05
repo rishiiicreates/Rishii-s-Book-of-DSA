@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, binary_strings]
-date: 2026-06-30
----
 # Count without consecutive 1s
 
 ## Problem Statement
-Count the number of binary strings of length $n$ that do not contain consecutive 1s.
+- count the number of binary strings of length $n$ that do not contain consecutive 1s.
 
 ## Approach / Intuition
-Let $dp[0][i]$ be the count of valid strings of length $i$ ending in 0, and $dp[1][i]$ be the count ending in 1. If we append 0, the previous bit could be 0 or 1. If we append 1, the previous bit must be 0. Using [[Dynamic Programming]], the transitions are $dp[0][i] = dp[0][i-1] + dp[1][i-1]$ and $dp[1][i] = dp[0][i-1]$. This is equivalent to finding the $(n+2)$-th [[Fibonacci]] number.
+- let $dp[0][i]$ be the count of valid strings of length $i$ ending in 0, and $dp[1][i]$ be the count ending in 1. If we append 0, the previous bit could be 0 or 1. If we append 1, the previous bit must be 0. Using [[Dynamic Programming]], the transitions are $dp[0][i] = dp[0][i-1] + dp[1][i-1]$ and $dp[1][i] = dp[0][i-1]$. This is equivalent to finding the $(n+2)$-th [[Fibonacci]] number.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ using iteration, can be optimized to $O(\log N)$ with [[Matrix Exponentiation]].
-- **[[Space Complexity]]:** $O(1)$ using two variables.
+- **[[time Complexity]]:** $O(N)$ using iteration, can be optimized to $O(\log N)$ with [[Matrix Exponentiation]].
+- **[[space Complexity]]:** $O(1)$ using two variables.
 
 ## Sample Code
 ```cpp
@@ -31,7 +26,9 @@ long long countStrings(int n) {
 ```
 
 ## New Keywords / STL Used
-None.
+- none.
 
 ## Edge Cases
-$n = 0$, $n = 1$, large $n$ requiring modulo arithmetic.
+- $n = 0$, $n = 1$, large $n$ requiring modulo arithmetic.
+
+NEXT: [[Index]]

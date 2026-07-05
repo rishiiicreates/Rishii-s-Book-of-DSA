@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching]
-date: 2026-06-30
----
 # Z algorithm
 
 ## Problem Statement
-Find all occurrences of a pattern in a text using linear time complexity.
+- find all occurrences of a pattern in a text using linear time complexity.
 
 ## Approach / Intuition
-The [[Z Algorithm]] computes a Z-array for a combined string `pattern + "$" + text`. The value `Z[i]` represents the length of the longest substring starting from `i` that is also a prefix of the string.
+- the [[Z Algorithm]] computes a Z-array for a combined string `pattern + "$" + text`. The value `Z[i]` represents the length of the longest substring starting from `i` that is also a prefix of the string.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N + M)$
-- **[[Space Complexity]]:** $O(N + M)$
+- **[[time Complexity]]:** $O(N + M)$
+- **[[space Complexity]]:** $O(N + M)$
 
 ## Sample Code
 ```cpp
@@ -54,7 +49,9 @@ vector<int> zAlgorithm(string text, string pattern) {
 ```
 
 ## New Keywords / STL Used
-String concatenation
+- string concatenation
 
 ## Edge Cases
-Character `$` appearing in text or pattern.
+- character `$` appearing in text or pattern.
+
+NEXT: [[Index]]

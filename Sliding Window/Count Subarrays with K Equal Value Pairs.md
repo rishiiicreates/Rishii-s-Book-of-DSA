@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, hash]
-date: 2026-06-30
----
 # Count Subarrays with K Equal Value Pairs
 
 ## Problem Statement
-Given an array, find the number of contiguous subarrays that contain exactly `k` identical value pairs. (Note: A pair (i, j) is identical if `arr[i] == arr[j]`).
+- given an array, find the number of contiguous subarrays that contain exactly `k` identical value pairs. (Note: A pair (i, j) is identical if `arr[i] == arr[j]`).
 
 ## Approach / Intuition
-Use a [[Sliding Window]] with a frequency map to track identical pairs. When expanding the window, adding an element with frequency `f` adds `f` new pairs. Calculate `atMost(k)` subarrays and return `atMost(k) - atMost(k-1)`. Shrink the window when the pair count exceeds the threshold.
+- use a [[Sliding Window]] with a frequency map to track identical pairs. When expanding the window, adding an element with frequency `f` adds `f` new pairs. Calculate `atMost(k)` subarrays and return `atMost(k) - atMost(k-1)`. Shrink the window when the pair count exceeds the threshold.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(n) for the hash map
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(n) for the hash map
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ long long subarraysWithKPairs(const vector<int>& nums, int k) {
 ```
 
 ## New Keywords / STL Used
-`unordered_map`, `long long`
+- `unordered_map`, `long long`
 
 ## Edge Cases
-`k = 0`, no duplicate elements, empty array, extremely large frequency counts.
+- `k = 0`, no duplicate elements, empty array, extremely large frequency counts.
+
+NEXT: [[Index]]

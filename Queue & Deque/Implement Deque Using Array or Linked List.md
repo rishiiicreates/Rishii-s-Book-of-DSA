@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, implementation]
-date: 2026-06-30
----
 # Implement Deque Using Array or Linked List
 
 ## Problem Statement
-Implement a Double Ended Queue (Deque) from scratch.
+- implement a Double Ended Queue (Deque) from scratch.
 
 ## Approach / Intuition
-A [[Deque]] can be effectively built using a Doubly [[Linked List]] to allow O(1) insertions and deletions at both the head and the tail. Alternatively, a circular array with `front` and `rear` pointers can be used, taking care of modulo arithmetic for boundary wrapping on both ends.
+- a [[Deque]] can be effectively built using a Doubly [[Linked List]] to allow O(1) insertions and deletions at both the head and the tail. Alternatively, a circular array with `front` and `rear` pointers can be used, taking care of modulo arithmetic for boundary wrapping on both ends.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for all push/pop operations
-- **[[Space Complexity]]:** O(n)
+- **[[time Complexity]]:** O(1) for all push/pop operations
+- **[[space Complexity]]:** O(n)
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-Popping from both ends until empty, pushing and popping single elements repeatedly.
+- popping from both ends until empty, pushing and popping single elements repeatedly.
+
+NEXT: [[Index]]

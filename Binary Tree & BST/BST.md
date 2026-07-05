@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, search]
-date: 2026-06-30
----
 # BST
 
 ## Problem Statement
-Implement a tree structure that allows for fast search, insertion, and deletion of items.
+- implement a tree structure that allows for fast search, insertion, and deletion of items.
 
 ## Approach / Intuition
-In a [[Binary Search Tree]], the left child contains values strictly less than the parent node, and the right child contains values strictly greater. This property enables [[Binary Search]]-like navigation.
+- in a [[Binary Search Tree]], the left child contains values strictly less than the parent node, and the right child contains values strictly greater. This property enables [[Binary Search]]-like navigation.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(log N) average, O(N) worst case (skewed tree).
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(log N) average, O(N) worst case (skewed tree).
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -29,8 +24,10 @@ TreeNode* insertBST(TreeNode* root, int val) {
 ```
 
 ## New Keywords / STL Used
-- None
+- none
 
 ## Edge Cases
-- Inserting duplicates (usually ignored or tracked via count)
-- Highly skewed insertions (e.g., sorted order)
+- inserting duplicates (usually ignored or tracked via count)
+- highly skewed insertions (e.g., sorted order)
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Longest String Chain
 
 ## Problem Statement
-Given a list of words, find the length of the longest string chain where each word adds exactly one letter to the previous word.
+- given a list of words, find the length of the longest string chain where each word adds exactly one letter to the previous word.
 
 ## Approach / Intuition
-Sort the words by length. This ensures we process shorter words first. Use a [[Hash Map]] to store the longest chain ending at each word. For each word, generate all possible predecessors by removing one character at a time. The chain length for the current word is `1 + max(chain lengths of predecessors)`.
+- sort the words by length. This ensures we process shorter words first. Use a [[Hash Map]] to store the longest chain ending at each word. For each word, generate all possible predecessors by removing one character at a time. The chain length for the current word is `1 + max(chain lengths of predecessors)`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N \log N + N \times L^2), where L is the maximum word length
-- **[[Space Complexity]]:** O(N \times L)
+- **[[time Complexity]]:** O(N \log N + N \times L^2), where L is the maximum word length
+- **[[space Complexity]]:** O(N \times L)
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ int longestStrChain(vector<string>& words) {
 ```
 
 ## New Keywords / STL Used
-`std::sort` with custom lambda, `std::unordered_map`, `std::string::substr`
+- `std::sort` with custom lambda, `std::unordered_map`, `std::string::substr`
 
 ## Edge Cases
-All words of same length, single word array, large number of words but no valid chains.
+- all words of same length, single word array, large number of words but no valid chains.
+
+NEXT: [[Index]]

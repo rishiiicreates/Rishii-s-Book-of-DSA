@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, red-black, balanced-tree]
-date: 2026-06-30
----
 # Red-Black Insert or Delete
 
 ## Problem Statement
-Implement the insertion and deletion operations in a Red-Black Tree, maintaining its color properties and self-balancing characteristics.
+- implement the insertion and deletion operations in a Red-Black Tree, maintaining its color properties and self-balancing characteristics.
 
 ## Approach / Intuition
-A [[Red-Black Tree]] ensures the path from the root to the farthest leaf is no more than twice as long as the path to the nearest leaf. It uses nodes colored Red or Black. The standard BST insert adds a node colored Red. We then fix violations of Red-Black properties (e.g., two consecutive red nodes) by performing color flips and [[Tree Rotations]]. Similar complex balancing occurs during deletion to maintain the same "black-height" on all paths.
+- a [[Red-Black Tree]] ensures the path from the root to the farthest leaf is no more than twice as long as the path to the nearest leaf. It uses nodes colored Red or Black. The standard BST insert adds a node colored Red. We then fix violations of Red-Black properties (e.g., two consecutive red nodes) by performing color flips and [[Tree Rotations]]. Similar complex balancing occurs during deletion to maintain the same "black-height" on all paths.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log N)$ for both insert and delete.
-- **[[Space Complexity]]:** $O(\log N)$ for the recursion stack or $O(1)$ iteratively with parent pointers.
+- **[[time Complexity]]:** $O(\log N)$ for both insert and delete.
+- **[[space Complexity]]:** $O(\log N)$ for the recursion stack or $O(1)$ iteratively with parent pointers.
 
 ## Sample Code
 ```cpp
@@ -62,9 +57,11 @@ void fixViolation(Node *&root, Node *&pt) {
 ```
 
 ## New Keywords / STL Used
-`enum`
+- `enum`
 
 ## Edge Cases
-- Inserting into an empty tree (root must be colored black)
-- Consecutive red nodes (violation)
-- Deleting a black node (disrupts black-height)
+- inserting into an empty tree (root must be colored black)
+- consecutive red nodes (violation)
+- deleting a black node (disrupts black-height)
+
+NEXT: [[Index]]

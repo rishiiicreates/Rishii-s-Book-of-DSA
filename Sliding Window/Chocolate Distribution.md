@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, sorting, chocolate-distribution]
-date: 2026-06-30
----
 # Chocolate Distribution
 
 ## Problem Statement
-Given an array of `N` integers where each value represents the number of chocolates in a packet, distribute the packets among `M` students such that each student gets exactly one packet and the difference between the maximum and minimum number of chocolates given is aggressively minimized.
+- given an array of `N` integers where each value represents the number of chocolates in a packet, distribute the packets among `M` students such that each student gets exactly one packet and the difference between the maximum and minimum number of chocolates given is aggressively minimized.
 
 ## Approach / Intuition
-First, sort the array in ascending order. Since the array is sorted, any valid contiguous subarray of size `M` dictates a potential distribution, with the minimum value at the front and maximum at the back. Evaluate the difference between boundaries while passing a fixed-size [[Sliding Window]] over the [[Sorting]] processed array to pinpoint the absolute lowest differential.
+- first, sort the array in ascending order. Since the array is sorted, any valid contiguous subarray of size `M` dictates a potential distribution, with the minimum value at the front and maximum at the back. Evaluate the difference between boundaries while passing a fixed-size [[Sliding Window]] over the [[Sorting]] processed array to pinpoint the absolute lowest differential.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(log N)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(log N)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ long long findMinDiff(vector<long long> arr, long long n, long long m) {
 ```
 
 ## New Keywords / STL Used
-`LLONG_MAX`
+- `lLONG_MAX`
 
 ## Edge Cases
-`M > N` (unsolvable), `M == 1` (zero difference), empty arrays triggering boundary errors.
+- `m > N` (unsolvable), `M == 1` (zero difference), empty arrays triggering boundary errors.
+
+NEXT: [[Index]]

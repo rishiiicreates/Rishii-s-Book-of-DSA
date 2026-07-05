@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, array, math]
-date: 2026-06-30
----
 # Permutations
 
 ## Problem Statement
-Given an array of distinct integers, return all the possible permutations.
+- given an array of distinct integers, return all the possible permutations.
 
 ## Approach / Intuition
-Use [[Backtracking]] to generate all orderings. Maintain a `used` array to track which elements are currently in the permutation, or simply swap elements in-place within the [[Array]]. In the swapping approach, for each index, swap it with all subsequent indices, recurse, and then backtrack by swapping them back to restore the original state.
+- use [[Backtracking]] to generate all orderings. Maintain a `used` array to track which elements are currently in the permutation, or simply swap elements in-place within the [[Array]]. In the swapping approach, for each index, swap it with all subsequent indices, recurse, and then backtrack by swapping them back to restore the original state.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \cdot N!)$
-- **[[Space Complexity]]:** $O(N)$ for the recursion stack
+- **[[time Complexity]]:** $O(N \cdot N!)$
+- **[[space Complexity]]:** $O(N)$ for the recursion stack
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ vector<vector<int>> permute(vector<int>& nums) {
 ```
 
 ## New Keywords / STL Used
-`swap`
+- `swap`
 
 ## Edge Cases
-Array with a single element, empty array, array with duplicate elements (requires sorting and skipping duplicates).
+- array with a single element, empty array, array with duplicate elements (requires sorting and skipping duplicates).
+
+NEXT: [[Index]]

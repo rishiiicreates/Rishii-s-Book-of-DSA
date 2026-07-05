@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, cpp, priority-queue]
-date: 2026-06-30
----
 # Priority Queue
 
 ## Problem Statement
-Utilize a priority queue to maintain a highly dynamic stream of integers and retrieve the minimum or maximum continuously.
+- utilize a priority queue to maintain a highly dynamic stream of integers and retrieve the minimum or maximum continuously.
 
 ## Approach / Intuition
-A `priority_queue` in C++ actively mimics a Max Heap natively by default. To emulate a Min Heap seamlessly, pass `std::greater<int>` strictly as the internal comparator. This container adapter fundamentally abstracts away raw array manipulation, yielding flawless [[Dynamic Queuing]].
+- a `priority_queue` in C++ actively mimics a Max Heap natively by default. To emulate a Min Heap seamlessly, pass `std::greater<int>` strictly as the internal comparator. This container adapter fundamentally abstracts away raw array manipulation, yielding flawless [[Dynamic Queuing]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(log N) for insertion/deletion, O(1) for top
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(log N) for insertion/deletion, O(1) for top
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ void demonstratePriorityQueue() {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, `std::greater`
+- `std::priority_queue`, `std::greater`
 
 ## Edge Cases
-Extracting objects directly from freshly initialized empty queues.
+- extracting objects directly from freshly initialized empty queues.
+
+NEXT: [[Index]]

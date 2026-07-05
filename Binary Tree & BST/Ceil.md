@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, ceil]
-date: 2026-06-30
----
 # Ceil
 
 ## Problem Statement
-Given a BST and an integer key, find the ceil value of the key in the BST. The ceil value is the smallest node value greater than or equal to the key.
+- given a BST and an integer key, find the ceil value of the key in the BST. The ceil value is the smallest node value greater than or equal to the key.
 
 ## Approach / Intuition
-Similar to the floor problem, we traverse the [[Binary Search Tree]]. If the current node's value is equal to the key, it is our ceil. If the node's value is less than the key, the ceil must lie in the right subtree. If the node's value is greater than the key, this node is a valid candidate for the ceil. We record it and then move to the left subtree to see if we can find a smaller candidate that is still $\geq$ the key.
+- similar to the floor problem, we traverse the [[Binary Search Tree]]. If the current node's value is equal to the key, it is our ceil. If the node's value is less than the key, the ceil must lie in the right subtree. If the node's value is greater than the key, this node is a valid candidate for the ceil. We record it and then move to the left subtree to see if we can find a smaller candidate that is still $\geq$ the key.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(H)$ where $H$ is the tree height.
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(H)$ where $H$ is the tree height.
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -43,9 +38,11 @@ int ceilBST(TreeNode* root, int key) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Key is greater than all nodes in the BST
-- Key is exactly present in the BST
-- BST is empty
+- key is greater than all nodes in the BST
+- key is exactly present in the BST
+- bST is empty
+
+NEXT: [[Index]]

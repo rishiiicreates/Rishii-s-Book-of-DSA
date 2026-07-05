@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, trie, strings]
-date: 2026-06-30
----
 # Count of distinct substrings
 
 ## Problem Statement
-Given a string, find the number of distinct substrings it contains.
+- given a string, find the number of distinct substrings it contains.
 
 ## Approach / Intuition
-Insert every suffix of the string into a [[Trie]]. The number of distinct substrings is equal to the number of nodes in the Trie (excluding the root). Each new node created represents a new distinct substring.
+- insert every suffix of the string into a [[Trie]]. The number of distinct substrings is equal to the number of nodes in the Trie (excluding the root). Each new node created represents a new distinct substring.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N^2)$ where $N$ is string length
-- **[[Space Complexity]]:** $O(N^2)$
+- **[[time Complexity]]:** $O(N^2)$ where $N$ is string length
+- **[[space Complexity]]:** $O(N^2)$
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ int countDistinctSubstrings(string s) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-String with identical characters, empty string.
+- string with identical characters, empty string.
+
+NEXT: [[Index]]

@@ -1,25 +1,18 @@
----
-type: concept
-tags: [two-pointer, array, cpp, set-theory, math]
-date: 2026-06-30
----
 # Intersection of Two Sorted Arrays
 
 ## Problem Statement
-Given two strictly monotonic (sorted) arrays $A$ and $B$, geometrically evaluate their mathematical intersection $A \cap B$. The evaluated intersection must inherently maintain sorting and contain only strictly unique instances of the common elements.
+- given two strictly monotonic (sorted) arrays $A$ and $B$, geometrically evaluate their mathematical intersection $A \cap B$. The evaluated intersection must inherently maintain sorting and contain only strictly unique instances of the common elements.
 
----
 
 ## Approach: Synchronous Dual Pointers
 
-Because the structures are strictly sorted, we completely bypass auxiliary Hash Maps and utilize synchronized [[Two Pointers]].
-1. Initialize $i = 0$ for $A$ and $j = 0$ for $B$.
-2. If $A[i] < B[j]$, it is mathematically impossible for $A[i]$ to exist in the remaining unseen elements of $B$, since $B$ is monotonically ascending. Thus, increment $i$.
-3. If $B[j] < A[i]$, symmetrically increment $j$.
-4. If $A[i] == B[j]$, a structural intersection exists. Push it to the result array (subject to mathematical deduplication via `res.back()`) and sequentially increment both $i$ and $j$.
-5. The algorithm terminates immediately when *either* pointer violates bounds.
+- because the structures are strictly sorted, we completely bypass auxiliary Hash Maps and utilize synchronized [[Two Pointers]].
+- initialize $i = 0$ for $A$ and $j = 0$ for $B$.
+- if $A[i] < B[j]$, it is mathematically impossible for $A[i]$ to exist in the remaining unseen elements of $B$, since $B$ is monotonically ascending. Thus, increment $i$.
+- if $B[j] < A[i]$, symmetrically increment $j$.
+- if $A[i] == B[j]$, a structural intersection exists. Push it to the result array (subject to mathematical deduplication via `res.back()`) and sequentially increment both $i$ and $j$.
+- the algorithm terminates immediately when *either* pointer violates bounds.
 
----
 
 ## Code Implementation
 
@@ -60,8 +53,9 @@ vector<int> findIntersection(const vector<int>& a, const vector<int>& b) {
 > [!tip]
 > Unlike mathematical Unions, Intersections structurally terminate the precise moment either individual array is exhausted. No residual sequence flushing is theoretically required.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N + M)$. In the absolute worst case, pointers independently increment up to the bounds.
-- **Space Complexity:** $\mathcal{O}(1)$ auxiliary structural memory. The return structure demands $\mathcal{O}(\min(N, M))$ bounds.
+- **time Complexity:** $\mathcal{O}(N + M)$. In the absolute worst case, pointers independently increment up to the bounds.
+- **space Complexity:** $\mathcal{O}(1)$ auxiliary structural memory. The return structure demands $\mathcal{O}(\min(N, M))$ bounds.
+
+NEXT: [[Index]]

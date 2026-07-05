@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching, hashing]
-date: 2026-06-30
----
 # Palindrome Substring Queries
 
 ## Problem Statement
-Answer queries asking whether a given substring $S[L..R]$ is a palindrome.
+- answer queries asking whether a given substring $S[L..R]$ is a palindrome.
 
 ## Approach / Intuition
-By using a [[Rolling Hash]] algorithm, we can compute the forward hash and reverse hash of any substring in $O(1)$ time after $O(N)$ preprocessing. A substring is a palindrome if its forward hash equals its reverse hash.
+- by using a [[Rolling Hash]] algorithm, we can compute the forward hash and reverse hash of any substring in $O(1)$ time after $O(N)$ preprocessing. A substring is a palindrome if its forward hash equals its reverse hash.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ for preprocessing, $O(1)$ per query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$ for preprocessing, $O(1)$ per query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -57,7 +52,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::vector::assign`
+- `std::vector::assign`
 
 ## Edge Cases
-Single character query, full string query, out of bounds indices.
+- single character query, full string query, out of bounds indices.
+
+NEXT: [[Index]]

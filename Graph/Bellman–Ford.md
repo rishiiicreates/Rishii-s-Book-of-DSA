@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, shortest-path, bellman-ford]
-date: 2026-06-30
----
 # Bellman-Ford
 
 ## Problem Statement
-Find the shortest path from a single source to all vertices in a directed graph, even with negative edge weights, and detect negative weight cycles.
+- find the shortest path from a single source to all vertices in a directed graph, even with negative edge weights, and detect negative weight cycles.
 
 ## Approach / Intuition
-Relax all edges exactly V-1 times. If any edge can still be relaxed on the Vth iteration, a [[Negative Weight Cycle]] exists.
+- relax all edges exactly V-1 times. If any edge can still be relaxed on the Vth iteration, a [[Negative Weight Cycle]] exists.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V \times E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V \times E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -39,7 +34,9 @@ vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
 ```
 
 ## New Keywords / STL Used
-`vector`
+- `vector`
 
 ## Edge Cases
-Graphs containing a negative cycle, graphs with negative weights but no negative cycle.
+- graphs containing a negative cycle, graphs with negative weights but no negative cycle.
+
+NEXT: [[Index]]

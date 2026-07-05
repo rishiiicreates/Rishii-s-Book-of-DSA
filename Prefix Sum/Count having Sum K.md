@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, hash-map]
-date: 2026-06-30
----
 # Count having Sum K
 
 ## Problem Statement
-Count the total number of continuous subarrays whose sum equals exactly `K`.
+- count the total number of continuous subarrays whose sum equals exactly `K`.
 
 ## Approach / Intuition
-Maintain a running [[Prefix Sum]]. Use a [[Hash Map]] to store the frequency of all prefix sums encountered. At each step, if `PrefixSum - K` exists in the map, it means there are valid subarrays ending at the current position. Add its frequency to the total count.
+- maintain a running [[Prefix Sum]]. Use a [[Hash Map]] to store the frequency of all prefix sums encountered. At each step, if `PrefixSum - K` exists in the map, it means there are valid subarrays ending at the current position. Add its frequency to the total count.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the array.
-- **[[Space Complexity]]:** O(N) for storing prefix sum frequencies.
+- **[[time Complexity]]:** O(N) where N is the length of the array.
+- **[[space Complexity]]:** O(N) for storing prefix sum frequencies.
 
 ## Sample Code
 ```cpp
@@ -33,9 +28,11 @@ int subarraySum(vector<int>& nums, int k) {
 ```
 
 ## New Keywords / STL Used
-- None
+- none
 
 ## Edge Cases
-- Array contains negative numbers and zeros
-- Subarray can be a single element
-- Target `K` is 0
+- array contains negative numbers and zeros
+- subarray can be a single element
+- target `K` is 0
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, balanced-tree]
-date: 2026-06-30
----
 # AVL Tree
 
 ## Problem Statement
-Maintain a balanced binary search tree to guarantee O(log N) operations even in the worst case.
+- maintain a balanced binary search tree to guarantee O(log N) operations even in the worst case.
 
 ## Approach / Intuition
-An [[AVL Tree]] is a self-balancing BST where the difference between heights of left and right subtrees cannot be more than one. If violated during insertion or deletion, we use [[Tree Rotations]] to restore balance.
+- an [[AVL Tree]] is a self-balancing BST where the difference between heights of left and right subtrees cannot be more than one. If violated during insertion or deletion, we use [[Tree Rotations]] to restore balance.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(log N) for search, insert, and delete.
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(log N) for search, insert, and delete.
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -42,5 +37,7 @@ AVLNode* rightRotate(AVLNode* y) {
 - `std::max`
 
 ## Edge Cases
-- Skewed inputs resulting in multiple consecutive rotations
-- Empty tree
+- skewed inputs resulting in multiple consecutive rotations
+- empty tree
+
+NEXT: [[Index]]

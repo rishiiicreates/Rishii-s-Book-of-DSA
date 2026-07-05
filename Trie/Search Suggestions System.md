@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dsa, cpp, trie, string, binary-search]
-date: 2026-06-30
----
 # Search Suggestions System
 
 ## Problem Statement
-Given an array of strings `products` and a `searchWord`, design a system that suggests at most three product names from `products` after each character of `searchWord` is typed.
+- given an array of strings `products` and a `searchWord`, design a system that suggests at most three product names from `products` after each character of `searchWord` is typed.
 
 ## Approach / Intuition
-Sort the products lexicographically. Insert them into a [[Trie]], where each node stores a list of up to three product indices (or the strings themselves) that share the prefix ending at that node. When typing characters, traverse the Trie; at each node, output the stored suggestions. Alternatively, this can be solved using two-pointers or [[Binary Search]] without a Trie, but a Trie explicitly models the prefix matching structure.
+- sort the products lexicographically. Insert them into a [[Trie]], where each node stores a list of up to three product indices (or the strings themselves) that share the prefix ending at that node. When typing characters, traverse the Trie; at each node, output the stored suggestions. Alternatively, this can be solved using two-pointers or [[Binary Search]] without a Trie, but a Trie explicitly models the prefix matching structure.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N + N \cdot L + Q)$ where $N$ is product count, $L$ is max length, $Q$ is searchWord length
-- **[[Space Complexity]]:** $O(N \cdot L)$ for Trie
+- **[[time Complexity]]:** $O(N \log N + N \cdot L + Q)$ where $N$ is product count, $L$ is max length, $Q$ is searchWord length
+- **[[space Complexity]]:** $O(N \cdot L)$ for Trie
 
 ## Sample Code
 ```cpp
@@ -71,7 +66,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-Vector accumulation inside struct
+- vector accumulation inside struct
 
 ## Edge Cases
-No products match the search word, less than three products match.
+- no products match the search word, less than three products match.
+
+NEXT: [[Index]]

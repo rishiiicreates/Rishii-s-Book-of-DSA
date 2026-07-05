@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, interval]
-date: 2026-06-30
----
 # Boolean Parenthesization
 
 ## Problem Statement
-Given a boolean expression with symbols `T`, `F`, and operators `&`, `|`, `^`, find the number of ways to parenthesize the expression so it evaluates to `True`.
+- given a boolean expression with symbols `T`, `F`, and operators `&`, `|`, `^`, find the number of ways to parenthesize the expression so it evaluates to `True`.
 
 ## Approach / Intuition
-We use interval [[Dynamic Programming]]. We need two 3D arrays or state caching: `dp[i][j][isTrue]` representing the number of ways to evaluate the substring from `i` to `j` to boolean value `isTrue`. We split at every operator `k` between `i` and `j`, recursively evaluate the left and right subexpressions, and combine their counts based on the operator.
+- we use interval [[Dynamic Programming]]. We need two 3D arrays or state caching: `dp[i][j][isTrue]` representing the number of ways to evaluate the substring from `i` to `j` to boolean value `isTrue`. We split at every operator `k` between `i` and `j`, recursively evaluate the left and right subexpressions, and combine their counts based on the operator.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^3)
-- **[[Space Complexity]]:** O(N^2)
+- **[[time Complexity]]:** O(N^3)
+- **[[space Complexity]]:** O(N^2)
 
 ## Sample Code
 ```cpp
@@ -57,7 +52,9 @@ int countWays(int n, string s) {
 ```
 
 ## New Keywords / STL Used
-None specifically beyond basic vectors.
+- none specifically beyond basic vectors.
 
 ## Edge Cases
-Single boolean value, expression missing operators, purely true/false sequence.
+- single boolean value, expression missing operators, purely true/false sequence.
+
+NEXT: [[Index]]

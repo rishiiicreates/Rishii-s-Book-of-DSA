@@ -1,19 +1,14 @@
----
-type: concept
-tags: [bst, cpp]
-date: 2026-06-30
----
 # Predecessor and Successor
 
 ## Problem Statement
-Find the inorder predecessor and successor of a given key in a [[Binary Search Tree]].
+- find the inorder predecessor and successor of a given key in a [[Binary Search Tree]].
 
 ## Approach / Intuition
-Traverse the tree from the root. To find the predecessor, move left if the key is smaller or equal, and move right while keeping track of the potential predecessor. To find the successor, move right if the key is greater or equal, and move left while tracking the potential successor. The inorder traversal of a BST gives elements in sorted order.
+- traverse the tree from the root. To find the predecessor, move left if the key is smaller or equal, and move right while keeping track of the potential predecessor. To find the successor, move right if the key is greater or equal, and move left while tracking the potential successor. The inorder traversal of a BST gives elements in sorted order.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(H) where H is the height of the tree.
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(H) where H is the height of the tree.
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -41,8 +36,10 @@ void findPreSuc(TreeNode* root, TreeNode*& pre, TreeNode*& suc, int key) {
 ```
 
 ## New Keywords / STL Used
-- Reference to pointer `TreeNode*&`
+- reference to pointer `TreeNode*&`
 
 ## Edge Cases
-- Key not present in the tree.
-- Key is the maximum or minimum element.
+- key not present in the tree.
+- key is the maximum or minimum element.
+
+NEXT: [[Index]]

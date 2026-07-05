@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, number-theory]
-date: 2026-06-30
----
 # Euler's Totient
 
 ## Problem Statement
-Calculate the number of positive integers up to $N$ that are relatively prime to $N$.
+- calculate the number of positive integers up to $N$ that are relatively prime to $N$.
 
 ## Approach / Intuition
-Use the formula $\phi(n) = n \times (1 - \frac{1}{p_1}) \times \dots \times (1 - \frac{1}{p_k})$ where $p_i$ are the distinct prime factors of $N$. This can be computed by iterating up to $\sqrt{N}$ to find [[Prime Factorization]].
+- use the formula $\phi(n) = n \times (1 - \frac{1}{p_1}) \times \dots \times (1 - \frac{1}{p_k})$ where $p_i$ are the distinct prime factors of $N$. This can be computed by iterating up to $\sqrt{N}$ to find [[Prime Factorization]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\sqrt{N})$
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(\sqrt{N})$
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int eulerTotient(int n) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-$N = 1$, prime numbers.
+- $n = 1$, prime numbers.
+
+NEXT: [[Index]]

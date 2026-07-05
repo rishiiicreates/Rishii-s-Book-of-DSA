@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, avl, balanced-tree]
-date: 2026-06-30
----
 # AVL Insert or Delete
 
 ## Problem Statement
-Implement the insertion and deletion operations in an AVL tree, ensuring that the tree remains height-balanced after each operation.
+- implement the insertion and deletion operations in an AVL tree, ensuring that the tree remains height-balanced after each operation.
 
 ## Approach / Intuition
-An [[AVL Tree]] is a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one for all nodes. When we insert or delete, we first perform the standard BST operation. Then, we update the heights and calculate the balance factor. If the node becomes unbalanced, we perform one of four [[Tree Rotations]] (Left-Left, Right-Right, Left-Right, or Right-Left) to restore balance.
+- an [[AVL Tree]] is a self-balancing binary search tree where the difference between heights of left and right subtrees cannot be more than one for all nodes. When we insert or delete, we first perform the standard BST operation. Then, we update the heights and calculate the balance factor. If the node becomes unbalanced, we perform one of four [[Tree Rotations]] (Left-Left, Right-Right, Left-Right, or Right-Left) to restore balance.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log N)$ for both insert and delete.
-- **[[Space Complexity]]:** $O(\log N)$ for the recursion stack.
+- **[[time Complexity]]:** $O(\log N)$ for both insert and delete.
+- **[[space Complexity]]:** $O(\log N)$ for the recursion stack.
 
 ## Sample Code
 ```cpp
@@ -84,8 +79,10 @@ Node* insert(Node* node, int key) {
 ```
 
 ## New Keywords / STL Used
-`std::max`
+- `std::max`
 
 ## Edge Cases
-- Inserting sorted data (would cause worst-case $O(N)$ in standard BST, but $O(\log N)$ in AVL)
-- Duplicate keys (often ignored or stored with counts)
+- inserting sorted data (would cause worst-case $O(N)$ in standard BST, but $O(\log N)$ in AVL)
+- duplicate keys (often ignored or stored with counts)
+
+NEXT: [[Index]]

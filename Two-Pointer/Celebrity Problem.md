@@ -1,19 +1,14 @@
----
-type: concept
-tags: [two-pointer, cpp, matrix]
-date: 2026-06-30
----
 # The Celebrity Problem
 
 ## Problem Statement
-In a party of `n` people, a celebrity is known by everyone but knows nobody. Given a helper function `knows(a, b)` which tells if `a` knows `b`, find the celebrity.
+- in a party of `n` people, a celebrity is known by everyone but knows nobody. Given a helper function `knows(a, b)` which tells if `a` knows `b`, find the celebrity.
 
 ## Approach / Intuition
-Use a [[Two Pointers]] approach initialized at both ends of the population (`left = 0`, `right = n - 1`). If `left` knows `right`, `left` cannot be the celebrity, so `left++`. If `left` does not know `right`, `right` cannot be the celebrity, so `right--`. The remaining person is a potential candidate, which must be verified.
+- use a [[Two Pointers]] approach initialized at both ends of the population (`left = 0`, `right = n - 1`). If `left` knows `right`, `left` cannot be the celebrity, so `left++`. If `left` does not know `right`, `right` cannot be the celebrity, so `right--`. The remaining person is a potential candidate, which must be verified.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ int findCelebrity(int n) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-No celebrity exists, multiple celebrities (impossible by definition), small party sizes.
+- no celebrity exists, multiple celebrities (impossible by definition), small party sizes.
+
+NEXT: [[Index]]

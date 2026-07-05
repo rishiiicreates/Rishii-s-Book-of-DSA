@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Interleaving String
 
 ## Problem Statement
-Given strings `s1`, `s2`, and `s3`, find whether `s3` is formed by an interleaving of `s1` and `s2`.
+- given strings `s1`, `s2`, and `s3`, find whether `s3` is formed by an interleaving of `s1` and `s2`.
 
 ## Approach / Intuition
-Use a 2D [[Dynamic Programming]] boolean table where `dp[i][j]` means `s1[0..i-1]` and `s2[0..j-1]` interleave to form `s3[0..i+j-1]`. Check character matches sequentially. If length doesn't match, return false immediately. Space can be optimized to 1D.
+- use a 2D [[Dynamic Programming]] boolean table where `dp[i][j]` means `s1[0..i-1]` and `s2[0..j-1]` interleave to form `s3[0..i+j-1]`. Check character matches sequentially. If length doesn't match, return false immediately. Space can be optimized to 1D.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * m)
-- **[[Space Complexity]]:** O(m)
+- **[[time Complexity]]:** O(n * m)
+- **[[space Complexity]]:** O(m)
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ bool isInterleave(string s1, string s2, string s3) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `string`, `length()`
+- `vector`, `string`, `length()`
 
 ## Edge Cases
-Empty strings for `s1` and `s2`, character matching but order swapped, string lengths sum mismatch.
+- empty strings for `s1` and `s2`, character matching but order swapped, string lengths sum mismatch.
+
+NEXT: [[Index]]

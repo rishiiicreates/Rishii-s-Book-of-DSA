@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, tree-view]
-date: 2026-06-30
----
 # Right View of Binary Tree
 
 ## Problem Statement
-Given a binary tree, return the values of the nodes you can see when the tree is viewed from the right side.
+- given a binary tree, return the values of the nodes you can see when the tree is viewed from the right side.
 
 ## Approach / Intuition
-Similar to the left view, use [[Depth-First Search]] but traverse the right child before the left child. Maintain the current depth and add the node to the result list if it's the first time reaching this depth. [[Breadth-First Search]] can also be used by taking the last element in the queue at each level.
+- similar to the left view, use [[Depth-First Search]] but traverse the right child before the left child. Maintain the current depth and add the node to the result list if it's the first time reaching this depth. [[Breadth-First Search]] can also be used by taking the last element in the queue at each level.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(H)$ for DFS recursion stack
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(H)$ for DFS recursion stack
 
 ## Sample Code
 ```cpp
@@ -43,7 +38,9 @@ vector<int> rightSideView(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-DFS traversal
+- dFS traversal
 
 ## Edge Cases
-Empty tree, single node tree, tree skewed to the left.
+- empty tree, single node tree, tree skewed to the left.
+
+NEXT: [[Index]]

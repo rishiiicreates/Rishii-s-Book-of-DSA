@@ -1,33 +1,26 @@
----
-type: concept
-tags: [tree, binary-tree, traversal, cpp, math, constant-space]
-date: 2026-06-30
----
 # Morris Inorder Traversal
 
 ## Problem Statement
-Mathematically evaluate the geometric Inorder sequence of a Binary Tree achieving strictly linear $\mathcal{O}(N)$ temporal performance whilst utilizing an absolutely constrained $\mathcal{O}(1)$ supplementary structural space, entirely avoiding both explicit Data Stacks and implicit System Call Stacks.
+- mathematically evaluate the geometric Inorder sequence of a Binary Tree achieving strictly linear $\mathcal{O}(N)$ temporal performance whilst utilizing an absolutely constrained $\mathcal{O}(1)$ supplementary structural space, entirely avoiding both explicit Data Stacks and implicit System Call Stacks.
 
----
 
 ## Approach: Structural Threading (Morris Traversal)
 
-A standard [[Inorder]] execution necessitates $\mathcal{O}(H)$ spatial memory to theoretically re-evaluate the parent after structurally resolving the left child subspace.
-Morris Traversal bypasses this constraint by dynamically threading the binary graph: it mathematically restructures the read-only $\emptyset$ bounds (null pointers) of terminal leaves to explicitly point temporally backward to their Inorder successor.
+- a standard [[Inorder]] execution necessitates $\mathcal{O}(H)$ spatial memory to theoretically re-evaluate the parent after structurally resolving the left child subspace.
+- morris Traversal bypasses this constraint by dynamically threading the binary graph: it mathematically restructures the read-only $\emptyset$ bounds (null pointers) of terminal leaves to explicitly point temporally backward to their Inorder successor.
 
-Algorithm:
-1. Initialize `current` at the absolute root.
-2. If `current->left` evaluates strictly to null, the local left subspace is empty. Evaluate `current->val` and structurally transition right: `current = current->right`.
-3. If a left subspace mathematically exists, geometrically discover the **Inorder Predecessor** (the structurally absolute rightmost node bounded within the left subtree).
-4. If the Predecessor's right bound is null:
-   - Temporally thread it to `current` (`pre->right = current`).
-   - Penetrate deeper left: `current = current->left`.
-5. If the Predecessor's right bound already explicitly points to `current`, the threading is fully evaluated.
-   - Sever the thread to strictly restore original graph topology (`pre->right = nullptr`).
-   - Evaluate `current->val`.
-   - Transition right: `current = current->right`.
+- algorithm:
+- initialize `current` at the absolute root.
+- if `current->left` evaluates strictly to null, the local left subspace is empty. Evaluate `current->val` and structurally transition right: `current = current->right`.
+- if a left subspace mathematically exists, geometrically discover the **Inorder Predecessor** (the structurally absolute rightmost node bounded within the left subtree).
+- if the Predecessor's right bound is null:
+   - temporally thread it to `current` (`pre->right = current`).
+   - penetrate deeper left: `current = current->left`.
+- if the Predecessor's right bound already explicitly points to `current`, the threading is fully evaluated.
+   - sever the thread to strictly restore original graph topology (`pre->right = nullptr`).
+   - evaluate `current->val`.
+   - transition right: `current = current->right`.
 
----
 
 ## Code Implementation
 
@@ -80,8 +73,9 @@ vector<int> morrisInorderTraversal(TreeNode* root) {
 > [!warning]
 > Morris Traversal actively mutates graph topology during execution. If multiple concurrent threads execute this algorithm on a shared tree instance, massive synchronization collisions and cycle loops are structurally guaranteed.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N)$. Although locating the theoretical predecessor mandates a nested sequence, each edge in the entire geometry is traversed structurally exactly twice (once to thread, once to evaluate). Thus, performance is strictly $2N \implies \mathcal{O}(N)$.
-- **Space Complexity:** $\mathcal{O}(1)$ supplementary structure. Bypasses the call stack completely utilizing explicit pointer mutation.
+- **time Complexity:** $\mathcal{O}(N)$. Although locating the theoretical predecessor mandates a nested sequence, each edge in the entire geometry is traversed structurally exactly twice (once to thread, once to evaluate). Thus, performance is strictly $2N \implies \mathcal{O}(N)$.
+- **space Complexity:** $\mathcal{O}(1)$ supplementary structure. Bypasses the call stack completely utilizing explicit pointer mutation.
+
+NEXT: [[Index]]

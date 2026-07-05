@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, cycle-detection, floyd]
-date: 2026-06-30
----
 # Detect Cycle
 
 ## Problem Statement
-Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
+- given `head`, the head of a linked list, determine if the linked list has a cycle in it.
 
 ## Approach / Intuition
-The most efficient way to detect a cycle is using [[Floyd's Cycle Detection]] algorithm, also known as the tortoise and hare algorithm. We maintain two pointers, a `slow` pointer that moves one step at a time, and a `fast` pointer that moves two steps. If there is a cycle, the `fast` pointer will eventually meet the `slow` pointer. If the `fast` pointer reaches the end of the list (`nullptr`), there is no cycle.
+- the most efficient way to detect a cycle is using [[Floyd's Cycle Detection]] algorithm, also known as the tortoise and hare algorithm. We maintain two pointers, a `slow` pointer that moves one step at a time, and a `fast` pointer that moves two steps. If there is a cycle, the `fast` pointer will eventually meet the `slow` pointer. If the `fast` pointer reaches the end of the list (`nullptr`), there is no cycle.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -43,9 +38,11 @@ bool hasCycle(ListNode *head) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Empty list or single node without a cycle
-- Single node pointing to itself
-- Cycle starting at the head
+- empty list or single node without a cycle
+- single node pointing to itself
+- cycle starting at the head
+
+NEXT: [[Index]]

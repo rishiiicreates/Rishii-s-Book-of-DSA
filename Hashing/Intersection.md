@@ -1,24 +1,17 @@
----
-type: concept
-tags: [hashing, cpp, set-theory, unordered-set]
-date: 2026-06-30
----
 # Intersection of Two Arrays (Unsorted)
 
 ## Problem Statement
-Given two unsorted arrays $A$ and $B$, evaluate their mathematical intersection $A \cap B$. The intersection must contain strictly distinct elements that physically reside in both original structures.
+- given two unsorted arrays $A$ and $B$, evaluate their mathematical intersection $A \cap B$. The intersection must contain strictly distinct elements that physically reside in both original structures.
 
----
 
 ## Approach: Bipartite Hash Mapping
 
-For unsorted arrays, we map one array into a [[Hash Set]] to enable $\mathcal{O}(1)$ amortized lookups.
-1. Map every element of $A$ into a structural `std::unordered_set`.
-2. Linearly traverse $B$. For each element $x \in B$, query the Set.
-3. If $x$ exists in the Set, it fundamentally belongs to $A \cap B$. Push it to the result structure.
-4. **Critical Deduplication Step:** Immediately execute `s.erase(x)` from the Set. If array $B$ contains duplicate instances of $x$, subsequent queries for $x$ will mathematically fail, strictly preserving uniqueness in the final intersection vector.
+- for unsorted arrays, we map one array into a [[Hash Set]] to enable $\mathcal{O}(1)$ amortized lookups.
+- map every element of $A$ into a structural `std::unordered_set`.
+- linearly traverse $B$. For each element $x \in B$, query the Set.
+- if $x$ exists in the Set, it fundamentally belongs to $A \cap B$. Push it to the result structure.
+- **critical Deduplication Step:** Immediately execute `s.erase(x)` from the Set. If array $B$ contains duplicate instances of $x$, subsequent queries for $x$ will mathematically fail, strictly preserving uniqueness in the final intersection vector.
 
----
 
 ## Code Implementation
 
@@ -51,8 +44,9 @@ vector<int> intersection(const vector<int>& a, const vector<int>& b) {
 > [!important]
 > As an absolute optimization rule, you should always map the **smaller** array into the Hash Set. If $|A| > |B|$, passing $B$ into the constructor strictly bounds the auxiliary spatial complexity to $\mathcal{O}(\min(M, N))$ rather than $\mathcal{O}(\max(M, N))$.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(M + N)$ amortized time.
-- **Space Complexity:** $\mathcal{O}(M)$ strictly to map the array $A$ into the associative hash structure. Output array space is excluded from auxiliary boundaries.
+- **time Complexity:** $\mathcal{O}(M + N)$ amortized time.
+- **space Complexity:** $\mathcal{O}(M)$ strictly to map the array $A$ into the associative hash structure. Output array space is excluded from auxiliary boundaries.
+
+NEXT: [[Index]]

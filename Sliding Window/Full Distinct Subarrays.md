@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, array]
-date: 2026-06-30
----
 # Subarrays with All Distinct Elements
 
 ## Problem Statement
-Given an array, calculate the total number of contiguous subarrays consisting of all distinct elements.
+- given an array, calculate the total number of contiguous subarrays consisting of all distinct elements.
 
 ## Approach / Intuition
-Use the [[Sliding Window]] method with an unordered set or boolean frequency [[Array]] to keep track of elements in the current window. Expand the right boundary, adding elements. If a duplicate is encountered, shrink from the left boundary until the duplicate is removed. At each step, all subarrays ending at the right pointer and starting anywhere from `left` to `right` are valid, contributing `right - left + 1` to the total count.
+- use the [[Sliding Window]] method with an unordered set or boolean frequency [[Array]] to keep track of elements in the current window. Expand the right boundary, adding elements. If a duplicate is encountered, shrink from the left boundary until the duplicate is removed. At each step, all subarrays ending at the right pointer and starting anywhere from `left` to `right` are valid, contributing `right - left + 1` to the total count.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ int sumOfLength(vector<int>& arr) {
 ```
 
 ## New Keywords / STL Used
-`unordered_set`, `insert`, `count`, `erase`
+- `unordered_set`, `insert`, `count`, `erase`
 
 ## Edge Cases
-Array with all identical elements, array with all unique elements, single element array.
+- array with all identical elements, array with all unique elements, single element array.
+
+NEXT: [[Index]]

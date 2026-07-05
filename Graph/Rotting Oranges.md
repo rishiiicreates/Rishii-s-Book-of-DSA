@@ -1,35 +1,28 @@
----
-type: concept
-tags: [graph, bfs, matrix, cpp, state-machine]
-date: 2026-07-01
----
 # Rotting Oranges
 
 ## Problem Statement
-Given an $M \times N$ spatial matrix grid, where each topological cell can assume three discrete states:
-- `0`: Absolute Void (Empty Cell)
-- `1`: Geometrically Isolated (Fresh Orange)
-- `2`: Contagious Origin (Rotten Orange)
+- given an $M \times N$ spatial matrix grid, where each topological cell can assume three discrete states:
+- `0`: absolute Void (Empty Cell)
+- `1`: geometrically Isolated (Fresh Orange)
+- `2`: contagious Origin (Rotten Orange)
 
-At every discrete temporal epoch ($T \to T+1$), any fresh orange that is 4-directionally adjacent to a rotten orange structurally decays to state `2`.
-Compute the mathematical minimum temporal duration required to propagate decay to every contiguous fresh orange. If topological isolation renders complete decay impossible, return `-1`.
+- at every discrete temporal epoch ($T \to T+1$), any fresh orange that is 4-directionally adjacent to a rotten orange structurally decays to state `2`.
+- compute the mathematical minimum temporal duration required to propagate decay to every contiguous fresh orange. If topological isolation renders complete decay impossible, return `-1`.
 
----
 
 ## Approach: Multi-Source Breadth-First Search (BFS)
 
-Because decay structurally propagates outward identically and symmetrically from ALL origin sources simultaneously, a standard single-source traversal algebraically fails.
-We must construct a **Multi-Source BFS** topology:
-1. Initialize a generic `queue` mapped to state tuples: `{ {row, col}, temporal_epoch }`.
-2. Iteratively map the spatial grid $O(M \times N)$. Inject EVERY coordinate mapping `grid[i][j] == 2` into the initial BFS frontier queue with $T = 0$. Concurrently, aggregate a scalar `fresh_count`.
-3. Geometrically process the BFS queue. For the dequeued tuple, apply 4-directional matrix vector addition $(dr, dc) \in \{(-1,0), (1,0), (0,-1), (0,1)\}$.
-4. If a geometric neighbor maps to a valid boundary AND holds state `1`:
-   - Mutate its state matrix directly: `grid[nr][nc] = 2` (prevents redundant cyclic visitation).
-   - Inject into queue with temporal mutation: $T + 1$.
-   - Decrement `fresh_count`.
-5. Upon queue exhaustion, mathematically evaluate isolation: If `fresh_count > 0`, return `-1`. Otherwise, return the absolute maximum $T$ observed.
+- because decay structurally propagates outward identically and symmetrically from ALL origin sources simultaneously, a standard single-source traversal algebraically fails.
+- we must construct a **Multi-Source BFS** topology:
+- initialize a generic `queue` mapped to state tuples: `{ {row, col}, temporal_epoch }`.
+- iteratively map the spatial grid $O(M \times N)$. Inject EVERY coordinate mapping `grid[i][j] == 2` into the initial BFS frontier queue with $T = 0$. Concurrently, aggregate a scalar `fresh_count`.
+- geometrically process the BFS queue. For the dequeued tuple, apply 4-directional matrix vector addition $(dr, dc) \in \{(-1,0), (1,0), (0,-1), (0,1)\}$.
+- if a geometric neighbor maps to a valid boundary AND holds state `1`:
+   - mutate its state matrix directly: `grid[nr][nc] = 2` (prevents redundant cyclic visitation).
+   - inject into queue with temporal mutation: $T + 1$.
+   - decrement `fresh_count`.
+- upon queue exhaustion, mathematically evaluate isolation: If `fresh_count > 0`, return `-1`. Otherwise, return the absolute maximum $T$ observed.
 
----
 
 ## Code Implementation
 
@@ -95,11 +88,12 @@ int orangesRotting(vector<vector<int>>& grid) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(M \times N)$ strict bound limit. The algorithm mathematically iterates the initial matrix to extract the frontier, and subsequently executes the BFS queue where each geometric cell is evaluated structurally at most exactly once.
-- **Space Complexity:** $O(M \times N)$ bounding the absolute maximum geometry of the BFS queue (e.g., in a theoretical topology where every cell is entirely saturated with rotten oranges).
+- **time Complexity:** $O(M \times N)$ strict bound limit. The algorithm mathematically iterates the initial matrix to extract the frontier, and subsequently executes the BFS queue where each geometric cell is evaluated structurally at most exactly once.
+- **space Complexity:** $O(M \times N)$ bounding the absolute maximum geometry of the BFS queue (e.g., in a theoretical topology where every cell is entirely saturated with rotten oranges).
 
 > [!important]
 > **DFS Impossibility Theorem:** This topological problem mathematically forbids a Depth-First Search (DFS) resolution. DFS structurally evaluates contiguous paths until isolation exhaustion, inherently violating the absolute temporal symmetry required to model simultaneous wave propagation across disjoint topologies.
+
+NEXT: [[Index]]

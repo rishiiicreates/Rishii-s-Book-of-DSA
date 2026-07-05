@@ -1,26 +1,19 @@
----
-type: concept
-tags: [array, cpp, brute-force, combinatorics]
-date: 2026-06-30
----
 # Generate All Subarrays
 
 ## Problem Statement
-Given an array of size $N$, generate and print all possible subarrays. A subarray is a contiguous sequence of elements within an array.
+- given an array of size $N$, generate and print all possible subarrays. A subarray is a contiguous sequence of elements within an array.
 
----
 
 ## Approach: Combinatorial Bounding
 
-From a combinatorial perspective, a subarray is uniquely defined by choosing two indices: a starting index $i$ and an ending index $j$, where $0 \le i \le j < N$. 
-The total number of such subarrays for an array of size $N$ is exactly the number of ways to choose 2 distinct points from $N+1$ points (acting as boundaries), which is mathematically given by $\binom{N+1}{2} = \frac{N(N+1)}{2}$.
+- from a combinatorial perspective, a subarray is uniquely defined by choosing two indices: a starting index $i$ and an ending index $j$, where $0 \le i \le j < N$.
+- the total number of such subarrays for an array of size $N$ is exactly the number of ways to choose 2 distinct points from $N+1$ points (acting as boundaries), which is mathematically given by $\binom{N+1}{2} = \frac{N(N+1)}{2}$.
 
-To generate them, we utilize a nested boundary selection strategy:
-1. The **outermost loop** fixes the starting index $i$.
-2. The **middle loop** fixes the ending index $j$ (ensuring $j \ge i$).
-3. The **innermost loop** iterates from $i$ to $j$ to extract and print the contiguous segment.
+- to generate them, we utilize a nested boundary selection strategy:
+- the **outermost loop** fixes the starting index $i$.
+- the **middle loop** fixes the ending index $j$ (ensuring $j \ge i$).
+- the **innermost loop** iterates from $i$ to $j$ to extract and print the contiguous segment.
 
----
 
 ## Code Implementation
 
@@ -51,8 +44,9 @@ void generateSubarrays(const vector<int>& arr) {
 > [!warning]
 > The brute-force generation of subarrays is fundamentally slow because there are $\mathcal{O}(N^2)$ subarrays, and printing/accumulating each takes $\mathcal{O}(N)$ on average. Do not use this for $N > 10^3$ in competitive programming or latency-critical applications.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(N^3)$. The number of subarrays is $\frac{N(N+1)}{2}$, and the average length of a subarray is $\frac{N}{3}$. Thus, printing all of them requires approximately $\frac{N^3}{6}$ operations.
-- **Space Complexity:** $\mathcal{O}(1)$. The algorithm only requires loop iterators and does not dynamically allocate extra memory structure.
+- **time Complexity:** $\mathcal{O}(N^3)$. The number of subarrays is $\frac{N(N+1)}{2}$, and the average length of a subarray is $\frac{N}{3}$. Thus, printing all of them requires approximately $\frac{N^3}{6}$ operations.
+- **space Complexity:** $\mathcal{O}(1)$. The algorithm only requires loop iterators and does not dynamically allocate extra memory structure.
+
+NEXT: [[Index]]

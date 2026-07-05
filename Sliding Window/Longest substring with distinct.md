@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, string]
-date: 2026-06-30
----
 # Longest Substring Without Repeating Characters
 
 ## Problem Statement
-Given a string, find the length of the longest substring without repeating characters.
+- given a string, find the length of the longest substring without repeating characters.
 
 ## Approach / Intuition
-Use a [[Sliding Window]] alongside an array (or hash map) to keep track of the most recent index of each character. When a repeating character is encountered, advance the `left` pointer to one position after the previous occurrence of that character. Update the maximum window size at each step.
+- use a [[Sliding Window]] alongside an array (or hash map) to keep track of the most recent index of each character. When a repeating character is encountered, advance the `left` pointer to one position after the previous occurrence of that character. Update the maximum window size at each step.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1) since character set size is fixed (e.g., 256)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1) since character set size is fixed (e.g., 256)
 
 ## Sample Code
 ```cpp
@@ -32,7 +27,9 @@ int lengthOfLongestSubstring(string s) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `std::max`
+- `vector`, `std::max`
 
 ## Edge Cases
-Empty string, string with all identical characters, string with all distinct characters.
+- empty string, string with all identical characters, string with all distinct characters.
+
+NEXT: [[Index]]

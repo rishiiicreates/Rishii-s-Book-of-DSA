@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Subarray Range Sum
 
 ## Problem Statement
-Find the sum of the ranges of all contiguous subarrays. The range of a subarray is defined as the difference between its maximum and minimum elements.
+- find the sum of the ranges of all contiguous subarrays. The range of a subarray is defined as the difference between its maximum and minimum elements.
 
 ## Approach / Intuition
-The sum of all subarray ranges equals the sum of maximums of all subarrays minus the sum of minimums of all subarrays. We can use a [[Monotonic Stack]] to efficiently find the contribution of each element as a maximum and as a minimum by finding the [[Next Greater Element]]/[[Next Smaller Element]] and their previous counterparts.
+- the sum of all subarray ranges equals the sum of maximums of all subarrays minus the sum of minimums of all subarrays. We can use a [[Monotonic Stack]] to efficiently find the contribution of each element as a maximum and as a minimum by finding the [[Next Greater Element]]/[[Next Smaller Element]] and their previous counterparts.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) since elements are pushed and popped from the stack at most once in both passes.
-- **[[Space Complexity]]:** O(N) for the stack.
+- **[[time Complexity]]:** O(N) since elements are pushed and popped from the stack at most once in both passes.
+- **[[space Complexity]]:** O(N) for the stack.
 
 ## Sample Code
 ```cpp
@@ -46,5 +41,7 @@ long long subArrayRanges(vector<int>& nums) {
 - `std::stack`, `std::vector`
 
 ## Edge Cases
-- Empty array or an array with a single element (sum is 0).
-- Subarrays with duplicate maximum or minimum elements (carefully handled by strict/non-strict inequalities to avoid double counting).
+- empty array or an array with a single element (sum is 0).
+- subarrays with duplicate maximum or minimum elements (carefully handled by strict/non-strict inequalities to avoid double counting).
+
+NEXT: [[Index]]

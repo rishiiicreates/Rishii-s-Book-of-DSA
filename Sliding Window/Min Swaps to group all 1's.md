@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, min-swaps]
-date: 2026-06-30
----
 # Min Swaps to group all 1's
 
 ## Problem Statement
-Given a binary array, find the minimum number of swaps required to group all 1’s present in the array together in any single contiguous block.
+- given a binary array, find the minimum number of swaps required to group all 1’s present in the array together in any single contiguous block.
 
 ## Approach / Intuition
-Count the absolute total number of 1s in the array, let's call it `TotalOnes`. Then, search for a subarray of exactly size `TotalOnes` that already contains the maximum amount of 1s using a standard [[Sliding Window]]. The minimum swaps required is simply `TotalOnes` minus this maximum cluster of 1s encountered.
+- count the absolute total number of 1s in the array, let's call it `TotalOnes`. Then, search for a subarray of exactly size `TotalOnes` that already contains the maximum amount of 1s using a standard [[Sliding Window]]. The minimum swaps required is simply `TotalOnes` minus this maximum cluster of 1s encountered.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ int minSwaps(vector<int>& arr) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Array containing absolutely no 1s, array composed entirely of 1s, deeply alternating 1s and 0s.
+- array containing absolutely no 1s, array composed entirely of 1s, deeply alternating 1s and 0s.
+
+NEXT: [[Index]]

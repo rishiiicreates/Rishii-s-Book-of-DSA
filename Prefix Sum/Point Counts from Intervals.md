@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, difference-array]
-date: 2026-06-30
----
 # Point Counts from Intervals
 
 ## Problem Statement
-Given a set of intervals `[L, R]`, find the maximum number of overlapping intervals at any point.
+- given a set of intervals `[L, R]`, find the maximum number of overlapping intervals at any point.
 
 ## Approach / Intuition
-Use a [[Difference Array]] technique. For each interval `[L, R]`, increment the value at index `L` and decrement at index `R + 1`. Then, compute the [[Prefix Sum]] of this array to find the number of overlapping intervals at any given point, and find the maximum of these prefix sums.
+- use a [[Difference Array]] technique. For each interval `[L, R]`, increment the value at index `L` and decrement at index `R + 1`. Then, compute the [[Prefix Sum]] of this array to find the number of overlapping intervals at any given point, and find the maximum of these prefix sums.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N + M) where N is the number of intervals and M is the range of coordinates.
-- **[[Space Complexity]]:** O(M) for the difference array.
+- **[[time Complexity]]:** O(N + M) where N is the number of intervals and M is the range of coordinates.
+- **[[space Complexity]]:** O(M) for the difference array.
 
 ## Sample Code
 ```cpp
@@ -38,6 +33,8 @@ int maxOverlappingIntervals(vector<pair<int, int>>& intervals, int max_val) {
 - `std::pair`
 
 ## Edge Cases
-- No intervals
-- Overlapping at boundaries
-- Large coordinate range (requires coordinate compression)
+- no intervals
+- overlapping at boundaries
+- large coordinate range (requires coordinate compression)
+
+NEXT: [[Index]]

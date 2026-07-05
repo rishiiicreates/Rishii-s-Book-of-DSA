@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, job-sequencing]
-date: 2026-06-30
----
 # Job Sequencing
 
 ## Problem Statement
-Given a set of N jobs where each job comes with a deadline and profit, find the maximum profit that can be earned assuming each job takes one unit of time and can only be completed on or before its deadline.
+- given a set of N jobs where each job comes with a deadline and profit, find the maximum profit that can be earned assuming each job takes one unit of time and can only be completed on or before its deadline.
 
 ## Approach / Intuition
-Sort the jobs in descending order of profit. Iterate through the jobs and assign each to the latest possible available time slot on or before its deadline. This [[Greedy Algorithm]] ensures maximum profit by prioritizing high-profit jobs.
+- sort the jobs in descending order of profit. Iterate through the jobs and assign each to the latest possible available time slot on or before its deadline. This [[Greedy Algorithm]] ensures maximum profit by prioritizing high-profit jobs.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N + N * max_deadline)
-- **[[Space Complexity]]:** O(max_deadline)
+- **[[time Complexity]]:** O(N log N + N * max_deadline)
+- **[[space Complexity]]:** O(max_deadline)
 
 ## Sample Code
 ```cpp
@@ -56,5 +51,7 @@ vector<int> JobScheduling(Job arr[], int n) {
 - `struct` array, `vector` initialization with size
 
 ## Edge Cases
-- All jobs have the same deadline
-- Many jobs with high profits but small deadlines
+- all jobs have the same deadline
+- many jobs with high profits but small deadlines
+
+NEXT: [[Index]]

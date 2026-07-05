@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, array, string_matching]
-date: 2026-06-30
----
 # Subarray Search
 
 ## Problem Statement
-Find if a subarray pattern exists within a given array (similar to string matching but for arrays).
+- find if a subarray pattern exists within a given array (similar to string matching but for arrays).
 
 ## Approach / Intuition
-We can treat the array as a string and use [[KMP Algorithm]] or [[Rabin-Karp Algorithm]]. In KMP, we build the LPS array for the pattern array and perform linear traversal over the given array to find matches.
+- we can treat the array as a string and use [[KMP Algorithm]] or [[Rabin-Karp Algorithm]]. In KMP, we build the LPS array for the pattern array and perform linear traversal over the given array to find matches.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N + M)$
-- **[[Space Complexity]]:** $O(M)$
+- **[[time Complexity]]:** $O(N + M)$
+- **[[space Complexity]]:** $O(M)$
 
 ## Sample Code
 ```cpp
@@ -59,7 +54,9 @@ int findSubarray(const vector<int>& arr, const vector<int>& pattern) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Empty pattern, array smaller than pattern, pattern not found.
+- empty pattern, array smaller than pattern, pattern not found.
+
+NEXT: [[Index]]

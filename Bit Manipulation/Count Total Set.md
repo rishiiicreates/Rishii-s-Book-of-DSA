@@ -1,36 +1,29 @@
----
-type: concept
-tags: [bit-manipulation, cpp, math, divide-and-conquer]
-date: 2026-07-01
----
 # Count Total Set Bits
 
 ## Problem Statement
-Given a mathematical integer $N$, compute the total sum of set bits (`1`s) across all integers in the contiguous sequence $[1, N]$.
+- given a mathematical integer $N$, compute the total sum of set bits (`1`s) across all integers in the contiguous sequence $[1, N]$.
 
----
 
 ## Approach: Logarithmic Divide and Conquer
 
-A naive iteration takes $O(N \log N)$ time, which fails for large $N$. 
-We use a geometric approach by observing the recursive fractal nature of binary representations.
+- a naive iteration takes $O(N \log N)$ time, which fails for large $N$.
+- we use a geometric approach by observing the recursive fractal nature of binary representations.
 
-For a given $N$, let $x = \lfloor \log_2 N \rfloor$. This means $2^x$ is the largest power of two completely contained within $N$.
-We partition the sequence $[1, N]$ into three mathematical domains:
-1. **Domain 1: $[1, 2^x - 1]$**. 
-   This is a complete binary tree of depth $x$. The number of elements is $2^x - 1$. Each column of bits has exactly half $1$s and half $0$s.
-   Total bits = $x \cdot 2^{x-1}$.
-2. **Domain 2: $[2^x, N]$ MSBs**.
-   Every number in this range has its $x$-th bit (Most Significant Bit) strictly set to $1$.
-   The count of these MSBs is $(N - 2^x) + 1$.
-3. **Domain 3: The Remainder**.
-   If we strip the MSB from the numbers in $[2^x, N]$, the remaining bit patterns exactly mirror the sequence $[1, N - 2^x]$.
-   We recursively solve for $N - 2^x$.
+- for a given $N$, let $x = \lfloor \log_2 N \rfloor$. This means $2^x$ is the largest power of two completely contained within $N$.
+- we partition the sequence $[1, N]$ into three mathematical domains:
+- **domain 1: $[1, 2^x - 1]$**.
+   - this is a complete binary tree of depth $x$. The number of elements is $2^x - 1$. Each column of bits has exactly half $1$s and half $0$s.
+   - total bits = $x \cdot 2^{x-1}$.
+- **domain 2: $[2^x, N]$ MSBs**.
+   - every number in this range has its $x$-th bit (Most Significant Bit) strictly set to $1$.
+   - the count of these MSBs is $(N - 2^x) + 1$.
+- **domain 3: The Remainder**.
+   - if we strip the MSB from the numbers in $[2^x, N]$, the remaining bit patterns exactly mirror the sequence $[1, N - 2^x]$.
+   - we recursively solve for $N - 2^x$.
 
-Recurrence Relation:
+- recurrence Relation:
 $$ f(N) = x \cdot 2^{x-1} + (N - 2^x + 1) + f(N - 2^x) $$
 
----
 
 ## Code Implementation
 
@@ -61,8 +54,9 @@ int countTotalSetBits(int n) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(\log N)$. At each step, we strip the highest bit of $N$. The recursion depth is bounded by the number of bits in $N$.
-- **Space Complexity:** $O(\log N)$ auxiliary space due to the Call Stack. This can be flattened to $O(1)$ iteratively.
+- **time Complexity:** $O(\log N)$. At each step, we strip the highest bit of $N$. The recursion depth is bounded by the number of bits in $N$.
+- **space Complexity:** $O(\log N)$ auxiliary space due to the Call Stack. This can be flattened to $O(1)$ iteratively.
+
+NEXT: [[Index]]

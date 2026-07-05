@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, hash-map]
-date: 2026-06-30
----
 # Largest with Equal 0s and 1s
 
 ## Problem Statement
-Given a binary array, find the maximum length of a contiguous subarray with an equal number of 0s and 1s.
+- given a binary array, find the maximum length of a contiguous subarray with an equal number of 0s and 1s.
 
 ## Approach / Intuition
-Replace all 0s in the array with -1s. The problem then reduces to finding the largest subarray with a sum of 0. We can solve this using a [[Prefix Sum]] and a [[Hash Map]] to store the first occurrence of each prefix sum.
+- replace all 0s in the array with -1s. The problem then reduces to finding the largest subarray with a sum of 0. We can solve this using a [[Prefix Sum]] and a [[Hash Map]] to store the first occurrence of each prefix sum.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the array.
-- **[[Space Complexity]]:** O(N) for the hash map.
+- **[[time Complexity]]:** O(N) where N is the length of the array.
+- **[[space Complexity]]:** O(N) for the hash map.
 
 ## Sample Code
 ```cpp
@@ -39,6 +34,8 @@ int findMaxLength(vector<int>& nums) {
 - `std::unordered_map`
 
 ## Edge Cases
-- Array contains only 1s or only 0s
-- Empty array
-- Array has an equal number of 0s and 1s entirely
+- array contains only 1s or only 0s
+- empty array
+- array has an equal number of 0s and 1s entirely
+
+NEXT: [[Index]]

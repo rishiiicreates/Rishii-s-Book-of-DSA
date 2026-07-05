@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, hash-map]
-date: 2026-06-30
----
 # Longest with Sum K
 
 ## Problem Statement
-Find the maximum length of a contiguous subarray that sums up to a specific value `K`.
+- find the maximum length of a contiguous subarray that sums up to a specific value `K`.
 
 ## Approach / Intuition
-Maintain a [[Prefix Sum]]. At each step, check if `PrefixSum - K` exists in our [[Hash Map]]. If it does, a subarray with sum `K` ends at the current index. We update the maximum length and ensure we only store the first occurrence of each prefix sum to maximize the length.
+- maintain a [[Prefix Sum]]. At each step, check if `PrefixSum - K` exists in our [[Hash Map]]. If it does, a subarray with sum `K` ends at the current index. We update the maximum length and ensure we only store the first occurrence of each prefix sum to maximize the length.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the array.
-- **[[Space Complexity]]:** O(N) for the hash map.
+- **[[time Complexity]]:** O(N) where N is the length of the array.
+- **[[space Complexity]]:** O(N) for the hash map.
 
 ## Sample Code
 ```cpp
@@ -38,9 +33,11 @@ int longestSubarrayWithSumK(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-- None
+- none
 
 ## Edge Cases
-- Array contains negative numbers and zeros
-- No subarray sums to `K`
-- Target `K` is 0
+- array contains negative numbers and zeros
+- no subarray sums to `K`
+- target `K` is 0
+
+NEXT: [[Index]]

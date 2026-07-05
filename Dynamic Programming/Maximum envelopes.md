@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, lis]
-date: 2026-06-30
----
 # Russian Doll Envelopes
 
 ## Problem Statement
-Given a 2D array of envelopes with width and height, find the maximum number of envelopes you can Russian doll (put one inside another).
+- given a 2D array of envelopes with width and height, find the maximum number of envelopes you can Russian doll (put one inside another).
 
 ## Approach / Intuition
-Sort the envelopes by width in ascending order. If widths are equal, sort by height in descending order. This clever sorting reduces the problem to finding the [[Longest Increasing Subsequence]] based purely on heights. Since equal widths have descending heights, they cannot form an increasing subsequence, which correctly prevents putting an envelope inside another of the same width.
+- sort the envelopes by width in ascending order. If widths are equal, sort by height in descending order. This clever sorting reduces the problem to finding the [[Longest Increasing Subsequence]] based purely on heights. Since equal widths have descending heights, they cannot form an increasing subsequence, which correctly prevents putting an envelope inside another of the same width.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N \log N)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N \log N)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ int maxEnvelopes(vector<vector<int>>& envelopes) {
 ```
 
 ## New Keywords / STL Used
-`std::sort` with custom lambda, `std::lower_bound`
+- `std::sort` with custom lambda, `std::lower_bound`
 
 ## Edge Cases
-Empty array, envelopes with identical dimensions, strictly decreasing sizes.
+- empty array, envelopes with identical dimensions, strictly decreasing sizes.
+
+NEXT: [[Index]]

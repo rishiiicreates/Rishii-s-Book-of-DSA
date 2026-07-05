@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, greedy-algorithm]
-date: 2026-06-30
----
 # Greedy Algorithm
 
 ## Problem Statement
-A general approach for solving optimization problems where we make the locally optimal choice at each step with the hope of finding a global optimum.
+- a general approach for solving optimization problems where we make the locally optimal choice at each step with the hope of finding a global optimum.
 
 ## Approach / Intuition
-The core idea of a [[Greedy Algorithm]] is to pick the best possible immediate choice. We assume that a local optimum will lead to a global optimum.
+- the core idea of a [[Greedy Algorithm]] is to pick the best possible immediate choice. We assume that a local optimum will lead to a global optimum.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N) usually, due to sorting
-- **[[Space Complexity]]:** O(1) or O(N) depending on sorting
+- **[[time Complexity]]:** O(N log N) usually, due to sorting
+- **[[space Complexity]]:** O(1) or O(N) depending on sorting
 
 ## Sample Code
 ```cpp
@@ -36,5 +31,7 @@ void greedyExample(vector<int>& items) {
 - `sort` with `greater<int>()`
 
 ## Edge Cases
-- All elements equal
-- Already sorted arrays
+- all elements equal
+- already sorted arrays
+
+NEXT: [[Index]]

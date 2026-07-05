@@ -1,32 +1,25 @@
----
-type: concept
-tags: [maths, pattern, recursion, cpp, tower-of-hanoi]
-date: 2026-06-30
----
 # Tower of Hanoi
 
 ## Problem Statement
-You have three rods: **Source**, **Auxiliary**, and **Destination**. There is a tower of $N$ disks on the Source rod, stacked in decreasing order of size.
+- you have three rods: **Source**, **Auxiliary**, and **Destination**. There is a tower of $N$ disks on the Source rod, stacked in decreasing order of size.
 
-**Rules:**
-1. Move the entire stack to the Destination rod.
-2. You can only move one disk at a time.
-3. A larger disk can *never* be placed on top of a smaller disk.
+- **rules:**
+- move the entire stack to the Destination rod.
+- you can only move one disk at a time.
+- a larger disk can *never* be placed on top of a smaller disk.
 
----
 
 ## Approach: The Power of Recursion
 
-This problem is extremely difficult to solve iteratively but is the absolute perfect example of "Divide and Conquer" recursion.
+- this problem is extremely difficult to solve iteratively but is the absolute perfect example of "Divide and Conquer" recursion.
 
-To move $N$ disks from Source to Destination:
-1. **Recursive Step 1:** Move the top $N-1$ disks from Source to the Auxiliary rod (using Destination as a temporary holder).
-2. **Move:** Move the remaining largest disk directly from Source to Destination.
-3. **Recursive Step 2:** Move the $N-1$ disks from Auxiliary to Destination (using Source as a temporary holder).
+- to move $N$ disks from Source to Destination:
+- **recursive Step 1:** Move the top $N-1$ disks from Source to the Auxiliary rod (using Destination as a temporary holder).
+- **move:** Move the remaining largest disk directly from Source to Destination.
+- **recursive Step 2:** Move the $N-1$ disks from Auxiliary to Destination (using Source as a temporary holder).
 
-*Base Case:* If $N=0$, do nothing (return).
+- *base Case:* If $N=0$, do nothing (return).
 
----
 
 ## Code Implementation
 
@@ -56,19 +49,20 @@ int main() {
 }
 ```
 
----
 
 ## Complexity Analysis
 
 ### Time Complexity: $O(2^N)$
-To calculate the total number of moves $T(N)$, we look at the recurrence relation derived from the code:
+- to calculate the total number of moves $T(N)$, we look at the recurrence relation derived from the code:
 $$ T(N) = 2T(N-1) + 1 $$
-Solving this equation mathematically yields:
+- solving this equation mathematically yields:
 $$ T(N) = 2^N - 1 $$
-Because it requires $2^N - 1$ moves, the time complexity is **$O(2^N)$** (Exponential Time).
+- because it requires $2^N - 1$ moves, the time complexity is **$O(2^N)$** (Exponential Time).
 
 > [!warning]
 > The Tower of Hanoi is a classic example of exponential explosion. Moving 64 disks would require $2^{64} - 1$ moves. Even if a computer did 1 billion moves per second, it would take nearly 600 years to complete!
 
 ### Space Complexity: $O(N)$
-The memory complexity is equal to the maximum depth of the recursive Call Stack. Since we only ever recurse down to $N=0$ before popping back up, the maximum depth is exactly $N$.
+- the memory complexity is equal to the maximum depth of the recursive Call Stack. Since we only ever recurse down to $N=0$ before popping back up, the maximum depth is exactly $N$.
+
+NEXT: [[Index]]

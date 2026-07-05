@@ -1,32 +1,25 @@
----
-type: concept
-tags: [bit-manipulation, cpp, math, subarrays]
-date: 2026-07-01
----
 # Subarray XORs
 
 ## Problem Statement
-Given an array $A$ of $N$ integers, mathematically compute the global bitwise XOR of all $\frac{N(N+1)}{2}$ contiguous subarrays.
+- given an array $A$ of $N$ integers, mathematically compute the global bitwise XOR of all $\frac{N(N+1)}{2}$ contiguous subarrays.
 $$ \text{Total} = \bigoplus_{i=1}^N \bigoplus_{j=i}^N \left( \bigoplus_{k=i}^j A_k \right) $$
 
----
 
 ## Approach: Frequency Parity Annihilation
 
-Computing all subarrays explicitly takes $O(N^2)$ or $O(N^3)$ time. We can reduce this to $O(N)$ by analyzing the structural frequency of each element across all contiguous subarrays.
+- computing all subarrays explicitly takes $O(N^2)$ or $O(N^3)$ time. We can reduce this to $O(N)$ by analyzing the structural frequency of each element across all contiguous subarrays.
 
-For an element at 0-indexed position $i$, any contiguous subarray containing $A_i$ must have a start index $L \le i$ and an end index $R \ge i$.
-- The number of valid choices for $L$ is exactly $(i + 1)$.
-- The number of valid choices for $R$ is exactly $(N - i)$.
-Thus, $A_i$ appears in exactly $F_i = (i + 1) \times (N - i)$ contiguous subarrays.
+- for an element at 0-indexed position $i$, any contiguous subarray containing $A_i$ must have a start index $L \le i$ and an end index $R \ge i$.
+- the number of valid choices for $L$ is exactly $(i + 1)$.
+- the number of valid choices for $R$ is exactly $(N - i)$.
+- thus, $A_i$ appears in exactly $F_i = (i + 1) \times (N - i)$ contiguous subarrays.
 
-Because we are accumulating via the XOR operator, we invoke the Nilpotence axiom: $X \oplus X = 0$.
-- If $F_i$ is **even**, $A_i$ XORs with itself an even number of times, annihilating entirely to $0$.
-- If $F_i$ is **odd**, $A_i$ XORs with itself an odd number of times, mathematically collapsing to a single instance of $A_i$.
+- because we are accumulating via the XOR operator, we invoke the Nilpotence axiom: $X \oplus X = 0$.
+- if $F_i$ is **even**, $A_i$ XORs with itself an even number of times, annihilating entirely to $0$.
+- if $F_i$ is **odd**, $A_i$ XORs with itself an odd number of times, mathematically collapsing to a single instance of $A_i$.
 
-Thus, the global result is simply the XOR sum of elements where $F_i$ is odd.
+- thus, the global result is simply the XOR sum of elements where $F_i$ is odd.
 
----
 
 ## Code Implementation
 
@@ -58,11 +51,12 @@ int subarrayBitwiseXORs(vector<int>& arr) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ linear time. Or strict $O(1)$ absolute if $N$ is even!
-- **Space Complexity:** $O(1)$ auxiliary space.
+- **time Complexity:** $O(N)$ linear time. Or strict $O(1)$ absolute if $N$ is even!
+- **space Complexity:** $O(1)$ auxiliary space.
 
 > [!tip]
 > **Even $N$ Annihilation Theorem:** Observe the polynomial $F_i = (i + 1) \times (N - i)$. If $N$ is even, exactly one of the terms $(i+1)$ or $(N-i)$ must be even, meaning $F_i$ is strictly even for ALL $i$. Thus, if the array length $N$ is even, the XOR sum of all subarrays is mathematically guaranteed to be $0$ without reading a single array element!
+
+NEXT: [[Index]]

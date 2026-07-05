@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, matrix, 2d-array]
-date: 2026-06-30
----
 # Prefix Sum on 2D
 
 ## Problem Statement
-Given a 2D matrix, compute a 2D prefix sum array where `prefix[i][j]` represents the sum of elements in the submatrix from `(0, 0)` to `(i, j)`.
+- given a 2D matrix, compute a 2D prefix sum array where `prefix[i][j]` represents the sum of elements in the submatrix from `(0, 0)` to `(i, j)`.
 
 ## Approach / Intuition
-To compute a [[2D Prefix Sum]], we use the principle of inclusion-exclusion. The sum at `(i, j)` includes the sum of the submatrix above it `(i-1, j)`, the submatrix to its left `(i, j-1)`, minus the overlapping top-left submatrix `(i-1, j-1)` which was added twice, plus the current element `matrix[i][j]`.
+- to compute a [[2D Prefix Sum]], we use the principle of inclusion-exclusion. The sum at `(i, j)` includes the sum of the submatrix above it `(i-1, j)`, the submatrix to its left `(i, j-1)`, minus the overlapping top-left submatrix `(i-1, j-1)` which was added twice, plus the current element `matrix[i][j]`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(R \times C)$
-- **[[Space Complexity]]:** $O(R \times C)$
+- **[[time Complexity]]:** $O(R \times C)$
+- **[[space Complexity]]:** $O(R \times C)$
 
 ## Sample Code
 ```cpp
@@ -40,9 +35,11 @@ std::vector<std::vector<int>> compute2DPrefixSum(std::vector<std::vector<int>>& 
 ```
 
 ## New Keywords / STL Used
-2D `std::vector` initialization
+- 2d `std::vector` initialization
 
 ## Edge Cases
-- Empty matrix or empty rows
-- Matrix with 1 row or 1 column
-- Negative elements
+- empty [[Matrix]] or empty rows
+- matrix with 1 row or 1 column
+- negative elements
+
+NEXT: [[Index]]

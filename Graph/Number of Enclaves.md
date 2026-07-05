@@ -1,30 +1,23 @@
----
-type: concept
-tags: [graph, dfs, bfs, matrix, cpp, boundaries]
-date: 2026-07-01
----
 # Number of Enclaves
 
 ## Problem Statement
-Given an $M \times N$ discrete boolean matrix representing a geographic grid.
-- `0`: Sea (Absolute Geometric Void)
-- `1`: Land (Structural Continent)
+- given an $M \times N$ discrete boolean matrix representing a geographic grid.
+- `0`: sea (Absolute Geometric Void)
+- `1`: land (Structural Continent)
 
-Mathematically compute the total number of generic land cells `1` that are geometrically isolated into an **Enclave**. An Enclave topologically defines a contiguous mass of `1`s that is completely surrounded by `0`s, containing zero scalar vectors capable of escaping to the external spatial boundary (the $M \times N$ perimeter) via 4-directional moves.
+- mathematically compute the total number of generic land cells `1` that are geometrically isolated into an **Enclave**. An Enclave topologically defines a contiguous mass of `1`s that is completely surrounded by `0`s, containing zero scalar vectors capable of escaping to the external spatial boundary (the $M \times N$ perimeter) via 4-directional moves.
 
----
 
 ## Approach: Boundary Elimination Topology
 
-This topological theorem is mathematically identical to *Surrounded Regions*. Any generic `1` situated on the absolute perimeter is mathematically uncontained. Any contiguous interior `1` sequentially connected to a perimeter `1` is geometrically safe.
-An absolute Enclave evaluates strictly to the residual `1`s that remain algebraically disconnected from any perimeter vector.
+- this topological theorem is mathematically identical to *Surrounded Regions*. Any generic `1` situated on the absolute perimeter is mathematically uncontained. Any contiguous interior `1` sequentially connected to a perimeter `1` is geometrically safe.
+- an absolute Enclave evaluates strictly to the residual `1`s that remain algebraically disconnected from any perimeter vector.
 
-1. Geometrically scan the matrix perimeter limits (first/last row, first/last col).
-2. If a perimeter vertex bounds `1`, execute a DFS/BFS traversal topologically destroying the continent (mutate structural state `1` to `0`, or log inside a `vis` array).
-3. Following complete elimination of all boundary-connected geometry, sequentially iterate the entire matrix field.
-4. Any surviving scalar mapping `1` constitutes an explicit enclave cell. Accumulate the topological total into `count`.
+- geometrically scan the [[Matrix]] perimeter limits (first/last row, first/last col).
+- if a perimeter vertex bounds `1`, execute a DFS/BFS traversal topologically destroying the continent (mutate structural state `1` to `0`, or log inside a `vis` array).
+- following complete elimination of all boundary-connected geometry, sequentially iterate the entire matrix field.
+- any surviving scalar mapping `1` constitutes an explicit enclave cell. Accumulate the topological total into `count`.
 
----
 
 ## Code Implementation
 
@@ -85,11 +78,12 @@ int numEnclaves(vector<vector<int>>& grid) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(M \times N)$ total topological sweep bounded. Extraneous boundary continents are recursively visited precisely once, and the terminal matrix scan evaluates every coordinate linearly.
-- **Space Complexity:** $O(M \times N)$ dynamically tied strictly to the DFS recursion call-stack bounding. Utilizing a localized `visited` matrix maps identical bounds, but in-place array mutation leverages absolute $O(1)$ memory external to the recursive engine.
+- **time Complexity:** $O(M \times N)$ total topological sweep bounded. Extraneous boundary continents are recursively visited precisely once, and the terminal matrix scan evaluates every coordinate linearly.
+- **space Complexity:** $O(M \times N)$ dynamically tied strictly to the DFS recursion call-stack bounding. Utilizing a localized `visited` matrix maps identical bounds, but in-place array mutation leverages absolute $O(1)$ memory external to the recursive engine.
 
 > [!tip]
 > **Architectural Congruence:** The algorithms for *Surrounded Regions* and *Number of Enclaves* are strictly topologically identical. The difference lies merely in the terminal constraint mapping (mutating the scalar array vs accumulating a scalar index).
+
+NEXT: [[Index]]

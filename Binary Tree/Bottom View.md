@@ -1,24 +1,17 @@
----
-type: concept
-tags: [binary-tree, cpp, math, geometry, maps]
-date: 2026-07-01
----
 # Bottom View of a Binary Tree
 
 ## Problem Statement
-Given a Binary Tree topology $T$, compute the strictly visible subset of node scalars when geometrically observing the tree structure from the absolute bottom boundary.
-If multiple nodes mathematically occupy the identical vertical alignment (identical $X$-coordinate), strictly output the one resident at the maximum geometrical depth ($Y$-coordinate). For equivalent depth overlaps on the same axis, standard convention maps the structurally later (right-most traversed) node.
+- given a Binary Tree topology $T$, compute the strictly visible subset of node scalars when geometrically observing the tree structure from the absolute bottom boundary.
+- if multiple nodes mathematically occupy the identical vertical alignment (identical $X$-coordinate), strictly output the one resident at the maximum geometrical depth ($Y$-coordinate). For equivalent depth overlaps on the same axis, standard convention maps the structurally later (right-most traversed) node.
 
----
 
 ## Approach: Cartesian Axis Overwriting (BFS)
 
-Similar to standard Vertical Traversal, we project the topology onto a 1D Cartesian Axis ($X$-axis).
-However, unlike the absolute multi-set grouping, we structurally demand exactly ONE scalar per $X$ coordinate.
-Because BFS inherently explores the tree mathematically level-by-level (strictly monotonic increasing $Y$), any subsequent geometric collision on a given $X$ coordinate is guaranteed to reside at a deeper (or identical) $Y$ level.
-Thus, by strictly executing BFS and unconditionally *overwriting* the map boundary state for $X$, the terminal surviving state naturally holds the deepest topological vertex for every column.
+- similar to standard Vertical Traversal, we project the topology onto a 1D Cartesian Axis ($X$-axis).
+- however, unlike the absolute multi-set grouping, we structurally demand exactly ONE scalar per $X$ coordinate.
+- because BFS inherently explores the tree mathematically level-by-level (strictly monotonic increasing $Y$), any subsequent geometric collision on a given $X$ coordinate is guaranteed to reside at a deeper (or identical) $Y$ level.
+- thus, by strictly executing BFS and unconditionally *overwriting* the map boundary state for $X$, the terminal surviving state naturally holds the deepest topological vertex for every column.
 
----
 
 ## Code Implementation
 
@@ -74,11 +67,12 @@ vector<int> bottomView(TreeNode *root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log X)$ where $X$ is the unique cardinality of horizontal dimensions. The `std::map` governs the $O(\log X)$ insertion boundary.
-- **Space Complexity:** $O(N)$ bounding the BFS level geometry, plus $O(X)$ auxiliary storage for the Cartesian axis map.
+- **time Complexity:** $O(N \log X)$ where $X$ is the unique cardinality of horizontal dimensions. The `std::map` governs the $O(\log X)$ insertion boundary.
+- **space Complexity:** $O(N)$ bounding the BFS level geometry, plus $O(X)$ auxiliary storage for the Cartesian axis map.
 
 > [!tip]
 > **DFS Failure Anomaly:** While DFS structurally evaluates every node, its non-monotonic depth traversal fundamentally violates the overwrite safety mechanism. A deeper node might be overwritten by a shallower node evaluated later in the traversal sequence. BFS is mathematically mandatory to preserve terminal depth overwrite logic.
+
+NEXT: [[Index]]

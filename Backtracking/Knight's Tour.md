@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, matrix]
-date: 2026-06-30
----
 # Knight's Tour
 
 ## Problem Statement
-Find a path for a knight on an $N \times N$ chessboard such that the knight visits every cell exactly once.
+- find a path for a knight on an $N \times N$ chessboard such that the knight visits every cell exactly once.
 
 ## Approach / Intuition
-Apply [[Backtracking]] across the [[Matrix]]. The knight has 8 possible moves from any cell. At each step, iterate through these moves, check if the new cell is valid and unvisited, mark it with the current move number, and recurse. If the sequence reaches $N^2$, the tour is complete. If a move leads to a dead end, backtrack by unmarking the cell.
+- apply [[Backtracking]] across the [[Matrix]]. The knight has 8 possible moves from any cell. At each step, iterate through these moves, check if the new cell is valid and unvisited, mark it with the current move number, and recurse. If the sequence reaches $N^2$, the tour is complete. If a move leads to a dead end, backtrack by unmarking the cell.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(8^{(N^2)})$
-- **[[Space Complexity]]:** $O(N^2)$ for recursion stack and board
+- **[[time Complexity]]:** $O(8^{(N^2)})$
+- **[[space Complexity]]:** $O(N^2)$ for recursion stack and board
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ void solveKT(int N) {
 ```
 
 ## New Keywords / STL Used
-Knights move arrays
+- knights move arrays
 
 ## Edge Cases
-Small values of $N$ where no tour exists ($N=1$ works, $N=2, 3, 4$ fail), non-square boards.
+- small values of $N$ where no tour exists ($N=1$ works, $N=2, 3, 4$ fail), non-square boards.
+
+NEXT: [[Index]]

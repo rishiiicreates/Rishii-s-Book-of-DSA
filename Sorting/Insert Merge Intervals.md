@@ -1,30 +1,23 @@
----
-type: concept
-tags: [sorting, cpp, intervals]
-date: 2026-06-30
----
 # Insert Merge Intervals
 
 ## Problem Statement
-Given a set of non-overlapping intervals sorted by their start times, insert a new interval into the list. If the new interval overlaps with existing intervals, merge them appropriately. The resulting list must remain sorted and non-overlapping.
+- given a set of non-overlapping intervals sorted by their start times, insert a new interval into the list. If the new interval overlaps with existing intervals, merge them appropriately. The resulting list must remain sorted and non-overlapping.
 
-*Example:* $\text{intervals} = [[1,3],[6,9]]$, $\text{newInterval} = [2,5]$
-*Result:* $[[1,5],[6,9]]$
+- *example:* $\text{intervals} = [[1,3],[6,9]]$, $\text{newInterval} = [2,5]$
+- *result:* $[[1,5],[6,9]]$
 
----
 
 ## Approach: Linear Traversal & Greedy Merge
 
-Since the intervals are already sorted by start time, we don't need to append and re-sort ($O(N \log N)$). We can accomplish this in $O(N)$ with a single pass.
+- since the intervals are already sorted by start time, we don't need to append and re-sort ($O(N \log N)$). We can accomplish this in $O(N)$ with a single pass.
 
-1. **Left Non-Overlapping:** Iterate and push all intervals that end *strictly before* the `newInterval` starts into the result array.
-2. **Merge Overlapping:** For all intervals that overlap with `newInterval`, merge them by mutating `newInterval`.
-   - An interval overlaps if its start time $\le$ `newInterval[1]`.
-   - Update `newInterval` to $\left[ \min(\text{start}), \max(\text{end}) \right]$.
-   - Push the fully merged `newInterval` to the result.
-3. **Right Non-Overlapping:** Push all remaining intervals (which start strictly after the merged `newInterval` ends) into the result.
+- **left Non-Overlapping:** Iterate and push all intervals that end *strictly before* the `newInterval` starts into the result array.
+- **merge Overlapping:** For all intervals that overlap with `newInterval`, merge them by mutating `newInterval`.
+   - an interval overlaps if its start time $\le$ `newInterval[1]`.
+   - update `newInterval` to $\left[ \min(\text{start}), \max(\text{end}) \right]$.
+   - push the fully merged `newInterval` to the result.
+- **right Non-Overlapping:** Push all remaining intervals (which start strictly after the merged `newInterval` ends) into the result.
 
----
 
 ## Code Implementation
 
@@ -65,8 +58,9 @@ vector<vector<int>> insert(const vector<vector<int>>& intervals, vector<int>& ne
 > [!tip]
 > This pattern elegantly avoids modifying the original array in place (which would be $O(N^2)$ due to erasing/shifting elements in a `std::vector`). Generating a new result array ensures strict $O(N)$ runtime.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$. We make a single pass over the $N$ intervals.
-- **Space Complexity:** $O(N)$. The result array requires linear space to store the merged output.
+- **time Complexity:** $O(N)$. We make a single pass over the $N$ intervals.
+- **space Complexity:** $O(N)$. The result array requires linear space to store the merged output.
+
+NEXT: [[Index]]

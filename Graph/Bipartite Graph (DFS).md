@@ -1,30 +1,23 @@
----
-type: concept
-tags: [graph, bipartite, dfs, recursion, cpp]
-date: 2026-06-30
----
 # Bipartite Graph (DFS)
 
 ## Problem Statement
-Determine mathematically if a given graph is a **Bipartite Graph** utilizing a Recursive [[Depth First Search]] approach instead of BFS.
+- determine mathematically if a given graph is a **Bipartite Graph** utilizing a Recursive [[Depth First Search]] approach instead of BFS.
 
-*(Definition recap: A graph is Bipartite if its vertices can be partitioned into two distinct sets such that no edge connects vertices within the same set, functionally equivalent to 2-coloring the graph without collisions).*
+- *(definition recap: A graph is Bipartite if its vertices can be partitioned into two distinct sets such that no edge connects vertices within the same set, functionally equivalent to 2-coloring the graph without collisions).*
 
----
 
 ## Approach: Recursive Alternating Coloring
 
-The DFS logic is topologically symmetric to the BFS logic, transitioning from an explicit queue to the implicit recursive call stack.
+- the DFS logic is topologically symmetric to the BFS logic, transitioning from an explicit queue to the implicit recursive call stack.
 
-1. **State Preservation:** Maintain the exact same `color` state array of size $|V|$, initialized universally to `-1`.
-2. **Recursive Descent `dfs(node, col, color, adj)`:**
-   - Immediately bind `color[node] = col`.
-   - Iterate across all mathematically adjacent neighbors $v$.
-   - **Uncolored Phase:** If `color[v] == -1`, recursively trigger `dfs(v, 1 - col, color, adj)`. If the recursive call bubbles up a `false` evaluation, propagate the `false` immediately to abort.
-   - **Collision Phase:** If `color[v] != -1` (meaning a cyclic path has converged back onto this node), rigidly evaluate if `color[v] == col`. If true, an odd-length cycle is confirmed. Return `false`.
-3. Return `true` if the entire branch successfully terminates.
+- **state Preservation:** Maintain the exact same `color` state array of size $|V|$, initialized universally to `-1`.
+- **recursive Descent `dfs(node, col, color, adj)`:**
+   - immediately bind `color[node] = col`.
+   - iterate across all mathematically adjacent neighbors $v$.
+   - **uncolored Phase:** If `color[v] == -1`, recursively trigger `dfs(v, 1 - col, color, adj)`. If the recursive call bubbles up a `false` evaluation, propagate the `false` immediately to abort.
+   - **collision Phase:** If `color[v] != -1` (meaning a cyclic path has converged back onto this node), rigidly evaluate if `color[v] == col`. If true, an odd-length cycle is confirmed. Return `false`.
+- return `true` if the entire branch successfully terminates.
 
----
 
 ## Code Implementation
 
@@ -74,8 +67,9 @@ bool isBipartite(int V, vector<vector<int>>& adj) {
 > [!tip]
 > Between DFS and BFS for Bipartite checking, there is negligible asymptotic difference. However, DFS recursion depth can hit $O(V)$, risking stack overflow on aggressively deep topological branches (e.g., a $10^5$ node linked list). For pure memory stability in production environments, BFS is frequently preferred.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(V + E)$. The recursive function `checkBipartiteDFS` is executed exactly once per vertex. Edges are scanned $O(E)$ times.
-- **Space Complexity:** $O(V)$. The `color` array consumes strict $O(V)$ space. The recursive execution stack requires auxiliary space proportional to the maximum topological branch depth, bounding at $O(V)$.
+- **time Complexity:** $O(V + E)$. The recursive function `checkBipartiteDFS` is executed exactly once per vertex. Edges are scanned $O(E)$ times.
+- **space Complexity:** $O(V)$. The `color` array consumes strict $O(V)$ space. The recursive execution stack requires auxiliary space proportional to the maximum topological branch depth, bounding at $O(V)$.
+
+NEXT: [[Index]]

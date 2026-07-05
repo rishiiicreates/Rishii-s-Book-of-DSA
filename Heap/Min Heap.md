@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, cpp, basics]
-date: 2026-06-30
----
 # Min Heap Basics
 
 ## Problem Statement
-Implement a custom Min Heap Data Structure that supports fast insertion and extraction of the minimal element.
+- implement a custom Min Heap Data Structure that supports fast insertion and extraction of the minimal element.
 
 ## Approach / Intuition
-A Min Heap is structurally a complete binary tree where every node evaluates as strictly smaller than its children. Implementing it sequentially using a flat array requires manual `heapify` operations recursively pushing new elements up or aggressively bubbling heavy nodes down, forming the foundation of native [[Heap Operations]].
+- a Min Heap is structurally a complete binary tree where every node evaluates as strictly smaller than its children. Implementing it sequentially using a flat array requires manual `heapify` operations recursively pushing new elements up or aggressively bubbling heavy nodes down, forming the foundation of native [[Heap Operations]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(log N) for push/pop, O(1) for top
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(log N) for push/pop, O(1) for top
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -54,7 +49,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`class`
+- `class`
 
 ## Edge Cases
-Popping elements iteratively from a completely empty heap instance.
+- popping elements iteratively from a completely empty heap instance.
+
+NEXT: [[Index]]

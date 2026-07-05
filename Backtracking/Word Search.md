@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, matrix, string]
-date: 2026-06-30
----
 # Word Search
 
 ## Problem Statement
-Given an $M \times N$ grid of characters and a string word, return true if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells.
+- given an $M \times N$ grid of characters and a string word, return true if the word exists in the grid. The word can be constructed from letters of sequentially adjacent cells.
 
 ## Approach / Intuition
-Iterate through the [[Matrix]] to find the starting character of the [[String]]. Upon finding a match, initiate a [[Backtracking]] search in all four directions. Temporarily mutate the cell value (e.g., to a special character) to mark it as visited, avoiding a separate visited array. Restore the character when backtracking.
+- iterate through the [[[[Matrix]]]] to find the starting character of the [[String]]. Upon finding a match, initiate a [[Backtracking]] search in all four directions. Temporarily mutate the cell value (e.g., to a special character) to mark it as visited, avoiding a separate visited array. Restore the character when backtracking.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(M \cdot N \cdot 3^L)$ where $L$ is word length
-- **[[Space Complexity]]:** $O(L)$ for recursion stack
+- **[[time Complexity]]:** $O(M \cdot N \cdot 3^L)$ where $L$ is word length
+- **[[space Complexity]]:** $O(L)$ for recursion stack
 
 ## Sample Code
 ```cpp
@@ -49,7 +44,9 @@ bool exist(vector<vector<char>>& board, string word) {
 ```
 
 ## New Keywords / STL Used
-In-place modification
+- in-place modification
 
 ## Edge Cases
-Word longer than total cells, single character word, board has only one cell.
+- word longer than total cells, single character word, board has only one cell.
+
+NEXT: [[Index]]

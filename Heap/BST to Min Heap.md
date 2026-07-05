@@ -1,21 +1,16 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # BST to Min Heap
 
 ## Problem Statement
-Convert a given [[Binary Search Tree]] (BST) into a Min-[[Heap]] such that all the values in the left subtree of a node should be less than all the values in the right subtree of the node. The structure of the tree must remain the same.
+- convert a given [[Binary Search Tree]] (BST) into a Min-[[Heap]] such that all the values in the left subtree of a node should be less than all the values in the right subtree of the node. The structure of the tree must remain the same.
 
 ## Approach / Intuition
-A [[Binary Search Tree]]'s inorder traversal yields elements in sorted (ascending) order. To satisfy the given condition (left child < right child) and the min-heap property (parent < children), we must perform a preorder traversal to populate the tree with the sorted elements. 
-1. Perform inorder traversal of the BST to store elements in a sorted array.
-2. Perform preorder traversal of the tree and replace the node values sequentially with elements from the sorted array.
+- a [[Binary Search Tree]]'s inorder traversal yields elements in sorted (ascending) order. To satisfy the given condition (left child < right child) and the min-heap property (parent < children), we must perform a preorder traversal to populate the tree with the sorted elements.
+- perform inorder traversal of the BST to store elements in a sorted array.
+- perform preorder traversal of the tree and replace the node values sequentially with elements from the sorted array.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the number of nodes.
-- **[[Space Complexity]]:** O(N) to store the inorder traversal array.
+- **[[time Complexity]]:** O(N) where N is the number of nodes.
+- **[[space Complexity]]:** O(N) to store the inorder traversal array.
 
 ## Sample Code
 ```cpp
@@ -52,8 +47,10 @@ void convertToMinHeap(Node* root) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-- Empty tree.
-- Tree with a single node.
+- empty tree.
+- tree with a single node.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, math]
-date: 2026-06-30
----
 # Largest with sum divisible by k
 
 ## Problem Statement
-Find the length of the largest continuous subarray whose sum is a multiple of `k`.
+- find the length of the largest continuous subarray whose sum is a multiple of `k`.
 
 ## Approach / Intuition
-Compute the [[Prefix Sum]] modulo `k` at each step. If the same remainder appears at two different indices, the subarray between them has a sum divisible by `k`. Use a [[Hash Map]] to store the first occurrence of each remainder. Remember to handle negative remainders correctly.
+- compute the [[Prefix Sum]] modulo `k` at each step. If the same remainder appears at two different indices, the subarray between them has a sum divisible by `k`. Use a [[Hash Map]] to store the first occurrence of each remainder. Remember to handle negative remainders correctly.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the number of elements.
-- **[[Space Complexity]]:** O(min(N, K)) for the hash map.
+- **[[time Complexity]]:** O(N) where N is the number of elements.
+- **[[space Complexity]]:** O(min(N, K)) for the hash map.
 
 ## Sample Code
 ```cpp
@@ -42,6 +37,8 @@ int maxLenDivisibleByK(vector<int>& arr, int k) {
 - `std::unordered_map`
 
 ## Edge Cases
-- All elements are negative
+- all elements are negative
 - `k` is 1 (entire array is the answer)
-- No subarray is divisible by `k`
+- no subarray is divisible by `k`
+
+NEXT: [[Index]]

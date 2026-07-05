@@ -1,25 +1,18 @@
----
-type: concept
-tags: [graph, topological-sort, kahn, bfs, cpp]
-date: 2026-07-01
----
 # Course Schedule II
 
 ## Problem Statement
-Structurally expand the *Course Schedule I* topology constraint. Given an integer `numCourses` (mapping $0$ to $N-1$) and a structural prerequisite geometry `[a, b]` (edge $b \to a$), mathematically construct a valid sequential execution vector (Topological Sort). If multiple valid geometries exist, output any one sequence. If a topological cycle deadlocks the matrix, output an empty vector `[]`.
+- structurally expand the *Course Schedule I* topology constraint. Given an integer `numCourses` (mapping $0$ to $N-1$) and a structural prerequisite geometry `[a, b]` (edge $b \to a$), mathematically construct a valid sequential execution vector (Topological Sort). If multiple valid geometries exist, output any one sequence. If a topological cycle deadlocks the matrix, output an empty vector `[]`.
 
----
 
 ## Approach: Kahn's Algorithm (Topological Reification)
 
-This is an explicit reification of the Topological Sort state topology. Instead of merely aggregating a validation scalar `completed_courses`, we must mathematically serialize the specific vertex scalars into a localized vector structure.
+- this is an explicit reification of the Topological Sort state topology. Instead of merely aggregating a validation scalar `completed_courses`, we must mathematically serialize the specific vertex scalars into a localized vector structure.
 
-1. Construct the geometric Adjacency List `adj` and global `indegree` limits identically $O(V+E)$.
-2. Queue all algebraically independent origin vectors (`indegree == 0`).
-3. During topological BFS extraction, explicitly push the processed vertex sequence into an output `ans` vector.
-4. If a generic cycle freezes the geometry, Kahn's algorithm isolates premature exhaustion. If `ans.size() != numCourses`, mathematically return an empty set `{}`. Otherwise, return `ans`.
+- construct the geometric Adjacency List `adj` and global `indegree` limits identically $O(V+E)$.
+- queue all algebraically independent origin vectors (`indegree == 0`).
+- during topological BFS extraction, explicitly push the processed vertex sequence into an output `ans` vector.
+- if a generic cycle freezes the geometry, Kahn's algorithm isolates premature exhaustion. If `ans.size() != numCourses`, mathematically return an empty set `{}`. Otherwise, return `ans`.
 
----
 
 ## Code Implementation
 
@@ -75,11 +68,12 @@ vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(V + E)$ where $V = \text{numCourses}$ bounding vertices and $E = \text{prerequisites.size()}$ bounding structural edges.
-- **Space Complexity:** $O(V + E)$ mapping explicit absolute dimensions for the adjacency list structure, $O(V)$ explicitly isolating output geometries and constraints.
+- **time Complexity:** $O(V + E)$ where $V = \text{numCourses}$ bounding vertices and $E = \text{prerequisites.size()}$ bounding structural edges.
+- **space Complexity:** $O(V + E)$ mapping explicit absolute dimensions for the adjacency list structure, $O(V)$ explicitly isolating output geometries and constraints.
 
 > [!tip]
 > **DFS Reversal Theorem:** To construct topological sequencing utilizing recursive DFS, one must algebraically push structurally exhausted nodes (all descendants visited) into a `stack`. Popping the global stack subsequently generates the exact forward monotonic Topological geometry. BFS Kahn's Algorithm produces it natively sequentially.
+
+NEXT: [[Index]]

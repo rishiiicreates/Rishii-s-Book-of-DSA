@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, design, lfu]
-date: 2026-06-30
----
 # LFU Cache
 
 ## Problem Statement
-Design and implement a data structure mapping to a Least Frequently Used (LFU) cache maintaining O(1) `get` and `put` operational bounds.
+- design and implement a data structure mapping to a Least Frequently Used (LFU) cache maintaining O(1) `get` and `put` operational bounds.
 
 ## Approach / Intuition
-Establish two synchronized hash maps: one linking explicit keys directly to nodes containing values and frequencies, and another directly mapping standard frequencies to doubly linked lists of active nodes. Tracking the absolute minimal active frequency instantly identifies candidates for eviction relying on intensive [[Frequency Tracking]].
+- establish two synchronized hash maps: one linking explicit keys directly to nodes containing values and frequencies, and another directly mapping standard frequencies to doubly linked lists of active nodes. Tracking the absolute minimal active frequency instantly identifies candidates for eviction relying on intensive [[Frequency Tracking]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1)
-- **[[Space Complexity]]:** O(Capacity)
+- **[[time Complexity]]:** O(1)
+- **[[space Complexity]]:** O(Capacity)
 
 ## Sample Code
 ```cpp
@@ -67,7 +62,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::list`
+- `std::list`
 
 ## Edge Cases
-Cache constrained forcefully to 0 capacity, massive collisions of keys sharing identical lowest frequencies.
+- cache constrained forcefully to 0 capacity, massive collisions of keys sharing identical lowest frequencies.
+
+NEXT: [[Index]]

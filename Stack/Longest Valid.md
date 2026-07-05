@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Longest Valid Parentheses
 
 ## Problem Statement
-Given a string containing just the characters `(` and `)`, find the length of the longest valid (well-formed) parentheses substring.
+- given a string containing just the characters `(` and `)`, find the length of the longest valid (well-formed) parentheses substring.
 
 ## Approach / Intuition
-We use a [[Stack]] to store the indices of the characters. We initialize the stack with `-1` to serve as a base for the first valid substring. As we iterate, if we see `(`, we push its index. If we see `)`, we pop the top of the stack. If the stack becomes empty, we push the current index as a new base. Otherwise, the length of the valid substring ending at the current index is the current index minus the new top of the stack.
+- we use a [[Stack]] to store the indices of the characters. We initialize the stack with `-1` to serve as a base for the first valid substring. As we iterate, if we see `(`, we push its index. If we see `)`, we pop the top of the stack. If the stack becomes empty, we push the current index as a new base. Otherwise, the length of the valid substring ending at the current index is the current index minus the new top of the stack.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the string
-- **[[Space Complexity]]:** O(N) for storing indices in the stack
+- **[[time Complexity]]:** O(N) where N is the length of the string
+- **[[space Complexity]]:** O(N) for storing indices in the stack
 
 ## Sample Code
 ```cpp
@@ -44,7 +39,9 @@ int longestValidParentheses(string s) {
 ```
 
 ## New Keywords / STL Used
-`std::stack`, `std::max`
+- `std::stack`, `std::max`
 
 ## Edge Cases
-String with no valid pairs, fully valid string, disjoint valid strings like `()()`, overlapping invalid strings like `(()`.
+- string with no valid pairs, fully valid string, disjoint valid strings like `()()`, overlapping invalid strings like `(()`.
+
+NEXT: [[Index]]

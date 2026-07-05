@@ -1,25 +1,18 @@
----
-type: concept
-tags: [string, cpp, stl]
-date: 2026-06-30
----
 # Remove Spaces
 
 ## Problem Statement
-Given a string $S$, remove all whitespace characters efficiently.
+- given a string $S$, remove all whitespace characters efficiently.
 
-*Example:* $S = \text{"  a  b   c "}$ $\rightarrow$ $S = \text{"abc"}$.
+- *example:* $S = \text{"  a  b   c "}$ $\rightarrow$ $S = \text{"abc"}$.
 
----
 
 ## Approach: Erase-Remove Idiom
 
-This is a direct application of the logic from [[Remove Occurrences]]. We target the space character (`' '`) using the **Erase-Remove Idiom** to efficiently compact the string.
+- this is a direct application of the logic from [[Remove Occurrences]]. We target the space character (`' '`) using the **Erase-Remove Idiom** to efficiently compact the string.
 
-1. `std::remove` shifts all non-space characters to the front.
-2. `std::string::erase` trims the leftover garbage characters from the new logical end to the physical end.
+- `std::remove` shifts all non-space characters to the front.
+- `std::string::erase` trims the leftover garbage characters from the new logical end to the physical end.
 
----
 
 ## Code Implementation
 
@@ -40,8 +33,9 @@ string removeSpaces(string s) {
 > s.erase(remove_if(s.begin(), s.end(), ::isspace), s.end());
 > ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ where $N$ is the string length. The shifting operation checks every character linearly.
-- **Space Complexity:** $O(1)$ auxiliary space. The modification is strictly in-place.
+- **time Complexity:** $O(N)$ where $N$ is the string length. The shifting operation checks every character linearly.
+- **space Complexity:** $O(1)$ auxiliary space. The modification is strictly in-place.
+
+NEXT: [[Index]]

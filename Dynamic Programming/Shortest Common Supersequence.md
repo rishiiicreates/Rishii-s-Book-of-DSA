@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, string]
-date: 2026-06-30
----
 # Shortest Common Supersequence
 
 ## Problem Statement
-Given two strings `str1` and `str2`, return the shortest string that has both `str1` and `str2` as subsequences. If there are multiple valid strings, return any of them.
+- given two strings `str1` and `str2`, return the shortest string that has both `str1` and `str2` as subsequences. If there are multiple valid strings, return any of them.
 
 ## Approach / Intuition
-First find the [[Longest Common Subsequence]] (LCS) using [[Dynamic Programming]]. Then backtrack through the DP table from the bottom right to construct the supersequence, picking matching characters once and non-matching characters from both strings as needed.
+- first find the [[Longest Common Subsequence]] (LCS) using [[Dynamic Programming]]. Then backtrack through the DP table from the bottom right to construct the supersequence, picking matching characters once and non-matching characters from both strings as needed.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n * m)
-- **[[Space Complexity]]:** O(n * m)
+- **[[time Complexity]]:** O(n * m)
+- **[[space Complexity]]:** O(n * m)
 
 ## Sample Code
 ```cpp
@@ -52,7 +47,9 @@ string shortestCommonSupersequence(string str1, string str2) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `string`, `reverse`
+- `vector`, `string`, `reverse`
 
 ## Edge Cases
-One string is empty, strings have no common characters, strings are identical.
+- one string is empty, strings have no common characters, strings are identical.
+
+NEXT: [[Index]]

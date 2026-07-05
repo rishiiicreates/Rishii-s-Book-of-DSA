@@ -1,19 +1,14 @@
----
-type: concept
-tags: [bst, cpp]
-date: 2026-06-30
----
 # Sorted Array to BST
 
 ## Problem Statement
-Convert a given sorted array into a height-balanced [[Binary Search Tree]].
+- convert a given sorted array into a height-balanced [[Binary Search Tree]].
 
 ## Approach / Intuition
-A height-balanced BST requires the middle element of the sorted array to be the root. The left half of the array forms the left subtree and the right half forms the right subtree. We can build the tree recursively using [[Divide and Conquer]].
+- a height-balanced BST requires the middle element of the sorted array to be the root. The left half of the array forms the left subtree and the right half forms the right subtree. We can build the tree recursively using [[Divide and Conquer]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the number of elements in the array.
-- **[[Space Complexity]]:** O(log N) for the recursion stack.
+- **[[time Complexity]]:** O(N) where N is the number of elements in the array.
+- **[[space Complexity]]:** O(log N) for the recursion stack.
 
 ## Sample Code
 ```cpp
@@ -41,6 +36,8 @@ public:
 - `const std::vector<int>&`
 
 ## Edge Cases
-- Empty array.
-- Array with a single element.
-- Array with an even number of elements.
+- empty array.
+- array with a single element.
+- array with an even number of elements.
+
+NEXT: [[Index]]

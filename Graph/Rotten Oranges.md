@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, bfs]
-date: 2026-06-30
----
 # Rotten Oranges
 
 ## Problem Statement
-Given a grid where 0 is empty, 1 is a fresh orange, and 2 is a rotten orange, find the minimum time required to rot all oranges. A rotten orange rots adjacent fresh oranges in 1 unit of time.
+- given a grid where 0 is empty, 1 is a fresh orange, and 2 is a rotten orange, find the minimum time required to rot all oranges. A rotten orange rots adjacent fresh oranges in 1 unit of time.
 
 ## Approach / Intuition
-Push all initially rotten oranges into a [[Queue]] with time 0. Use multi-source [[BFS]] to rot adjacent fresh oranges. Keep track of the maximum time and remaining fresh oranges.
+- push all initially rotten oranges into a [[Queue]] with time 0. Use multi-source [[BFS]] to rot adjacent fresh oranges. Keep track of the maximum time and remaining fresh oranges.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N * M)
-- **[[Space Complexity]]:** O(N * M)
+- **[[time Complexity]]:** O(N * M)
+- **[[space Complexity]]:** O(N * M)
 
 ## Sample Code
 ```cpp
@@ -56,7 +51,9 @@ int orangesRotting(vector<vector<int>>& grid) {
 ```
 
 ## New Keywords / STL Used
-`std::queue`, `std::pair`
+- `std::queue`, `std::pair`
 
 ## Edge Cases
-No fresh oranges initially, unreachable fresh oranges, no rotten oranges initially.
+- no fresh oranges initially, unreachable fresh oranges, no rotten oranges initially.
+
+NEXT: [[Index]]

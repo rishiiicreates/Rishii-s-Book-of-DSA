@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, matrix, dfs]
-date: 2026-06-30
----
 # Longest Increasing Path
 
 ## Problem Statement
-Given an `m x n` integers matrix, return the length of the longest increasing path. You can move up, down, left, or right, but not diagonally or outside the boundary.
+- given an `m x n` integers matrix, return the length of the longest increasing path. You can move up, down, left, or right, but not diagonally or outside the boundary.
 
 ## Approach / Intuition
-This combines [[DFS]] with [[Memoization]]. Start a DFS from each cell and compute the longest increasing path from it. If a cell's longest path is already computed in our cache, reuse it. The global max is the longest among all DFS starts.
+- this combines [[DFS]] with [[Memoization]]. Start a DFS from each cell and compute the longest increasing path from it. If a cell's longest path is already computed in our cache, reuse it. The global max is the longest among all DFS starts.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(m * n)
-- **[[Space Complexity]]:** O(m * n)
+- **[[time Complexity]]:** O(m * n)
+- **[[space Complexity]]:** O(m * n)
 
 ## Sample Code
 ```cpp
@@ -50,7 +45,9 @@ int longestIncreasingPath(vector<vector<int>>& matrix) {
 ```
 
 ## New Keywords / STL Used
-`vector`, `max`
+- `vector`, `max`
 
 ## Edge Cases
-Empty matrix, all elements equal (no strictly increasing path), 1x1 matrix.
+- empty [[Matrix]], all elements equal (no strictly increasing path), 1x1 matrix.
+
+NEXT: [[Index]]

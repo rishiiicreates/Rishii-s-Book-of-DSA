@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, min-max-costs]
-date: 2026-06-30
----
 # Min and Max Costs to Buy All Candies
 
 ## Problem Statement
-Given an array representing the prices of candies and an integer K, find the minimum and maximum cost to buy all N candies, given that for every candy bought, you get K candies for free.
+- given an array representing the prices of candies and an integer K, find the minimum and maximum cost to buy all N candies, given that for every candy bought, you get K candies for free.
 
 ## Approach / Intuition
-Sort the candy prices. For the minimum cost, buy the cheapest candies and take the most expensive ones for free. For the maximum cost, buy the most expensive candies and take the cheapest ones for free, using a [[Greedy Algorithm]].
+- sort the candy prices. For the minimum cost, buy the cheapest candies and take the most expensive ones for free. For the maximum cost, buy the most expensive candies and take the cheapest ones for free, using a [[Greedy Algorithm]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -47,5 +42,7 @@ pair<int, int> findMinMaxCost(vector<int>& candies, int K) {
 - `pair`
 
 ## Edge Cases
-- K is 0
-- K is larger than the number of candies
+- k is 0
+- k is larger than the number of candies
+
+NEXT: [[Index]]

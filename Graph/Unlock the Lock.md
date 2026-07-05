@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, bfs, shortest-path]
-date: 2026-06-30
----
 # Unlock the Lock
 
 ## Problem Statement
-You have a 4-wheel lock. You want to reach a target combination starting from "0000", but cannot pass through deadends. Find the minimum turns required.
+- you have a 4-wheel lock. You want to reach a target combination starting from "0000", but cannot pass through deadends. Find the minimum turns required.
 
 ## Approach / Intuition
-Use [[BFS]] to find the shortest path. At each step, generate 8 possible next combinations by turning each of the 4 wheels up or down. Skip if it's a deadend or already visited.
+- use [[BFS]] to find the shortest path. At each step, generate 8 possible next combinations by turning each of the 4 wheels up or down. Skip if it's a deadend or already visited.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(10^4)
-- **[[Space Complexity]]:** O(10^4)
+- **[[time Complexity]]:** O(10^4)
+- **[[space Complexity]]:** O(10^4)
 
 ## Sample Code
 ```cpp
@@ -46,7 +41,9 @@ int openLock(vector<string>& deadends, string target) {
 ```
 
 ## New Keywords / STL Used
-`unordered_set`, string manipulation
+- `unordered_set`, string manipulation
 
 ## Edge Cases
-Target is "0000", "0000" is a deadend, impossible to reach target.
+- target is "0000", "0000" is a deadend, impossible to reach target.
+
+NEXT: [[Index]]

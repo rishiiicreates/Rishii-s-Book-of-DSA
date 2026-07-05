@@ -1,24 +1,17 @@
----
-type: concept
-tags: [binary-tree, cpp, math, recursion, geometry]
-date: 2026-07-01
----
 # Invert Binary Tree
 
 ## Problem Statement
-Given the topological root of a Binary Tree $T$, mathematically compute its absolute mirror reflection across its central vertical geometric axis. The resulting tree is strictly the inverted image of the original topology.
+- given the topological root of a Binary Tree $T$, mathematically compute its absolute mirror reflection across its central vertical geometric axis. The resulting tree is strictly the inverted image of the original topology.
 
----
 
 ## Approach: Recursive Geometric Reflection (DFS)
 
-Topological inversion is a mathematically pure recursive operation. A Binary Tree $T$ is inverted if and only if:
-1. The left subtree $T_L$ is geometrically swapped with the right subtree $T_R$.
-2. Both $T_L$ and $T_R$ are themselves structurally inverted.
+- topological inversion is a mathematically pure recursive operation. A Binary Tree $T$ is inverted if and only if:
+- the left subtree $T_L$ is geometrically swapped with the right subtree $T_R$.
+- both $T_L$ and $T_R$ are themselves structurally inverted.
 
-This maps perfectly to a Depth-First Search (DFS) operation. At every distinct vertex $v$, we atomically execute a scalar swap of the `left` and `right` child pointers, and inductively propagate the inversion operation down the structural height of the tree. The base case bounds on the $\emptyset$ (null) terminal condition.
+- this maps perfectly to a Depth-First Search (DFS) operation. At every distinct vertex $v$, we atomically execute a scalar swap of the `left` and `right` child pointers, and inductively propagate the inversion operation down the structural height of the tree. The base case bounds on the $\emptyset$ (null) terminal condition.
 
----
 
 ## Code Implementation
 
@@ -52,11 +45,12 @@ TreeNode* invertTree(TreeNode* root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ strict linear traversal. The algorithm mathematically visits every structural vertex exactly once to execute the geometric swap.
-- **Space Complexity:** $O(H)$ mapping the recursive depth bound of the call-stack, peaking at $O(N)$ for a strictly degenerate sequence, and $O(\log N)$ for a perfectly balanced topology.
+- **time Complexity:** $O(N)$ strict linear traversal. The algorithm mathematically visits every structural vertex exactly once to execute the geometric swap.
+- **space Complexity:** $O(H)$ mapping the recursive depth bound of the call-stack, peaking at $O(N)$ for a strictly degenerate sequence, and $O(\log N)$ for a perfectly balanced topology.
 
 > [!tip]
 > **Iterative Isomorphism:** This topological mutation is not exclusively bound to DFS. A Breadth-First Search (BFS) utilizing a `std::queue` achieves identical geometric reflection iteratively, evaluating pointer swaps perfectly level-by-level, effectively neutralizing call-stack depth limits.
+
+NEXT: [[Index]]

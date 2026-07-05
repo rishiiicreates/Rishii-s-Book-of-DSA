@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query, math]
-date: 2026-06-30
----
 # Range LCM Queries
 
 ## Problem Statement
-Answer queries to find the Least Common Multiple (LCM) of all elements in a range $[L, R]$.
+- answer queries to find the Least Common Multiple (LCM) of all elements in a range $[L, R]$.
 
 ## Approach / Intuition
-Use a [[Segment Tree]] where each node stores the LCM of its segment. The LCM of two segments is computed as `(a * b) / GCD(a, b)`. Due to potential overflow, values can be stored under modulo if required by the problem.
+- use a [[Segment Tree]] where each node stores the LCM of its segment. The LCM of two segments is computed as `(a * b) / GCD(a, b)`. Due to potential overflow, values can be stored under modulo if required by the problem.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log (\text{max\_val}))$ build, $O(\log N \log (\text{max\_val}))$ query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N \log (\text{max\_val}))$ build, $O(\log N \log (\text{max\_val}))$ query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -63,7 +58,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::gcd` (C++17)
+- `std::gcd` (C++17)
 
 ## Edge Cases
-Large LCM causing integer overflow, queries on disjoint ranges.
+- large LCM causing integer overflow, queries on disjoint ranges.
+
+NEXT: [[Index]]

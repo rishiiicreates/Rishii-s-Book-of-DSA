@@ -1,20 +1,15 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, serialization]
-date: 2026-06-30
----
 # Serialize and Deserialize Binary Tree
 
 ## Problem Statement
-Design an algorithm to serialize a binary tree to a string and deserialize that string back to the original binary tree.
+- design an algorithm to serialize a binary tree to a string and deserialize that string back to the original binary tree.
 
 ## Approach / Intuition
-Serialization: Use [[Breadth-First Search]] (Level Order Traversal) to convert the tree into a [[String]] using a queue. Record null nodes with a special character like '#'. 
-Deserialization: Use a stringstream to parse the string. Rebuild the tree level by level using a queue, creating child nodes from the parsed string values and linking them to dequeued parent nodes.
+- serialization: Use [[Breadth-First Search]] (Level Order Traversal) to convert the tree into a [[String]] using a queue. Record null nodes with a special character like '#'.
+- deserialization: Use a stringstream to parse the string. Rebuild the tree level by level using a queue, creating child nodes from the parsed string values and linking them to dequeued parent nodes.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -83,7 +78,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`stringstream`, `getline`, `stoi`, `to_string`
+- `stringstream`, `getline`, `stoi`, `to_string`
 
 ## Edge Cases
-Empty tree, heavily unbalanced tree.
+- empty tree, heavily unbalanced tree.
+
+NEXT: [[Index]]

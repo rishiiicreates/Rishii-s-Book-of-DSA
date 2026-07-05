@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, backtracking]
-date: 2026-06-30
----
 # Remove Invalid Parentheses
 
 ## Problem Statement
-Remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible valid strings.
+- remove the minimum number of invalid parentheses in order to make the input string valid. Return all possible valid strings.
 
 ## Approach / Intuition
-Use [[BFS]] or [[Backtracking]] to generate all possible states by removing one parenthesis at a time. The first level in BFS that yields valid strings guarantees the minimum removals.
+- use [[BFS]] or [[Backtracking]] to generate all possible states by removing one parenthesis at a time. The first level in BFS that yields valid strings guarantees the minimum removals.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(2^N)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(2^N)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -62,7 +57,9 @@ vector<string> removeInvalidParentheses(string s) {
 ```
 
 ## New Keywords / STL Used
-`std::queue`, `std::unordered_set`
+- `std::queue`, `std::unordered_set`
 
 ## Edge Cases
-Already valid string, string without parentheses, no valid string possible.
+- already valid string, string without parentheses, no valid string possible.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, tree-view]
-date: 2026-06-30
----
 # Bottom View of Binary Tree
 
 ## Problem Statement
-Given a binary tree, return the nodes visible when viewed from the bottom, ordered from left to right.
+- given a binary tree, return the nodes visible when viewed from the bottom, ordered from left to right.
 
 ## Approach / Intuition
-Like the top view, assign a horizontal distance (HD) to each node. Perform a [[Breadth-First Search]] (BFS). Use a map to continually update the node stored at each HD. Because BFS traverses level by level, the last node encountered at any HD will naturally be the bottom-most node.
+- like the top view, assign a horizontal distance (HD) to each node. Perform a [[Breadth-First Search]] (BFS). Use a map to continually update the node stored at each HD. Because BFS traverses level by level, the last node encountered at any HD will naturally be the bottom-most node.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N)$ due to map updates
-- **[[Space Complexity]]:** $O(N)$ for queue and map
+- **[[time Complexity]]:** $O(N \log N)$ due to map updates
+- **[[space Complexity]]:** $O(N)$ for queue and map
 
 ## Sample Code
 ```cpp
@@ -58,7 +53,9 @@ vector<int> bottomView(TreeNode *root) {
 ```
 
 ## New Keywords / STL Used
-`map`, map update
+- `map`, map update
 
 ## Edge Cases
-Empty tree, overlapping nodes at same HD where deeper node shadows the upper one.
+- empty tree, overlapping nodes at same HD where deeper node shadows the upper one.
+
+NEXT: [[Index]]

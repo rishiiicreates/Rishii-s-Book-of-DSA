@@ -1,28 +1,21 @@
----
-type: concept
-tags: [maths, pattern, cpp, divisors]
-date: 2026-06-30
----
 # All Divisors
 
 ## Problem Statement
-Given an integer $N$, find all its positive divisors and return them in ascending order.
-*Example:* For $N = 36$, the divisors are `[1, 2, 3, 4, 6, 9, 12, 18, 36]`.
+- given an integer $N$, find all its positive divisors and return them in ascending order.
+- *example:* For $N = 36$, the divisors are `[1, 2, 3, 4, 6, 9, 12, 18, 36]`.
 
----
 
 ## Approach: The $\sqrt{N}$ Method
 
-A naive $O(N)$ loop from $1 \dots N$ checking `if (N % i == 0)` is too slow for large constraints.
+- a naive $O(N)$ loop from $1 \dots N$ checking `if (N % i == 0)` is too slow for large constraints.
 
-Just like in [[Prime Testing]], we leverage the mathematical fact that divisors always exist in pairs. 
-If $i$ is a divisor of $N$, then $(N/i)$ must also be a divisor of $N$.
-Because one divisor in the pair must be $\le \sqrt{N}$, we only need to iterate up to the square root of $N$. Every time we find a divisor $i$, we instantly find its counterpart $(N/i)$.
+- just like in [[Prime Testing]], we leverage the mathematical fact that divisors always exist in pairs.
+- if $i$ is a divisor of $N$, then $(N/i)$ must also be a divisor of $N$.
+- because one divisor in the pair must be $\le \sqrt{N}$, we only need to iterate up to the square root of $N$. Every time we find a divisor $i$, we instantly find its counterpart $(N/i)$.
 
 ### The Perfect Square Trap
-If $N = 36$ and $i = 6$, the counterpart is $36/6 = 6$. We must ensure we don't add the number $6$ twice!
+- if $N = 36$ and $i = 6$, the counterpart is $36/6 = 6$. We must ensure we don't add the number $6$ twice!
 
----
 
 ## Code Implementation
 
@@ -54,11 +47,12 @@ vector<int> allDivisors(int n) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(\sqrt{N} + K \log K)$ where $K$ is the total number of divisors. Finding the divisors takes $O(\sqrt{N})$. Sorting them at the end takes $O(K \log K)$. Because $K$ is typically very small compared to $N$, this is incredibly fast.
-- **Space Complexity:** $O(K)$ to store the array of divisors that is returned.
+- **time Complexity:** $O(\sqrt{N} + K \log K)$ where $K$ is the total number of divisors. Finding the divisors takes $O(\sqrt{N})$. Sorting them at the end takes $O(K \log K)$. Because $K$ is typically very small compared to $N$, this is incredibly fast.
+- **space Complexity:** $O(K)$ to store the array of divisors that is returned.
 
 > [!important]
 > If a problem strictly prohibits sorting at the end, you can maintain two separate lists: one for the small divisors (`i`) and one for the large divisors (`n / i`). The small divisors are naturally found in ascending order, while the large divisors are found in descending order. Reverse the large list and append it to the small list to achieve an un-sorted $O(\sqrt{N})$ overall time complexity!
+
+NEXT: [[Index]]

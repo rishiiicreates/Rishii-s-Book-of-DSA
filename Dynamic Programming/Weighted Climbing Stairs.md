@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, min_cost]
-date: 2026-06-30
----
 # Weighted Climbing Stairs
 
 ## Problem Statement
-You are given an integer array `cost` where `cost[i]` is the cost of $i^{th}$ step on a staircase. Once you pay the cost, you can either climb one or two steps. Find the minimum cost to reach the top of the floor.
+- you are given an integer array `cost` where `cost[i]` is the cost of $i^{th}$ step on a staircase. Once you pay the cost, you can either climb one or two steps. Find the minimum cost to reach the top of the floor.
 
 ## Approach / Intuition
-We want to minimize the total cost. The minimum cost to reach step $i$ is `cost[i]` plus the minimum of the cost to reach step $i-1$ and step $i-2$. We use [[Dynamic Programming]] to calculate this iteratively from the bottom up, maintaining only the costs of the last two steps to optimize space.
+- we want to minimize the total cost. The minimum cost to reach step $i$ is `cost[i]` plus the minimum of the cost to reach step $i-1$ and step $i-2$. We use [[Dynamic Programming]] to calculate this iteratively from the bottom up, maintaining only the costs of the last two steps to optimize space.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ where $N$ is the length of the `cost` array.
-- **[[Space Complexity]]:** $O(1)$ since we only store two previous values.
+- **[[time Complexity]]:** $O(N)$ where $N$ is the length of the `cost` array.
+- **[[space Complexity]]:** $O(1)$ since we only store two previous values.
 
 ## Sample Code
 ```cpp
@@ -34,7 +29,9 @@ int minCostClimbingStairs(std::vector<int>& cost) {
 ```
 
 ## New Keywords / STL Used
-`std::min`, `std::vector`
+- `std::min`, `std::vector`
 
 ## Edge Cases
-Array size of 2.
+- array size of 2.
+
+NEXT: [[Index]]

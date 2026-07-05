@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, hash-map]
-date: 2026-06-30
----
 # Minimum Window Substring
 
 ## Problem Statement
-Given two strings `s` and `t`, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window.
+- given two strings `s` and `t`, return the minimum window substring of `s` such that every character in `t` (including duplicates) is included in the window.
 
 ## Approach / Intuition
-Use a [[Sliding Window]] and an array to track character frequencies. Expand the window to the right until it contains all characters of `t`. Then, shrink the window from the left to find the minimum length while keeping the required characters.
+- use a [[Sliding Window]] and an array to track character frequencies. Expand the window to the right until it contains all characters of `t`. Then, shrink the window from the left to find the minimum length while keeping the required characters.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(S + T)
-- **[[Space Complexity]]:** O(1) since character sets are bounded (e.g., ASCII).
+- **[[time Complexity]]:** O(S + T)
+- **[[space Complexity]]:** O(1) since character sets are bounded (e.g., ASCII).
 
 ## Sample Code
 ```cpp
@@ -47,5 +42,7 @@ string minWindow(string s, string t) {
 
 ## Edge Cases
 - `s` is shorter than `t`
-- Window covers the entire string `s`
-- No such window exists
+- window covers the entire string `s`
+- no such window exists
+
+NEXT: [[Index]]

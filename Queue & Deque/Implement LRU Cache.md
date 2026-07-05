@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, cache]
-date: 2026-06-30
----
 # Implement LRU Cache
 
 ## Problem Statement
-Design and implement a data structure for Least Recently Used (LRU) cache, supporting `get` and `put` in O(1) average time complexity.
+- design and implement a data structure for Least Recently Used (LRU) cache, supporting `get` and `put` in O(1) average time complexity.
 
 ## Approach / Intuition
-Use a combination of an `unordered_map` and a doubly [[Linked List]] (or `std::list`). The hash map provides O(1) access to nodes. The linked list maintains the usage order, with the most recently used at the front and the least recently used at the back. Every time a node is accessed or updated, move it to the front.
+- use a combination of an `unordered_map` and a doubly [[Linked List]] (or `std::list`). The hash map provides O(1) access to nodes. The linked list maintains the usage order, with the most recently used at the front and the least recently used at the back. Every time a node is accessed or updated, move it to the front.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for both get and put
-- **[[Space Complexity]]:** O(capacity)
+- **[[time Complexity]]:** O(1) for both get and put
+- **[[space Complexity]]:** O(capacity)
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::list`, `std::list::splice`, `std::unordered_map`
+- `std::list`, `std::list::splice`, `std::unordered_map`
 
 ## Edge Cases
-Cache capacity is 1, updating an existing key without exceeding capacity.
+- cache capacity is 1, updating an existing key without exceeding capacity.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, non_adjacent]
-date: 2026-06-30
----
 # House Robber
 
 ## Problem Statement
-Given an integer array representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. Adjacent houses have security systems connected, so you cannot rob two adjacent houses.
+- given an integer array representing the amount of money of each house, return the maximum amount of money you can rob tonight without alerting the police. Adjacent houses have security systems connected, so you cannot rob two adjacent houses.
 
 ## Approach / Intuition
-At any house $i$, we have two choices: rob it and add its money to the maximum money from house $i-2$, or skip it and keep the maximum money from house $i-1$. This presents a clear [[Dynamic Programming]] recurrence: `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`. We can optimize space by only storing the results of the previous two houses.
+- at any house $i$, we have two choices: rob it and add its money to the maximum money from house $i-2$, or skip it and keep the maximum money from house $i-1$. This presents a clear [[Dynamic Programming]] recurrence: `dp[i] = max(dp[i-1], dp[i-2] + nums[i])`. We can optimize space by only storing the results of the previous two houses.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$ where $N$ is the number of houses.
-- **[[Space Complexity]]:** $O(1)$ space optimization.
+- **[[time Complexity]]:** $O(N)$ where $N$ is the number of houses.
+- **[[space Complexity]]:** $O(1)$ space optimization.
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int rob(std::vector<int>& nums) {
 ```
 
 ## New Keywords / STL Used
-`std::max`
+- `std::max`
 
 ## Edge Cases
-Empty array, single element array, all zero amounts.
+- empty array, single element array, all zero amounts.
+
+NEXT: [[Index]]

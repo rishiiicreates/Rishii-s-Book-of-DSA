@@ -1,24 +1,17 @@
----
-type: concept
-tags: [binary-tree, cpp, math, recursion]
-date: 2026-07-01
----
 # Depth (Height) of a Binary Tree
 
 ## Problem Statement
-Given the geometric root node of a Binary Tree $T$, compute its absolute mathematical height, defined as the maximum topological edge-path distance from the root to any remote leaf vertex (often equivalently measured as the absolute maximum node depth).
+- given the geometric root node of a Binary Tree $T$, compute its absolute mathematical height, defined as the maximum topological edge-path distance from the root to any remote leaf vertex (often equivalently measured as the absolute maximum node depth).
 
----
 
 ## Approach: Recursive Max-Path Bounding
 
-Let the height of a subtree $T$ be denoted as $H(T)$. Topologically, the height of a non-empty tree is exactly one geometric unit greater than the *maximum* height of its two disjoint structural child subtrees.
-This establishes the recurrence relation:
+- let the height of a subtree $T$ be denoted as $H(T)$. Topologically, the height of a non-empty tree is exactly one geometric unit greater than the *maximum* height of its two disjoint structural child subtrees.
+- this establishes the recurrence relation:
 $$ H(T) = \begin{cases} 0 & \text{if } T = \emptyset \\ 1 + \max(H(T_L), H(T_R)) & \text{otherwise} \end{cases} $$
 
-We execute a geometric post-order DFS traversal. A node computes the absolute maximal depth of its disjoint left and right topological paths, and mathematically passes the bound $+1$ to its geometric parent.
+- we execute a geometric post-order DFS traversal. A node computes the absolute maximal depth of its disjoint left and right topological paths, and mathematically passes the bound $+1$ to its geometric parent.
 
----
 
 ## Code Implementation
 
@@ -51,11 +44,12 @@ int maxDepth(TreeNode* root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ exact linear constraint, as every node must be topologically evaluated to certify the global maximum bound.
-- **Space Complexity:** $O(H)$ bounding the execution call-stack depth, mapping to $O(\log N)$ perfectly balanced, or $O(N)$ pathologically degenerate.
+- **time Complexity:** $O(N)$ exact linear constraint, as every node must be topologically evaluated to certify the global maximum bound.
+- **space Complexity:** $O(H)$ bounding the execution call-stack depth, mapping to $O(\log N)$ perfectly balanced, or $O(N)$ pathologically degenerate.
 
 > [!important]
 > **Depth vs. Height Semantics:** Strictly mathematically, *Depth* is measured continuously downwards from the root ($0$ at root, increasing), while *Height* is measured upwards from the deepest leaf ($0$ at leaf, increasing). However, the absolute maximum Depth of a tree is topologically identical to its absolute Height.
+
+NEXT: [[Index]]

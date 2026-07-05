@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, grid_dp]
-date: 2026-06-30
----
 # Largest Square Submatrix with All 1s
 
 ## Problem Statement
-Given an $m \times n$ binary matrix filled with 0s and 1s, find the largest square containing only 1s and return its area.
+- given an $m \times n$ binary matrix filled with 0s and 1s, find the largest square containing only 1s and return its area.
 
 ## Approach / Intuition
-Let `dp[i][j]` represent the side length of the maximum square whose bottom-right corner is at cell $(i, j)$ in the matrix. If the cell is '1', the size of the square is bounded by its top, left, and top-left neighbors. Thus, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`. This [[Dynamic Programming]] approach can be space-optimized to use only a 1D array.
+- let `dp[i][j]` represent the side length of the maximum square whose bottom-right corner is at cell $(i, j)$ in the matrix. If the cell is '1', the size of the square is bounded by its top, left, and top-left neighbors. Thus, `dp[i][j] = min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) + 1`. This [[Dynamic Programming]] approach can be space-optimized to use only a 1D array.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(M \times N)$
-- **[[Space Complexity]]:** $O(N)$ with space optimization.
+- **[[time Complexity]]:** $O(M \times N)$
+- **[[space Complexity]]:** $O(N)$ with space optimization.
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ int maximalSquare(std::vector<std::vector<char>>& matrix) {
 ```
 
 ## New Keywords / STL Used
-`std::min` with initializer list, `std::max`
+- `std::min` with initializer list, `std::max`
 
 ## Edge Cases
-Matrix with all 0s, matrix with a single 1.
+- [[Matrix]] with all 0s, matrix with a single 1.
+
+NEXT: [[Index]]

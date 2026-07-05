@@ -1,33 +1,26 @@
----
-type: concept
-tags: [two-pointer, cpp, sum-problem]
-date: 2026-06-30
----
 # 3 Sum (Zero Sum Triplets)
 
 ## Problem Statement
-Given an integer array $A$ of size $N$, return all mathematically unique triplets $[A[i], A[j], A[k]]$ such that $i, j, k$ are distinct and $A[i] + A[j] + A[k] = 0$. The solution set must not contain duplicate triplets.
+- given an integer array $A$ of size $N$, return all mathematically unique triplets $[A[i], A[j], A[k]]$ such that $i, j, k$ are distinct and $A[i] + A[j] + A[k] = 0$. The solution set must not contain duplicate triplets.
 
-*Example:* $A = [-1, 0, 1, 2, -1, -4]$
-*Result:* $[[-1, -1, 2], [-1, 0, 1]]$
+- *example:* $A = [-1, 0, 1, 2, -1, -4]$
+- *result:* $[[-1, -1, 2], [-1, 0, 1]]$
 
----
 
 ## Approach: Fix, Find, and Deduplicate
 
-This extends the standard [[Triplet Sum]] logic but introduces a severe mathematical constraint: preventing duplicate triplets in the output without relying on a slow, memory-intensive `std::set`.
+- this extends the standard [[Triplet Sum]] logic but introduces a severe mathematical constraint: preventing duplicate triplets in the output without relying on a slow, memory-intensive `std::set`.
 
-1. **Sort:** Sorting establishes monotonicity for [[Two-Pointer]] convergence and naturally groups identical elements adjacently, enabling constant-time deduplication.
-2. **Fixation with Deduplication:** Iterate `i` from $0$ to $N-3$. 
-   - *Deduplication Rule 1:* If $i > 0$ and $A[i] == A[i-1]$, we skip `i`. We have already explored all triplets where this value acts as the smallest element.
-   - *Early Exit Optimization:* Since the array is sorted, if $A[i] > 0$, the sum can never mathematically reach $0$ (all subsequent elements are positive). We can break immediately.
-3. **Convergence Search:** Set `left = i + 1` and `right = N - 1`. If $S = A[i] + A[\text{left}] + A[\text{right}] == 0$, we record the triplet.
-4. **Pointer Deduplication:** After finding a valid triplet, we must advance `left` and `right`. To prevent generating the exact same triplet again, we mathematically skip over adjacent duplicates:
-   - *Deduplication Rule 2:* `while (left < right && A[left] == A[left+1]) left++;`
-   - *Deduplication Rule 3:* `while (left < right && A[right] == A[right-1]) right--;`
-   - Finally, explicitly step both pointers inward once more.
+- **sort:** Sorting establishes monotonicity for [[Two-Pointer]] convergence and naturally groups identical elements adjacently, enabling constant-time deduplication.
+- **fixation with Deduplication:** Iterate `i` from $0$ to $N-3$.
+   - *deduplication Rule 1:* If $i > 0$ and $A[i] == A[i-1]$, we skip `i`. We have already explored all triplets where this value acts as the smallest element.
+   - *early Exit Optimization:* Since the array is sorted, if $A[i] > 0$, the sum can never mathematically reach $0$ (all subsequent elements are positive). We can break immediately.
+- **convergence Search:** Set `left = i + 1` and `right = N - 1`. If $S = A[i] + A[\text{left}] + A[\text{right}] == 0$, we record the triplet.
+- **pointer Deduplication:** After finding a valid triplet, we must advance `left` and `right`. To prevent generating the exact same triplet again, we mathematically skip over adjacent duplicates:
+   - *deduplication Rule 2:* `while (left < right && A[left] == A[left+1]) left++;`
+   - *deduplication Rule 3:* `while (left < right && A[right] == A[right-1]) right--;`
+   - finally, explicitly step both pointers inward once more.
 
----
 
 ## Code Implementation
 
@@ -82,8 +75,9 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 > [!warning]
 > Forgetting any of the three deduplication rules will result in duplicate output vectors. Utilizing a `set<vector<int>>` to handle duplicates lazily is considered an anti-pattern due to the massive logarithmic overhead of inserting vectors into a red-black tree.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N^2)$. The sorting is $O(N \log N)$. The nested loop structure takes precisely $O(N^2)$ time.
-- **Space Complexity:** $O(1)$ auxiliary space, excluding the memory allocated for the `res` output matrix.
+- **time Complexity:** $O(N^2)$. The sorting is $O(N \log N)$. The nested loop structure takes precisely $O(N^2)$ time.
+- **space Complexity:** $O(1)$ auxiliary space, excluding the memory allocated for the `res` output matrix.
+
+NEXT: [[Index]]

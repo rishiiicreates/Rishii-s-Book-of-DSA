@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, matrix]
-date: 2026-06-30
----
 # N Queen Problem
 
 ## Problem Statement
-Place $N$ queens on an $N \times N$ chessboard such that no two queens threaten each other.
+- place $N$ queens on an $N \times N$ chessboard such that no two queens threaten each other.
 
 ## Approach / Intuition
-Use [[Backtracking]] to place one queen per row. For each column in the current row, verify if placing a queen is safe by checking the same column and both diagonals. To optimize safety checks, maintain [[Array]]s acting as hash maps to track occupied columns and both diagonals, rather than scanning the board.
+- use [[Backtracking]] to place one queen per row. For each column in the current row, verify if placing a queen is safe by checking the same column and both diagonals. To optimize safety checks, maintain [[Array]]s acting as hash maps to track occupied columns and both diagonals, rather than scanning the board.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N!)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N!)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -51,7 +46,9 @@ vector<vector<string>> solveNQueens(int n) {
 ```
 
 ## New Keywords / STL Used
-Hashing diagonals
+- hashing diagonals
 
 ## Edge Cases
-$N=1$ (trivial), $N=2, 3$ (no solution).
+- $n=1$ (trivial), $N=2, 3$ (no solution).
+
+NEXT: [[Index]]

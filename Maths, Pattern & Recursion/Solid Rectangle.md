@@ -1,31 +1,24 @@
----
-type: concept
-tags: [maths, pattern, cpp, loops, basics, visual]
-date: 2026-06-30
----
 # Solid Rectangle
 
 ## Problem Statement
-Given two integers $R$ (rows) and $C$ (columns), print a solid rectangle of asterisks `*` of size $R \times C$.
-*Example for $R = 3, C = 5$:*
+- given two integers $R$ (rows) and $C$ (columns), print a solid rectangle of asterisks `*` of size $R \times C$.
+- *example for $R = 3, C = 5$:*
 ```
 *****
 *****
 *****
 ```
 
----
 
 ## Approach: Nested Loops
 
-The most basic pattern generation involves a nested loop structure. 
-Think of the screen as a 2D matrix or a 2D Cartesian coordinate system.
-1. The **Outer Loop** controls the rows ($y$-axis). It moves the cursor down line by line.
-2. The **Inner Loop** controls the columns ($x$-axis). It prints characters horizontally across the current row.
+- the most basic pattern generation involves a nested loop structure.
+- think of the screen as a 2D [[Matrix]] or a 2D Cartesian coordinate system.
+- the **Outer Loop** controls the rows ($y$-axis). It moves the cursor down line by line.
+- the **Inner Loop** controls the columns ($x$-axis). It prints characters horizontally across the current row.
 
-For a completely solid rectangle, the inner loop always prints a `*`, and it does this $C$ times. Once the inner loop finishes, the outer loop must print a newline `\n` to drop down to the next row.
+- for a completely solid rectangle, the inner loop always prints a `*`, and it does this $C$ times. Once the inner loop finishes, the outer loop must print a newline `\n` to drop down to the next row.
 
----
 
 ## Code Implementation
 
@@ -51,8 +44,9 @@ void printSolidRectangle(int r, int c) {
 > [!tip] 
 > **Performance:** In C++, always use `\n` instead of `endl` when printing massive patterns. `endl` forces the OS to flush the output buffer every single line, which is extremely slow and can cause Time Limit Exceeded (TLE) errors in competitive programming.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(R \times C)$. We execute the print statement exactly $R \times C$ times.
-- **Space Complexity:** $O(1)$. No extra memory is allocated.
+- **time Complexity:** $O(R \times C)$. We execute the print statement exactly $R \times C$ times.
+- **space Complexity:** $O(1)$. No extra memory is allocated.
+
+NEXT: [[Index]]

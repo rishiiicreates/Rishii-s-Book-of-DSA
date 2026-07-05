@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, prefix-sum]
-date: 2026-06-30
----
 # Smallest subarray with sum greater than x
 
 ## Problem Statement
-Find the minimum length of a contiguous subarray whose sum is strictly greater than a given value `x`.
+- find the minimum length of a contiguous subarray whose sum is strictly greater than a given value `x`.
 
 ## Approach / Intuition
-Utilize a [[Sliding Window]]. Maintain a running sum as the right pointer expands. When the sum exceeds `x`, record the window size and continuously shrink from the left to find the smallest possible valid window.
+- utilize a [[Sliding Window]]. Maintain a running sum as the right pointer expands. When the sum exceeds `x`, record the window size and continuously shrink from the left to find the smallest possible valid window.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the size of the array.
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(N) where N is the size of the array.
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -32,9 +27,11 @@ int smallestSubWithSum(vector<int>& arr, int x) {
 ```
 
 ## New Keywords / STL Used
-- `INT_MAX`, `std::min`
+- `iNT_MAX`, `std::min`
 
 ## Edge Cases
-- Entire array sum is less than or equal to `x`
-- Single element is greater than `x`
-- Empty array
+- entire array sum is less than or equal to `x`
+- single element is greater than `x`
+- empty array
+
+NEXT: [[Index]]

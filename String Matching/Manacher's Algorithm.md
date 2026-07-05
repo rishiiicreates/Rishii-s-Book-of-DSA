@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching, palindromes]
-date: 2026-06-30
----
 # Manacher's Algorithm
 
 ## Problem Statement
-Find the longest palindromic substring in a given string in linear time.
+- find the longest palindromic substring in a given string in linear time.
 
 ## Approach / Intuition
-[[Manacher's Algorithm]] expands palindromes around centers but reuses already computed palindrome lengths using properties of symmetry. We insert dummy characters (e.g., `#`) between original characters to handle both even and odd length palindromes uniformly.
+- [[manacher's Algorithm]] expands palindromes around centers but reuses already computed palindrome lengths using properties of symmetry. We insert dummy characters (e.g., `#`) between original characters to handle both even and odd length palindromes uniformly.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -58,7 +53,9 @@ string longestPalindrome(string s) {
 ```
 
 ## New Keywords / STL Used
-`std::min`, `std::string::substr`
+- `std::min`, `std::string::substr`
 
 ## Edge Cases
-Empty string, single character string, string with all same characters.
+- empty string, single character string, string with all same characters.
+
+NEXT: [[Index]]

@@ -1,34 +1,27 @@
----
-type: concept
-tags: [queue, graph, bfs, cpp]
-date: 2026-06-30
----
 # Minimum Knight Steps to Target Position
 
 ## Problem Statement
-Given an $N \times N$ chessboard, a Knight's starting coordinate $(S_x, S_y)$, and a destination coordinate $(T_x, T_y)$, mathematically compute the minimum number of discrete legal moves required for the Knight to travel from the start to the target.
+- given an $N \times N$ chessboard, a Knight's starting coordinate $(S_x, S_y)$, and a destination coordinate $(T_x, T_y)$, mathematically compute the minimum number of discrete legal moves required for the Knight to travel from the start to the target.
 
-*Movement Rules:* A Knight moves in an $L$-shape. From $(x, y)$, it can mathematically transition to exactly eight possible coordinates $(x \pm 2, y \pm 1)$ and $(x \pm 1, y \pm 2)$, assuming the resulting coordinates reside strictly within the bounds $[0, N-1]$.
+- *movement Rules:* A Knight moves in an $L$-shape. From $(x, y)$, it can mathematically transition to exactly eight possible coordinates $(x \pm 2, y \pm 1)$ and $(x \pm 1, y \pm 2)$, assuming the resulting coordinates reside strictly within the bounds $[0, N-1]$.
 
----
 
 ## Approach: Breadth-First Search (BFS)
 
-Finding the absolute shortest path on an unweighted, discrete topological space is the canonical application of [[Breadth-First Search]] (BFS). The chessboard maps conceptually to an unweighted graph where every valid board coordinate is a node, and every legal Knight move establishes a directed edge.
+- finding the absolute shortest path on an unweighted, discrete topological space is the canonical application of [[Breadth-First Search]] (BFS). The chessboard maps conceptually to an unweighted graph where every valid board coordinate is a node, and every legal Knight move establishes a directed edge.
 
-1. **Topological Representation:** Maintain a queue of structures storing `(current_x, current_y, steps_taken)`.
-2. **State Tracking:** Initialize a boolean grid `visited[N][N]` to track previously visited coordinates, preventing infinite cycles and redundant calculations.
-3. **Queue Initialization:** Enqueue the starting coordinate $(S_x, S_y, 0)$ and mark it as `visited`.
-4. **Traversal:** While the queue is not empty:
-   - Dequeue the front state $(x, y, \text{dist})$.
-   - If $(x, y) == (T_x, T_y)$, return $\text{dist}$.
-   - Iterate through the 8 predefined directional transformations vectors.
-   - For each transformation resulting in a valid $(nx, ny)$ that has **not** been `visited`, mark it `visited` and enqueue $(nx, ny, \text{dist} + 1)$.
+- **topological Representation:** Maintain a queue of structures storing `(current_x, current_y, steps_taken)`.
+- **state Tracking:** Initialize a boolean grid `visited[N][N]` to track previously visited coordinates, preventing infinite cycles and redundant calculations.
+- **queue Initialization:** Enqueue the starting coordinate $(S_x, S_y, 0)$ and mark it as `visited`.
+- **traversal:** While the queue is not empty:
+   - dequeue the front state $(x, y, \text{dist})$.
+   - if $(x, y) == (T_x, T_y)$, return $\text{dist}$.
+   - iterate through the 8 predefined directional transformations vectors.
+   - for each transformation resulting in a valid $(nx, ny)$ that has **not** been `visited`, mark it `visited` and enqueue $(nx, ny, \text{dist} + 1)$.
 
 > [!important]
 > For unbounded boards (e.g., an infinite plane), bounding algorithms (such as bidirectional BFS or $A^*$ utilizing Manhattan distance heuristics) become strictly mathematically necessary to prevent exponential explosion.
 
----
 
 ## Code Implementation
 
@@ -88,8 +81,9 @@ int minStepToReachTarget(vector<int>& KnightPos, vector<int>& TargetPos, int N) 
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N^2)$. The board contains $N^2$ unique states (nodes). In the worst-case exploration pattern, the BFS verifies all $N^2$ nodes exactly once, analyzing at most 8 constant edges per node.
-- **Space Complexity:** $O(N^2)$ utilized by the `visited` boolean matrix and the worst-case footprint of the auxiliary exploration `queue`.
+- **time Complexity:** $O(N^2)$. The board contains $N^2$ unique states (nodes). In the worst-case exploration pattern, the BFS verifies all $N^2$ nodes exactly once, analyzing at most 8 constant edges per node.
+- **space Complexity:** $O(N^2)$ utilized by the `visited` boolean matrix and the worst-case footprint of the auxiliary exploration `queue`.
+
+NEXT: [[Index]]

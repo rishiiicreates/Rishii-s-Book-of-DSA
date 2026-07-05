@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, 2d-difference-array]
-date: 2026-06-30
----
 # 2D Difference Array
 
 ## Problem Statement
-Given a 2D matrix initialized to zeros, process multiple queries of the form `(r1, c1, r2, c2, X)` to add value `X` to the submatrix explicitly defined by top-left `(r1, c1)` and bottom-right `(r2, c2)`.
+- given a 2D matrix initialized to zeros, process multiple queries of the form `(r1, c1, r2, c2, X)` to add value `X` to the submatrix explicitly defined by top-left `(r1, c1)` and bottom-right `(r2, c2)`.
 
 ## Approach / Intuition
-Elevate the 1D difference logic strictly to 2D coordinates. Add `X` to the starting corner `(r1, c1)` and the post-diagonal corner `(r2+1, c2+1)`, while explicitly subtracting `X` from the intersecting corners `(r2+1, c1)` and `(r1, c2+1)`. Finally, reconstruct the matrix natively utilizing a sequential 2D [[Prefix Sum]] sweep to propagate values accurately.
+- elevate the 1D difference logic strictly to 2D coordinates. Add `X` to the starting corner `(r1, c1)` and the post-diagonal corner `(r2+1, c2+1)`, while explicitly subtracting `X` from the intersecting corners `(r2+1, c1)` and `(r1, c2+1)`. Finally, reconstruct the matrix natively utilizing a sequential 2D [[Prefix Sum]] sweep to propagate values accurately.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(R*C + Q)
-- **[[Space Complexity]]:** O(R*C)
+- **[[time Complexity]]:** O(R*C + Q)
+- **[[space Complexity]]:** O(R*C)
 
 ## Sample Code
 ```cpp
@@ -41,7 +36,9 @@ vector<vector<int>> process2DQueries(int rows, int cols, vector<vector<int>>& qu
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Queries completely overlapping each other, queries brushing the extreme outer matrix boundaries.
+- queries completely overlapping each other, queries brushing the extreme outer [[Matrix]] boundaries.
+
+NEXT: [[Index]]

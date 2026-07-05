@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, dfs]
-date: 2026-06-30
----
 # Depth First Search (DFS)
 
 ## Problem Statement
-Traverse a graph structure starting from a source node, exploring as far as possible along each branch before backtracking.
+- traverse a graph structure starting from a source node, exploring as far as possible along each branch before backtracking.
 
 ## Approach / Intuition
-Use [[Recursion]] (implicit [[Stack]]) to explore nodes. Mark nodes as visited and recursively visit all unvisited neighbors.
+- use [[Recursion]] (implicit [[Stack]]) to explore nodes. Mark nodes as visited and recursively visit all unvisited neighbors.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -39,7 +34,9 @@ vector<int> dfsOfGraph(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Disconnected components, deep graphs causing stack overflow, cycles.
+- disconnected components, deep graphs causing stack overflow, cycles.
+
+NEXT: [[Index]]

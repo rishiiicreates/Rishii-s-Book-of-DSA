@@ -1,30 +1,23 @@
----
-type: concept
-tags: [sorting, cpp, divide-and-conquer]
-date: 2026-06-30
----
 # Surpasser Count of Each Element
 
 ## Problem Statement
-Given an array $A$ of $N$ integers, find the surpasser count for each element. The surpasser count of $A[i]$ is defined as the number of elements $A[j]$ such that $j > i$ and $A[j] > A[i]$.
+- given an array $A$ of $N$ integers, find the surpasser count for each element. The surpasser count of $A[i]$ is defined as the number of elements $A[j]$ such that $j > i$ and $A[j] > A[i]$.
 
-*Example:* $A = [2, 7, 5, 3, 0, 8, 1]$
-*Result:* $[4, 1, 1, 1, 2, 0, 0]$ (For $2$, the surpassers are $7, 5, 3, 8$)
+- *example:* $A = [2, 7, 5, 3, 0, 8, 1]$
+- *result:* $[4, 1, 1, 1, 2, 0, 0]$ (For $2$, the surpassers are $7, 5, 3, 8$)
 
----
 
 ## Approach: Divide and Conquer (Modified Merge Sort)
 
-This is a structural variation of the Inversion Count problem. Instead of counting how many elements on the left are strictly greater than elements on the right, we want to know how many elements on the right are strictly greater than elements on the left.
+- this is a structural variation of the Inversion Count problem. Instead of counting how many elements on the left are strictly greater than elements on the right, we want to know how many elements on the right are strictly greater than elements on the left.
 
-We use a modified [[Merge Sort]] that sorts the array in **descending** order. Since elements move around during sorting, we must track their original indices using an array of `std::pair<value, original_index>`.
+- we use a modified [[Merge Sort]] that sorts the array in **descending** order. Since elements move around during sorting, we must track their original indices using an array of `std::pair<value, original_index>`.
 
-1. Divide the array into two halves.
-2. During the merge step (sorting in descending order), we compare `left[i]` and `right[j]`.
-3. If `left[i].value > right[j].value`, `left[i]` surpasses all elements remaining in the right half (since the right half is sorted descending). However, it's easier to count dynamically: whenever we pull an element from the right half, we increment a `right_pulled_count`. 
-4. When we finally pull `left[i]` into the merged array, the number of elements from the right half that are strictly greater than `left[i]` is exactly `right_pulled_count`. We add this to the answer array at `left[i].original_index`.
+- divide the array into two halves.
+- during the merge step (sorting in descending order), we compare `left[i]` and `right[j]`.
+- if `left[i].value > right[j].value`, `left[i]` surpasses all elements remaining in the right half (since the right half is sorted descending). However, it's easier to count dynamically: whenever we pull an element from the right half, we increment a `right_pulled_count`.
+- when we finally pull `left[i]` into the merged array, the number of elements from the right half that are strictly greater than `left[i]` is exactly `right_pulled_count`. We add this to the answer array at `left[i].original_index`.
 
----
 
 ## Code Implementation
 
@@ -93,8 +86,9 @@ vector<int> findSurpasserCount(const vector<int>& arr) {
 > [!tip]
 > A structurally equivalent approach is sorting in *ascending* order, but tracking how many elements are pulled from the left half when moving an element from the right half.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log N)$. Governed by the Merge Sort recursion tree.
-- **Space Complexity:** $O(N)$. Required for the auxiliary `indexedArr` and temporary merge vectors.
+- **time Complexity:** $O(N \log N)$. Governed by the Merge Sort recursion tree.
+- **space Complexity:** $O(N)$. Required for the auxiliary `indexedArr` and temporary merge vectors.
+
+NEXT: [[Index]]

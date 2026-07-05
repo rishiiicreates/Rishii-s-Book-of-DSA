@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, string_matching, hashing]
-date: 2026-06-30
----
 # Rabin-Karp
 
 ## Problem Statement
-Given a text and a pattern, find all occurrences of the pattern in the text.
+- given a text and a pattern, find all occurrences of the pattern in the text.
 
 ## Approach / Intuition
-The [[Rabin-Karp Algorithm]] uses a [[Rolling Hash]] to quickly filter out positions in the text that cannot match the pattern. We only perform a full string comparison when the hash values match.
+- the [[Rabin-Karp Algorithm]] uses a [[Rolling Hash]] to quickly filter out positions in the text that cannot match the pattern. We only perform a full string comparison when the hash values match.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N + M)$ average, $O(N \times M)$ worst case
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(N + M)$ average, $O(N \times M)$ worst case
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -57,7 +52,9 @@ vector<int> rabinKarp(string text, string pattern) {
 ```
 
 ## New Keywords / STL Used
-Modular arithmetic
+- modular arithmetic
 
 ## Edge Cases
-Hash collisions, pattern length equal to text length.
+- hash collisions, pattern length equal to text length.
+
+NEXT: [[Index]]

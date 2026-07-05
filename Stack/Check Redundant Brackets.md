@@ -1,19 +1,14 @@
----
-type: concept
-tags: [stack, cpp]
-date: 2026-06-30
----
 # Check Redundant Brackets
 
 ## Problem Statement
-Check if a given mathematical expression contains redundant brackets. A pair of brackets is redundant if it doesn't enclose any useful operators between them.
+- check if a given mathematical expression contains redundant brackets. A pair of brackets is redundant if it doesn't enclose any useful operators between them.
 
 ## Approach / Intuition
-We can parse the expression using a [[Stack]]. Push all characters onto the stack until we hit a closing bracket `)`. Then, pop elements until the matching `(` is found. If no mathematical operator (`+`, `-`, `*`, `/`) is encountered during this popping phase, the brackets are redundant.
+- we can parse the expression using a [[Stack]]. Push all characters onto the stack until we hit a closing bracket `)`. Then, pop elements until the matching `(` is found. If no mathematical operator (`+`, `-`, `*`, `/`) is encountered during this popping phase, the brackets are redundant.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N) where N is the length of the string, as each character is pushed and popped at most once.
-- **[[Space Complexity]]:** O(N) for maintaining the stack.
+- **[[time Complexity]]:** O(N) where N is the length of the string, as each character is pushed and popped at most once.
+- **[[space Complexity]]:** O(N) for maintaining the stack.
 
 ## Sample Code
 ```cpp
@@ -44,6 +39,8 @@ bool checkRedundancy(string s) {
 - `std::stack`
 
 ## Edge Cases
-- Expressions with multiple nested non-redundant brackets like `((a+b)*(c+d))`.
-- Single variables enclosed in brackets like `(a)`.
-- Expressions devoid of brackets entirely.
+- expressions with multiple nested non-redundant brackets like `((a+b)*(c+d))`.
+- single variables enclosed in brackets like `(a)`.
+- expressions devoid of brackets entirely.
+
+NEXT: [[Index]]

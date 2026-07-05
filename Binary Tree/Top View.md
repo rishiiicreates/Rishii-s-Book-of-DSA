@@ -1,26 +1,19 @@
----
-type: concept
-tags: [binary-tree, cpp, math, geometry, maps]
-date: 2026-07-01
----
 # Top View of a Binary Tree
 
 ## Problem Statement
-Given a Binary Tree topology $T$, compute the strictly visible subset of node scalars when geometrically observing the tree structure from the absolute top boundary.
-If multiple nodes mathematically occupy the identical vertical alignment (identical $X$-coordinate), strictly output the one resident at the minimum geometrical depth ($Y$-coordinate).
+- given a Binary Tree topology $T$, compute the strictly visible subset of node scalars when geometrically observing the tree structure from the absolute top boundary.
+- if multiple nodes mathematically occupy the identical vertical alignment (identical $X$-coordinate), strictly output the one resident at the minimum geometrical depth ($Y$-coordinate).
 
----
 
 ## Approach: Cartesian Axis Persistence (BFS)
 
-This is the geometric mathematical dual to the Bottom View topology. We project the binary tree structure onto a 1D horizontal Cartesian axis ($X$-axis).
-Because a Breadth-First Search (BFS) mathematically explores the sequence in strictly monotonic increasing depth ($Y$), the absolute first topological node encountered on any explicit $X$ coordinate is guaranteed to geometrically sit at the shallowest depth.
+- this is the geometric mathematical dual to the Bottom View topology. We project the binary tree structure onto a 1D horizontal Cartesian axis ($X$-axis).
+- because a Breadth-First Search (BFS) mathematically explores the sequence in strictly monotonic increasing depth ($Y$), the absolute first topological node encountered on any explicit $X$ coordinate is guaranteed to geometrically sit at the shallowest depth.
 
-Therefore, our state machine utilizes a generic `std::map`. When evaluating $X$:
-- If $X$ is mathematically absent from the map, we inject the node scalar.
-- If $X$ structurally exists, we completely ignore the current scalar, as it structurally resides at a geometrically inferior (deeper) topology.
+- therefore, our state machine utilizes a generic `std::map`. When evaluating $X$:
+- if $X$ is mathematically absent from the map, we inject the node scalar.
+- if $X$ structurally exists, we completely ignore the current scalar, as it structurally resides at a geometrically inferior (deeper) topology.
 
----
 
 ## Code Implementation
 
@@ -79,11 +72,12 @@ vector<int> topView(TreeNode *root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log X)$ mapping bounds. $N$ evaluations via BFS queue, multiplying a strict $O(\log X)$ `std::map` lookup/insertion topology, where $X$ denotes maximum absolute width dimensions.
-- **Space Complexity:** $O(N)$ max node boundary bounded by level recursion width constraints, and $O(X)$ tracking map density.
+- **time Complexity:** $O(N \log X)$ mapping bounds. $N$ evaluations via BFS queue, multiplying a strict $O(\log X)$ `std::map` lookup/insertion topology, where $X$ denotes maximum absolute width dimensions.
+- **space Complexity:** $O(N)$ max node boundary bounded by level recursion width constraints, and $O(X)$ tracking map density.
 
 > [!important]
 > **Depth Concealment Isolation:** Two disjoint nodes can never conceptually reside on the identical spatial coordinate $(X, Y)$ (except in generic multigraph structures). Hence, the strict $(X)$ axis persistence flawlessly insulates the geometry against structural shadow overlap, mapping exactly one vertex per geometric vertical boundary.
+
+NEXT: [[Index]]

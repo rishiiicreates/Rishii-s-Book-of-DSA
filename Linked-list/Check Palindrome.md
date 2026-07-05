@@ -1,19 +1,14 @@
----
-type: concept
-tags: [linked-list, cpp, palindrome, two-pointers]
-date: 2026-06-30
----
 # Check Palindrome
 
 ## Problem Statement
-Given the `head` of a singly linked list, return `true` if it is a palindrome or `false` otherwise.
+- given the `head` of a singly linked list, return `true` if it is a palindrome or `false` otherwise.
 
 ## Approach / Intuition
-To check if a linked list is a palindrome in $O(1)$ space, we use [[Two Pointers]] (slow and fast) to find the middle of the list. We then reverse the second half of the list. Finally, we iterate through both halves simultaneously, comparing the values. If any values mismatch, it's not a palindrome. We can optionally reverse the second half back to restore the original list.
+- to check if a linked list is a palindrome in $O(1)$ space, we use [[Two Pointers]] (slow and fast) to find the middle of the list. We then reverse the second half of the list. Finally, we iterate through both halves simultaneously, comparing the values. If any values mismatch, it's not a palindrome. We can optionally reverse the second half back to restore the original list.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -61,9 +56,11 @@ bool isPalindrome(ListNode* head) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Empty list
-- Single element
-- List with even length vs odd length
+- empty list
+- single element
+- list with even length vs odd length
+
+NEXT: [[Index]]

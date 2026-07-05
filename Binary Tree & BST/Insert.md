@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, insert]
-date: 2026-06-30
----
 # Insert
 
 ## Problem Statement
-Given the root of a Binary Search Tree (BST) and a value to insert, insert the value into the BST and return the root. It is guaranteed that the new value does not exist in the original BST.
+- given the root of a Binary Search Tree (BST) and a value to insert, insert the value into the BST and return the root. It is guaranteed that the new value does not exist in the original BST.
 
 ## Approach / Intuition
-To insert a new node while maintaining the [[Binary Search Tree]] property, we traverse the tree from the root. At each step, if the new value is smaller than the current node's value, we go left; if greater, we go right. We continue this until we reach a null pointer, which is the correct position to insert the new node. We can perform this recursively or iteratively.
+- to insert a new node while maintaining the [[Binary Search Tree]] property, we traverse the tree from the root. At each step, if the new value is smaller than the current node's value, we go left; if greater, we go right. We continue this until we reach a null pointer, which is the correct position to insert the new node. We can perform this recursively or iteratively.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(H)$ where $H$ is the height of the tree.
-- **[[Space Complexity]]:** $O(1)$ for iterative approach.
+- **[[time Complexity]]:** $O(H)$ where $H$ is the height of the tree.
+- **[[space Complexity]]:** $O(1)$ for iterative approach.
 
 ## Sample Code
 ```cpp
@@ -49,8 +44,10 @@ TreeNode* insertIntoBST(TreeNode* root, int val) {
 ```
 
 ## New Keywords / STL Used
-`new`
+- `new`
 
 ## Edge Cases
-- Inserting into an empty tree
-- Value becomes the new minimum or maximum leaf
+- inserting into an empty tree
+- value becomes the new minimum or maximum leaf
+
+NEXT: [[Index]]

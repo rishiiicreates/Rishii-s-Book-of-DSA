@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, lcs]
-date: 2026-06-30
----
 # Longest Common Subsequence
 
 ## Problem Statement
-Given two strings `text1` and `text2`, return the length of their longest common subsequence. If there is no common subsequence, return 0.
+- given two strings `text1` and `text2`, return the length of their longest common subsequence. If there is no common subsequence, return 0.
 
 ## Approach / Intuition
-We create a 2D [[Dynamic Programming]] table where `dp[i][j]` represents the length of the longest common subsequence of `text1[0..i-1]` and `text2[0..j-1]`. If `text1[i-1] == text2[j-1]`, then `dp[i][j] = 1 + dp[i-1][j-1]`. Otherwise, `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`. Space optimization can be applied to use only two 1D arrays.
+- we create a 2D [[Dynamic Programming]] table where `dp[i][j]` represents the length of the longest common subsequence of `text1[0..i-1]` and `text2[0..j-1]`. If `text1[i-1] == text2[j-1]`, then `dp[i][j] = 1 + dp[i-1][j-1]`. Otherwise, `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`. Space optimization can be applied to use only two 1D arrays.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(M \times N)$ where $M$ and $N$ are the lengths of the two strings.
-- **[[Space Complexity]]:** $O(\min(M, N))$ with space optimization.
+- **[[time Complexity]]:** $O(M \times N)$ where $M$ and $N$ are the lengths of the two strings.
+- **[[space Complexity]]:** $O(\min(M, N))$ with space optimization.
 
 ## Sample Code
 ```cpp
@@ -42,7 +37,9 @@ int longestCommonSubsequence(std::string text1, std::string text2) {
 ```
 
 ## New Keywords / STL Used
-`std::max`, `std::swap`
+- `std::max`, `std::swap`
 
 ## Edge Cases
-One or both strings are empty, completely disjoint strings.
+- one or both strings are empty, completely disjoint strings.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, cycle-detection]
-date: 2026-06-30
----
 # Cycle in a Directed Graph
 
 ## Problem Statement
-Detect if a directed graph contains a cycle.
+- detect if a directed graph contains a cycle.
 
 ## Approach / Intuition
-Maintain a visited array and a path visited array during [[DFS]]. If we reach a node that is already marked in the current path visited array, a cycle is detected.
+- maintain a visited array and a path visited array during [[DFS]]. If we reach a node that is already marked in the current path visited array, a cycle is detected.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V + E)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(V + E)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ bool isCyclic(int V, vector<int> adj[]) {
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Self-loops, disconnected components, DAG.
+- self-loops, disconnected components, DAG.
+
+NEXT: [[Index]]

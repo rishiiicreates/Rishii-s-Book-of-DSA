@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, traversal]
-date: 2026-06-30
----
 # Postorder
 
 ## Problem Statement
-Traverse a binary tree to visit nodes in the left-right-root order.
+- traverse a binary tree to visit nodes in the left-right-root order.
 
 ## Approach / Intuition
-Recursively visit the left subtree, then the right subtree, and finally process the current root. This is typically used when you need to delete a tree or evaluate [[Postfix Notation]] expressions.
+- recursively visit the left subtree, then the right subtree, and finally process the current root. This is typically used when you need to delete a tree or evaluate [[Postfix Notation]] expressions.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N)
-- **[[Space Complexity]]:** O(H) for recursion stack.
+- **[[time Complexity]]:** O(N)
+- **[[space Complexity]]:** O(H) for recursion stack.
 
 ## Sample Code
 ```cpp
@@ -27,8 +22,10 @@ void postorder(TreeNode* root, vector<int>& res) {
 ```
 
 ## New Keywords / STL Used
-- None
+- none
 
 ## Edge Cases
-- Empty tree
-- Skewed tree
+- empty tree
+- skewed tree
+
+NEXT: [[Index]]

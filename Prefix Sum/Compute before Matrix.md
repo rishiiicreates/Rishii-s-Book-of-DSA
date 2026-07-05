@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, 2d-matrix, inverse]
-date: 2026-06-30
----
 # Find Original Matrix from 2D Prefix Sum (Compute before Matrix)
 
 ## Problem Statement
-Given a 2D prefix sum matrix computed traditionally, reconstruct and strictly return the original array.
+- given a 2D prefix sum [[Matrix]] computed traditionally, reconstruct and strictly return the original array.
 
 ## Approach / Intuition
-The established prefix sum at `(i, j)` equates mathematically to `original[i][j] + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1]`. By cleanly inverting this associative formula, we isolate the base value `original[i][j]`, completely reversing the 2D [[Prefix Sum]] footprint step-by-step.
+- the established prefix sum at `(i, j)` equates mathematically to `original[i][j] + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1]`. By cleanly inverting this associative formula, we isolate the base value `original[i][j]`, completely reversing the 2D [[Prefix Sum]] footprint step-by-step.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(R * C)
-- **[[Space Complexity]]:** O(R * C)
+- **[[time Complexity]]:** O(R * C)
+- **[[space Complexity]]:** O(R * C)
 
 ## Sample Code
 ```cpp
@@ -35,7 +30,9 @@ vector<vector<int>> computeOriginalMatrix(vector<vector<int>>& prefix) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-1x1 minimal matrix dimensions, universally zeroed arrays mirroring identically between origin and prefix.
+- 1x1 minimal matrix dimensions, universally zeroed arrays mirroring identically between origin and prefix.
+
+NEXT: [[Index]]

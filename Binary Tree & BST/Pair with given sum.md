@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, two-pointers, inorder]
-date: 2026-06-30
----
 # Pair with given sum
 
 ## Problem Statement
-Given the root of a Binary Search Tree and a target number $k$, return true if there exist two elements in the BST such that their sum is equal to the given target.
+- given the root of a Binary Search Tree and a target number $k$, return true if there exist two elements in the BST such that their sum is equal to the given target.
 
 ## Approach / Intuition
-One approach is to do an [[Inorder Traversal]] to store elements in a sorted array, then use [[Two Pointers]] to find the pair. A more space-optimized approach utilizes a [[BST Iterator]] to simulate the two-pointer technique directly on the tree. We create one iterator that yields elements in ascending order (normal inorder) and another that yields elements in descending order (reverse inorder).
+- one approach is to do an [[Inorder Traversal]] to store elements in a sorted array, then use [[Two Pointers]] to find the pair. A more space-optimized approach utilizes a [[BST Iterator]] to simulate the two-pointer technique directly on the tree. We create one iterator that yields elements in ascending order (normal inorder) and another that yields elements in descending order (reverse inorder).
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(H)$ using BST Iterator.
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(H)$ using BST Iterator.
 
 ## Sample Code
 ```cpp
@@ -72,9 +67,11 @@ bool findTarget(TreeNode* root, int k) {
 ```
 
 ## New Keywords / STL Used
-`std::stack`
+- `std::stack`
 
 ## Edge Cases
-- Tree has fewer than two nodes
-- Multiple pairs sum to target
-- Target is twice the value of one node (must avoid pairing node with itself)
+- tree has fewer than two nodes
+- multiple pairs sum to target
+- target is twice the value of one node (must avoid pairing node with itself)
+
+NEXT: [[Index]]

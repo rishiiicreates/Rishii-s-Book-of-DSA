@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, number-theory]
-date: 2026-06-30
----
 # Sieve of Eratosthenes
 
 ## Problem Statement
-Find all prime numbers up to a given limit $N$.
+- find all prime numbers up to a given limit $N$.
 
 ## Approach / Intuition
-Create a boolean array indicating prime status. Start from 2, and for each prime found, mark its multiples as composite. Optimization: start marking from $p^2$ as smaller multiples are already marked by smaller [[Prime Numbers]].
+- create a boolean array indicating prime status. Start from 2, and for each prime found, mark its multiples as composite. Optimization: start marking from $p^2$ as smaller multiples are already marked by smaller [[Prime Numbers]].
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log \log N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N \log \log N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -31,7 +26,9 @@ vector<bool> sieve(int n) {
 ```
 
 ## New Keywords / STL Used
-`vector<bool>`
+- `vector<bool>`
 
 ## Edge Cases
-$N < 2$, small ranges.
+- $n < 2$, small ranges.
+
+NEXT: [[Index]]

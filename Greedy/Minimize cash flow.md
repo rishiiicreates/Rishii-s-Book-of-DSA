@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, minimize-cash-flow]
-date: 2026-06-30
----
 # Minimize Cash Flow
 
 ## Problem Statement
-Given a number of friends who have to give or take some amount of money from one another, find out the minimum number of transactions to settle all debts.
+- given a number of friends who have to give or take some amount of money from one another, find out the minimum number of transactions to settle all debts.
 
 ## Approach / Intuition
-Calculate the net amount for every person. The person with the maximum net debt should pay the person with the maximum net credit to minimize transactions. This is a [[Greedy Algorithm]] approach to cancel out extremes quickly. Recursively or iteratively settle debts.
+- calculate the net amount for every person. The person with the maximum net debt should pay the person with the maximum net credit to minimize transactions. This is a [[Greedy Algorithm]] approach to cancel out extremes quickly. Recursively or iteratively settle debts.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^2) in worst case
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N^2) in worst case
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -49,8 +44,10 @@ void settleAmounts(vector<int>& amount) {
 ```
 
 ## New Keywords / STL Used
-- Recursion
+- recursion
 
 ## Edge Cases
-- All debts are 0
-- Single person owes everything
+- all debts are 0
+- single person owes everything
+
+NEXT: [[Index]]

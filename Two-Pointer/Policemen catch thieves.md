@@ -1,19 +1,14 @@
----
-type: concept
-tags: [two-pointer, cpp, greedy, array]
-date: 2026-06-30
----
 # Policemen Catch Thieves
 
 ## Problem Statement
-Given an array containing 'P' (Policeman) and 'T' (Thief) and a maximum distance $K$, find the maximum number of thieves that can be caught. A policeman can catch at most one thief who is no more than $K$ units away.
+- given an array containing 'P' (Policeman) and 'T' (Thief) and a maximum distance $K$, find the maximum number of thieves that can be caught. A policeman can catch at most one thief who is no more than $K$ units away.
 
 ## Approach / Intuition
-Store the indices of all policemen and thieves in separate lists. Use a [[Two-Pointer]] approach on both lists. Compare the current policeman index with the current thief index. If their absolute distance is within $K$, increment the catch count and move both pointers. Otherwise, advance the pointer corresponding to the smaller index, as it is the most restricting factor for future matches.
+- store the indices of all policemen and thieves in separate lists. Use a [[Two-Pointer]] approach on both lists. Compare the current policeman index with the current thief index. If their absolute distance is within $K$, increment the catch count and move both pointers. Otherwise, advance the pointer corresponding to the smaller index, as it is the most restricting factor for future matches.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N)$
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(N)$
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -47,7 +42,9 @@ int catchThieves(vector<char>& arr, int n, int k) {
 ```
 
 ## New Keywords / STL Used
-`abs`
+- `abs`
 
 ## Edge Cases
-No policemen, no thieves, $K=0$.
+- no policemen, no thieves, $K=0$.
+
+NEXT: [[Index]]

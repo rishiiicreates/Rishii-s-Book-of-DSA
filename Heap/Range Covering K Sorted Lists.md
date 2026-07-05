@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # Range Covering K Sorted Lists
 
 ## Problem Statement
-Given `k` sorted arrays, find the smallest range `[a, b]` that includes at least one number from each of the `k` lists.
+- given `k` sorted arrays, find the smallest range `[a, b]` that includes at least one number from each of the `k` lists.
 
 ## Approach / Intuition
-Use a min-[[Heap]] to keep track of the minimum element across all `k` lists, and a variable to track the maximum element currently in our sliding window. Initialize the heap with the first element of each list. At any point, the current range is `[minHeap.top(), currentMax]`. Try to update the best range if this is smaller. Then pop the minimum element and push the next element from its list. Update `currentMax` if the new element is larger. The process stops when any list is exhausted.
+- use a min-[[Heap]] to keep track of the minimum element across all `k` lists, and a variable to track the maximum element currently in our sliding window. Initialize the heap with the first element of each list. At any point, the current range is `[minHeap.top(), currentMax]`. Try to update the best range if this is smaller. Then pop the minimum element and push the next element from its list. Update `currentMax` if the new element is larger. The process stops when any list is exhausted.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log k) where N is the total number of elements.
-- **[[Space Complexity]]:** O(k) for the min-heap.
+- **[[time Complexity]]:** O(N log k) where N is the total number of elements.
+- **[[space Complexity]]:** O(k) for the min-heap.
 
 ## Sample Code
 ```cpp
@@ -62,8 +57,10 @@ vector<int> smallestRange(vector<vector<int>>& nums) {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, `std::pair`, `std::greater`, `INT_MAX`, `INT_MIN`
+- `std::priority_queue`, `std::pair`, `std::greater`, `INT_MAX`, `INT_MIN`
 
 ## Edge Cases
-- Several lists have identical elements.
-- A single element list restricting the advancement of the algorithm early.
+- several lists have identical elements.
+- a single element list restricting the advancement of the algorithm early.
+
+NEXT: [[Index]]

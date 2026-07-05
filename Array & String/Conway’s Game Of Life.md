@@ -1,35 +1,28 @@
----
-type: concept
-tags: [matrix, array, cpp, simulation, state-machine]
-date: 2026-07-01
----
 # Conway's Game Of Life
 
 ## Problem Statement
-Given an $M \times N$ grid where each cell is either `0` (dead) or `1` (live), compute the next state of the grid according to the rules of Conway's Game of Life. The updates must be performed simultaneously (i.e., in-place) without allocating a separate $O(M \times N)$ board.
-The rules for transitions are:
-1. Any live cell with fewer than two live neighbors dies (underpopulation).
-2. Any live cell with two or three live neighbors lives on.
-3. Any live cell with more than three live neighbors dies (overpopulation).
-4. Any dead cell with exactly three live neighbors becomes a live cell (reproduction).
+- given an $M \times N$ grid where each cell is either `0` (dead) or `1` (live), compute the next state of the grid according to the rules of Conway's Game of Life. The updates must be performed simultaneously (i.e., in-place) without allocating a separate $O(M \times N)$ board.
+- the rules for transitions are:
+- any live cell with fewer than two live neighbors dies (underpopulation).
+- any live cell with two or three live neighbors lives on.
+- any live cell with more than three live neighbors dies (overpopulation).
+- any dead cell with exactly three live neighbors becomes a live cell (reproduction).
 
----
 
 ## Approach: State Machine Encoding
 
-If we overwrite a cell directly, we destroy its original state, corrupting the neighbor calculations for subsequent cells. To achieve simultaneous updates in an $O(1)$ auxiliary space constraint, we use a **State Machine Encoding**.
+- if we overwrite a cell directly, we destroy its original state, corrupting the neighbor calculations for subsequent cells. To achieve simultaneous updates in an $O(1)$ auxiliary space constraint, we use a **State Machine Encoding**.
 
-Since the grid only uses bits `0` and `1`, we can encode the *transition* states using higher integers. 
-Let's define the state mapping mathematically:
+- since the grid only uses bits `0` and `1`, we can encode the *transition* states using higher integers.
+- let's define the state mapping mathematically:
 - `0` $\rightarrow$ Dead (remains dead)
 - `1` $\rightarrow$ Live (remains live)
 - `2` $\rightarrow$ Was Live, now Dead
 - `3` $\rightarrow$ Was Dead, now Live
 
-When checking the current state of a cell for neighbor counting, a cell is considered "currently live" if its value is `1` OR `2`. 
-After fully iterating the grid and applying these intermediate states, we perform a second pass to resolve the states: `2` becomes `0`, and `3` becomes `1`.
+- when checking the current state of a cell for neighbor counting, a cell is considered "currently live" if its value is `1` OR `2`.
+- after fully iterating the grid and applying these intermediate states, we perform a second pass to resolve the states: `2` becomes `0`, and `3` becomes `1`.
 
----
 
 ## Code Implementation
 
@@ -83,11 +76,12 @@ void gameOfLife(vector<vector<int>>& board) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(M \times N)$. For each of the $M \times N$ cells, we do exactly $8$ neighbor checks. This is strictly linear with respect to the grid size.
-- **Space Complexity:** $O(1)$ auxiliary space. The grid is modified in-place using our bit-level / integer state encoding.
+- **time Complexity:** $O(M \times N)$. For each of the $M \times N$ cells, we do exactly $8$ neighbor checks. This is strictly linear with respect to the grid size.
+- **space Complexity:** $O(1)$ auxiliary space. The grid is modified in-place using our bit-level / integer state encoding.
 
 > [!important]
 > **Infinite Grids:** If the grid is infinite (or extremely sparse and large), storing the full matrix is inefficient. Instead, store only the live cells in a hash set of coordinates. To calculate the next state, iterate only over the live cells and their immediate neighbors.
+
+NEXT: [[Index]]

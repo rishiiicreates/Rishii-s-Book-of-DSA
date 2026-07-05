@@ -1,19 +1,14 @@
----
-type: concept
-tags: [sliding window, cpp, product]
-date: 2026-06-30
----
 # Subarray Product Less Than K
 
 ## Problem Statement
-Given an array of positive integers and an integer `k`, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than `k`.
+- given an array of positive integers and an integer `k`, return the number of contiguous subarrays where the product of all the elements in the subarray is strictly less than `k`.
 
 ## Approach / Intuition
-Use a [[Sliding Window]] to maintain a running product. As the `right` pointer expands the window, multiply the current element. If the product reaches or exceeds `k`, shrink the window from the `left` until the product is less than `k` again. At each valid step, the number of valid subarrays ending at `right` is `right - left + 1`.
+- use a [[Sliding Window]] to maintain a running product. As the `right` pointer expands the window, multiply the current element. If the product reaches or exceeds `k`, shrink the window from the `left` until the product is less than `k` again. At each valid step, the number of valid subarrays ending at `right` is `right - left + 1`.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(1)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(1)
 
 ## Sample Code
 ```cpp
@@ -33,7 +28,9 @@ int numSubarrayProductLessThanK(const vector<int>& nums, int k) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-`k` is 0 or 1, all elements larger than `k`, empty array.
+- `k` is 0 or 1, all elements larger than `k`, empty array.
+
+NEXT: [[Index]]

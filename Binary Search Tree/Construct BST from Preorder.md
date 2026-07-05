@@ -1,28 +1,21 @@
----
-type: concept
-tags: [bst, cpp, math, recursion, boundaries]
-date: 2026-07-01
----
 # Construct Binary Search Tree from Preorder Traversal
 
 ## Problem Statement
-Given an array containing the absolute mathematical Preorder Traversal sequence of a Binary Search Tree (BST), reconstruct the exact original topological tree structure.
+- given an array containing the absolute mathematical Preorder Traversal sequence of a Binary Search Tree (BST), reconstruct the exact original topological tree structure.
 
----
 
 ## Approach: Upper Bound Scalar Limitation (O(N))
 
-A naive mapping would utilize $O(N^2)$ scalar sorting or leverage In-Order reconstruction $O(N \log N)$.
-However, because Preorder traversal implies a strict sequence format `(Root, Left_Subtree, Right_Subtree)`, we can reconstruct the geometry in pure $O(N)$ linear time utilizing **Upper Bound Pointer Limits**.
-We maintain a global index pointer `i` traversing the Preorder array sequentially.
-For any arbitrary node construction:
-1. It is bound by an absolute theoretical maximum scalar limit (`bound`).
-2. If the current sequence scalar $A[i] > \text{bound}$, the topological placement is invalid, mapping a return `nullptr`.
-3. Otherwise, consume the array element and construct the geometric root $V$.
-4. Recursively construct $V$'s left subtree, updating the strict upper bound to $V.\text{val}$.
-5. Recursively construct $V$'s right subtree, utilizing the original unmodified parent upper limit.
+- a naive mapping would utilize $O(N^2)$ scalar sorting or leverage In-Order reconstruction $O(N \log N)$.
+- however, because Preorder traversal implies a strict sequence format `(Root, Left_Subtree, Right_Subtree)`, we can reconstruct the geometry in pure $O(N)$ linear time utilizing **Upper Bound Pointer Limits**.
+- we maintain a global index pointer `i` traversing the Preorder array sequentially.
+- for any arbitrary node construction:
+- it is bound by an absolute theoretical maximum scalar limit (`bound`).
+- if the current sequence scalar $A[i] > \text{bound}$, the topological placement is invalid, mapping a return `nullptr`.
+- otherwise, consume the array element and construct the geometric root $V$.
+- recursively construct $V$'s left subtree, updating the strict upper bound to $V.\text{val}$.
+- recursively construct $V$'s right subtree, utilizing the original unmodified parent upper limit.
 
----
 
 ## Code Implementation
 
@@ -64,11 +57,12 @@ TreeNode* bstFromPreorder(vector<int>& preorder) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ absolute limit. Every scalar in the Preorder sequence topological array is evaluated and structurally linked exactly once, executing strict $O(1)$ constant time comparisons.
-- **Space Complexity:** $O(H)$ where $H$ denotes the topological height mapping of the newly constructed Binary Search Tree.
+- **time Complexity:** $O(N)$ absolute limit. Every scalar in the Preorder sequence topological array is evaluated and structurally linked exactly once, executing strict $O(1)$ constant time comparisons.
+- **space Complexity:** $O(H)$ where $H$ denotes the topological height mapping of the newly constructed Binary Search Tree.
 
 > [!warning]
 > **Redundant Sorting Isolation:** A common inefficient approach involves mapping a copy of the array, sorting it to artificially construct an In-Order traversal array, and processing dual-pointer topology. This immediately forces minimum $O(N \log N)$ mapping overhead. The Upper Bound approach mathematically out-scales it to true $O(N)$.
+
+NEXT: [[Index]]

@@ -1,30 +1,23 @@
----
-type: concept
-tags: [searching, binary-search, cpp, two-pointers, sliding-window]
-date: 2026-06-30
----
 # Find K Closest Elements
 
 ## Problem Statement
-Given a sorted integer array `arr`, two integers `k` and `x`, return the `k` closest integers to `x` in the array. The final result should be sorted in ascending order.
-Integer $a$ is closer to $x$ than integer $b$ if:
+- given a sorted integer array `arr`, two integers `k` and `x`, return the `k` closest integers to `x` in the array. The final result should be sorted in ascending order.
+- integer $a$ is closer to $x$ than integer $b$ if:
 - $|a - x| < |b - x|$, or
 - $|a - x| == |b - x|$ and $a < b$
 
----
 
 ## Approach: Binary Searching the Window Boundary
 
-The naive approach is to sort the array by absolute difference, which takes $\mathcal{O}(N \log N)$. 
-A better approach uses Binary Search to find the closest element to $x$ and expands two pointers outward, taking $\mathcal{O}(\log N + K)$.
+- the naive approach is to sort the array by absolute difference, which takes $\mathcal{O}(N \log N)$.
+- a better approach uses Binary Search to find the closest element to $x$ and expands two pointers outward, taking $\mathcal{O}(\log N + K)$.
 
-However, the **absolute optimal mathematical approach** is to directly binary search for the **starting index** of the optimal $K$-sized window!
-1. The starting index of the window must lie in the range $[0, N - K]$.
-2. For any candidate starting index `mid`, compare the distance of `x` to `arr[mid]` versus `arr[mid + k]`.
-3. If $x - arr[mid] > arr[mid + k] - x$, it implies that `arr[mid + k]` is mathematically closer to $x$ than `arr[mid]`. Thus, the optimal window must start further to the right. (`left = mid + 1`)
-4. Otherwise, the window should shift leftwards. (`right = mid`)
+- however, the **absolute optimal mathematical approach** is to directly binary search for the **starting index** of the optimal $K$-sized window!
+- the starting index of the window must lie in the range $[0, N - K]$.
+- for any candidate starting index `mid`, compare the distance of `x` to `arr[mid]` versus `arr[mid + k]`.
+- if $x - arr[mid] > arr[mid + k] - x$, it implies that `arr[mid + k]` is mathematically closer to $x$ than `arr[mid]`. Thus, the optimal window must start further to the right. (`left = mid + 1`)
+- otherwise, the window should shift leftwards. (`right = mid`)
 
----
 
 ## Code Implementation
 
@@ -57,8 +50,9 @@ vector<int> findClosestElements(const vector<int>& arr, int k, int x) {
 > [!important]
 > The condition `x - arr[mid] > arr[mid + k] - x` mathematically simplifies the absolute difference constraints because the array is strictly sorted. Thus, $arr[mid + k]$ is inherently $\ge arr[mid]$.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $\mathcal{O}(\log(N - K) + K)$. The binary search converges on a search space of $N - K$ possible starting indices. Constructing the final vector slice takes $\mathcal{O}(K)$.
-- **Space Complexity:** $\mathcal{O}(K)$ strictly for allocating the output array. Auxiliary space for the search itself is $\mathcal{O}(1)$.
+- **time Complexity:** $\mathcal{O}(\log(N - K) + K)$. The binary search converges on a search space of $N - K$ possible starting indices. Constructing the final vector slice takes $\mathcal{O}(K)$.
+- **space Complexity:** $\mathcal{O}(K)$ strictly for allocating the output array. Auxiliary space for the search itself is $\mathcal{O}(1)$.
+
+NEXT: [[Index]]

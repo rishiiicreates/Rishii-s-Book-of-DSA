@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, matrix]
-date: 2026-06-30
----
 # Maximum path sum in matrix
 
 ## Problem Statement
-Given an `N x M` matrix of integers, find the maximum path sum from any cell in the first row to any cell in the last row. You can move down, diagonally left, or diagonally right.
+- given an `N x M` matrix of integers, find the maximum path sum from any cell in the first row to any cell in the last row. You can move down, diagonally left, or diagonally right.
 
 ## Approach / Intuition
-Use [[Dynamic Programming]] to iterate through each row. For each cell, add the maximum value among the three reachable cells directly above it. The answer will be the maximum value in the final row. Space can be optimized by keeping only the previous row.
+- use [[Dynamic Programming]] to iterate through each row. For each cell, add the maximum value among the three reachable cells directly above it. The answer will be the maximum value in the final row. Space can be optimized by keeping only the previous row.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N * M)
-- **[[Space Complexity]]:** O(M)
+- **[[time Complexity]]:** O(N * M)
+- **[[space Complexity]]:** O(M)
 
 ## Sample Code
 ```cpp
@@ -40,7 +35,9 @@ int maximumPath(int N, int M, vector<vector<int>> Matrix) {
 ```
 
 ## New Keywords / STL Used
-`max` with initializer list, `vector`
+- `max` with initializer list, `vector`
 
 ## Edge Cases
-Single column matrix, single row matrix, all negative numbers.
+- single column [[Matrix]], single row matrix, all negative numbers.
+
+NEXT: [[Index]]

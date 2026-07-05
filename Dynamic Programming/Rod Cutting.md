@@ -1,19 +1,14 @@
----
-type: concept
-tags: [dp, cpp, rod_cutting]
-date: 2026-06-30
----
 # Rod Cutting
 
 ## Problem Statement
-Given a rod of length `n` and an array of prices that contains prices of all pieces of size smaller than `n`. Determine the maximum value obtainable by cutting up the rod and selling the pieces.
+- given a rod of length `n` and an array of prices that contains prices of all pieces of size smaller than `n`. Determine the maximum value obtainable by cutting up the rod and selling the pieces.
 
 ## Approach / Intuition
-This can be modeled as the [[Unbounded Knapsack]] problem where weights are the lengths `1` to `n` and capacities are up to `n`. We use a 1D [[Dynamic Programming]] array, taking the maximum of skipping the current cut length or taking it and reducing the rod length.
+- this can be modeled as the [[Unbounded Knapsack]] problem where weights are the lengths `1` to `n` and capacities are up to `n`. We use a 1D [[Dynamic Programming]] array, taking the maximum of skipping the current cut length or taking it and reducing the rod length.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n^2)
-- **[[Space Complexity]]:** O(n)
+- **[[time Complexity]]:** O(n^2)
+- **[[space Complexity]]:** O(n)
 
 ## Sample Code
 ```cpp
@@ -29,7 +24,9 @@ int cutRod(vector<int>& price, int n) {
 ```
 
 ## New Keywords / STL Used
-`max`, `vector`
+- `max`, `vector`
 
 ## Edge Cases
-Rod length is 0, prices are 0, max value comes from not cutting at all.
+- rod length is 0, prices are 0, max value comes from not cutting at all.
+
+NEXT: [[Index]]

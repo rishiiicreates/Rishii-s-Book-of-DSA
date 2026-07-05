@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, matrix]
-date: 2026-06-30
----
 # Rat in a Maze
 
 ## Problem Statement
-Given a binary matrix representing a maze where 1 is an open path and 0 is a blocked cell, find all possible paths for a rat to move from the top-left to the bottom-right corner.
+- given a binary [[Matrix]] representing a maze where 1 is an open path and 0 is a blocked cell, find all possible paths for a rat to move from the top-left to the bottom-right corner.
 
 ## Approach / Intuition
-Employ [[Backtracking]] alongside [[Depth-First Search]] on the [[Matrix]]. From the current cell, recursively explore all four valid orthogonal directions. Mark the current cell as visited to prevent cycles, and backtrack by unmarking it before returning from the recursive call. Accumulate valid paths when the destination cell is reached.
+- employ [[Backtracking]] alongside [[Depth-First Search]] on the [[Matrix]]. From the current cell, recursively explore all four valid orthogonal directions. Mark the current cell as visited to prevent cycles, and backtrack by unmarking it before returning from the recursive call. Accumulate valid paths when the destination cell is reached.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(4^{(N^2)})$
-- **[[Space Complexity]]:** $O(N^2)$ for recursion stack
+- **[[time Complexity]]:** $O(4^{(N^2)})$
+- **[[space Complexity]]:** $O(N^2)$ for recursion stack
 
 ## Sample Code
 ```cpp
@@ -55,7 +50,9 @@ vector<string> findPath(vector<vector<int>>& m, int n) {
 ```
 
 ## New Keywords / STL Used
-Direction arrays
+- direction arrays
 
 ## Edge Cases
-Start or end cell is blocked, no valid path exists, $1 \times 1$ maze.
+- start or end cell is blocked, no valid path exists, $1 \times 1$ maze.
+
+NEXT: [[Index]]

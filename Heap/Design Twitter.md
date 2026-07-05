@@ -1,31 +1,24 @@
----
-type: concept
-tags: [heap, design, cpp, max-heap, oops]
-date: 2026-07-01
----
 # Design Twitter
 
 ## Problem Statement
-Mathematically architect a scalable, simplified topological network of a social media system. The architecture must geometrically isolate and support:
-1. `postTweet(userId, tweetId)`: Mutate sequence state.
-2. `getNewsFeed(userId)`: Extract the 10 most temporally recent tweets propagated by the user and their explicit geometric followers, sorted sequentially descending.
-3. `follow(followerId, followeeId)`: Architect a directed topological edge.
-4. `unfollow(followerId, followeeId)`: Sever a directed topological edge.
+- mathematically architect a scalable, simplified topological network of a social media system. The [[Architecture]] must geometrically isolate and support:
+- `postTweet(userId, tweetId)`: Mutate sequence state.
+- `getNewsFeed(userId)`: Extract the 10 most temporally recent tweets propagated by the user and their explicit geometric followers, sorted sequentially descending.
+- `follow(followerId, followeeId)`: Architect a directed topological edge.
+- `unfollow(followerId, followeeId)`: Sever a directed topological edge.
 
----
 
 ## Approach: Directed Graphs & Max-Heap K-Way Merge
 
-This is an architectural composition of two primary data models:
-1. **Geometric Relational Map (Adjacency List):** `unordered_map<int, unordered_set<int>>` mapping absolute explicit follow topologies.
-2. **Temporal State Map:** `unordered_map<int, vector<pair<int, int>>>` binding users to their ordered discrete tweet sequences (timestamp, tweetId).
+- this is an architectural composition of two primary data models:
+- **geometric Relational Map (Adjacency List):** `unordered_map<int, unordered_set<int>>` mapping absolute explicit follow topologies.
+- **temporal State Map:** `unordered_map<int, vector<pair<int, int>>>` binding users to their ordered discrete tweet sequences (timestamp, tweetId).
 
-The `getNewsFeed` algorithm structurally demands extracting the 10 most recent chronological scalars from up to $K$ distinct sorted lists (the user's topological followings).
-This is a strict mathematical equivalent to **Merging $K$ Sorted Linked Lists**.
-We inject a globally monotonic `timestamp` integer. We isolate the absolute tail (most recent) of every valid user sequence and push it to a **Max-Heap**.
-Iteratively extract the mathematical maximum temporal scalar, push it to the output bounds, and conceptually advance the sequence pointer for that specific sub-array, injecting the next temporal element until 10 scalars are isolated.
+- the `getNewsFeed` algorithm structurally demands extracting the 10 most recent chronological scalars from up to $K$ distinct sorted lists (the user's topological followings).
+- this is a strict mathematical equivalent to **Merging $K$ Sorted Linked Lists**.
+- we inject a globally monotonic `timestamp` integer. We isolate the absolute tail (most recent) of every valid user sequence and push it to a **Max-Heap**.
+- iteratively extract the mathematical maximum temporal scalar, push it to the output bounds, and conceptually advance the sequence pointer for that specific sub-array, injecting the next temporal element until 10 scalars are isolated.
 
----
 
 ## Code Implementation
 
@@ -106,9 +99,10 @@ public:
 };
 ```
 
----
 
 ## Complexity Analysis
 - **`postTweet` / `follow` / `unfollow`:** $O(1)$ amortized temporal bounds leveraging raw `unordered_map` and `unordered_set` hash constraints.
 - **`getNewsFeed`:** $O(F + 10 \log F)$ time. Constructing the initial max-heap operates in $O(F \log F)$ or $O(F)$ heapify, where $F$ is the geometrical cardinality of explicit followings. Iterative extractions structurally bound to a constant 10 $\log$ bounds.
-- **Space Complexity:** $O(U + T)$ absolute limit mapping Total Users and Total Tweets geometrically mapped into dynamic memory arrays.
+- **space Complexity:** $O(U + T)$ absolute limit mapping Total Users and Total Tweets geometrically mapped into dynamic memory arrays.
+
+NEXT: [[Index]]

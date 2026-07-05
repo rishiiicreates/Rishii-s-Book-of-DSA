@@ -1,19 +1,14 @@
----
-type: concept
-tags: [bst, cpp]
-date: 2026-06-30
----
 # Kth Smallest Element
 
 ## Problem Statement
-Find the kth smallest element in a [[Binary Search Tree]].
+- find the kth smallest element in a [[Binary Search Tree]].
 
 ## Approach / Intuition
-Perform an inorder traversal which visits the nodes in ascending order. Maintain a count of visited nodes and stop when the count reaches `k`. This approach leverages the [[Inorder Traversal]] property of BSTs.
+- perform an inorder traversal which visits the nodes in ascending order. Maintain a count of visited nodes and stop when the count reaches `k`. This approach leverages the [[Inorder Traversal]] property of BSTs.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(H + K) where H is the height of the tree.
-- **[[Space Complexity]]:** O(H) for the recursion stack.
+- **[[time Complexity]]:** O(H + K) where H is the height of the tree.
+- **[[space Complexity]]:** O(H) for the recursion stack.
 
 ## Sample Code
 ```cpp
@@ -44,9 +39,11 @@ public:
 ```
 
 ## New Keywords / STL Used
-- Class member variables
+- class member variables
 
 ## Edge Cases
 - `k` is 1 (minimum element).
 - `k` is equal to the number of nodes in the tree.
-- Tree has only one node.
+- tree has only one node.
+
+NEXT: [[Index]]

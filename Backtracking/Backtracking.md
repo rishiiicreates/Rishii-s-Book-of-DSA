@@ -1,19 +1,14 @@
----
-type: concept
-tags: [backtracking, cpp, fundamentals]
-date: 2026-06-30
----
 # Backtracking
 
 ## Problem Statement
-Understand the fundamental paradigm of backtracking for solving constraint satisfaction and exhaustive search problems.
+- understand the fundamental paradigm of backtracking for solving constraint satisfaction and exhaustive search problems.
 
 ## Approach / Intuition
-[[Backtracking]] is an algorithmic technique for solving problems recursively by trying to build a solution incrementally. It involves exploring a path and, if it leads to a dead end or violates constraints, abandoning it and "backtracking" to the previous step. This is essentially a refined [[Depth-First Search]] (DFS) applied to a search space tree.
+- [[backtracking]] is an algorithmic technique for solving problems recursively by trying to build a solution incrementally. It involves exploring a path and, if it leads to a dead end or violates constraints, abandoning it and "backtracking" to the previous step. This is essentially a refined [[Depth-First Search]] (DFS) applied to a search space tree.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** Varies greatly, typically $O(b^d)$ where $b$ is the branching factor and $d$ is depth
-- **[[Space Complexity]]:** $O(d)$ for the recursive call stack
+- **[[time Complexity]]:** Varies greatly, typically $O(b^d)$ where $b$ is the branching factor and $d$ is depth
+- **[[space Complexity]]:** $O(d)$ for the recursive call stack
 
 ## Sample Code
 ```cpp
@@ -37,7 +32,9 @@ void backtrack(int n, int current, vector<int>& path) {
 ```
 
 ## New Keywords / STL Used
-`pop_back`
+- `pop_back`
 
 ## Edge Cases
-Empty solution space, zero constraints.
+- empty solution space, zero constraints.
+
+NEXT: [[Index]]

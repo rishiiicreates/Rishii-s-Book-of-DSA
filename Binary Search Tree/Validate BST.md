@@ -1,30 +1,23 @@
----
-type: concept
-tags: [bst, cpp, math, recursion, boundaries]
-date: 2026-07-01
----
 # Validate Binary Search Tree
 
 ## Problem Statement
-Given a generic topological Binary Tree, strictly prove whether it conforms to the axiomatic mathematical definition of a valid Binary Search Tree (BST).
-The mathematical invariant requires:
-1. Every node in the left subtree $T_L$ is strictly less than $T$.
-2. Every node in the right subtree $T_R$ is strictly greater than $T$.
-3. Subtrees $T_L$ and $T_R$ must recursively satisfy the invariant.
+- given a generic topological Binary Tree, strictly prove whether it conforms to the axiomatic mathematical definition of a valid Binary Search Tree (BST).
+- the mathematical invariant requires:
+- every node in the left subtree $T_L$ is strictly less than $T$.
+- every node in the right subtree $T_R$ is strictly greater than $T$.
+- subtrees $T_L$ and $T_R$ must recursively satisfy the invariant.
 
----
 
 ## Approach: Recursive Absolute Geometric Bounds
 
-A naive verification mapping only a node to its immediate children is mathematically catastrophic, as it fails to enforce the global boundary transitive constraints.
-Instead, we utilize **Recursive Absolute Extrema Bounds**.
-Every structural node must geographically reside within an explicit algebraic interval $(L, R)$.
-1. The global geometric root is unconstrained: $(-\infty, \infty)$.
-2. When descending to a left child $T_L$, the strict upper boundary condenses to the parent's scalar: $(L, \text{Parent})$.
-3. When descending to a right child $T_R$, the strict lower boundary expands to the parent's scalar: $(\text{Parent}, R)$.
-If any vertex intrinsically violates $L < V.\text{val} < R$, the entire topology is irrevocably invalid.
+- a naive verification mapping only a node to its immediate children is mathematically catastrophic, as it fails to enforce the global boundary transitive constraints.
+- instead, we utilize **Recursive Absolute Extrema Bounds**.
+- every structural node must geographically reside within an explicit algebraic interval $(L, R)$.
+- the global geometric root is unconstrained: $(-\infty, \infty)$.
+- when descending to a left child $T_L$, the strict upper boundary condenses to the parent's scalar: $(L, \text{Parent})$.
+- when descending to a right child $T_R$, the strict lower boundary expands to the parent's scalar: $(\text{Parent}, R)$.
+- if any vertex intrinsically violates $L < V.\text{val} < R$, the entire topology is irrevocably invalid.
 
----
 
 ## Code Implementation
 
@@ -58,11 +51,12 @@ bool isValidBST(TreeNode* root) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N)$ strict linear traversal. The algorithm evaluates every structural vertex exactly once, propagating $O(1)$ boundary state.
-- **Space Complexity:** $O(H)$ spatial bounds corresponding to the DFS call-stack recursion depth.
+- **time Complexity:** $O(N)$ strict linear traversal. The algorithm evaluates every structural vertex exactly once, propagating $O(1)$ boundary state.
+- **space Complexity:** $O(H)$ spatial bounds corresponding to the DFS call-stack recursion depth.
 
 > [!warning]
 > **In-Order Trap:** While an In-Order traversal of a valid BST mathematically produces a strictly ascending monotonic sequence, relying on sequence array extraction requires $O(N)$ space. Storing only the `prev` scalar pointer solves space issues but complicates short-circuit propagation. Boundary constraints are algebraically superior.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # Nearly Sorted
 
 ## Problem Statement
-Sort an [[Array]] where each element is at most `k` positions away from its target position in the sorted array.
+- sort an [[Array]] where each element is at most `k` positions away from its target position in the sorted array.
 
 ## Approach / Intuition
-Since every element is at most `k` places away, the minimum element must be among the first `k+1` elements. We can maintain a min-[[Heap]] of size `k+1`. We insert the first `k+1` elements, then iteratively pop the minimum to place it in the correct position in the array, and push the next element from the array into the heap.
+- since every element is at most `k` places away, the minimum element must be among the first `k+1` elements. We can maintain a min-[[Heap]] of size `k+1`. We insert the first `k+1` elements, then iteratively pop the minimum to place it in the correct position in the array, and push the next element from the array into the heap.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log k)
-- **[[Space Complexity]]:** O(k)
+- **[[time Complexity]]:** O(N log k)
+- **[[space Complexity]]:** O(k)
 
 ## Sample Code
 ```cpp
@@ -45,8 +40,10 @@ void sortKSortedArray(vector<int>& arr, int k) {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, `std::greater`, `std::min`
+- `std::priority_queue`, `std::greater`, `std::min`
 
 ## Edge Cases
 - `k = 0` (array is already sorted).
 - `k >= n` (equivalent to standard heap sort).
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, stable-marriage]
-date: 2026-06-30
----
 # Stable Marriage
 
 ## Problem Statement
-Given N men and N women, where each person has ranked all members of the opposite sex in order of preference, marry the men and women together such that there are no two people of opposite sex who would both rather have each other than their current partners.
+- given N men and N women, where each person has ranked all members of the opposite sex in order of preference, marry the men and women together such that there are no two people of opposite sex who would both rather have each other than their current partners.
 
 ## Approach / Intuition
-Use the Gale-Shapley algorithm, which is a classic [[Greedy Algorithm]]. Unengaged men propose to the most preferred woman they haven't proposed to yet. The woman accepts if she is free or prefers him over her current partner. This continues until all men are engaged.
+- use the Gale-Shapley algorithm, which is a classic [[Greedy Algorithm]]. Unengaged men propose to the most preferred woman they haven't proposed to yet. The woman accepts if she is free or prefers him over her current partner. This continues until all men are engaged.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N^2)
-- **[[Space Complexity]]:** O(N^2) for preference matrices
+- **[[time Complexity]]:** O(N^2)
+- **[[space Complexity]]:** O(N^2) for preference matrices
 
 ## Sample Code
 ```cpp
@@ -58,8 +53,10 @@ void stableMarriage(const vector<vector<int>>& prefer, int N) {
 ```
 
 ## New Keywords / STL Used
-- 2D `vector`
+- 2d `vector`
 
 ## Edge Cases
-- Universal agreement on preferences
-- Perfect opposite preferences
+- universal agreement on preferences
+- perfect opposite preferences
+
+NEXT: [[Index]]

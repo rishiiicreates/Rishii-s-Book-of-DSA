@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, data-structure, disjoint-set]
-date: 2026-06-30
----
 # Disjoint Set
 
 ## Problem Statement
-Implement a data structure to keep track of a set of elements partitioned into a number of disjoint sets, supporting union and find operations efficiently.
+- implement a data structure to keep track of a set of elements partitioned into a number of disjoint sets, supporting union and find operations efficiently.
 
 ## Approach / Intuition
-Implement a tree-based structure. Use path compression in the find operation and union by rank or size in the union operation to maintain near-constant time complexity. This is optimal for [[Disjoint Set]] operations.
+- implement a tree-based structure. Use path compression in the find operation and union by rank or size in the union operation to maintain near-constant time complexity. This is optimal for [[Disjoint Set]] operations.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(\alpha(V)) for operations, amortized O(1)
-- **[[Space Complexity]]:** O(V)
+- **[[time Complexity]]:** O(\alpha(V)) for operations, amortized O(1)
+- **[[space Complexity]]:** O(V)
 
 ## Sample Code
 ```cpp
@@ -59,7 +54,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`class`, `vector`
+- `class`, `vector`
 
 ## Edge Cases
-1-based indexing, merging already connected components, components with duplicate edges.
+- 1-based indexing, merging already connected components, components with duplicate edges.
+
+NEXT: [[Index]]

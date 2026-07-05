@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query]
-date: 2026-06-30
----
 # Lazy Propagation
 
 ## Problem Statement
-Perform range updates and range queries efficiently on an array.
+- perform range updates and range queries efficiently on an array.
 
 ## Approach / Intuition
-When updating a range in a [[Segment Tree]], updating every element can take $O(N)$ time. With [[Lazy Propagation]], we delay the updates to children nodes until they are strictly required. This ensures both range updates and queries run in logarithmic time.
+- when updating a range in a [[Segment Tree]], updating every element can take $O(N)$ time. With [[Lazy Propagation]], we delay the updates to children nodes until they are strictly required. This ensures both range updates and queries run in logarithmic time.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log N)$ for both range update and query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(\log N)$ for both range update and query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -82,7 +77,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Overlapping range updates, queries on partially updated segments.
+- overlapping range updates, queries on partially updated segments.
+
+NEXT: [[Index]]

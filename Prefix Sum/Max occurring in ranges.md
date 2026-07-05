@@ -1,19 +1,14 @@
----
-type: concept
-tags: [prefix sum, cpp, range-queries]
-date: 2026-06-30
----
 # Max Occurring Element in Given Ranges
 
 ## Problem Statement
-Given multiple ranges `[L_i, R_i]`, efficiently find the single integer element that occurs the maximum number of times across all combined intervals.
+- given multiple ranges `[L_i, R_i]`, efficiently find the single integer element that occurs the maximum number of times across all combined intervals.
 
 ## Approach / Intuition
-Because interval ranges imply contiguous increments, leverage a simple [[Difference Array]]. Add `1` precisely at boundary `L_i` and subtract `1` right after the boundary at `R_i + 1`. Execute a subsequent [[Prefix Sum]] sweep across the timeline space to naturally unfold actual frequencies, logging the index when the maximum frequency is achieved.
+- because interval ranges imply contiguous increments, leverage a simple [[Difference Array]]. Add `1` precisely at boundary `L_i` and subtract `1` right after the boundary at `R_i + 1`. Execute a subsequent [[Prefix Sum]] sweep across the timeline space to naturally unfold actual frequencies, logging the index when the maximum frequency is achieved.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(Max(R_i) + N)
-- **[[Space Complexity]]:** O(Max(R_i))
+- **[[time Complexity]]:** O(Max(R_i) + N)
+- **[[space Complexity]]:** O(Max(R_i))
 
 ## Sample Code
 ```cpp
@@ -38,7 +33,9 @@ int maxOccurring(vector<int>& L, vector<int>& R) {
 ```
 
 ## New Keywords / STL Used
-None
+- none
 
 ## Edge Cases
-Wildly vast coordinate spaces causing excessive memory usage, strictly disconnected ranges.
+- wildly vast coordinate spaces causing excessive memory usage, strictly disconnected ranges.
+
+NEXT: [[Index]]

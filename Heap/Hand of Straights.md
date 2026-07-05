@@ -1,31 +1,24 @@
----
-type: concept
-tags: [heap, min-heap, greedy, map, cpp]
-date: 2026-07-01
----
 # Hand of Straights
 
 ## Problem Statement
-Given an integer array `hand` of size $N$ and an integer group size `groupSize`, strictly determine if it is mathematically possible to structurally partition the array into disjoint sequential permutations of identical scalar length `groupSize`. A valid permutation structurally demands consecutive scalars: $(X, X+1, X+2, \dots, X+W-1)$.
+- given an integer array `hand` of size $N$ and an integer group size `groupSize`, strictly determine if it is mathematically possible to structurally partition the array into disjoint sequential permutations of identical scalar length `groupSize`. A valid permutation structurally demands consecutive scalars: $(X, X+1, X+2, \dots, X+W-1)$.
 
----
 
 ## Approach: Min-Heap Driven Topological Anchoring
 
-This is a structural permutation binding problem. 
-If $N \pmod{\text{groupSize}} \neq 0$, a mathematical partition is theoretically impossible.
-For the sequence mapping, we must greedily construct permutations anchored on the absolute lowest available scalar.
+- this is a structural permutation binding problem.
+- if $N \pmod{\text{groupSize}} \neq 0$, a mathematical partition is theoretically impossible.
+- for the sequence mapping, we must greedily construct permutations anchored on the absolute lowest available scalar.
 
-We deploy a **Min-Heap (Priority Queue)** over a Hash Map frequencies:
-1. Map the topological frequency of every scalar.
-2. Inject all unique scalars into a Min-Heap to guarantee absolute ascending monotonic extraction.
-3. While the Min-Heap is populated:
-   - The geometric `root` (absolute minimum) MUST structurally act as the anchor of a new consecutive sequence.
-   - We geometrically iterate from $X$ to $X + \text{groupSize} - 1$.
-   - If any required sequential scalar mathematically does not exist (or its frequency is 0), the topological partition immediately collapses $\to$ `false`.
-   - Mutate the sequence frequencies. If a scalar frequency bounds to zero, we mathematically demand it matches the exact root of the Min-Heap. If it does, `pop()`. If it hits zero prematurely (nested), it implies a topological hole, terminating the sequence validity.
+- we deploy a **Min-Heap (Priority Queue)** over a Hash Map frequencies:
+- map the topological frequency of every scalar.
+- inject all unique scalars into a Min-Heap to guarantee absolute ascending monotonic extraction.
+- while the Min-Heap is populated:
+   - the geometric `root` (absolute minimum) MUST structurally act as the anchor of a new consecutive sequence.
+   - we geometrically iterate from $X$ to $X + \text{groupSize} - 1$.
+   - if any required sequential scalar mathematically does not exist (or its frequency is 0), the topological partition immediately collapses $\to$ `false`.
+   - mutate the sequence frequencies. If a scalar frequency bounds to zero, we mathematically demand it matches the exact root of the Min-Heap. If it does, `pop()`. If it hits zero prematurely (nested), it implies a topological hole, terminating the sequence validity.
 
----
 
 ## Code Implementation
 
@@ -78,11 +71,12 @@ bool isNStraightHand(vector<int>& hand, int groupSize) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(N \log U)$, where $U$ denotes the cardinality of unique scalars, governed entirely by the Min-Heap topological operations. The internal geometric sequencing strictly bounds to total element extraction $O(N)$.
-- **Space Complexity:** $O(U)$ geometric limit for mapping frequencies and storing elements inside the structural heap.
+- **time Complexity:** $O(N \log U)$, where $U$ denotes the cardinality of unique scalars, governed entirely by the Min-Heap topological operations. The internal geometric sequencing strictly bounds to total element extraction $O(N)$.
+- **space Complexity:** $O(U)$ geometric limit for mapping frequencies and storing elements inside the structural heap.
 
 > [!tip]
 > **Ordered Map Isomorphism:** A `std::map<int, int>` naturally binds keys in strict ascending monotonic order. Iterating the map and recursively collapsing sequences identically satisfies the constraints in $O(N \log U)$ time, effectively bypassing explicit Heap manipulation while maintaining identical theoretical properties.
+
+NEXT: [[Index]]

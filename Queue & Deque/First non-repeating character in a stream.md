@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, stream]
-date: 2026-06-30
----
 # First non-repeating character in a stream
 
 ## Problem Statement
-Given a stream of characters, find the first non-repeating character every time a new character is added.
+- given a stream of characters, find the first non-repeating character every time a new character is added.
 
 ## Approach / Intuition
-Use a frequency array (or map) to track character counts and a [[Queue]] to maintain the order of characters. When a new character arrives, update its frequency and push it to the queue. Then, pop characters from the front of the queue if their frequency is greater than 1, until a non-repeating character is found or the queue is empty.
+- use a frequency array (or map) to track character counts and a [[Queue]] to maintain the order of characters. When a new character arrives, update its frequency and push it to the queue. Then, pop characters from the front of the queue if their frequency is greater than 1, until a non-repeating character is found or the queue is empty.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) amortized per character
-- **[[Space Complexity]]:** O(n) or O(1) considering fixed character set size
+- **[[time Complexity]]:** O(1) amortized per character
+- **[[space Complexity]]:** O(n) or O(1) considering fixed character set size
 
 ## Sample Code
 ```cpp
@@ -38,7 +33,9 @@ string firstNonRepeating(string A) {
 ```
 
 ## New Keywords / STL Used
-`queue<char>`
+- `queue<char>`
 
 ## Edge Cases
-All characters repeat, no characters repeat, long stream with late repeats.
+- all characters repeat, no characters repeat, long stream with late repeats.
+
+NEXT: [[Index]]

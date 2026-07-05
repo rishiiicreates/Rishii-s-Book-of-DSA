@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, implementation]
-date: 2026-06-30
----
 # Implement Queue Using Array or Linked List
 
 ## Problem Statement
-Implement a custom queue data structure from scratch using either a static array with a circular behavior or a singly linked list.
+- implement a custom queue data structure from scratch using either a static array with a circular behavior or a singly linked list.
 
 ## Approach / Intuition
-For an array implementation, maintain `front` and `rear` pointers, using modulo arithmetic for circular indexing to reuse space. For a [[Linked List]] implementation, keep pointers to both the `head` (for popping) and `tail` (for pushing) to ensure O(1) operations.
+- for an array implementation, maintain `front` and `rear` pointers, using modulo arithmetic for circular indexing to reuse space. For a [[Linked List]] implementation, keep pointers to both the `head` (for popping) and `tail` (for pushing) to ensure O(1) operations.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(1) for enqueue and dequeue
-- **[[Space Complexity]]:** O(n)
+- **[[time Complexity]]:** O(1) for enqueue and dequeue
+- **[[space Complexity]]:** O(n)
 
 ## Sample Code
 ```cpp
@@ -50,7 +45,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`new`, `delete`
+- `new`, `delete`
 
 ## Edge Cases
-Popping when empty, pushing after pop to empty state.
+- popping when empty, pushing after pop to empty state.
+
+NEXT: [[Index]]

@@ -1,19 +1,14 @@
----
-type: concept
-tags: [cpp, range_query]
-date: 2026-06-30
----
 # Flipping Sign
 
 ## Problem Statement
-Given an array, perform updates that flip the sign of all elements in a range $[L, R]$, and query the sum of a range.
+- given an array, perform updates that flip the sign of all elements in a range $[L, R]$, and query the sum of a range.
 
 ## Approach / Intuition
-Using a [[Segment Tree]] with [[Lazy Propagation]], each node maintains the sum of its segment. Flipping the signs in a segment means multiplying the sum by $-1$. The lazy array stores whether a sign flip is pending for the children. 
+- using a [[Segment Tree]] with [[Lazy Propagation]], each node maintains the sum of its segment. Flipping the signs in a segment means multiplying the sum by $-1$. The lazy array stores whether a sign flip is pending for the children.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(\log N)$ for update and query
-- **[[Space Complexity]]:** $O(N)$
+- **[[time Complexity]]:** $O(\log N)$ for update and query
+- **[[space Complexity]]:** $O(N)$
 
 ## Sample Code
 ```cpp
@@ -89,7 +84,9 @@ public:
 ```
 
 ## New Keywords / STL Used
-`std::vector`
+- `std::vector`
 
 ## Edge Cases
-Double flip restoring the original value, query after flip.
+- double flip restoring the original value, query after flip.
+
+NEXT: [[Index]]

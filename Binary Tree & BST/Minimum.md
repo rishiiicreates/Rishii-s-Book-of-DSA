@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, minimum]
-date: 2026-06-30
----
 # Minimum
 
 ## Problem Statement
-Find the node with the minimum value in a Binary Search Tree (BST).
+- find the node with the minimum value in a Binary Search Tree (BST).
 
 ## Approach / Intuition
-Because of the properties of a [[Binary Search Tree]], the left child of any node always contains a smaller value than the node itself. Therefore, to find the minimum value, we simply need to traverse to the leftmost leaf node starting from the root.
+- because of the properties of a [[Binary Search Tree]], the left child of any node always contains a smaller value than the node itself. Therefore, to find the minimum value, we simply need to traverse to the leftmost leaf node starting from the root.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(H)$ where $H$ is the height of the tree.
-- **[[Space Complexity]]:** $O(1)$
+- **[[time Complexity]]:** $O(H)$ where $H$ is the height of the tree.
+- **[[space Complexity]]:** $O(1)$
 
 ## Sample Code
 ```cpp
@@ -36,8 +31,10 @@ int minValue(TreeNode* root) {
 ```
 
 ## New Keywords / STL Used
-None specific
+- none specific
 
 ## Edge Cases
-- Tree is empty
-- Tree only has right children (skewed right)
+- tree is empty
+- tree only has right children (skewed right)
+
+NEXT: [[Index]]

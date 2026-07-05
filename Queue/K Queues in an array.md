@@ -1,49 +1,42 @@
----
-type: concept
-tags: [queue, array, memory-management, cpp]
-date: 2026-06-30
----
 # K Queues in a Single Array
 
 ## Problem Statement
-Design an optimal data structure to efficiently implement $K$ independent queues utilizing a strictly singular scalar array of size $N$. The structure must ensure that a `QueueOverflow` error is only triggered mathematically when all $N$ slots across the universal array are completely exhausted (i.e., no artificial fragmentation limitations).
+- design an optimal data structure to efficiently implement $K$ independent queues utilizing a strictly singular scalar array of size $N$. The structure must ensure that a `QueueOverflow` error is only triggered mathematically when all $N$ slots across the universal array are completely exhausted (i.e., no artificial fragmentation limitations).
 
----
 
 ## Approach: Spatial Linking and Free List Architecture
 
-A naive approach partitions the array into $K$ contiguous, static blocks of size $N/K$. However, this causes severe fragmentation: queue $i$ might overflow its bounds while queue $j$ is completely empty, squandering valid memory. 
+- a naive approach partitions the array into $K$ contiguous, static blocks of size $N/K$. However, this causes severe fragmentation: queue $i$ might overflow its bounds while queue $j$ is completely empty, squandering valid memory.
 
-To achieve optimal mathematical utilization, we dynamically manage memory using a topological approach identical to the OS file system's linked allocation.
+- to achieve optimal mathematical utilization, we dynamically manage memory using a topological approach identical to the OS file system's linked allocation.
 
 ### Necessary Arrays
-We require one primary data array and three auxiliary state-tracking arrays:
-1. `arr[N]`: Stores the actual mathematical values of the queue nodes.
-2. `front[K]`: Stores the physical index of the front element for each queue $i$. Initialize all to $-1$.
-3. `rear[K]`: Stores the physical index of the rear element for each queue $i$. Initialize all to $-1$.
-4. `next[N]`: Acts as a dual-purpose pointer map.
-   - For an occupied slot $x$, `next[x]` stores the index of the next element in the *same* queue.
-   - For a vacant slot $x$, `next[x]` stores the index of the next vacant slot, forming a unified **Free List**.
+- we require one primary data array and three auxiliary state-tracking arrays:
+- `arr[N]`: Stores the actual mathematical values of the queue nodes.
+- `front[K]`: Stores the physical index of the front element for each queue $i$. Initialize all to $-1$.
+- `rear[K]`: Stores the physical index of the rear element for each queue $i$. Initialize all to $-1$.
+- `next[N]`: Acts as a dual-purpose pointer map.
+   - for an occupied slot $x$, `next[x]` stores the index of the next element in the *same* queue.
+   - for a vacant slot $x$, `next[x]` stores the index of the next vacant slot, forming a unified **Free List**.
 
 ### Universal Variables
 - `free_top`: Points to the mathematical head of the Free List. Initialized to $0$.
 
 ### Operations
-**Enqueue(item, q_id):**
-1. Ensure `free_top != -1` (otherwise, universal overflow).
-2. Allocate index: `idx = free_top`. Update `free_top = next[idx]`.
-3. If queue $q_{id}$ is empty (`front[q_id] == -1`), set `front[q_id] = idx`.
-4. Else, link the old rear: `next[rear[q_id]] = idx`.
-5. Update state: `next[idx] = -1`, `rear[q_id] = idx`, `arr[idx] = item`.
+- **enqueue(item, q_id):**
+- ensure `free_top != -1` (otherwise, universal overflow).
+- allocate index: `idx = free_top`. Update `free_top = next[idx]`.
+- if queue $q_{id}$ is empty (`front[q_id] == -1`), set `front[q_id] = idx`.
+- else, link the old rear: `next[rear[q_id]] = idx`.
+- update state: `next[idx] = -1`, `rear[q_id] = idx`, `arr[idx] = item`.
 
-**Dequeue(q_id):**
-1. Ensure `front[q_id] != -1` (otherwise, queue underflow).
-2. Retrieve target: `idx = front[q_id]`.
-3. Advance front pointer: `front[q_id] = next[idx]`.
-4. Deallocate and return to free list: `next[idx] = free_top`, `free_top = idx`.
-5. Return `arr[idx]`.
+- **dequeue(q_id):**
+- ensure `front[q_id] != -1` (otherwise, queue underflow).
+- retrieve target: `idx = front[q_id]`.
+- advance front pointer: `front[q_id] = next[idx]`.
+- deallocate and return to free list: `next[idx] = free_top`, `free_top = idx`.
+- return `arr[idx]`.
 
----
 
 ## Code Implementation
 
@@ -130,8 +123,9 @@ public:
 > [!tip]
 > This architecture relies heavily on array-based pointers. It achieves absolute optimization of cache-locality compared to an array of $K$ distinct Linked Lists distributed across the heap, minimizing cache-miss penalties.
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(1)$ for both `enqueue` and `dequeue`. Memory resolution via the `next` array guarantees strict constant-time boundaries.
-- **Space Complexity:** $O(N + K)$ overhead for the auxiliary tracking arrays, independent of the underlying values.
+- **time Complexity:** $O(1)$ for both `enqueue` and `dequeue`. Memory resolution via the `next` array guarantees strict constant-time boundaries.
+- **space Complexity:** $O(N + K)$ overhead for the auxiliary tracking arrays, independent of the underlying values.
+
+NEXT: [[Index]]

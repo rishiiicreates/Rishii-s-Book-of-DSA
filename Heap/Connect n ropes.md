@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # Connect n ropes
 
 ## Problem Statement
-Given `n` ropes of different lengths, connect them into a single rope with minimum cost. The cost to connect two ropes is equal to the sum of their lengths.
+- given `n` ropes of different lengths, connect them into a single rope with minimum cost. The cost to connect two ropes is equal to the sum of their lengths.
 
 ## Approach / Intuition
-To minimize the overall cost, we should always connect the two shortest ropes available. We can maintain a min-[[Heap]] containing the lengths of all ropes. Repeatedly extract the two smallest lengths, add them up to find the cost of connecting them, and insert the new combined length back into the heap. Add this cost to the total cost, and repeat until one rope remains.
+- to minimize the overall cost, we should always connect the two shortest ropes available. We can maintain a min-[[Heap]] containing the lengths of all ropes. Repeatedly extract the two smallest lengths, add them up to find the cost of connecting them, and insert the new combined length back into the heap. Add this cost to the total cost, and repeat until one [[RoPE]] remains.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(N)
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(N)
 
 ## Sample Code
 ```cpp
@@ -42,8 +37,10 @@ long long minCost(vector<long long>& arr) {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, `std::greater`
+- `std::priority_queue`, `std::greater`
 
 ## Edge Cases
-- Only 1 rope given (cost is 0).
-- All ropes of same length.
+- only 1 rope given (cost is 0).
+- all ropes of same length.
+
+NEXT: [[Index]]

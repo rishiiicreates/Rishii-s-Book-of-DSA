@@ -1,19 +1,14 @@
----
-type: concept
-tags: [heap, dsa, cpp]
-date: 2026-06-30
----
 # Merge k sorted
 
 ## Problem Statement
-Merge `k` sorted [[Linked List]]s (or arrays) and return them as one sorted list.
+- merge `k` sorted [[Linked List]]s (or arrays) and return them as one sorted list.
 
 ## Approach / Intuition
-To efficiently merge `k` lists, use a min-[[Heap]]. Push the first element (or head node) of all `k` lists into the heap. Then, iteratively extract the minimum element from the heap, add it to the merged result, and push the next element from the same list that the extracted element belonged to. Repeat this until the heap is empty.
+- to efficiently merge `k` lists, use a min-[[Heap]]. Push the first element (or head node) of all `k` lists into the heap. Then, iteratively extract the minimum element from the heap, add it to the merged result, and push the next element from the same list that the extracted element belonged to. Repeat this until the heap is empty.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log k) where N is the total number of elements across all lists.
-- **[[Space Complexity]]:** O(k) for the heap.
+- **[[time Complexity]]:** O(N log k) where N is the total number of elements across all lists.
+- **[[space Complexity]]:** O(k) for the heap.
 
 ## Sample Code
 ```cpp
@@ -61,8 +56,10 @@ ListNode* mergeKLists(vector<ListNode*>& lists) {
 ```
 
 ## New Keywords / STL Used
-`std::priority_queue`, custom comparator `operator()`
+- `std::priority_queue`, custom comparator `operator()`
 
 ## Edge Cases
 - `k` is 0 (empty input vector).
-- Some or all of the input lists are empty.
+- some or all of the input lists are empty.
+
+NEXT: [[Index]]

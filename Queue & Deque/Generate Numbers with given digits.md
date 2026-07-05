@@ -1,19 +1,14 @@
----
-type: concept
-tags: [queue, deque, cpp, sequence]
-date: 2026-06-30
----
 # Generate Numbers with given digits
 
 ## Problem Statement
-Generate the first `n` numbers using only specific digits (e.g., 5 and 6) in increasing order.
+- generate the first `n` numbers using only specific digits (e.g., 5 and 6) in increasing order.
 
 ## Approach / Intuition
-Use a [[Queue]] starting with the base digits as strings. In each step, pop the front element, add it to the result, and then push new elements by appending the base digits to the popped string. This acts like a level-order traversal of a tree generating the combinations.
+- use a [[Queue]] starting with the base digits as strings. In each step, pop the front element, add it to the result, and then push new elements by appending the base digits to the popped string. This acts like a level-order traversal of a tree generating the combinations.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(n)
-- **[[Space Complexity]]:** O(n)
+- **[[time Complexity]]:** O(n)
+- **[[space Complexity]]:** O(n)
 
 ## Sample Code
 ```cpp
@@ -35,7 +30,9 @@ vector<string> generateNumbers(int n) {
 ```
 
 ## New Keywords / STL Used
-`std::to_string` (implied with concatenation), `std::queue`
+- `std::to_string` (implied with concatenation), `std::queue`
 
 ## Edge Cases
-`n = 0`, large values of `n` causing string length inflation.
+- `n = 0`, large values of `n` causing string length inflation.
+
+NEXT: [[Index]]

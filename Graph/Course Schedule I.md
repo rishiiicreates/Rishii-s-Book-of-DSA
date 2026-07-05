@@ -1,27 +1,20 @@
----
-type: concept
-tags: [graph, topological-sort, kahn, bfs, cpp]
-date: 2026-07-01
----
 # Course Schedule I
 
 ## Problem Statement
-Mathematically evaluate a university scheduling constraint problem. Given an integer `numCourses` mapping topologically from $0$ to $N-1$, and a structural array `prerequisites` where `[a, b]` algebraically implies course $b$ MUST be strictly evaluated before course $a$, determine if it is mathematically possible to complete all generic courses.
+- mathematically evaluate a university scheduling constraint problem. Given an integer `numCourses` mapping topologically from $0$ to $N-1$, and a structural array `prerequisites` where `[a, b]` algebraically implies course $b$ MUST be strictly evaluated before course $a$, determine if it is mathematically possible to complete all generic courses.
 
----
 
 ## Approach: Topological Cycle Detection (Kahn's BFS)
 
-This geometry maps strictly to a Directed Graph Cycle Detection algorithm.
-A prerequisite tuple `[a, b]` mathematically defines a directed topological edge $b \to a$.
-To complete all structural courses, the graph MUST map flawlessly as a Directed Acyclic Graph (DAG). If a cyclic dependency exists (e.g., $A \to B \to A$), the topology mathematically deadlocks, returning `false`.
+- this geometry maps strictly to a Directed Graph Cycle Detection algorithm.
+- a prerequisite tuple `[a, b]` mathematically defines a directed topological edge $b \to a$.
+- to complete all structural courses, the graph MUST map flawlessly as a Directed Acyclic Graph (DAG). If a cyclic dependency exists (e.g., $A \to B \to A$), the topology mathematically deadlocks, returning `false`.
 
-1. Construct the absolute Adjacency Matrix `adj` and the global `indegree` constraint map.
-2. Inject independent origins (`indegree == 0`) into the BFS boundary.
-3. Topologically iterate Kahn's algorithm, mutating a `completed_courses` scalar index.
-4. If `completed_courses == numCourses`, the geometry successfully collapses (valid sequence).
+- construct the absolute Adjacency Matrix `adj` and the global `indegree` constraint map.
+- inject independent origins (`indegree == 0`) into the BFS boundary.
+- topologically iterate Kahn's algorithm, mutating a `completed_courses` scalar index.
+- if `completed_courses == numCourses`, the geometry successfully collapses (valid sequence).
 
----
 
 ## Code Implementation
 
@@ -74,11 +67,12 @@ bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
 }
 ```
 
----
 
 ## Complexity Analysis
-- **Time Complexity:** $O(V + E)$ absolute limit. Where $V = \text{numCourses}$ and $E = \text{prerequisites.size()}$. Constructing the topological graph and evaluating Kahn's Algorithm scale identically sequentially.
-- **Space Complexity:** $O(V + E)$ structural geometric limit allocating the adjacency list, and $O(V)$ explicitly bounding the BFS generic queue and `indegree` array.
+- **time Complexity:** $O(V + E)$ absolute limit. Where $V = \text{numCourses}$ and $E = \text{prerequisites.size()}$. Constructing the topological graph and evaluating Kahn's Algorithm scale identically sequentially.
+- **space Complexity:** $O(V + E)$ structural geometric limit allocating the adjacency list, and $O(V)$ explicitly bounding the BFS generic queue and `indegree` array.
 
 > [!important]
 > **Constraint Isomorphism:** This topological evaluation strictly mandates Kahn's BFS Algorithm. Utilizing standard recursive DFS cycle detection operates with identical mathematical bounds but sacrifices spatial iterative stability.
+
+NEXT: [[Index]]

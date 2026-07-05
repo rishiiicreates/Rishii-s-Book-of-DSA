@@ -1,19 +1,14 @@
----
-type: concept
-tags: [binary_tree, bst, cpp, tree-view]
-date: 2026-06-30
----
 # Top View of Binary Tree
 
 ## Problem Statement
-Given a binary tree, return the nodes visible when viewed from the top, ordered from left to right.
+- given a binary tree, return the nodes visible when viewed from the top, ordered from left to right.
 
 ## Approach / Intuition
-Assign a horizontal distance (HD) to each node, where the root is at HD 0, the left child is at HD - 1, and the right child is at HD + 1. Perform a [[Breadth-First Search]] (Level Order Traversal) to ensure we capture the uppermost nodes first. Use a map to store the first node encountered at each HD.
+- assign a horizontal distance (HD) to each node, where the root is at HD 0, the left child is at HD - 1, and the right child is at HD + 1. Perform a [[Breadth-First Search]] (Level Order Traversal) to ensure we capture the uppermost nodes first. Use a map to store the first node encountered at each HD.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** $O(N \log N)$ due to map insertion, $O(N)$ if hash map is used
-- **[[Space Complexity]]:** $O(N)$ for queue and map
+- **[[time Complexity]]:** $O(N \log N)$ due to map insertion, $O(N)$ if hash map is used
+- **[[space Complexity]]:** $O(N)$ for queue and map
 
 ## Sample Code
 ```cpp
@@ -60,7 +55,9 @@ vector<int> topView(TreeNode *root) {
 ```
 
 ## New Keywords / STL Used
-`map`, `queue`, `pair`
+- `map`, `queue`, `pair`
 
 ## Edge Cases
-Empty tree, completely overlapped nodes in vertical projection.
+- empty tree, completely overlapped nodes in vertical projection.
+
+NEXT: [[Index]]

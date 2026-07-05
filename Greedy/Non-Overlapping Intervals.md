@@ -1,19 +1,14 @@
----
-type: concept
-tags: [greedy, cpp, non-overlapping-intervals]
-date: 2026-06-30
----
 # Non-Overlapping Intervals
 
 ## Problem Statement
-Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
+- given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
 
 ## Approach / Intuition
-This is equivalent to finding the maximum number of non-overlapping intervals (like Activity Selection). Sort the intervals by their end times. Use a [[Greedy Algorithm]] to keep intervals that end earliest, thereby leaving more space for subsequent intervals.
+- this is equivalent to finding the maximum number of non-overlapping intervals (like Activity Selection). Sort the intervals by their end times. Use a [[Greedy Algorithm]] to keep intervals that end earliest, thereby leaving more space for subsequent intervals.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(N log N)
-- **[[Space Complexity]]:** O(1) or O(N) depending on sorting
+- **[[time Complexity]]:** O(N log N)
+- **[[space Complexity]]:** O(1) or O(N) depending on sorting
 
 ## Sample Code
 ```cpp
@@ -40,8 +35,10 @@ int eraseOverlapIntervals(vector<vector<int>>& intervals) {
 ```
 
 ## New Keywords / STL Used
-- Lambda expression for custom sorting of vectors
+- lambda expression for custom sorting of vectors
 
 ## Edge Cases
-- Intervals fully contained within other intervals
-- Identical intervals
+- intervals fully contained within other intervals
+- identical intervals
+
+NEXT: [[Index]]

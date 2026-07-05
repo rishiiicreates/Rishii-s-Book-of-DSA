@@ -1,19 +1,14 @@
----
-type: concept
-tags: [graph, cpp, math, spanning-tree]
-date: 2026-06-30
----
 # Total Spanning Trees
 
 ## Problem Statement
-Find the total number of spanning trees in a connected undirected graph.
+- find the total number of spanning trees in a connected undirected graph.
 
 ## Approach / Intuition
-Apply [[Kirchhoff's Matrix Tree Theorem]]. Construct the Laplacian matrix by subtracting the Adjacency matrix from the Degree matrix, remove any one row and one column, and calculate the absolute value of the determinant.
+- apply [[Kirchhoff's [[Matrix]] Tree Theorem]]. Construct the Laplacian matrix by subtracting the Adjacency matrix from the Degree matrix, remove any one row and one column, and calculate the absolute value of the determinant.
 
 ## Time & Space Complexity
-- **[[Time Complexity]]:** O(V^3)
-- **[[Space Complexity]]:** O(V^2)
+- **[[time Complexity]]:** O(V^3)
+- **[[space Complexity]]:** O(V^2)
 
 ## Sample Code
 ```cpp
@@ -61,7 +56,9 @@ int spanningTrees(int n, vector<vector<int>>& edges) {
 ```
 
 ## New Keywords / STL Used
-`abs`, `swap`, Gaussian elimination
+- `abs`, `swap`, Gaussian elimination
 
 ## Edge Cases
-Disconnected graph (returns 0), completely connected graph, tree structure (returns 1).
+- disconnected graph (returns 0), completely connected graph, tree structure (returns 1).
+
+NEXT: [[Index]]
